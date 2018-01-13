@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModeloContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PersonasSet" EntityType="Modelo.Personas" />
+    <EntitySet Name="UsuariosSet" EntityType="Modelo.Usuarios" />
+    <EntitySet Name="ConductorSet" EntityType="Modelo.Conductor" />
+    <EntitySet Name="SocioSet" EntityType="Modelo.Socio" />
+    <EntitySet Name="VehiculoSet" EntityType="Modelo.Vehiculo" />
+    <EntitySet Name="TipoUsuarioSet" EntityType="Modelo.TipoUsuario" />
+    <EntitySet Name="TransaccionSet" EntityType="Modelo.Transaccion" />
+    <EntitySet Name="DetalleSet" EntityType="Modelo.Detalle" />
+    <EntitySet Name="TipoDetalleSet" EntityType="Modelo.TipoDetalle" />
+    <EntitySet Name="CarreraSet" EntityType="Modelo.Carrera" />
+    <AssociationSet Name="PersonasUsuarios" Association="Modelo.PersonasUsuarios">
+      <End Role="Personas" EntitySet="PersonasSet" />
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonasConductor" Association="Modelo.PersonasConductor">
+      <End Role="Personas" EntitySet="PersonasSet" />
+      <End Role="Conductor" EntitySet="ConductorSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonasSocio" Association="Modelo.PersonasSocio">
+      <End Role="Personas" EntitySet="PersonasSet" />
+      <End Role="Socio" EntitySet="SocioSet" />
+    </AssociationSet>
+    <AssociationSet Name="VehiculoCarrera" Association="Modelo.VehiculoCarrera">
+      <End Role="Vehiculo" EntitySet="VehiculoSet" />
+      <End Role="Carrera" EntitySet="CarreraSet" />
+    </AssociationSet>
+    <AssociationSet Name="VehiculoTransaccion" Association="Modelo.VehiculoTransaccion">
+      <End Role="Vehiculo" EntitySet="VehiculoSet" />
+      <End Role="Transaccion" EntitySet="TransaccionSet" />
+    </AssociationSet>
+    <AssociationSet Name="SocioVehiculo" Association="Modelo.SocioVehiculo">
+      <End Role="Socio" EntitySet="SocioSet" />
+      <End Role="Vehiculo" EntitySet="VehiculoSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoUsuarioUsuarios" Association="Modelo.TipoUsuarioUsuarios">
+      <End Role="TipoUsuario" EntitySet="TipoUsuarioSet" />
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoEgresoEgreso" Association="Modelo.TipoEgresoEgreso">
+      <End Role="TipoDetalle" EntitySet="TipoDetalleSet" />
+      <End Role="Detalle" EntitySet="DetalleSet" />
+    </AssociationSet>
+    <AssociationSet Name="TransaccionEgreso" Association="Modelo.TransaccionEgreso">
+      <End Role="Transaccion" EntitySet="TransaccionSet" />
+      <End Role="Detalle" EntitySet="DetalleSet" />
+    </AssociationSet>
+    <EntitySet Name="SaldoSet" EntityType="Modelo.Saldo" />
+  </EntityContainer>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="Id_persona" />
+    </Key>
+    <Property Name="Id_persona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Identificacion" Type="String" Nullable="false" />
+    <Property Name="Nombres" Type="String" Nullable="false" />
+    <Property Name="Apellidos" Type="String" Nullable="false" />
+    <Property Name="Direccion" Type="String" Nullable="false" />
+    <Property Name="Telefono" Type="String" Nullable="false" />
+    <Property Name="Correo" Type="String" Nullable="true" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Usuarios" cg:GetterAccess="Public" Relationship="Modelo.PersonasUsuarios" FromRole="Personas" ToRole="Usuarios" />
+    <NavigationProperty Name="Socios" Relationship="Modelo.PersonasSocio" FromRole="Personas" ToRole="Socio" />
+    <NavigationProperty Name="Conductor" Relationship="Modelo.PersonasConductor" FromRole="Personas" ToRole="Conductor" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id_usuario" />
+    </Key>
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="Nickname" Type="String" Nullable="false" />
+    <Property Name="Clave" Type="String" Nullable="false" />
+    <Property Name="Id_tipo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Personas" Relationship="Modelo.PersonasUsuarios" FromRole="Usuarios" ToRole="Personas" />
+    <NavigationProperty Name="TipoUsuario" Relationship="Modelo.TipoUsuarioUsuarios" FromRole="Usuarios" ToRole="TipoUsuario" />
+  </EntityType>
+  <EntityType Name="Conductor">
+    <Key>
+      <PropertyRef Name="Id_conductor" />
+    </Key>
+    <Property Name="Id_conductor" Type="Int32" Nullable="false" />
+    <Property Name="Licencia" Type="String" Nullable="false" />
+    <NavigationProperty Name="Personas" Relationship="Modelo.PersonasConductor" FromRole="Conductor" ToRole="Personas" />
+  </EntityType>
+  <EntityType Name="Socio">
+    <Key>
+      <PropertyRef Name="Id_socio" />
+    </Key>
+    <Property Name="Id_socio" Type="Int32" Nullable="false" />
+    <Property Name="FechaAsociacion" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Personas" Relationship="Modelo.PersonasSocio" FromRole="Socio" ToRole="Personas" />
+    <NavigationProperty Name="Vehiculo" Relationship="Modelo.SocioVehiculo" FromRole="Socio" ToRole="Vehiculo" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="Id_Vehiculo" />
+    </Key>
+    <Property Name="Id_Vehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Placa" Type="String" Nullable="false" />
+    <Property Name="Marca" Type="String" Nullable="false" />
+    <Property Name="Modelo" Type="String" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="Id_socio" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carrera" Relationship="Modelo.VehiculoCarrera" FromRole="Vehiculo" ToRole="Carrera" />
+    <NavigationProperty Name="Transaccion" Relationship="Modelo.VehiculoTransaccion" FromRole="Vehiculo" ToRole="Transaccion" />
+    <NavigationProperty Name="Socio" Relationship="Modelo.SocioVehiculo" FromRole="Vehiculo" ToRole="Socio" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="Id_tipo" />
+    </Key>
+    <Property Name="Id_tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Modelo.TipoUsuarioUsuarios" FromRole="TipoUsuario" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Transaccion">
+    <Key>
+      <PropertyRef Name="IdTransaccion" />
+    </Key>
+    <Property Name="IdTransaccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="Id_Vehiculo" Type="Int32" Nullable="false" />
+    <Property Name="FechaTransaccion" Type="DateTime" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Vehiculo" Relationship="Modelo.VehiculoTransaccion" FromRole="Transaccion" ToRole="Vehiculo" />
+    <NavigationProperty Name="Egreso" Relationship="Modelo.TransaccionEgreso" FromRole="Transaccion" ToRole="Detalle" />
+  </EntityType>
+  <EntityType Name="Detalle">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTransaccion" Type="Int32" Nullable="false" />
+    <Property Name="TipoDetalle" Type="Int32" Nullable="false" />
+    <Property Name="TipoTransaccion" Type="Boolean" Nullable="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TipoEgreso" Relationship="Modelo.TipoEgresoEgreso" FromRole="Detalle" ToRole="TipoDetalle" />
+    <NavigationProperty Name="Transaccion" Relationship="Modelo.TransaccionEgreso" FromRole="Detalle" ToRole="Transaccion" />
+  </EntityType>
+  <EntityType Name="TipoDetalle">
+    <Key>
+      <PropertyRef Name="IdTipoDetalle" />
+    </Key>
+    <Property Name="IdTipoDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Egreso" Relationship="Modelo.TipoEgresoEgreso" FromRole="TipoDetalle" ToRole="Detalle" />
+  </EntityType>
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="Id_carrera" />
+    </Key>
+    <Property Name="Id_carrera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_conductor" Type="Int32" Nullable="false" />
+    <Property Name="Id_vehiculo" Type="Int32" Nullable="false" />
+    <Property Name="No_transaccion" Type="Int32" Nullable="false" />
+    <Property Name="HoraSalida" Type="Time" Nullable="false" />
+    <Property Name="HoraLlegada" Type="Time" Nullable="false" />
+    <Property Name="FechaCarrera" Type="DateTime" Nullable="false" />
+    <Property Name="Vuelta_Completa" Type="Boolean" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Vehiculo" Relationship="Modelo.VehiculoCarrera" FromRole="Carrera" ToRole="Vehiculo" />
+  </EntityType>
+  <Association Name="PersonasUsuarios">
+    <End Type="Modelo.Personas" Role="Personas" Multiplicity="1" />
+    <End Type="Modelo.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+  </Association>
+  <Association Name="PersonasConductor">
+    <End Type="Modelo.Personas" Role="Personas" Multiplicity="1" />
+    <End Type="Modelo.Conductor" Role="Conductor" Multiplicity="0..1" />
+  </Association>
+  <Association Name="PersonasSocio">
+    <End Type="Modelo.Personas" Role="Personas" Multiplicity="1" />
+    <End Type="Modelo.Socio" Role="Socio" Multiplicity="0..1" />
+  </Association>
+  <Association Name="VehiculoCarrera">
+    <End Type="Modelo.Vehiculo" Role="Vehiculo" Multiplicity="1" />
+    <End Type="Modelo.Carrera" Role="Carrera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="Id_Vehiculo" />
+      </Principal>
+      <Dependent Role="Carrera">
+        <PropertyRef Name="Id_vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehiculoTransaccion">
+    <End Type="Modelo.Vehiculo" Role="Vehiculo" Multiplicity="1" />
+    <End Type="Modelo.Transaccion" Role="Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="Id_Vehiculo" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="Id_Vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SocioVehiculo">
+    <End Type="Modelo.Socio" Role="Socio" Multiplicity="1" />
+    <End Type="Modelo.Vehiculo" Role="Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="Id_socio" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="Id_socio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoUsuarioUsuarios">
+    <End Type="Modelo.TipoUsuario" Role="TipoUsuario" Multiplicity="1" />
+    <End Type="Modelo.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="Id_tipo" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoEgresoEgreso">
+    <End Type="Modelo.TipoDetalle" Role="TipoDetalle" Multiplicity="1" />
+    <End Type="Modelo.Detalle" Role="Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDetalle">
+        <PropertyRef Name="IdTipoDetalle" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="TipoDetalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransaccionEgreso">
+    <End Type="Modelo.Transaccion" Role="Transaccion" Multiplicity="1" />
+    <End Type="Modelo.Detalle" Role="Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaccion">
+        <PropertyRef Name="IdTransaccion" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="IdTransaccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Saldo">
+    <Key>
+      <PropertyRef Name="Id_saldo" />
+    </Key>
+    <Property Name="Id_saldo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_vehiculo" Type="Int32" Nullable="false" />
+    <Property Name="Total_sado" Type="Double" Nullable="false" />
+    <Property Name="ultima_transacion" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

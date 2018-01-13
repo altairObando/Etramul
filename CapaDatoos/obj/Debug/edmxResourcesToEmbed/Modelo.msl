@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="ModeloContainer">
+    <EntitySetMapping Name="PersonasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Personas)">
+        <MappingFragment StoreEntitySet="PersonasSet">
+          <ScalarProperty Name="Id_persona" ColumnName="Id_persona" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuariosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Usuarios)">
+        <MappingFragment StoreEntitySet="UsuariosSet">
+          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Id_tipo" ColumnName="Id_tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConductorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Conductor)">
+        <MappingFragment StoreEntitySet="ConductorSet">
+          <ScalarProperty Name="Id_conductor" ColumnName="Id_conductor" />
+          <ScalarProperty Name="Licencia" ColumnName="Licencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Socio)">
+        <MappingFragment StoreEntitySet="SocioSet">
+          <ScalarProperty Name="Id_socio" ColumnName="Id_socio" />
+          <ScalarProperty Name="FechaAsociacion" ColumnName="FechaAsociacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiculoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Vehiculo)">
+        <MappingFragment StoreEntitySet="VehiculoSet">
+          <ScalarProperty Name="Id_Vehiculo" ColumnName="Id_Vehiculo" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Id_socio" ColumnName="Id_socio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoUsuarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.TipoUsuario)">
+        <MappingFragment StoreEntitySet="TipoUsuarioSet">
+          <ScalarProperty Name="Id_tipo" ColumnName="Id_tipo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransaccionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Transaccion)">
+        <MappingFragment StoreEntitySet="TransaccionSet">
+          <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
+          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
+          <ScalarProperty Name="Id_Vehiculo" ColumnName="Id_Vehiculo" />
+          <ScalarProperty Name="FechaTransaccion" ColumnName="FechaTransaccion" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Detalle)">
+        <MappingFragment StoreEntitySet="DetalleSet">
+          <ScalarProperty Name="IdDetalle" ColumnName="IdDetalle" />
+          <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
+          <ScalarProperty Name="TipoDetalle" ColumnName="TipoDetalle" />
+          <ScalarProperty Name="TipoTransaccion" ColumnName="TipoTransaccion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDetalleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.TipoDetalle)">
+        <MappingFragment StoreEntitySet="TipoDetalleSet">
+          <ScalarProperty Name="IdTipoDetalle" ColumnName="IdTipoDetalle" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarreraSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Carrera)">
+        <MappingFragment StoreEntitySet="CarreraSet">
+          <ScalarProperty Name="Id_carrera" ColumnName="Id_carrera" />
+          <ScalarProperty Name="Id_conductor" ColumnName="Id_conductor" />
+          <ScalarProperty Name="Id_vehiculo" ColumnName="Id_vehiculo" />
+          <ScalarProperty Name="No_transaccion" ColumnName="No_transaccion" />
+          <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+          <ScalarProperty Name="HoraLlegada" ColumnName="HoraLlegada" />
+          <ScalarProperty Name="FechaCarrera" ColumnName="FechaCarrera" />
+          <ScalarProperty Name="Vuelta_Completa" ColumnName="Vuelta_Completa" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaldoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Saldo)">
+        <MappingFragment StoreEntitySet="SaldoSet">
+          <ScalarProperty Name="Id_saldo" ColumnName="Id_saldo" />
+          <ScalarProperty Name="Id_vehiculo" ColumnName="Id_vehiculo" />
+          <ScalarProperty Name="Total_sado" ColumnName="Total_sado" />
+          <ScalarProperty Name="ultima_transacion" ColumnName="ultima_transacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PersonasUsuarios" TypeName="Modelo.PersonasUsuarios" StoreEntitySet="UsuariosSet">
+      <EndProperty Name="Personas">
+        <ScalarProperty Name="Id_persona" ColumnName="Personas_Id_persona" />
+      </EndProperty>
+      <EndProperty Name="Usuarios">
+        <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonasConductor" TypeName="Modelo.PersonasConductor" StoreEntitySet="ConductorSet">
+      <EndProperty Name="Personas">
+        <ScalarProperty Name="Id_persona" ColumnName="Personas_Id_persona" />
+      </EndProperty>
+      <EndProperty Name="Conductor">
+        <ScalarProperty Name="Id_conductor" ColumnName="Id_conductor" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonasSocio" TypeName="Modelo.PersonasSocio" StoreEntitySet="SocioSet">
+      <EndProperty Name="Personas">
+        <ScalarProperty Name="Id_persona" ColumnName="Personas_Id_persona" />
+      </EndProperty>
+      <EndProperty Name="Socio">
+        <ScalarProperty Name="Id_socio" ColumnName="Id_socio" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

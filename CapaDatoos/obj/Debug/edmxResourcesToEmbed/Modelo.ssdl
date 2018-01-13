@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Modelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModeloStoreContainer">
+    <EntitySet Name="PersonasSet" EntityType="Modelo.Store.PersonasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsuariosSet" EntityType="Modelo.Store.UsuariosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConductorSet" EntityType="Modelo.Store.ConductorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SocioSet" EntityType="Modelo.Store.SocioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehiculoSet" EntityType="Modelo.Store.VehiculoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoUsuarioSet" EntityType="Modelo.Store.TipoUsuarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TransaccionSet" EntityType="Modelo.Store.TransaccionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleSet" EntityType="Modelo.Store.DetalleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoDetalleSet" EntityType="Modelo.Store.TipoDetalleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarreraSet" EntityType="Modelo.Store.CarreraSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SaldoSet" EntityType="Modelo.Store.SaldoSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PersonasUsuarios" Association="Modelo.Store.PersonasUsuarios">
+      <End Role="Personas" EntitySet="PersonasSet" />
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonasConductor" Association="Modelo.Store.PersonasConductor">
+      <End Role="Personas" EntitySet="PersonasSet" />
+      <End Role="Conductor" EntitySet="ConductorSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonasSocio" Association="Modelo.Store.PersonasSocio">
+      <End Role="Personas" EntitySet="PersonasSet" />
+      <End Role="Socio" EntitySet="SocioSet" />
+    </AssociationSet>
+    <AssociationSet Name="VehiculoCarrera" Association="Modelo.Store.VehiculoCarrera">
+      <End Role="Vehiculo" EntitySet="VehiculoSet" />
+      <End Role="Carrera" EntitySet="CarreraSet" />
+    </AssociationSet>
+    <AssociationSet Name="VehiculoTransaccion" Association="Modelo.Store.VehiculoTransaccion">
+      <End Role="Vehiculo" EntitySet="VehiculoSet" />
+      <End Role="Transaccion" EntitySet="TransaccionSet" />
+    </AssociationSet>
+    <AssociationSet Name="SocioVehiculo" Association="Modelo.Store.SocioVehiculo">
+      <End Role="Socio" EntitySet="SocioSet" />
+      <End Role="Vehiculo" EntitySet="VehiculoSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoUsuarioUsuarios" Association="Modelo.Store.TipoUsuarioUsuarios">
+      <End Role="TipoUsuario" EntitySet="TipoUsuarioSet" />
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoEgresoEgreso" Association="Modelo.Store.TipoEgresoEgreso">
+      <End Role="TipoDetalle" EntitySet="TipoDetalleSet" />
+      <End Role="Detalle" EntitySet="DetalleSet" />
+    </AssociationSet>
+    <AssociationSet Name="TransaccionEgreso" Association="Modelo.Store.TransaccionEgreso">
+      <End Role="Transaccion" EntitySet="TransaccionSet" />
+      <End Role="Detalle" EntitySet="DetalleSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PersonasSet">
+    <Key>
+      <PropertyRef Name="Id_persona" />
+    </Key>
+    <Property Name="Id_persona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Identificacion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apellidos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Correo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuariosSet">
+    <Key>
+      <PropertyRef Name="Id_usuario" />
+    </Key>
+    <Property Name="Id_usuario" Type="int" Nullable="false" />
+    <Property Name="Nickname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Clave" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_tipo" Type="int" Nullable="false" />
+    <Property Name="Personas_Id_persona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConductorSet">
+    <Key>
+      <PropertyRef Name="Id_conductor" />
+    </Key>
+    <Property Name="Id_conductor" Type="int" Nullable="false" />
+    <Property Name="Licencia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Personas_Id_persona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SocioSet">
+    <Key>
+      <PropertyRef Name="Id_socio" />
+    </Key>
+    <Property Name="Id_socio" Type="int" Nullable="false" />
+    <Property Name="FechaAsociacion" Type="datetime" Nullable="false" />
+    <Property Name="Personas_Id_persona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehiculoSet">
+    <Key>
+      <PropertyRef Name="Id_Vehiculo" />
+    </Key>
+    <Property Name="Id_Vehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Placa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Marca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="Id_socio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoUsuarioSet">
+    <Key>
+      <PropertyRef Name="Id_tipo" />
+    </Key>
+    <Property Name="Id_tipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransaccionSet">
+    <Key>
+      <PropertyRef Name="IdTransaccion" />
+    </Key>
+    <Property Name="IdTransaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_usuario" Type="int" Nullable="false" />
+    <Property Name="Id_Vehiculo" Type="int" Nullable="false" />
+    <Property Name="FechaTransaccion" Type="datetime" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleSet">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTransaccion" Type="int" Nullable="false" />
+    <Property Name="TipoDetalle" Type="int" Nullable="false" />
+    <Property Name="TipoTransaccion" Type="bit" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDetalleSet">
+    <Key>
+      <PropertyRef Name="IdTipoDetalle" />
+    </Key>
+    <Property Name="IdTipoDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CarreraSet">
+    <Key>
+      <PropertyRef Name="Id_carrera" />
+    </Key>
+    <Property Name="Id_carrera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_conductor" Type="int" Nullable="false" />
+    <Property Name="Id_vehiculo" Type="int" Nullable="false" />
+    <Property Name="No_transaccion" Type="int" Nullable="false" />
+    <Property Name="HoraSalida" Type="time" Nullable="false" />
+    <Property Name="HoraLlegada" Type="time" Nullable="false" />
+    <Property Name="FechaCarrera" Type="datetime" Nullable="false" />
+    <Property Name="Vuelta_Completa" Type="bit" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SaldoSet">
+    <Key>
+      <PropertyRef Name="Id_saldo" />
+    </Key>
+    <Property Name="Id_saldo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_vehiculo" Type="int" Nullable="false" />
+    <Property Name="Total_sado" Type="float" Nullable="false" />
+    <Property Name="ultima_transacion" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PersonasUsuarios">
+    <End Role="Personas" Type="Modelo.Store.PersonasSet" Multiplicity="1" />
+    <End Role="Usuarios" Type="Modelo.Store.UsuariosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="Id_persona" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Personas_Id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonasConductor">
+    <End Role="Personas" Type="Modelo.Store.PersonasSet" Multiplicity="1" />
+    <End Role="Conductor" Type="Modelo.Store.ConductorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="Id_persona" />
+      </Principal>
+      <Dependent Role="Conductor">
+        <PropertyRef Name="Personas_Id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonasSocio">
+    <End Role="Personas" Type="Modelo.Store.PersonasSet" Multiplicity="1" />
+    <End Role="Socio" Type="Modelo.Store.SocioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="Id_persona" />
+      </Principal>
+      <Dependent Role="Socio">
+        <PropertyRef Name="Personas_Id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehiculoCarrera">
+    <End Role="Vehiculo" Type="Modelo.Store.VehiculoSet" Multiplicity="1" />
+    <End Role="Carrera" Type="Modelo.Store.CarreraSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="Id_Vehiculo" />
+      </Principal>
+      <Dependent Role="Carrera">
+        <PropertyRef Name="Id_vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehiculoTransaccion">
+    <End Role="Vehiculo" Type="Modelo.Store.VehiculoSet" Multiplicity="1" />
+    <End Role="Transaccion" Type="Modelo.Store.TransaccionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="Id_Vehiculo" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="Id_Vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SocioVehiculo">
+    <End Role="Socio" Type="Modelo.Store.SocioSet" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Modelo.Store.VehiculoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="Id_socio" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="Id_socio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoUsuarioUsuarios">
+    <End Role="TipoUsuario" Type="Modelo.Store.TipoUsuarioSet" Multiplicity="1" />
+    <End Role="Usuarios" Type="Modelo.Store.UsuariosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="Id_tipo" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoEgresoEgreso">
+    <End Role="TipoDetalle" Type="Modelo.Store.TipoDetalleSet" Multiplicity="1" />
+    <End Role="Detalle" Type="Modelo.Store.DetalleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDetalle">
+        <PropertyRef Name="IdTipoDetalle" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="TipoDetalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransaccionEgreso">
+    <End Role="Transaccion" Type="Modelo.Store.TransaccionSet" Multiplicity="1" />
+    <End Role="Detalle" Type="Modelo.Store.DetalleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaccion">
+        <PropertyRef Name="IdTransaccion" />
+      </Principal>
+      <Dependent Role="Detalle">
+        <PropertyRef Name="IdTransaccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

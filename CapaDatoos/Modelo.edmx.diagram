@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4c907897c8043bc8d84272d8151fa5b" Name="Diagram1" ZoomLevel="81" >
+        <EntityTypeShape EntityType="Modelo.Personas" Width="1.5" PointX="0.75" PointY="5.75" FillColor="64, 64, 64" />
+        <EntityTypeShape EntityType="Modelo.Usuarios" Width="1.5" PointX="3.25" PointY="2.375" />
+        <EntityTypeShape EntityType="Modelo.Conductor" Width="1.5" PointX="3" PointY="6.25" />
+        <EntityTypeShape EntityType="Modelo.Socio" Width="1.5" PointX="3" PointY="10.75" />
+        <EntityTypeShape EntityType="Modelo.Vehiculo" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="Modelo.TipoUsuario" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="Modelo.Transaccion" Width="1.5" PointX="7.5" PointY="8.625" FillColor="64, 64, 64" />
+        <EntityTypeShape EntityType="Modelo.Detalle" Width="1.5" PointX="9.75" PointY="8.5" />
+        <EntityTypeShape EntityType="Modelo.TipoDetalle" Width="1.5" PointX="7.5" PointY="5.875" />
+        <EntityTypeShape EntityType="Modelo.Carrera" Width="1.5" PointX="7.5" PointY="11.75" />
+        <AssociationConnector Association="Modelo.PersonasUsuarios" />
+        <AssociationConnector Association="Modelo.PersonasConductor" />
+        <AssociationConnector Association="Modelo.PersonasSocio" />
+        <AssociationConnector Association="Modelo.VehiculoCarrera" />
+        <AssociationConnector Association="Modelo.VehiculoTransaccion" />
+        <AssociationConnector Association="Modelo.SocioVehiculo" />
+        <AssociationConnector Association="Modelo.TipoUsuarioUsuarios" />
+        <AssociationConnector Association="Modelo.TipoEgresoEgreso" />
+        <AssociationConnector Association="Modelo.TransaccionEgreso" />
+        <EntityTypeShape EntityType="Modelo.Saldo" Width="1.5" PointX="7.375" PointY="2.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

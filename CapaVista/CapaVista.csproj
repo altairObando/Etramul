@@ -1,0 +1,992 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{440554EA-D556-469A-AEC0-CC833A257A52}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaVista</RootNamespace>
+    <AssemblyName>COOTRACOSAN</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Estudiante\Desktop\Etramul-master\setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Cootracosan Sistema de ingreso y egresos</ProductName>
+    <PublisherName>Noel Antonio Obando espinoza</PublisherName>
+    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CapaVista.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B7E71AB041812B39F37585AF6050932CAAABD063</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CapaVista_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUsuarios.Designer.cs">
+      <DependentUpon>AdminUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conductores\AgregarConductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conductores\AgregarConductor.Designer.cs">
+      <DependentUpon>AgregarConductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conductores\BuscarConductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conductores\BuscarConductor.Designer.cs">
+      <DependentUpon>BuscarConductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexiones.cs" />
+    <Compile Include="FormTipoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoUsuario.Designer.cs">
+      <DependentUpon>FormTipoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manual de ayuda\Help_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manual de ayuda\Help_Form.Designer.cs">
+      <DependentUpon>Help_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CarrerasPorDia_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\CarrerasPorDia_Form.Designer.cs">
+      <DependentUpon>CarrerasPorDia_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleEgresoEntreFechas_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleEgresoEntreFechas_form.Designer.cs">
+      <DependentUpon>DetalleEgresoEntreFechas_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DetalleGastosRubroDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\DetalleGastosRubroDia.Designer.cs">
+      <DependentUpon>DetalleGastosRubroDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\GastosPorRubroEntreFechas_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\GastosPorRubroEntreFechas_form.Designer.cs">
+      <DependentUpon>GastosPorRubroEntreFechas_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\GastosPorRubroPorDia_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\GastosPorRubroPorDia_form.Designer.cs">
+      <DependentUpon>GastosPorRubroPorDia_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ImprimirFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ImprimirFactura.Designer.cs">
+      <DependentUpon>ImprimirFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\IngresoTotalPorFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\IngresoTotalPorFechas.Designer.cs">
+      <DependentUpon>IngresoTotalPorFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\MenuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\MenuReportes.Designer.cs">
+      <DependentUpon>MenuReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Selector.Designer.cs">
+      <DependentUpon>Selector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\TicketFisicoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\TicketFisicoForm.Designer.cs">
+      <DependentUpon>TicketFisicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VerEntreFechasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VerEntreFechasForm.Designer.cs">
+      <DependentUpon>VerEntreFechasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ingreso_total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ingreso_total.Designer.cs">
+      <DependentUpon>Ingreso_total.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ver_hoy_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ver_hoy_form.Designer.cs">
+      <DependentUpon>ver_hoy_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\DetalleEgresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\DetalleEgresos.Designer.cs">
+      <DependentUpon>DetalleEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\GastosPorRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\GastosPorRubro.Designer.cs">
+      <DependentUpon>GastosPorRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos\DetallesCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos\DetallesCarrera.Designer.cs">
+      <DependentUpon>DetallesCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos\DetallesSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos\DetallesSocio.Designer.cs">
+      <DependentUpon>DetallesSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos\MenuVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos\MenuVehiculos.Designer.cs">
+      <DependentUpon>MenuVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conductores\ModificarConductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conductores\ModificarConductor.Designer.cs">
+      <DependentUpon>ModificarConductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainContainer.Designer.cs">
+      <DependentUpon>MainContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Saldo\ConsultaSaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Saldo\ConsultaSaldo.Designer.cs">
+      <DependentUpon>ConsultaSaldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Socios\AgregarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Socios\AgregarSocio.Designer.cs">
+      <DependentUpon>AgregarSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Socios\BuscarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Socios\BuscarSocio.Designer.cs">
+      <DependentUpon>BuscarSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Socios\ModificarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Socios\ModificarSocio.Designer.cs">
+      <DependentUpon>ModificarSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Administracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Administracion.Designer.cs">
+      <DependentUpon>Administracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\AgregarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\AgregarCarrera.Designer.cs">
+      <DependentUpon>AgregarCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\AgregarTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\AgregarTransaccion.Designer.cs">
+      <DependentUpon>AgregarTransaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Carreras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Carreras.Designer.cs">
+      <DependentUpon>Carreras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\DetalleCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\DetalleCarrera.Designer.cs">
+      <DependentUpon>DetalleCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\DetalleTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\DetalleTransaccion.Designer.cs">
+      <DependentUpon>DetalleTransaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\ListaTransacciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\ListaTransacciones.Designer.cs">
+      <DependentUpon>ListaTransacciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Ticket.Designer.cs">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\TipoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\TipoDetalle.Designer.cs">
+      <DependentUpon>TipoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\TransaccionesDataSet.cs">
+      <DependentUpon>TransaccionesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\TransaccionesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransaccionesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\VisorReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\VisorReportes.Designer.cs">
+      <DependentUpon>VisorReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos\AgregarVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos\AgregarVehiculos.Designer.cs">
+      <DependentUpon>AgregarVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Total Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Total Vehiculos.Designer.cs">
+      <DependentUpon>Total Vehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\UltimasTransacciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\UltimasTransacciones.Designer.cs">
+      <DependentUpon>UltimasTransacciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Ver dia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Ver dia.Designer.cs">
+      <DependentUpon>Ver dia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos\VerDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos\VerDetalles.Designer.cs">
+      <DependentUpon>VerDetalles.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminUsuarios.resx">
+      <DependentUpon>AdminUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conductores\AgregarConductor.resx">
+      <DependentUpon>AgregarConductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conductores\BuscarConductor.resx">
+      <DependentUpon>BuscarConductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manual de ayuda\Help_Form.es-NI.resx">
+      <DependentUpon>Help_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manual de ayuda\Help_Form.resx">
+      <DependentUpon>Help_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CarrerasPorDia.rdlc" />
+    <EmbeddedResource Include="Reportes\CarrerasPorDia_Form.resx">
+      <DependentUpon>CarrerasPorDia_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\DetalleEgresoEntreFechas.rdlc" />
+    <EmbeddedResource Include="Reportes\DetalleEgresoEntreFechas_form.resx">
+      <DependentUpon>DetalleEgresoEntreFechas_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\DetalleGastosRubroDia.rdlc" />
+    <EmbeddedResource Include="Reportes\DetalleGastosRubroDia.resx">
+      <DependentUpon>DetalleGastosRubroDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EgresosDia.rdlc" />
+    <EmbeddedResource Include="Reportes\GastosPorRubroEntreFechas.rdlc" />
+    <EmbeddedResource Include="Reportes\GastosPorRubroEntreFechas_form.resx">
+      <DependentUpon>GastosPorRubroEntreFechas_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\GastosPorRubroPorDia_form.rdlc" />
+    <EmbeddedResource Include="Reportes\GastosPorRubroPorDia_form.resx">
+      <DependentUpon>GastosPorRubroPorDia_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ImprimirFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\ImprimirFactura.resx">
+      <DependentUpon>ImprimirFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\IngresosDia.rdlc" />
+    <EmbeddedResource Include="Reportes\IngresosTotalPorFechas.rdlc" />
+    <EmbeddedResource Include="Reportes\IngresoTotalPorFechas.resx">
+      <DependentUpon>IngresoTotalPorFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ingreso_total.rdlc" />
+    <EmbeddedResource Include="Reportes\MenuReportes.resx">
+      <DependentUpon>MenuReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Selector.resx">
+      <DependentUpon>Selector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\TicketFisico.rdlc" />
+    <EmbeddedResource Include="Reportes\TicketFisicoForm.resx">
+      <DependentUpon>TicketFisicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ver hoy.rdlc" />
+    <EmbeddedResource Include="Reportes\VerEntreFechas.rdlc" />
+    <EmbeddedResource Include="Reportes\VerEntreFechasForm.resx">
+      <DependentUpon>VerEntreFechasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoUsuario.resx">
+      <DependentUpon>FormTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ingreso_total.resx">
+      <DependentUpon>Ingreso_total.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ver_hoy_form.resx">
+      <DependentUpon>ver_hoy_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\DetalleEgresos.resx">
+      <DependentUpon>DetalleEgresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\GastosPorRubro.resx">
+      <DependentUpon>GastosPorRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos\DetallesCarrera.resx">
+      <DependentUpon>DetallesCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos\DetallesSocio.resx">
+      <DependentUpon>DetallesSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos\MenuVehiculos.resx">
+      <DependentUpon>MenuVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conductores\ModificarConductor.resx">
+      <DependentUpon>ModificarConductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainContainer.resx">
+      <DependentUpon>MainContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Saldo\ConsultaSaldo.resx">
+      <DependentUpon>ConsultaSaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socios\AgregarSocio.resx">
+      <DependentUpon>AgregarSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socios\BuscarSocio.resx">
+      <DependentUpon>BuscarSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socios\ModificarSocio.resx">
+      <DependentUpon>ModificarSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Administracion.es-NI.resx">
+      <DependentUpon>Administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Administracion.resx">
+      <DependentUpon>Administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\AgregarCarrera.resx">
+      <DependentUpon>AgregarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\AgregarTransaccion.resx">
+      <DependentUpon>AgregarTransaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Carreras.resx">
+      <DependentUpon>Carreras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\DetalleCarrera.resx">
+      <DependentUpon>DetalleCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\DetalleTransaccion.resx">
+      <DependentUpon>DetalleTransaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\ListaTransacciones.resx">
+      <DependentUpon>ListaTransacciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Ticket.resx">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\TipoDetalle.resx">
+      <DependentUpon>TipoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\VisorReportes.resx">
+      <DependentUpon>VisorReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos\AgregarVehiculos.resx">
+      <DependentUpon>AgregarVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Total Vehiculos.resx">
+      <DependentUpon>Total Vehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\UltimasTransacciones.resx">
+      <DependentUpon>UltimasTransacciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Ver dia.es-NI.resx">
+      <DependentUpon>Ver dia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Ver dia.resx">
+      <DependentUpon>Ver dia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos\VerDetalles.resx">
+      <DependentUpon>VerDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\ReportesDataSet.xsc">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportesDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xss">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\manualw.pdf" />
+    <None Include="Transacciones\TransaccionesDataSet.xsc">
+      <DependentUpon>TransaccionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Transacciones\TransaccionesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransaccionesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Transacciones\TransaccionesDataSet.xss">
+      <DependentUpon>TransaccionesDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaControlador\CapaControlador.csproj">
+      <Project>{3338fcfa-5333-4c1c-9d7e-13a2da442d9a}</Project>
+      <Name>CapaControlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaDatoos\CapaDatos.csproj">
+      <Project>{2ecec2bc-f8fe-43a7-9a58-c06c24911f51}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-material.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school-bus%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school-bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user 128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\question%281%29.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\payment1.png" />
+    <None Include="Resources\printer%281%29.png" />
+    <None Include="Resources\road1.png" />
+    <None Include="Resources\teamwork1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,KB2468871">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29 and Update for .NET Framework 4 %28KB2468871%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client,KB2468871">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29 and Update for .NET Framework 4 %28KB2468871%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x64">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Shared">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MetroFramework.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

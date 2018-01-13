@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TransaccionesDataSet" targetNamespace="http://tempuri.org/TransaccionesDataSet.xsd" xmlns:mstns="http://tempuri.org/TransaccionesDataSet.xsd" xmlns="http://tempuri.org/TransaccionesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TransaccionDataSet" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TransaccionDataSet (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CapaVista.Properties.Settings.GlobalReference.Default.TransaccionDataSet" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Etramulv2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Etramulv2ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CapaVista.Properties.Settings.GlobalReference.Default.Etramulv2ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Etramulv2ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Etramulv2ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CapaVista.Properties.Settings.GlobalReference.Default.Etramulv2ConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Etramulv2ConnectionString2" IsAppSettingsProperty="true" Modifier="Assembly" Name="Etramulv2ConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CapaVista.Properties.Settings.GlobalReference.Default.Etramulv2ConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CarrerasTableTableAdapter" GeneratorDataComponentClassName="CarrerasTableTableAdapter" Name="CarrerasTable" UserDataComponentName="CarrerasTableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TransaccionDataSet (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillCarreras" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataCarreras" GeneratorSourceName="FillCarreras" GetMethodModifier="Public" GetMethodName="GetDataCarreras" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataCarreras" UserSourceName="FillCarreras">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT 
+                         a.Id_carrera, a.No_transaccion, RTRIM(g.Nombres) + SPACE(2) + LTRIM(g.Apellidos) AS Conductor, e.Placa, a.HoraSalida, a.HoraLlegada, a.FechaCarrera, 
+                         c.Cantidad AS Ingreso, a.Vuelta_Completa AS Completa
+FROM            CarreraSet AS a INNER JOIN
+                         TransaccionSet AS b ON a.No_transaccion = b.IdTransaccion INNER JOIN
+                         DetalleSet AS c ON b.IdTransaccion = c.IdTransaccion INNER JOIN
+                         TipoDetalleSet AS d ON c.TipoDetalle = d.IdTipoDetalle INNER JOIN
+                         VehiculoSet AS e ON a.Id_vehiculo = e.Id_Vehiculo INNER JOIN
+                         PersonasSet AS g ON a.Id_conductor = g.Id_persona
+WHERE        (c.TipoTransaccion = 1) AND (a.Activo = 1)
+ORDER BY a.Id_carrera DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_carrera" DataSetColumn="Id_carrera" />
+              <Mapping SourceColumn="No_transaccion" DataSetColumn="No_transaccion" />
+              <Mapping SourceColumn="Conductor" DataSetColumn="Conductor" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="HoraSalida" DataSetColumn="HoraSalida" />
+              <Mapping SourceColumn="HoraLlegada" DataSetColumn="HoraLlegada" />
+              <Mapping SourceColumn="FechaCarrera" DataSetColumn="FechaCarrera" />
+              <Mapping SourceColumn="Ingreso" DataSetColumn="Ingreso" />
+              <Mapping SourceColumn="Completa" DataSetColumn="Completa" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TransaccionDataSet (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByFechaTOP" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByFechaTOP" GeneratorSourceName="FillByFechaTOP" GetMethodModifier="Public" GetMethodName="GetDataByFechaTOP" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByFechaTOP" UserSourceName="FillByFechaTOP">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (@Tope) a.Id_carrera, a.No_transaccion, RTRIM(g.Nombres) + SPACE(2) + LTRIM(g.Apellidos) AS Conductor, e.Placa, a.HoraSalida, a.HoraLlegada, 
+                         a.FechaCarrera, c.Cantidad AS Ingreso, a.Vuelta_Completa AS Completa
+FROM            CarreraSet AS a INNER JOIN
+                         TransaccionSet AS b ON a.No_transaccion = b.IdTransaccion INNER JOIN
+                         DetalleSet AS c ON b.IdTransaccion = c.IdTransaccion INNER JOIN
+                         TipoDetalleSet AS d ON c.TipoDetalle = d.IdTipoDetalle INNER JOIN
+                         VehiculoSet AS e ON a.Id_vehiculo = e.Id_Vehiculo INNER JOIN
+                         PersonasSet AS g ON a.Id_conductor = g.Id_persona
+WHERE        (c.TipoTransaccion = 1) AND (a.FechaCarrera LIKE @Fecha) AND (a.Activo = 1)
+ORDER BY a.Id_carrera DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Tope" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Int32" Direction="Input" ParameterName="@Tope" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Fecha" ColumnName="FechaCarrera" DataSourceName="Etramulv2.dbo.CarreraSet" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FechaCarrera" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DetallesTableAdapter" GeneratorDataComponentClassName="DetallesTableAdapter" Name="Detalles" UserDataComponentName="DetallesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TransaccionDataSet (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDetallePorCodigoCarrera" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataDetallePorCodigoCarrera" GeneratorSourceName="FillDetallePorCodigoCarrera" GetMethodModifier="Public" GetMethodName="GetDataDetallePorCodigoCarrera" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataDetallePorCodigoCarrera" UserSourceName="FillDetallePorCodigoCarrera">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        a.Id_carrera, a.No_transaccion, g.Nombres, g.Apellidos, e.Placa, a.FechaCarrera, c.Cantidad AS Egreso, d.IdTipoDetalle AS Codigo, c.Descripcion
+FROM            CarreraSet AS a INNER JOIN
+                         TransaccionSet AS b ON a.No_transaccion = b.IdTransaccion INNER JOIN
+                         DetalleSet AS c ON b.IdTransaccion = c.IdTransaccion INNER JOIN
+                         TipoDetalleSet AS d ON c.TipoDetalle = d.IdTipoDetalle INNER JOIN
+                         VehiculoSet AS e ON a.Id_vehiculo = e.Id_Vehiculo INNER JOIN
+                         PersonasSet AS g ON a.Id_conductor = g.Id_persona
+WHERE        (c.TipoTransaccion = 0) AND (a.Activo = 1) AND (a.Id_carrera = @Codigo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Codigo" ColumnName="Id_carrera" DataSourceName="Etramulv2.dbo.CarreraSet" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Codigo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id_carrera" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_carrera" DataSetColumn="Id_carrera" />
+              <Mapping SourceColumn="No_transaccion" DataSetColumn="No_transaccion" />
+              <Mapping SourceColumn="Nombres" DataSetColumn="Nombres" />
+              <Mapping SourceColumn="Apellidos" DataSetColumn="Apellidos" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="FechaCarrera" DataSetColumn="FechaCarrera" />
+              <Mapping SourceColumn="Egreso" DataSetColumn="Egreso" />
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TicketDetalleTableAdapter" GeneratorDataComponentClassName="TicketDetalleTableAdapter" Name="TicketDetalle" UserDataComponentName="TicketDetalleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TransaccionDataSet (Settings)" DbObjectName="Etramulv2.dbo.TicketCarrera" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillTicketCarrera" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataTicketCarrera" GeneratorSourceName="FillTicketCarrera" GetMethodModifier="Public" GetMethodName="GetDataTicketCarrera" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataTicketCarrera" UserSourceName="FillTicketCarrera">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.TicketCarrera</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Object" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Codigo" ColumnName="Id_carrera" DataSourceName="Etramulv2.dbo.CarreraSet" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Codigo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id_carrera" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TipoUsuarioSetTableAdapter" GeneratorDataComponentClassName="TipoUsuarioSetTableAdapter" Name="TipoUsuarioSet" UserDataComponentName="TipoUsuarioSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString (Settings)" DbObjectName="Etramulv2.dbo.TipoUsuarioSet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[TipoUsuarioSet] WHERE (([Id_tipo] = @Original_Id_tipo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id_tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id_tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[TipoUsuarioSet] ([Descripcion]) VALUES (@Descripcion);
+SELECT Id_tipo, Descripcion FROM TipoUsuarioSet WHERE (Id_tipo = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id_tipo, Descripcion FROM dbo.TipoUsuarioSet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[TipoUsuarioSet] SET [Descripcion] = @Descripcion WHERE (([Id_tipo] = @Original_Id_tipo));
+SELECT Id_tipo, Descripcion FROM TipoUsuarioSet WHERE (Id_tipo = @Id_tipo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id_tipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id_tipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id_tipo" ColumnName="Id_tipo" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id_tipo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id_tipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_tipo" DataSetColumn="Id_tipo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TipoDetalleSetTableAdapter" GeneratorDataComponentClassName="TipoDetalleSetTableAdapter" Name="TipoDetalleSet" UserDataComponentName="TipoDetalleSetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString (Settings)" DbObjectName="Etramulv2.dbo.TipoDetalleSet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[TipoDetalleSet] WHERE (([IdTipoDetalle] = @Original_IdTipoDetalle) AND ([Activo] = @Original_Activo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdTipoDetalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdTipoDetalle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[TipoDetalleSet] ([Descripcion], [Activo]) VALUES (@Descripcion, @Activo);
+SELECT IdTipoDetalle, Descripcion, Activo FROM TipoDetalleSet WHERE (IdTipoDetalle = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdTipoDetalle, Descripcion, Activo FROM dbo.TipoDetalleSet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[TipoDetalleSet] SET [Descripcion] = @Descripcion, [Activo] = @Activo WHERE (([IdTipoDetalle] = @Original_IdTipoDetalle) AND ([Activo] = @Original_Activo));
+SELECT IdTipoDetalle, Descripcion, Activo FROM TipoDetalleSet WHERE (IdTipoDetalle = @IdTipoDetalle)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Descripcion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdTipoDetalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdTipoDetalle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Activo" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Activo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdTipoDetalle" ColumnName="IdTipoDetalle" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdTipoDetalle" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdTipoDetalle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdTipoDetalle" DataSetColumn="IdTipoDetalle" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GastosPorRubroEntreFechasTableAdapter" GeneratorDataComponentClassName="GastosPorRubroEntreFechasTableAdapter" Name="GastosPorRubroEntreFechas" UserDataComponentName="GastosPorRubroEntreFechasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString (Settings)" DbObjectName="Etramulv2.dbo.GastosPorRubroEntreFechas" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GastosPorRubroEntreFechas</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Tipo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Fecha1" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Fecha2" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="IdTipoDetalle" DataSetColumn="IdTipoDetalle" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Monto" DataSetColumn="Monto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GastosPorRubroPorDiaTableAdapter" GeneratorDataComponentClassName="GastosPorRubroPorDiaTableAdapter" Name="GastosPorRubroPorDia" UserDataComponentName="GastosPorRubroPorDiaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString (Settings)" DbObjectName="Etramulv2.dbo.GastosPorRubroPorDia" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GastosPorRubroPorDia</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@tipo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="IdTipoDetalle" DataSetColumn="IdTipoDetalle" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Monto" DataSetColumn="Monto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EgresosDetallePorRubroTableAdapter" GeneratorDataComponentClassName="EgresosDetallePorRubroTableAdapter" Name="EgresosDetallePorRubro" UserDataComponentName="EgresosDetallePorRubroTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString1 (Settings)" DbObjectName="Etramulv2.dbo.EgresosDetallePorRubro" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.EgresosDetallePorRubro</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_rubro" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_vehiculo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fecha" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdTransaccion" DataSetColumn="IdTransaccion" />
+              <Mapping SourceColumn="FechaTransaccion" DataSetColumn="FechaTransaccion" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EgresosDetallePorRubroEntreFechasTableAdapter" GeneratorDataComponentClassName="EgresosDetallePorRubroEntreFechasTableAdapter" Name="EgresosDetallePorRubroEntreFechas" UserDataComponentName="EgresosDetallePorRubroEntreFechasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString1 (Settings)" DbObjectName="Etramulv2.dbo.EgresosDetallePorRubroEntreFechas" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.EgresosDetallePorRubroEntreFechas</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_rubro" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_vehiculo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fecha1" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fecha2" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdTransaccion" DataSetColumn="IdTransaccion" />
+              <Mapping SourceColumn="FechaTransaccion" DataSetColumn="FechaTransaccion" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Total_entre_fechasTableAdapter" GeneratorDataComponentClassName="Total_entre_fechasTableAdapter" Name="Total_entre_fechas" UserDataComponentName="Total_entre_fechasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString2 (Settings)" DbObjectName="Etramulv2.dbo.Total_entre_fechas" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Total_entre_fechas</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaInicio" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaFin" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Vehiculo" DataSetColumn="Id_Vehiculo" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="Ingreso" DataSetColumn="Ingreso" />
+              <Mapping SourceColumn="Egreso" DataSetColumn="Egreso" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DetalleDeTransaccionTableAdapter" GeneratorDataComponentClassName="DetalleDeTransaccionTableAdapter" Name="DetalleDeTransaccion" UserDataComponentName="DetalleDeTransaccionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Etramulv2ConnectionString1 (Settings)" DbObjectName="Etramulv2.dbo.DetalleDeTransaccion" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.DetalleDeTransaccion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@codigo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdTransaccion" DataSetColumn="IdTransaccion" />
+              <Mapping SourceColumn="Transaccion" DataSetColumn="Transaccion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Detalle" DataSetColumn="Detalle" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TransaccionesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TransaccionesDataSet" msprop:Generator_UserDSName="TransaccionesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CarrerasTable" msprop:Generator_TableClassName="CarrerasTableDataTable" msprop:Generator_TableVarName="tableCarrerasTable" msprop:Generator_RowChangedName="CarrerasTableRowChanged" msprop:Generator_TablePropName="CarrerasTable" msprop:Generator_RowDeletingName="CarrerasTableRowDeleting" msprop:Generator_RowChangingName="CarrerasTableRowChanging" msprop:Generator_RowEvHandlerName="CarrerasTableRowChangeEventHandler" msprop:Generator_RowDeletedName="CarrerasTableRowDeleted" msprop:Generator_RowClassName="CarrerasTableRow" msprop:Generator_UserTableName="CarrerasTable" msprop:Generator_RowEvArgName="CarrerasTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_carrera" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_carrera" msprop:Generator_ColumnPropNameInRow="Id_carrera" msprop:Generator_ColumnPropNameInTable="Id_carreraColumn" msprop:Generator_UserColumnName="Id_carrera" type="xs:int" />
+              <xs:element name="No_transaccion" msprop:Generator_ColumnVarNameInTable="columnNo_transaccion" msprop:Generator_ColumnPropNameInRow="No_transaccion" msprop:Generator_ColumnPropNameInTable="No_transaccionColumn" msprop:Generator_UserColumnName="No_transaccion" type="xs:int" />
+              <xs:element name="Conductor" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConductor" msprop:Generator_ColumnPropNameInRow="Conductor" msprop:Generator_ColumnPropNameInTable="ConductorColumn" msprop:Generator_UserColumnName="Conductor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HoraSalida" msprop:Generator_ColumnVarNameInTable="columnHoraSalida" msprop:Generator_ColumnPropNameInRow="HoraSalida" msprop:Generator_ColumnPropNameInTable="HoraSalidaColumn" msprop:Generator_UserColumnName="HoraSalida" type="xs:duration" />
+              <xs:element name="HoraLlegada" msprop:Generator_ColumnVarNameInTable="columnHoraLlegada" msprop:Generator_ColumnPropNameInRow="HoraLlegada" msprop:Generator_ColumnPropNameInTable="HoraLlegadaColumn" msprop:Generator_UserColumnName="HoraLlegada" type="xs:duration" />
+              <xs:element name="FechaCarrera" msprop:Generator_ColumnVarNameInTable="columnFechaCarrera" msprop:Generator_ColumnPropNameInRow="FechaCarrera" msprop:Generator_ColumnPropNameInTable="FechaCarreraColumn" msprop:Generator_UserColumnName="FechaCarrera" type="xs:dateTime" />
+              <xs:element name="Ingreso" msprop:Generator_ColumnVarNameInTable="columnIngreso" msprop:Generator_ColumnPropNameInRow="Ingreso" msprop:Generator_ColumnPropNameInTable="IngresoColumn" msprop:Generator_UserColumnName="Ingreso" type="xs:decimal" />
+              <xs:element name="Completa" msprop:Generator_ColumnVarNameInTable="columnCompleta" msprop:Generator_ColumnPropNameInRow="Completa" msprop:Generator_ColumnPropNameInTable="CompletaColumn" msprop:Generator_UserColumnName="Completa" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Detalles" msprop:Generator_TableClassName="DetallesDataTable" msprop:Generator_TableVarName="tableDetalles" msprop:Generator_RowChangedName="DetallesRowChanged" msprop:Generator_TablePropName="Detalles" msprop:Generator_RowDeletingName="DetallesRowDeleting" msprop:Generator_RowChangingName="DetallesRowChanging" msprop:Generator_RowEvHandlerName="DetallesRowChangeEventHandler" msprop:Generator_RowDeletedName="DetallesRowDeleted" msprop:Generator_RowClassName="DetallesRow" msprop:Generator_UserTableName="Detalles" msprop:Generator_RowEvArgName="DetallesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_carrera" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_carrera" msprop:Generator_ColumnPropNameInRow="Id_carrera" msprop:Generator_ColumnPropNameInTable="Id_carreraColumn" msprop:Generator_UserColumnName="Id_carrera" type="xs:int" />
+              <xs:element name="No_transaccion" msprop:Generator_ColumnVarNameInTable="columnNo_transaccion" msprop:Generator_ColumnPropNameInRow="No_transaccion" msprop:Generator_ColumnPropNameInTable="No_transaccionColumn" msprop:Generator_UserColumnName="No_transaccion" type="xs:int" />
+              <xs:element name="Nombres" msprop:Generator_ColumnVarNameInTable="columnNombres" msprop:Generator_ColumnPropNameInRow="Nombres" msprop:Generator_ColumnPropNameInTable="NombresColumn" msprop:Generator_UserColumnName="Nombres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellidos" msprop:Generator_ColumnVarNameInTable="columnApellidos" msprop:Generator_ColumnPropNameInRow="Apellidos" msprop:Generator_ColumnPropNameInTable="ApellidosColumn" msprop:Generator_UserColumnName="Apellidos">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaCarrera" msprop:Generator_ColumnVarNameInTable="columnFechaCarrera" msprop:Generator_ColumnPropNameInRow="FechaCarrera" msprop:Generator_ColumnPropNameInTable="FechaCarreraColumn" msprop:Generator_UserColumnName="FechaCarrera" type="xs:dateTime" />
+              <xs:element name="Egreso" msprop:Generator_ColumnVarNameInTable="columnEgreso" msprop:Generator_ColumnPropNameInRow="Egreso" msprop:Generator_ColumnPropNameInTable="EgresoColumn" msprop:Generator_UserColumnName="Egreso" type="xs:decimal" />
+              <xs:element name="Codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TicketDetalle" msprop:Generator_TableClassName="TicketDetalleDataTable" msprop:Generator_TableVarName="tableTicketDetalle" msprop:Generator_TablePropName="TicketDetalle" msprop:Generator_RowDeletingName="TicketDetalleRowDeleting" msprop:Generator_RowChangingName="TicketDetalleRowChanging" msprop:Generator_RowEvHandlerName="TicketDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="TicketDetalleRowDeleted" msprop:Generator_UserTableName="TicketDetalle" msprop:Generator_RowChangedName="TicketDetalleRowChanged" msprop:Generator_RowEvArgName="TicketDetalleRowChangeEvent" msprop:Generator_RowClassName="TicketDetalleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Tipo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TipoUsuarioSet" msprop:Generator_TableClassName="TipoUsuarioSetDataTable" msprop:Generator_TableVarName="tableTipoUsuarioSet" msprop:Generator_RowChangedName="TipoUsuarioSetRowChanged" msprop:Generator_TablePropName="TipoUsuarioSet" msprop:Generator_RowDeletingName="TipoUsuarioSetRowDeleting" msprop:Generator_RowChangingName="TipoUsuarioSetRowChanging" msprop:Generator_RowEvHandlerName="TipoUsuarioSetRowChangeEventHandler" msprop:Generator_RowDeletedName="TipoUsuarioSetRowDeleted" msprop:Generator_RowClassName="TipoUsuarioSetRow" msprop:Generator_UserTableName="TipoUsuarioSet" msprop:Generator_RowEvArgName="TipoUsuarioSetRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_tipo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_tipo" msprop:Generator_ColumnPropNameInRow="Id_tipo" msprop:Generator_ColumnPropNameInTable="Id_tipoColumn" msprop:Generator_UserColumnName="Id_tipo" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TipoDetalleSet" msprop:Generator_TableClassName="TipoDetalleSetDataTable" msprop:Generator_TableVarName="tableTipoDetalleSet" msprop:Generator_TablePropName="TipoDetalleSet" msprop:Generator_RowDeletingName="TipoDetalleSetRowDeleting" msprop:Generator_RowChangingName="TipoDetalleSetRowChanging" msprop:Generator_RowEvHandlerName="TipoDetalleSetRowChangeEventHandler" msprop:Generator_RowDeletedName="TipoDetalleSetRowDeleted" msprop:Generator_UserTableName="TipoDetalleSet" msprop:Generator_RowChangedName="TipoDetalleSetRowChanged" msprop:Generator_RowEvArgName="TipoDetalleSetRowChangeEvent" msprop:Generator_RowClassName="TipoDetalleSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdTipoDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdTipoDetalle" msprop:Generator_ColumnPropNameInRow="IdTipoDetalle" msprop:Generator_ColumnPropNameInTable="IdTipoDetalleColumn" msprop:Generator_UserColumnName="IdTipoDetalle" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GastosPorRubroEntreFechas" msprop:Generator_TableClassName="GastosPorRubroEntreFechasDataTable" msprop:Generator_TableVarName="tableGastosPorRubroEntreFechas" msprop:Generator_TablePropName="GastosPorRubroEntreFechas" msprop:Generator_RowDeletingName="GastosPorRubroEntreFechasRowDeleting" msprop:Generator_RowChangingName="GastosPorRubroEntreFechasRowChanging" msprop:Generator_RowEvHandlerName="GastosPorRubroEntreFechasRowChangeEventHandler" msprop:Generator_RowDeletedName="GastosPorRubroEntreFechasRowDeleted" msprop:Generator_UserTableName="GastosPorRubroEntreFechas" msprop:Generator_RowChangedName="GastosPorRubroEntreFechasRowChanged" msprop:Generator_RowEvArgName="GastosPorRubroEntreFechasRowChangeEvent" msprop:Generator_RowClassName="GastosPorRubroEntreFechasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdTipoDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIdTipoDetalle" msprop:Generator_ColumnPropNameInRow="IdTipoDetalle" msprop:Generator_ColumnPropNameInTable="IdTipoDetalleColumn" msprop:Generator_UserColumnName="IdTipoDetalle" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Monto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GastosPorRubroPorDia" msprop:Generator_TableClassName="GastosPorRubroPorDiaDataTable" msprop:Generator_TableVarName="tableGastosPorRubroPorDia" msprop:Generator_TablePropName="GastosPorRubroPorDia" msprop:Generator_RowDeletingName="GastosPorRubroPorDiaRowDeleting" msprop:Generator_RowChangingName="GastosPorRubroPorDiaRowChanging" msprop:Generator_RowEvHandlerName="GastosPorRubroPorDiaRowChangeEventHandler" msprop:Generator_RowDeletedName="GastosPorRubroPorDiaRowDeleted" msprop:Generator_UserTableName="GastosPorRubroPorDia" msprop:Generator_RowChangedName="GastosPorRubroPorDiaRowChanged" msprop:Generator_RowEvArgName="GastosPorRubroPorDiaRowChangeEvent" msprop:Generator_RowClassName="GastosPorRubroPorDiaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdTipoDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIdTipoDetalle" msprop:Generator_ColumnPropNameInRow="IdTipoDetalle" msprop:Generator_ColumnPropNameInTable="IdTipoDetalleColumn" msprop:Generator_UserColumnName="IdTipoDetalle" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Monto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EgresosDetallePorRubro" msprop:Generator_TableClassName="EgresosDetallePorRubroDataTable" msprop:Generator_TableVarName="tableEgresosDetallePorRubro" msprop:Generator_RowChangedName="EgresosDetallePorRubroRowChanged" msprop:Generator_TablePropName="EgresosDetallePorRubro" msprop:Generator_RowDeletingName="EgresosDetallePorRubroRowDeleting" msprop:Generator_RowChangingName="EgresosDetallePorRubroRowChanging" msprop:Generator_RowEvHandlerName="EgresosDetallePorRubroRowChangeEventHandler" msprop:Generator_RowDeletedName="EgresosDetallePorRubroRowDeleted" msprop:Generator_RowClassName="EgresosDetallePorRubroRow" msprop:Generator_UserTableName="EgresosDetallePorRubro" msprop:Generator_RowEvArgName="EgresosDetallePorRubroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdTransaccion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdTransaccion" msprop:Generator_ColumnPropNameInRow="IdTransaccion" msprop:Generator_ColumnPropNameInTable="IdTransaccionColumn" msprop:Generator_UserColumnName="IdTransaccion" type="xs:int" />
+              <xs:element name="FechaTransaccion" msprop:Generator_ColumnVarNameInTable="columnFechaTransaccion" msprop:Generator_ColumnPropNameInRow="FechaTransaccion" msprop:Generator_ColumnPropNameInTable="FechaTransaccionColumn" msprop:Generator_UserColumnName="FechaTransaccion" type="xs:dateTime" />
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" />
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EgresosDetallePorRubroEntreFechas" msprop:Generator_TableClassName="EgresosDetallePorRubroEntreFechasDataTable" msprop:Generator_TableVarName="tableEgresosDetallePorRubroEntreFechas" msprop:Generator_RowChangedName="EgresosDetallePorRubroEntreFechasRowChanged" msprop:Generator_TablePropName="EgresosDetallePorRubroEntreFechas" msprop:Generator_RowDeletingName="EgresosDetallePorRubroEntreFechasRowDeleting" msprop:Generator_RowChangingName="EgresosDetallePorRubroEntreFechasRowChanging" msprop:Generator_RowEvHandlerName="EgresosDetallePorRubroEntreFechasRowChangeEventHandler" msprop:Generator_RowDeletedName="EgresosDetallePorRubroEntreFechasRowDeleted" msprop:Generator_RowClassName="EgresosDetallePorRubroEntreFechasRow" msprop:Generator_UserTableName="EgresosDetallePorRubroEntreFechas" msprop:Generator_RowEvArgName="EgresosDetallePorRubroEntreFechasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdTransaccion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIdTransaccion" msprop:Generator_ColumnPropNameInRow="IdTransaccion" msprop:Generator_ColumnPropNameInTable="IdTransaccionColumn" msprop:Generator_UserColumnName="IdTransaccion" type="xs:int" />
+              <xs:element name="FechaTransaccion" msprop:Generator_ColumnVarNameInTable="columnFechaTransaccion" msprop:Generator_ColumnPropNameInRow="FechaTransaccion" msprop:Generator_ColumnPropNameInTable="FechaTransaccionColumn" msprop:Generator_UserColumnName="FechaTransaccion" type="xs:dateTime" />
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" />
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Total_entre_fechas" msprop:Generator_TableClassName="Total_entre_fechasDataTable" msprop:Generator_TableVarName="tableTotal_entre_fechas" msprop:Generator_TablePropName="Total_entre_fechas" msprop:Generator_RowDeletingName="Total_entre_fechasRowDeleting" msprop:Generator_RowChangingName="Total_entre_fechasRowChanging" msprop:Generator_RowEvHandlerName="Total_entre_fechasRowChangeEventHandler" msprop:Generator_RowDeletedName="Total_entre_fechasRowDeleted" msprop:Generator_UserTableName="Total_entre_fechas" msprop:Generator_RowChangedName="Total_entre_fechasRowChanged" msprop:Generator_RowEvArgName="Total_entre_fechasRowChangeEvent" msprop:Generator_RowClassName="Total_entre_fechasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Vehiculo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId_Vehiculo" msprop:Generator_ColumnPropNameInRow="Id_Vehiculo" msprop:Generator_ColumnPropNameInTable="Id_VehiculoColumn" msprop:Generator_UserColumnName="Id_Vehiculo" type="xs:int" />
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ingreso" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIngreso" msprop:Generator_ColumnPropNameInRow="Ingreso" msprop:Generator_ColumnPropNameInTable="IngresoColumn" msprop:Generator_UserColumnName="Ingreso" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Egreso" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEgreso" msprop:Generator_ColumnPropNameInRow="Egreso" msprop:Generator_ColumnPropNameInTable="EgresoColumn" msprop:Generator_UserColumnName="Egreso" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DetalleDeTransaccion" msprop:Generator_TableClassName="DetalleDeTransaccionDataTable" msprop:Generator_TableVarName="tableDetalleDeTransaccion" msprop:Generator_RowChangedName="DetalleDeTransaccionRowChanged" msprop:Generator_TablePropName="DetalleDeTransaccion" msprop:Generator_RowDeletingName="DetalleDeTransaccionRowDeleting" msprop:Generator_RowChangingName="DetalleDeTransaccionRowChanging" msprop:Generator_RowEvHandlerName="DetalleDeTransaccionRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleDeTransaccionRowDeleted" msprop:Generator_RowClassName="DetalleDeTransaccionRow" msprop:Generator_UserTableName="DetalleDeTransaccion" msprop:Generator_RowEvArgName="DetalleDeTransaccionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdTransaccion" msprop:Generator_ColumnVarNameInTable="columnIdTransaccion" msprop:Generator_ColumnPropNameInRow="IdTransaccion" msprop:Generator_ColumnPropNameInTable="IdTransaccionColumn" msprop:Generator_UserColumnName="IdTransaccion" type="xs:int" />
+              <xs:element name="Transaccion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTransaccion" msprop:Generator_ColumnPropNameInRow="Transaccion" msprop:Generator_ColumnPropNameInTable="TransaccionColumn" msprop:Generator_UserColumnName="Transaccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Detalle" msprop:Generator_ColumnVarNameInTable="columnDetalle" msprop:Generator_ColumnPropNameInRow="Detalle" msprop:Generator_ColumnPropNameInTable="DetalleColumn" msprop:Generator_UserColumnName="Detalle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CarrerasTable" />
+      <xs:field xpath="mstns:Id_carrera" />
+    </xs:unique>
+    <xs:unique name="TipoUsuarioSet_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TipoUsuarioSet" />
+      <xs:field xpath="mstns:Id_tipo" />
+    </xs:unique>
+    <xs:unique name="TipoDetalleSet_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TipoDetalleSet" />
+      <xs:field xpath="mstns:IdTipoDetalle" />
+    </xs:unique>
+    <xs:unique name="GastosPorRubroEntreFechas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GastosPorRubroEntreFechas" />
+      <xs:field xpath="mstns:IdTipoDetalle" />
+    </xs:unique>
+    <xs:unique name="GastosPorRubroPorDia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GastosPorRubroPorDia" />
+      <xs:field xpath="mstns:IdTipoDetalle" />
+    </xs:unique>
+    <xs:unique name="EgresosDetallePorRubro_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EgresosDetallePorRubro" />
+      <xs:field xpath="mstns:IdTransaccion" />
+    </xs:unique>
+    <xs:unique name="EgresosDetallePorRubroEntreFechas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EgresosDetallePorRubroEntreFechas" />
+      <xs:field xpath="mstns:IdTransaccion" />
+    </xs:unique>
+    <xs:unique name="Total_entre_fechas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Total_entre_fechas" />
+      <xs:field xpath="mstns:Id_Vehiculo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
