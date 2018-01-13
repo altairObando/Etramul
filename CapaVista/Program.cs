@@ -16,7 +16,6 @@ namespace CapaVista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //application.run(new conductores.menuconductores());
             Application.Run(new MainContainer());
         }
     }
