@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.transaccionesDataSet = new CapaVista.Transacciones.TransaccionesDataSet();
             this.gastosPorRubroPorDiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transaccionesDataSet = new CapaVista.Transacciones.TransaccionesDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.gastosPorRubroPorDiaTableAdapter = new CapaVista.Transacciones.TransaccionesDataSetTableAdapters.GastosPorRubroPorDiaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gastosPorRubroPorDiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gastosPorRubroPorDiaBindingSource
+            // 
+            this.gastosPorRubroPorDiaBindingSource.DataMember = "GastosPorRubroPorDia";
+            this.gastosPorRubroPorDiaBindingSource.DataSource = this.transaccionesDataSet;
+            // 
+            // transaccionesDataSet
+            // 
+            this.transaccionesDataSet.DataSetName = "TransaccionesDataSet";
+            this.transaccionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -45,20 +55,10 @@
             reportDataSource1.Value = this.gastosPorRubroPorDiaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.DetalleGastosRubroDia.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1031, 605);
+            this.reportViewer1.Size = new System.Drawing.Size(353, 685);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // transaccionesDataSet
-            // 
-            this.transaccionesDataSet.DataSetName = "TransaccionesDataSet";
-            this.transaccionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gastosPorRubroPorDiaBindingSource
-            // 
-            this.gastosPorRubroPorDiaBindingSource.DataMember = "GastosPorRubroPorDia";
-            this.gastosPorRubroPorDiaBindingSource.DataSource = this.transaccionesDataSet;
             // 
             // gastosPorRubroPorDiaTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 605);
+            this.ClientSize = new System.Drawing.Size(393, 765);
             this.Controls.Add(this.reportViewer1);
             this.Name = "DetalleGastosRubroDia";
             this.Text = "Visor Reportes";
             this.Load += new System.EventHandler(this.DetalleGastosRubroDia_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gastosPorRubroPorDiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

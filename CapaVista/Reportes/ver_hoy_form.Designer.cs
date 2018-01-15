@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ReportesDataSet = new CapaVista.Reportes.ReportesDataSet();
             this.TRANSACCION_DIA_VEHICULOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ReportesDataSet = new CapaVista.Reportes.ReportesDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.TRANSACCION_DIA_VEHICULOTableAdapter = new CapaVista.Reportes.ReportesDataSetTableAdapters.TRANSACCION_DIA_VEHICULOTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRANSACCION_DIA_VEHICULOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // TRANSACCION_DIA_VEHICULOBindingSource
+            // 
+            this.TRANSACCION_DIA_VEHICULOBindingSource.DataMember = "TRANSACCION_DIA_VEHICULO";
+            this.TRANSACCION_DIA_VEHICULOBindingSource.DataSource = this.ReportesDataSet;
+            // 
+            // ReportesDataSet
+            // 
+            this.ReportesDataSet.DataSetName = "ReportesDataSet";
+            this.ReportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.ver hoy.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(639, 653);
+            this.reportViewer1.Size = new System.Drawing.Size(359, 628);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ReportesDataSet
-            // 
-            this.ReportesDataSet.DataSetName = "ReportesDataSet";
-            this.ReportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // TRANSACCION_DIA_VEHICULOBindingSource
-            // 
-            this.TRANSACCION_DIA_VEHICULOBindingSource.DataMember = "TRANSACCION_DIA_VEHICULO";
-            this.TRANSACCION_DIA_VEHICULOBindingSource.DataSource = this.ReportesDataSet;
             // 
             // TRANSACCION_DIA_VEHICULOTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 733);
+            this.ClientSize = new System.Drawing.Size(399, 708);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ver_hoy_form";
             this.Text = "Visor Reportes";
             this.Load += new System.EventHandler(this.ver_hoy_form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRANSACCION_DIA_VEHICULOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

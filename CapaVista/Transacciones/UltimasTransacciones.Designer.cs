@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPlaca = new MetroFramework.Controls.MetroLabel();
             this.lblCodigoPlaca = new MetroFramework.Controls.MetroLabel();
             this.lblNumero = new MetroFramework.Controls.MetroLabel();
@@ -41,14 +41,14 @@
             this.Cajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalles = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.reset = new MetroFramework.Controls.MetroLink();
             this.lblSaldo = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.lblMostrar = new MetroFramework.Controls.MetroLabel();
             this.tbTOP = new MetroFramework.Controls.MetroTrackBar();
-            this.detalles = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
             this.detalles.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +107,6 @@
             this.dgDatos.Size = new System.Drawing.Size(615, 236);
             this.dgDatos.TabIndex = 5;
             this.dgDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellContentDoubleClick);
-            this.dgDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellContentDoubleClick);
             // 
             // No
             // 
@@ -117,9 +116,9 @@
             // 
             // Fecha
             // 
-            dataGridViewCellStyle10.Format = "d";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
@@ -132,19 +131,33 @@
             // 
             // Ingreso
             // 
-            dataGridViewCellStyle11.Format = "C";
-            this.Ingreso.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Format = "C";
+            this.Ingreso.DefaultCellStyle = dataGridViewCellStyle2;
             this.Ingreso.HeaderText = "Ingreso total";
             this.Ingreso.Name = "Ingreso";
             this.Ingreso.ReadOnly = true;
             // 
             // Egreso
             // 
-            dataGridViewCellStyle12.Format = "C";
-            this.Egreso.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Format = "C";
+            this.Egreso.DefaultCellStyle = dataGridViewCellStyle3;
             this.Egreso.HeaderText = "Egreso Total";
             this.Egreso.Name = "Egreso";
             this.Egreso.ReadOnly = true;
+            // 
+            // detalles
+            // 
+            this.detalles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verDetallesToolStripMenuItem});
+            this.detalles.Name = "detalles";
+            this.detalles.Size = new System.Drawing.Size(134, 26);
+            // 
+            // verDetallesToolStripMenuItem
+            // 
+            this.verDetallesToolStripMenuItem.Name = "verDetallesToolStripMenuItem";
+            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.verDetallesToolStripMenuItem.Text = "&Ver detalles";
+            this.verDetallesToolStripMenuItem.Click += new System.EventHandler(this.verDetallesToolStripMenuItem_Click);
             // 
             // btnCerrar
             // 
@@ -195,7 +208,7 @@
             this.lblMostrar.AutoSize = true;
             this.lblMostrar.Location = new System.Drawing.Point(191, 65);
             this.lblMostrar.Name = "lblMostrar";
-            this.lblMostrar.Size = new System.Drawing.Size(58, 19);
+            this.lblMostrar.Size = new System.Drawing.Size(59, 19);
             this.lblMostrar.TabIndex = 11;
             this.lblMostrar.Text = "Mostrar:";
             // 
@@ -207,20 +220,6 @@
             this.tbTOP.Size = new System.Drawing.Size(163, 23);
             this.tbTOP.TabIndex = 10;
             this.tbTOP.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbTOP_Scroll);
-            // 
-            // detalles
-            // 
-            this.detalles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verDetallesToolStripMenuItem});
-            this.detalles.Name = "detalles";
-            this.detalles.Size = new System.Drawing.Size(135, 26);
-            // 
-            // verDetallesToolStripMenuItem
-            // 
-            this.verDetallesToolStripMenuItem.Name = "verDetallesToolStripMenuItem";
-            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verDetallesToolStripMenuItem.Text = "&Ver detalles";
-            this.verDetallesToolStripMenuItem.Click += new System.EventHandler(this.verDetallesToolStripMenuItem_Click);
             // 
             // UltimasTransacciones
             // 

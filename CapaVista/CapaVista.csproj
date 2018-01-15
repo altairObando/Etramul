@@ -192,12 +192,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Selector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Selector.Designer.cs">
-      <DependentUpon>Selector.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\TicketFisicoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,7 +420,6 @@
     <EmbeddedResource Include="Reportes\DetalleGastosRubroDia.resx">
       <DependentUpon>DetalleGastosRubroDia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\EgresosDia.rdlc" />
     <EmbeddedResource Include="Reportes\GastosPorRubroEntreFechas.rdlc" />
     <EmbeddedResource Include="Reportes\GastosPorRubroEntreFechas_form.resx">
       <DependentUpon>GastosPorRubroEntreFechas_form.cs</DependentUpon>
@@ -444,14 +437,14 @@
     <EmbeddedResource Include="Reportes\IngresoTotalPorFechas.resx">
       <DependentUpon>IngresoTotalPorFechas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ingreso_total.es-NI.resx">
+      <DependentUpon>Ingreso_total.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ingreso_total.rdlc" />
     <EmbeddedResource Include="Reportes\MenuReportes.resx">
       <DependentUpon>MenuReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
-    <EmbeddedResource Include="Reportes\Selector.resx">
-      <DependentUpon>Selector.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\TicketFisico.rdlc" />
     <EmbeddedResource Include="Reportes\TicketFisicoForm.resx">
       <DependentUpon>TicketFisicoForm.cs</DependentUpon>

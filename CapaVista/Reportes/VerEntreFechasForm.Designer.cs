@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ReportesDataset = new CapaVista.Reportes.ReportesDataSet();
             this.verEntreFechasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ReportesDataset = new CapaVista.Reportes.ReportesDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.verEntreFechasTableAdapter = new CapaVista.Reportes.ReportesDataSetTableAdapters.verEntreFechasTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.verEntreFechasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataset)).BeginInit();
             this.SuspendLayout();
+            // 
+            // verEntreFechasBindingSource
+            // 
+            this.verEntreFechasBindingSource.DataMember = "verEntreFechas";
+            this.verEntreFechasBindingSource.DataSource = this.ReportesDataset;
+            // 
+            // ReportesDataset
+            // 
+            this.ReportesDataset.DataSetName = "ReportesDataset";
+            this.ReportesDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.VerEntreFechas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(617, 415);
+            this.reportViewer1.Size = new System.Drawing.Size(353, 615);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ReportesDataset
-            // 
-            this.ReportesDataset.DataSetName = "ReportesDataset";
-            this.ReportesDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // verEntreFechasBindingSource
-            // 
-            this.verEntreFechasBindingSource.DataMember = "verEntreFechas";
-            this.verEntreFechasBindingSource.DataSource = this.ReportesDataset;
             // 
             // verEntreFechasTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 495);
+            this.ClientSize = new System.Drawing.Size(393, 695);
             this.Controls.Add(this.reportViewer1);
             this.Name = "VerEntreFechasForm";
             this.Text = "Visor Reportes";
             this.Load += new System.EventHandler(this.VerEntreFechasForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.verEntreFechasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataset)).EndInit();
             this.ResumeLayout(false);
 
         }

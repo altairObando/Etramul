@@ -31,15 +31,30 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ingreso_total));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportesDataSet = new CapaVista.Reportes.ReportesDataSet();
-            this.reportesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ingresototalpordiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportesDataSet = new CapaVista.Reportes.ReportesDataSet();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ingreso_total_por_diaTableAdapter = new CapaVista.Reportes.ReportesDataSetTableAdapters.ingreso_total_por_diaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresototalpordiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ingresototalpordiaBindingSource
+            // 
+            this.ingresototalpordiaBindingSource.DataMember = "ingreso_total_por_dia";
+            this.ingresototalpordiaBindingSource.DataSource = this.reportesDataSetBindingSource;
+            // 
+            // reportesDataSetBindingSource
+            // 
+            this.reportesDataSetBindingSource.DataSource = this.reportesDataSet;
+            this.reportesDataSetBindingSource.Position = 0;
+            // 
+            // reportesDataSet
+            // 
+            this.reportesDataSet.DataSetName = "ReportesDataSet";
+            this.reportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer
             // 
@@ -49,21 +64,6 @@
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.ingreso_total.rdlc";
             this.reportViewer.Name = "reportViewer";
-            // 
-            // reportesDataSet
-            // 
-            this.reportesDataSet.DataSetName = "ReportesDataSet";
-            this.reportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportesDataSetBindingSource
-            // 
-            this.reportesDataSetBindingSource.DataSource = this.reportesDataSet;
-            this.reportesDataSetBindingSource.Position = 0;
-            // 
-            // ingresototalpordiaBindingSource
-            // 
-            this.ingresototalpordiaBindingSource.DataMember = "ingreso_total_por_dia";
-            this.ingresototalpordiaBindingSource.DataSource = this.reportesDataSetBindingSource;
             // 
             // ingreso_total_por_diaTableAdapter
             // 
@@ -76,9 +76,9 @@
             this.Controls.Add(this.reportViewer);
             this.Name = "Ingreso_total";
             this.Load += new System.EventHandler(this.Visor2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresototalpordiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

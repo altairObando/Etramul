@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ReportesDataSet = new CapaVista.Reportes.ReportesDataSet();
             this.carrerasPorDiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ReportesDataSet = new CapaVista.Reportes.ReportesDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.carrerasPorDiaTableAdapter = new CapaVista.Reportes.ReportesDataSetTableAdapters.carrerasPorDiaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrerasPorDiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // carrerasPorDiaBindingSource
+            // 
+            this.carrerasPorDiaBindingSource.DataMember = "carrerasPorDia";
+            this.carrerasPorDiaBindingSource.DataSource = this.ReportesDataSet;
+            // 
+            // ReportesDataSet
+            // 
+            this.ReportesDataSet.DataSetName = "ReportesDataSet";
+            this.ReportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.CarrerasPorDia.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(746, 509);
+            this.reportViewer1.Size = new System.Drawing.Size(354, 689);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ReportesDataSet
-            // 
-            this.ReportesDataSet.DataSetName = "ReportesDataSet";
-            this.ReportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carrerasPorDiaBindingSource
-            // 
-            this.carrerasPorDiaBindingSource.DataMember = "carrerasPorDia";
-            this.carrerasPorDiaBindingSource.DataSource = this.ReportesDataSet;
             // 
             // carrerasPorDiaTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 589);
+            this.ClientSize = new System.Drawing.Size(394, 769);
             this.Controls.Add(this.reportViewer1);
             this.Name = "CarrerasPorDia_Form";
             this.Text = "Carreras Efectuadas";
             this.Load += new System.EventHandler(this.CarrerasPorDia_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrerasPorDiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

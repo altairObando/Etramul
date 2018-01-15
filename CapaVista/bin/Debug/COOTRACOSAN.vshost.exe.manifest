@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/c1UVJinCHgm2QFp5Vv3DyzqyNPGbxocLPFluhq2mjM=</dsig:DigestValue>
+        <dsig:DigestValue>nP79LGSx/ppCugIoFSYs7POmPmCh5wuGO5FR6hFwXrg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,31 +62,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>esjQJg+ByiVL7ofLMrcDsLIgo+cO+agtvRE9Dg5liUE=</dsig:DigestValue>
+        <dsig:DigestValue>8kntTe6KJWeyvzToDNddbmISMkpXt5wdgJSO9hhg1/g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="4498944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="4486144">
       <assemblyIdentity name="COOTRACOSAN" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cGhf/D3lxdQf2Vp3ym7hv7oa+P3TWWfcy8HuuBoVdsk=</dsig:DigestValue>
+        <dsig:DigestValue>dH8c8bzg7K91V5b+aeL2UKDcnjyBuc1jaqHPpPHmKYU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es-NI\COOTRACOSAN.resources.dll" size="6656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es-NI\COOTRACOSAN.resources.dll" size="7680">
       <assemblyIdentity name="COOTRACOSAN.resources" version="1.0.0.0" language="es-NI" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D8jRKsD7Lo13H7TBhRyNannYogS7mx3WouOiyAaXo3g=</dsig:DigestValue>
+        <dsig:DigestValue>q9dN2lDtkROF/lM3XqbZwakRuedmOLC2oQ9Fi/iY8R4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -367,14 +367,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="32416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="22344">
       <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>V7mfoRRmE6RC/ZLNxKdhZgTrwNymvx0W/KmNUJKMI7I=</dsig:DigestValue>
+        <dsig:DigestValue>jMi19KrJNkB1ILLnkqK/8gftgN9goxalLVafnSSLWHI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

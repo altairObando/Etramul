@@ -57,7 +57,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.IngresosTotalPorFechas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(531, 613);
+            this.reportViewer1.Size = new System.Drawing.Size(572, 386);
             this.reportViewer1.TabIndex = 0;
             // 
             // Total_entre_fechasTableAdapter
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 693);
+            this.ClientSize = new System.Drawing.Size(612, 466);
             this.Controls.Add(this.reportViewer1);
             this.Name = "IngresoTotalPorFechas";
             this.Text = "Visor Reportes";
