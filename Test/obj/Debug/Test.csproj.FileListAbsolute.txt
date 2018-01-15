@@ -22,3 +22,15 @@ C:\Users\Estudiante\Desktop\Etramul-master\Test\bin\Debug\EntityFramework.xml
 C:\Users\Estudiante\Desktop\Etramul-master\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\Estudiante\Desktop\Etramul-master\Test\obj\Debug\Test.exe
 C:\Users\Estudiante\Desktop\Etramul-master\Test\obj\Debug\Test.pdb
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\Test.exe.config
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\Test.exe
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\Test.pdb
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\CapaControlador.dll
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\CapaDatoos.dll
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\EntityFramework.dll
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\CapaControlador.pdb
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\CapaDatoos.pdb
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\bin\Debug\EntityFramework.xml
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\obj\Debug\Test.exe
+C:\Users\Estuidiante\Source\Repos\Etramul\Test\obj\Debug\Test.pdb

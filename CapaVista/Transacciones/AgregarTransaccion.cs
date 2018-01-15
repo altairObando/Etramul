@@ -259,7 +259,7 @@ namespace CapaVista.Transacciones
                 CapaDatos.Vehiculo car = ((CapaDatos.Vehiculo)cboVehiculo.SelectedItem); 
                 if (car.Transaccion.Where(x => x.FechaTransaccion == DateTime.Now.Date).ToList().Count != 0)
                 {
-                    Form ticket = new Reportes.ver_hoy_form(car.Id_Vehiculo, dtFecha.Value, car.Placa);
+                    Form ticket = new Reportes.ver_hoy_form(car.Id_Vehiculo, dtFecha.Value.Date, car.Placa);
                     ticket.ShowDialog();
                 }else
                 {

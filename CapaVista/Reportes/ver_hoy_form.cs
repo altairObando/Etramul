@@ -14,10 +14,10 @@ namespace CapaVista.Reportes
 {
     public partial class ver_hoy_form : MetroForm
     {
-        private DateTime? fecha;
+        private DateTime fecha;
         private int? id_vehiculo;
         private string placa;
-        public ver_hoy_form(int? id_vehiculo, DateTime? fecha, string placa)
+        public ver_hoy_form(int? id_vehiculo, DateTime fecha, string placa)
         {
             InitializeComponent();
             this.id_vehiculo = id_vehiculo;
@@ -27,15 +27,14 @@ namespace CapaVista.Reportes
 
         private void ver_hoy_form_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ReportesDataSet.Ingresos_Dia' table. You can move, or remove it, as needed.
-            this.Ingresos_DiaTableAdapter.Fill(this.ReportesDataSet.Ingresos_Dia, id_vehiculo, fecha);
-            // TODO: This line of code loads data into the 'ReportesDataSet.Egresos_Dia' table. You can move, or remove it, as needed.
-            this.Egresos_DiaTableAdapter.Fill(this.ReportesDataSet.Egresos_Dia, id_vehiculo, fecha);
+            this.ReportesDataSet.EnforceConstraints = false;
+            // TODO: esta línea de código carga datos en la tabla 'ReportesDataSet.TRANSACCION_DIA_VEHICULO' Puede moverla o quitarla según sea necesario.
+            this.TRANSACCION_DIA_VEHICULOTableAdapter.Fill(this.ReportesDataSet.TRANSACCION_DIA_VEHICULO, id_vehiculo,fecha.Date);
             reportViewer1.LocalReport.SetParameters(
-                new ReportParameter[] 
+                new ReportParameter[]
                 {
-                    new ReportParameter("PLACA", placa),
-                    new ReportParameter("FECHA", fecha.ToString())
+                    new ReportParameter("placa", placa),
+                    new ReportParameter("fecha", fecha.ToShortDateString())
                 }
                 );
             this.reportViewer1.RefreshReport();

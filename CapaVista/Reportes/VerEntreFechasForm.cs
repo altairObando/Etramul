@@ -29,12 +29,13 @@ namespace CapaVista.Reportes
 
         private void VerEntreFechasForm_Load(object sender, EventArgs e)
         {
+            this.ReportesDataset.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'ReportesDataset.verEntreFechas' table. You can move, or remove it, as needed.
             this.verEntreFechasTableAdapter.Fill(this.ReportesDataset.verEntreFechas, FechaInicio, FechaFin, IdVehiculo);
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] {
                 new ReportParameter("FechaInicio", FechaInicio.ToShortDateString()),
                 new ReportParameter("FechaFin", FechaFin.ToShortDateString()),
-                new ReportParameter("FechaInicio", Placa)                
+                new ReportParameter("PLACA", Placa)                
             });
             this.reportViewer1.RefreshReport();
         }

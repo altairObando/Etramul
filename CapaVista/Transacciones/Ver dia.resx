@@ -228,7 +228,7 @@
     <value>308, 241</value>
   </data>
   <data name="dgvEgresos.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;dgvEgresos.Name" xml:space="preserve">
     <value>dgvEgresos</value>
@@ -330,7 +330,7 @@
     <value>109, 20</value>
   </data>
   <data name="dtFecha.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;dtFecha.Name" xml:space="preserve">
     <value>dtFecha</value>
@@ -375,7 +375,7 @@
     <value>184, 384</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 25</value>
+    <value>58, 25</value>
   </data>
   <data name="lblTotal.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -402,7 +402,7 @@
     <value>510, 384</value>
   </data>
   <data name="metroLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 25</value>
+    <value>58, 25</value>
   </data>
   <data name="metroLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -562,7 +562,7 @@
     <value>64, 58</value>
   </data>
   <data name="btnCerrar.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="btnCerrar.Text" xml:space="preserve">
     <value>Cerrar</value>
@@ -598,7 +598,7 @@
     <value>64, 58</value>
   </data>
   <data name="btnPrint.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>2</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>Imprimir</value>
@@ -703,7 +703,7 @@
     <value>261, 58</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>1</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Entre Fechas</value>

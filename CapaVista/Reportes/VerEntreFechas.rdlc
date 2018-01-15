@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>1.64952cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>2.69938cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>2.2551cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.302cm</Width>
@@ -38,7 +38,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -68,7 +70,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -98,7 +102,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -128,7 +134,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -158,7 +166,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -193,7 +203,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Factura</rd:DefaultName>
@@ -220,10 +232,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Fecha.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>d/M/yyyy</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Fecha</rd:DefaultName>
@@ -253,7 +269,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Descripcion</rd:DefaultName>
@@ -280,10 +298,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Ingreso.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Ingreso</rd:DefaultName>
@@ -310,10 +333,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Egreso.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Egreso</rd:DefaultName>
@@ -435,10 +463,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Ingreso.Value)</Value>
-                              <Style />
+                              <Style>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -465,10 +498,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!Egreso.Value)</Value>
-                              <Style />
+                              <Style>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox20</rd:DefaultName>
@@ -513,8 +551,9 @@
         </TablixRowHierarchy>
         <DataSetName>VerEntreFechas</DataSetName>
         <Top>2.56646cm</Top>
+        <Left>0.635cm</Left>
         <Height>1.8cm</Height>
-        <Width>16.51cm</Width>
+        <Width>13.208cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -613,9 +652,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox21</rd:DefaultName>
         <Top>4.94453cm</Top>
-        <Left>9.05552cm</Left>
+        <Left>6.54198cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.13021cm</Width>
+        <Width>2.4595cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -634,16 +673,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Sum(Fields!Ingreso.Value, "VerEntreFechas") - Sum(Fields!Egreso.Value, "VerEntreFechas")</Value>
-                <Style />
+                <Value>=Sum(Fields!Ingreso.Value, "VerEntreFechas") - Sum(Fields!Egreso.Value, "VerEntreFechas")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Format>'C$' 0.00;('C$' 0.00)</Format>
+                  <TextDecoration>Underline</TextDecoration>
+                  <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>4.94453cm</Top>
-        <Left>11.05641cm</Left>
+        <Left>9.17787cm</Left>
         <Height>0.6cm</Height>
         <Width>4.37854cm</Width>
         <ZIndex>4</ZIndex>
@@ -661,7 +707,7 @@
     <Height>2.54747in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>5.55208in</Width>
   <Page>
     <PageHeader>
       <Height>3.20146cm</Height>
@@ -675,10 +721,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>ETRAMUL</Value>
+                  <Value>COOTRACOSAN</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -689,9 +736,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
           <Top>0.61708cm</Top>
-          <Left>7.0976cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>14.10229cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -713,15 +759,48 @@
                   <Style />
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
           <Top>1.32292cm</Top>
-          <Left>4.95448cm</Left>
           <Height>0.6cm</Height>
-          <Width>6.60104cm</Width>
+          <Width>14.10229cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox23">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>CIUDAD SANDINO RUTA 210</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox13</rd:DefaultName>
+          <Top>1.93573cm</Top>
+          <Left>0cm</Left>
+          <Height>0.6cm</Height>
+          <Width>14.10229cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

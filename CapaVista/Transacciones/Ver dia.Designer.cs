@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ver_dia));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbIngreso = new System.Windows.Forms.GroupBox();
             this.dgvIngresos = new System.Windows.Forms.DataGridView();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEgresos = new System.Windows.Forms.GroupBox();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblUnidad = new MetroFramework.Controls.MetroLabel();
             this.txtUnidad = new MetroFramework.Controls.MetroLabel();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
@@ -53,12 +59,6 @@
             this.lblFiltrar = new MetroFramework.Controls.MetroLink();
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbIngreso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
             this.gbEgresos.SuspendLayout();
@@ -96,6 +96,27 @@
             this.dgvIngresos.RowHeadersVisible = false;
             this.dgvIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
+            // no
+            // 
+            resources.ApplyResources(this.no, "no");
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            resources.ApplyResources(this.Tipo, "Tipo");
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Monto
+            // 
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "-1";
+            this.Monto.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.Monto, "Monto");
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
+            // 
             // gbEgresos
             // 
             this.gbEgresos.Controls.Add(this.dgvEgresos);
@@ -125,6 +146,30 @@
             this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 76.14214F;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 103.5561F;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = "-1";
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn3.FillWeight = 120.3018F;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // lblUnidad
             // 
@@ -244,51 +289,6 @@
             resources.ApplyResources(this.dtFechaInicio, "dtFechaInicio");
             this.dtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaInicio.Name = "dtFechaInicio";
-            // 
-            // no
-            // 
-            resources.ApplyResources(this.no, "no");
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            resources.ApplyResources(this.Tipo, "Tipo");
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Monto
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "-1";
-            this.Monto.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.Monto, "Monto");
-            this.Monto.Name = "Monto";
-            this.Monto.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 76.14214F;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 103.5561F;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = "-1";
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn3.FillWeight = 120.3018F;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // Ver_dia
             // 
