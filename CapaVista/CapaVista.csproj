@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Estudiante\Desktop\Etramul-master\setup\</PublishUrl>
+    <PublishUrl>C:\Users\Estuidiante\Source\Repos\Etramul\setup\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Cootracosan Sistema de ingreso y egresos</ProductName>
     <PublisherName>Noel Antonio Obando espinoza</PublisherName>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -351,6 +351,7 @@
     </Compile>
     <Compile Include="Transacciones\TransaccionesDataSet.cs">
       <DependentUpon>TransaccionesDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Transacciones\TransaccionesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

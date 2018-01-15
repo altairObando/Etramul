@@ -26,8 +26,8 @@ namespace CapaVista.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Etramulv2;Integrated Security=True;Pooling=False;Mu" +
-            "ltipleActiveResultSets=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MLC08;Initial Catalog=Etramulv2;User ID=admin;Password=123321;Pooling" +
+            "=False;MultipleActiveResultSets=True")]
         public string DatasetsConexion {
             get {
                 return ((string)(this["DatasetsConexion"]));
@@ -37,8 +37,8 @@ namespace CapaVista.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Etramulv2;Integrated Security=True;Pooling=False;Mu" +
-            "ltipleActiveResultSets=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MLC08;Initial Catalog=Etramulv2;User ID=admin;Password=123321;Pooling" +
+            "=False;MultipleActiveResultSets=True")]
         public string TransaccionDataSet {
             get {
                 return ((string)(this["TransaccionDataSet"]));
@@ -48,8 +48,8 @@ namespace CapaVista.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Etramulv2;Integrated Security=True;Pooling=False;Mu" +
-            "ltipleActiveResultSets=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MLC08;Initial Catalog=Etramulv2;User ID=admin;Password=123321;Pooling" +
+            "=False;MultipleActiveResultSets=True")]
         public string Etramulv2ConnectionString {
             get {
                 return ((string)(this["Etramulv2ConnectionString"]));

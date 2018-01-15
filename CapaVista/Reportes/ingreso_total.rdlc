@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.1825cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.23542cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.87042cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71167cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -36,7 +36,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -49,7 +48,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -72,7 +71,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -85,7 +83,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -108,7 +106,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -121,7 +118,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -144,7 +141,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -157,7 +153,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -187,7 +183,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Id_Vehiculo</rd:DefaultName>
@@ -220,7 +218,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Placa</rd:DefaultName>
@@ -249,7 +249,7 @@
                               <Value>=Fields!Ingreso.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <Format>'C$'0.00;('C$'0.00)</Format>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
                                 <Color>#4d4d4d</Color>
                                 <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
@@ -284,8 +284,9 @@
                               <Value>=Fields!Egreso.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <Format>'C$'0.00;('C$'0.00)</Format>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
                                 <Color>#4d4d4d</Color>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -320,14 +321,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>TOTAL:</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -342,41 +345,10 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <ColSpan>2</ColSpan>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox18">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
+                <TablixCell />
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox19">
@@ -389,8 +361,9 @@
                               <Value>=Sum(Fields!Ingreso.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <Format>'C$'0.00;('C$'0.00)</Format>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
                                 <Color>#4d4d4d</Color>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -423,8 +396,9 @@
                               <Value>=Sum(Fields!Egreso.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <Format>'C$'0.00;('C$'0.00)</Format>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
                                 <Color>#4d4d4d</Color>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -482,7 +456,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.8788in</Height>
+    <Height>1.07672in</Height>
     <Style />
   </Body>
   <Width>4.07242in</Width>
@@ -564,7 +538,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Parameters!fecha.Value</Value>
-                  <Style />
+                  <Style>
+                    <Format>d/M/yyyy</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -624,7 +600,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.08479cm</Height>
+      <Height>2.38125cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -643,10 +619,75 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>OverallTotalPages</rd:DefaultName>
-          <Top>0.17639cm</Top>
+          <Top>1.47285cm</Top>
           <Left>3.78353cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>UTILIDAD TOTAL:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>0.33113cm</Top>
+          <Left>2.96016cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.32337cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox9">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Fields!Ingreso.Value, "ingreso_total_por_dia") - Sum(Fields!Egreso.Value, "ingreso_total_por_dia")</Value>
+                  <Style>
+                    <Format>'C$' 0.00;('C$' 0.00)</Format>
+                    <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.33113cm</Top>
+          <Left>6.87599cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
