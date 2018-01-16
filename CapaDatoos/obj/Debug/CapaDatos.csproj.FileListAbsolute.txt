@@ -21,3 +21,11 @@ C:\Users\Estuidiante\Source\Repos\Etramul\CapaDatoos\bin\Debug\EntityFramework.x
 C:\Users\Estuidiante\Source\Repos\Etramul\CapaDatoos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\Estuidiante\Source\Repos\Etramul\CapaDatoos\obj\Debug\CapaDatoos.dll
 C:\Users\Estuidiante\Source\Repos\Etramul\CapaDatoos\obj\Debug\CapaDatoos.pdb
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\bin\Debug\CapaDatoos.dll.config
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\bin\Debug\CapaDatoos.dll
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\bin\Debug\CapaDatoos.pdb
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\bin\Debug\EntityFramework.dll
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\bin\Debug\EntityFramework.xml
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\obj\Debug\CapaDatoos.dll
+C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\obj\Debug\CapaDatoos.pdb
