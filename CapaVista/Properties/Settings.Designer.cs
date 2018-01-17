@@ -26,17 +26,6 @@ namespace CapaVista.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MLC08;Initial Catalog=Etramulv2;User ID=admin;Password=123321;Pooling" +
-            "=False;MultipleActiveResultSets=True")]
-        public string DatasetsConexion {
-            get {
-                return ((string)(this["DatasetsConexion"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.33;Initial Catalog=Etramulv2;User ID=admin;Password=123321;" +
             "Pooling=False;MultipleActiveResultSets=True")]
         public string TransaccionDataSet {
@@ -65,6 +54,17 @@ namespace CapaVista.Properties {
             }
             set {
                 this["Manual"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.33;Initial Catalog=Etramulv2;User ID=admin;Password=123321;" +
+            "Pooling=False;MultipleActiveResultSets=True")]
+        public string DatasetsConexion {
+            get {
+                return ((string)(this["DatasetsConexion"]));
             }
         }
     }
