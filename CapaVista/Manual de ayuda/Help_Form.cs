@@ -26,7 +26,7 @@ namespace CapaVista.Manual_de_ayuda
         {
             try
             {
-                this.Browser.Navigate(Directory.GetCurrentDirectory() + "C:\\Manual\\index.htm");
+                this.Browser.Navigate(global::CapaVista.Properties.Settings.Default.Manual.ToString());
             }
             catch (Exception ex)
             {

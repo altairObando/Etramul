@@ -1,6 +1,5 @@
 ﻿using CapaControlador;
 using CapaDatos;
-using CrystalDecisions.Shared;
 using MetroFramework.Forms;
 using System;
 using System.Windows.Forms;
