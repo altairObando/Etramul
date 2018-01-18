@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.28292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.34125cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -228,7 +228,7 @@
         <DataSetName>Ticket</DataSetName>
         <Top>2.8575cm</Top>
         <Height>1.2cm</Height>
-        <Width>7.5cm</Width>
+        <Width>6.12417cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -344,7 +344,7 @@
       <Line Name="Line1">
         <Top>4.19861cm</Top>
         <Height>0cm</Height>
-        <Width>7.6562cm</Width>
+        <Width>6.46812cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -359,7 +359,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Gasto total:                           </Value>
+                <Value>Gasto total:           </Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -374,7 +374,7 @@
         <Top>4.375cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.18568cm</Width>
+        <Width>6.1538cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -393,7 +393,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Ingreso Carrera:                     </Value>
+                <Value>Ingreso Carrera:     </Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -408,7 +408,7 @@
         <Top>5.15139cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.18568cm</Width>
+        <Width>6.1538cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -427,7 +427,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total:                                    </Value>
+                <Value>Total:                     </Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -442,7 +442,7 @@
         <Top>5.92778cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.18568cm</Width>
+        <Width>6.1538cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -458,7 +458,7 @@
     <Height>2.90625in</Height>
     <Style />
   </Body>
-  <Width>3.01425in</Width>
+  <Width>2.55592in</Width>
   <Page>
     <PageHeader>
       <Height>5.53035cm</Height>
@@ -483,9 +483,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
           <Top>0.44979cm</Top>
-          <Left>2.5cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.76458cm</Width>
+          <Width>6.49203cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -524,10 +523,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.22618cm</Top>
-          <Left>1.56359cm</Left>
+          <Top>1.26146cm</Top>
           <Height>1.5525cm</Height>
-          <Width>4.29917cm</Width>
+          <Width>6.46812cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -648,12 +646,12 @@
         </Border>
       </Style>
     </PageHeader>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <PageHeight>15cm</PageHeight>
+    <PageWidth>6.5cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

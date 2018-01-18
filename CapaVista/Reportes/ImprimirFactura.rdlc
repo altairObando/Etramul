@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.38875cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.1825cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -335,7 +335,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>1.8cm</Height>
-        <Width>7.5cm</Width>
+        <Width>6.07125cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -346,7 +346,7 @@
     <Height>0.90625in</Height>
     <Style />
   </Body>
-  <Width>3.07292in</Width>
+  <Width>2.51526in</Width>
   <Page>
     <PageHeader>
       <Height>5.66208cm</Height>
@@ -375,9 +375,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
           <Top>0.26141cm</Top>
-          <Left>0.28787cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.21213cm</Width>
+          <Width>6.07125cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -395,7 +394,18 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>SISTEMA DE INGRESOS &amp; EGRESOS</Value>
+                  <Value>SISTEMA DE INGRESOS</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value> &amp; EGRESOS</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -406,9 +416,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>1.0378cm</Top>
-          <Left>0.28787cm</Left>
-          <Height>0.6cm</Height>
-          <Width>7.21213cm</Width>
+          <Height>0.91667cm</Height>
+          <Width>6.07125cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -437,10 +446,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.605cm</Top>
-          <Left>0.29654cm</Left>
+          <Top>2.0603cm</Top>
           <Height>0.6cm</Height>
-          <Width>7.21213cm</Width>
+          <Width>6.07125cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -474,7 +482,7 @@
           <Top>2.80141cm</Top>
           <Left>0.29654cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.20346cm</Width>
+          <Width>5.77471cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -508,7 +516,7 @@
           <Top>3.5687cm</Top>
           <Left>0.29654cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.20346cm</Width>
+          <Width>5.77471cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -542,7 +550,7 @@
           <Top>4.2037cm</Top>
           <Left>0.29654cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.20346cm</Width>
+          <Width>5.77471cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -578,7 +586,7 @@
           <Top>4.78578cm</Top>
           <Left>0.29654cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.20346cm</Width>
+          <Width>5.77471cm</Width>
           <ZIndex>6</ZIndex>
           <Style>
             <Border>
@@ -638,12 +646,12 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <PageHeight>15cm</PageHeight>
+    <PageWidth>6.5cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

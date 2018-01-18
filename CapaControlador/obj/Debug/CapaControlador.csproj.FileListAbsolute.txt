@@ -34,3 +34,12 @@ C:\Users\Estudiante\Source\Repos\Etramul\CapaControlador\bin\Debug\EntityFramewo
 C:\Users\Estudiante\Source\Repos\Etramul\CapaControlador\obj\Debug\CapaControlador.csprojResolveAssemblyReference.cache
 C:\Users\Estudiante\Source\Repos\Etramul\CapaControlador\obj\Debug\CapaControlador.dll
 C:\Users\Estudiante\Source\Repos\Etramul\CapaControlador\obj\Debug\CapaControlador.pdb
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\bin\Debug\CapaControlador.dll
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\bin\Debug\CapaControlador.pdb
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\bin\Debug\CapaDatoos.dll
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\bin\Debug\EntityFramework.dll
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\bin\Debug\CapaDatoos.pdb
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\bin\Debug\EntityFramework.xml
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\obj\Debug\CapaControlador.csprojResolveAssemblyReference.cache
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\obj\Debug\CapaControlador.dll
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaControlador\obj\Debug\CapaControlador.pdb
