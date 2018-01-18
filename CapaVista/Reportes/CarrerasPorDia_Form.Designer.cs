@@ -57,7 +57,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.CarrerasPorDia.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(354, 689);
+            this.reportViewer1.Size = new System.Drawing.Size(1041, 689);
             this.reportViewer1.TabIndex = 0;
             // 
             // carrerasPorDiaTableAdapter
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 769);
+            this.ClientSize = new System.Drawing.Size(1081, 769);
             this.Controls.Add(this.reportViewer1);
             this.Name = "CarrerasPorDia_Form";
             this.Text = "Carreras Efectuadas";

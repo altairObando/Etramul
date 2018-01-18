@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.70625cm</Width>
+              <Width>1.49203cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.13276cm</Width>
@@ -28,7 +28,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Placa</Value>
+                              <Value>Fact.</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -92,7 +92,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -116,21 +118,23 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Placa">
+                    <Textbox Name="IdTransaccion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Placa.Value</Value>
+                              <Value>=Fields!IdTransaccion.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Placa</rd:DefaultName>
+                      <rd:DefaultName>IdTransaccion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -157,7 +161,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Descripcion</rd:DefaultName>
@@ -176,24 +182,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Monto">
+                    <Textbox Name="Cantidad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Monto.Value)</Value>
+                              <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <Format>'C$'0.00;('C$'0.00)</Format>
                                 <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Monto</rd:DefaultName>
+                      <rd:DefaultName>Cantidad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -286,13 +294,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Monto.Value)</Value>
+                              <Value>=Sum(Fields!Cantidad.Value)</Value>
                               <Style>
                                 <Format>'C$'0.00;('C$'0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -334,8 +344,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
+        <Top>0cm</Top>
         <Height>1.8cm</Height>
-        <Width>6.33901cm</Width>
+        <Width>6.12479cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -346,7 +357,7 @@
     <Height>0.70866in</Height>
     <Style />
   </Body>
-  <Width>2.55692in</Width>
+  <Width>2.49567in</Width>
   <Page>
     <PageHeader>
       <Height>4.77724cm</Height>
@@ -395,7 +406,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>SISTEMA DE INGRESOS &amp; EGRESOS</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -426,7 +439,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>CIUDAD SANDINO RUTA 210</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -436,7 +451,6 @@
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
           <Top>1.60197cm</Top>
-          <Left>0cm</Left>
           <Height>0.6cm</Height>
           <Width>6.33901cm</Width>
           <ZIndex>2</ZIndex>
@@ -562,7 +576,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.32292cm</Height>
+      <Height>1.19063cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -577,7 +591,9 @@
                   <Style />
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>OverallPageNumber</rd:DefaultName>
@@ -601,7 +617,7 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>15cm</PageHeight>
+    <PageHeight>20cm</PageHeight>
     <PageWidth>6.5cm</PageWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
@@ -627,30 +643,38 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="IdTransaccion">
+          <DataField>IdTransaccion</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FechaTransaccion">
+          <DataField>FechaTransaccion</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Activo">
+          <DataField>Activo</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
         <Field Name="Placa">
           <DataField>Placa</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IdTipoDetalle">
-          <DataField>IdTipoDetalle</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Descripcion">
           <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Monto">
-          <DataField>Monto</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>TransaccionesDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Estudiante\Desktop\Etramul-master\CapaVista\Transacciones\TransaccionesDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>GastosPorRubroPorDia</rd:TableName>
+        <rd:DataSetName>ReportesDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\Reportes\ReportesDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>EgresosDetallePorRubroEntreFechas</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>GastosPorRubroPorDiaTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>EgresosDetallePorRubroEntreFechasTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

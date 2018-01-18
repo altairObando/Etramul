@@ -92,7 +92,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -190,7 +192,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -292,7 +296,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -346,7 +352,7 @@
     <Height>0.90625in</Height>
     <Style />
   </Body>
-  <Width>2.51526in</Width>
+  <Width>2.39026in</Width>
   <Page>
     <PageHeader>
       <Height>5.66208cm</Height>
@@ -647,7 +653,7 @@
       </Style>
     </PageFooter>
     <PageHeight>15cm</PageHeight>
-    <PageWidth>6.5cm</PageWidth>
+    <PageWidth>6.35cm</PageWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
     <TopMargin>0.5cm</TopMargin>

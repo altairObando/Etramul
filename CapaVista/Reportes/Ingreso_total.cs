@@ -20,6 +20,7 @@ namespace CapaVista.Reportes
             this.ingreso_total_por_diaTableAdapter.Fill(this.reportesDataSet.ingreso_total_por_dia, fecha);
             this.reportViewer.LocalReport.SetParameters(new ReportParameter[] {
                 new ReportParameter("fecha", fecha.ToShortDateString()) });
+            reportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer.RefreshReport();
         }
     }

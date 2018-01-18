@@ -119,9 +119,9 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="reportViewer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 678</value>
+    <value>876, 678</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>397, 758</value>
+    <value>916, 758</value>
   </data>
 </root>

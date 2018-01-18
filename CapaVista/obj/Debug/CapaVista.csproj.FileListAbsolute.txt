@@ -513,8 +513,6 @@ C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.TrustIn
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe.manifest
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.application
 C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.exe.config
-C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe
-C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.pdb
 C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.exe.manifest
 C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.application
 C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.exe
@@ -600,3 +598,5 @@ C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\es-NI\COOTRACOSAN
 C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.TrustInfo.xml
 C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe.manifest
 C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.application
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe
+C:\Users\MASTERCOMP01\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.pdb

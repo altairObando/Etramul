@@ -24,7 +24,7 @@ namespace CapaVista.Reportes
 
         private void DetalleEgresoEntreFechas_form_Load(object sender, EventArgs e)
         {
-            egresosDetallePorRubroEntreFechasTableAdapter.Fill(this.transaccionesDataSet.EgresosDetallePorRubroEntreFechas, id_rubro, id_vehiculo, fecha1, fecha2);
+            egresosDetallePorRubroEntreFechasTableAdapter.Fill(this.reportesDataSet.EgresosDetallePorRubroEntreFechas, id_rubro, id_vehiculo, fecha1, fecha2);
             this.reportViewer1.LocalReport.SetParameters( 
                 new ReportParameter[] {
                     //Parametros
@@ -34,6 +34,7 @@ namespace CapaVista.Reportes
                 new ReportParameter("FECHA2", fecha2.ToString())
             });
             this.reportViewer1.RefreshReport();
+            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
         }
     }
 }

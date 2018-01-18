@@ -137,11 +137,11 @@
   <data name="reportViewer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;ReportesDataSet.Name" xml:space="preserve">
+    <value>ReportesDataSet</value>
+  </data>
   <data name="&gt;&gt;reportViewer.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Ingreso_total</value>
@@ -167,6 +167,9 @@
   <data name="&gt;&gt;Ingreso_TotalBindingSource.Name" xml:space="preserve">
     <value>Ingreso_TotalBindingSource</value>
   </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
   <data name="&gt;&gt;ReportesDataSet.Type" xml:space="preserve">
     <value>CapaVista.Reportes.ReportesDataSet, Reportes.ReportesDataset.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
@@ -182,9 +185,6 @@
   </data>
   <data name="&gt;&gt;reportViewer.Type" xml:space="preserve">
     <value>Microsoft.Reporting.WinForms.ReportViewer, Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</value>
-  </data>
-  <data name="&gt;&gt;ReportesDataSet.Name" xml:space="preserve">
-    <value>ReportesDataSet</value>
   </data>
   <data name="&gt;&gt;Ingreso_TotalTableAdapter.Type" xml:space="preserve">
     <value>CapaVista.Reportes.ReportesDataSetTableAdapters.Ingreso_TotalTableAdapter, Reportes.ReportesDataset.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -204,8 +204,8 @@
   <metadata name="ReportesDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="reportesDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>157, 17</value>
+  <metadata name="ingresototalpordiaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>375, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -219,8 +219,8 @@
   <metadata name="Ingreso_TotalTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>364, 17</value>
   </metadata>
-  <metadata name="ingresototalpordiaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>375, 17</value>
+  <metadata name="reportesDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>157, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>es-NI</value>

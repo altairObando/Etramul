@@ -40,6 +40,7 @@ namespace CapaVista.Reportes
                     new ReportParameter("FECHA", fecha.ToShortDateString())
                 }
                 );
+            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
     }

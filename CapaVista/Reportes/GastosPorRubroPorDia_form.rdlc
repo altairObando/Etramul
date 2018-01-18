@@ -92,7 +92,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -190,7 +192,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Monto</rd:DefaultName>
@@ -251,11 +255,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>TOTAL:</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -270,6 +276,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -283,12 +290,16 @@
                             <TextRun>
                               <Value>=Sum(Fields!Monto.Value)</Value>
                               <Style>
+                                <FontWeight>Bold</FontWeight>
                                 <Format>'C$'0.00;('C$'0.00)</Format>
+                                <TextDecoration>Underline</TextDecoration>
                                 <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -557,7 +568,7 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>15cm</PageHeight>
+    <PageHeight>24cm</PageHeight>
     <PageWidth>6.35cm</PageWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>

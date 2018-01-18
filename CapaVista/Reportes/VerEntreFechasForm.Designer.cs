@@ -57,7 +57,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.VerEntreFechas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(353, 615);
+            this.reportViewer1.Size = new System.Drawing.Size(1035, 683);
             this.reportViewer1.TabIndex = 0;
             // 
             // verEntreFechasTableAdapter
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 695);
+            this.ClientSize = new System.Drawing.Size(1075, 763);
             this.Controls.Add(this.reportViewer1);
             this.Name = "VerEntreFechasForm";
             this.Text = "Visor Reportes";

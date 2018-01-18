@@ -26,6 +26,7 @@ namespace CapaVista.Reportes
         {
             this.transaccionesDataSet.EnforceConstraints = false;
             this.gastosPorRubroPorDiaTableAdapter.Fill(this.transaccionesDataSet.GastosPorRubroPorDia, tipo, fecha);
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
     }

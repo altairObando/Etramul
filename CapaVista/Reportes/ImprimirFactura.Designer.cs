@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ReportesDataSet = new CapaVista.Reportes.ReportesDataSet();
             this.DetalleDeTransaccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ReportesDataSet = new CapaVista.Reportes.ReportesDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DetalleDeTransaccionTableAdapter = new CapaVista.Reportes.ReportesDataSetTableAdapters.DetalleDeTransaccionTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDeTransaccionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DetalleDeTransaccionBindingSource
+            // 
+            this.DetalleDeTransaccionBindingSource.DataMember = "DetalleDeTransaccion";
+            this.DetalleDeTransaccionBindingSource.DataSource = this.ReportesDataSet;
+            // 
+            // ReportesDataSet
+            // 
+            this.ReportesDataSet.DataSetName = "ReportesDataSet";
+            this.ReportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.ImprimirFactura.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(363, 643);
+            this.reportViewer1.Size = new System.Drawing.Size(728, 643);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ReportesDataSet
-            // 
-            this.ReportesDataSet.DataSetName = "ReportesDataSet";
-            this.ReportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DetalleDeTransaccionBindingSource
-            // 
-            this.DetalleDeTransaccionBindingSource.DataMember = "DetalleDeTransaccion";
-            this.DetalleDeTransaccionBindingSource.DataSource = this.ReportesDataSet;
             // 
             // DetalleDeTransaccionTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 723);
+            this.ClientSize = new System.Drawing.Size(768, 723);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ImprimirFactura";
             this.Text = "Visor Reportes";
             this.Load += new System.EventHandler(this.ImprimirFactura_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDeTransaccionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

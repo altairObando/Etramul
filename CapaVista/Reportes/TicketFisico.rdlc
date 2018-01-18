@@ -32,7 +32,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -62,7 +64,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -92,7 +96,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -183,11 +189,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Cantidad.Value)</Value>
-                              <Style />
+                              <Value>=Fields!Cantidad.Value</Value>
+                              <Style>
+                                <Format>'C$'0.00;('C$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -276,7 +286,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Conductor:   </Value>
+                <Value>Conductor:    </Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -288,7 +298,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>0.95278cm</Top>
+        <Top>0.77639cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
         <Width>5.54843cm</Width>
@@ -326,7 +336,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>1.90294cm</Top>
+        <Top>1.41167cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
         <Width>5.54843cm</Width>
@@ -344,7 +354,7 @@
       <Line Name="Line1">
         <Top>4.19861cm</Top>
         <Height>0cm</Height>
-        <Width>6.46812cm</Width>
+        <Width>6.15945cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -359,22 +369,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Gasto total:           </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Parameters!Egresos.Value</Value>
-                <Style />
+                <Value>Total de gastos:        </Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>4.375cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.1538cm</Width>
+        <Width>3.30985cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -393,22 +404,20 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Ingreso Carrera:     </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Parameters!Ingreso.Value</Value>
+                <Value>Ingreso Por Ciclo:     </Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>5.15139cm</Top>
+        <Top>2.04695cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.1538cm</Width>
+        <Width>3.03489cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -427,23 +436,131 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total:                     </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Parameters!Total.Value</Value>
-                <Style />
+                <Value>Total por Ciclo:                     </Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>5.92778cm</Top>
+        <Top>5.15139cm</Top>
         <Left>0.31432cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.1538cm</Width>
+        <Width>3.30985cm</Width>
         <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Egresos">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Egresos.Value</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Format>'C$'0.00;('C$'0.00)</Format>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Egresos</rd:DefaultName>
+        <Top>4.375cm</Top>
+        <Left>3.65945cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Ingreso">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Ingreso.Value</Value>
+                <Style>
+                  <Format>'C$'0.00;('C$'0.00)</Format>
+                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Ingreso</rd:DefaultName>
+        <Top>2.11639cm</Top>
+        <Left>3.65945cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Total">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Total.Value</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Format>'C$'0.00;('C$'0.00)</Format>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Total</rd:DefaultName>
+        <Top>5.15139cm</Top>
+        <Left>3.65945cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -458,10 +575,10 @@
     <Height>2.90625in</Height>
     <Style />
   </Body>
-  <Width>2.55592in</Width>
+  <Width>2.42498in</Width>
   <Page>
     <PageHeader>
-      <Height>5.53035cm</Height>
+      <Height>4.49848cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -473,7 +590,11 @@
               <TextRuns>
                 <TextRun>
                   <Value>COTRACOSAN</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -482,9 +603,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>0.44979cm</Top>
-          <Height>0.6cm</Height>
-          <Width>6.49203cm</Width>
+          <Height>0.65292cm</Height>
+          <Width>6.12417cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -502,8 +622,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>SISTEMA DE INGRESO CIUDAD SANDINO</Value>
-                  <Style />
+                  <Value>SISTEMA DE INGRESO &amp; EGRESO</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -513,8 +635,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>RUTA 210</Value>
-                  <Style />
+                  <Value>CIUDAD SANDINO RUTA 210</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -523,9 +647,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.26146cm</Top>
+          <Top>0.72347cm</Top>
           <Height>1.5525cm</Height>
-          <Width>6.46812cm</Width>
+          <Width>6.12417cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -544,7 +668,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Transacción: </Value>
+                  <Value>Factura:        </Value>
                   <Style />
                 </TextRun>
                 <TextRun>
@@ -556,10 +680,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>2.95507cm</Top>
+          <Top>2.39035cm</Top>
           <Left>0.31432cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.54843cm</Width>
+          <Width>5.80985cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -583,17 +707,19 @@
                 </TextRun>
                 <TextRun>
                   <Value>=Parameters!Fecha.Value</Value>
-                  <Style />
+                  <Style>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>3.66944cm</Top>
+          <Top>2.99035cm</Top>
           <Left>0.31432cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.54843cm</Width>
+          <Width>5.80985cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -624,10 +750,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>4.44583cm</Top>
+          <Top>3.62563cm</Top>
           <Left>0.31432cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.54843cm</Width>
+          <Width>5.80985cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -639,6 +765,17 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Line Name="Line2">
+          <Top>2.35507cm</Top>
+          <Height>0cm</Height>
+          <Width>6.12417cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>

@@ -37,6 +37,7 @@ namespace CapaVista.Reportes
                 new ReportParameter("FechaFin", FechaFin.ToShortDateString()),
                 new ReportParameter("PLACA", Placa)                
             });
+            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
     }

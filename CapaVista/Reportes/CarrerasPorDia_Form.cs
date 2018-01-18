@@ -29,6 +29,7 @@ namespace CapaVista.Reportes
             this.carrerasPorDiaTableAdapter.Fill(this.ReportesDataSet.carrerasPorDia, fecha, placa);
 
             this.reportViewer1.RefreshReport();
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
         }
     }
 }

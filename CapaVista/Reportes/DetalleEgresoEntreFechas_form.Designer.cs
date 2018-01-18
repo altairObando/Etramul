@@ -30,23 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.egresosDetallePorRubroEntreFechasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transaccionesDataSet = new CapaVista.Transacciones.TransaccionesDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.egresosDetallePorRubroEntreFechasTableAdapter = new CapaVista.Transacciones.TransaccionesDataSetTableAdapters.EgresosDetallePorRubroEntreFechasTableAdapter();
+            this.reportesDataSet = new CapaVista.Reportes.ReportesDataSet();
+            this.egresosDetallePorRubroEntreFechasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.egresosDetallePorRubroEntreFechasTableAdapter = new CapaVista.Reportes.ReportesDataSetTableAdapters.EgresosDetallePorRubroEntreFechasTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.egresosDetallePorRubroEntreFechasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // egresosDetallePorRubroEntreFechasBindingSource
-            // 
-            this.egresosDetallePorRubroEntreFechasBindingSource.DataMember = "EgresosDetallePorRubroEntreFechas";
-            this.egresosDetallePorRubroEntreFechasBindingSource.DataSource = this.transaccionesDataSet;
-            // 
-            // transaccionesDataSet
-            // 
-            this.transaccionesDataSet.DataSetName = "TransaccionesDataSet";
-            this.transaccionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -57,8 +47,18 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.DetalleEgresoEntreFechas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(353, 653);
+            this.reportViewer1.Size = new System.Drawing.Size(954, 660);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // reportesDataSet
+            // 
+            this.reportesDataSet.DataSetName = "ReportesDataSet";
+            this.reportesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // egresosDetallePorRubroEntreFechasBindingSource
+            // 
+            this.egresosDetallePorRubroEntreFechasBindingSource.DataMember = "EgresosDetallePorRubroEntreFechas";
+            this.egresosDetallePorRubroEntreFechasBindingSource.DataSource = this.reportesDataSet;
             // 
             // egresosDetallePorRubroEntreFechasTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 733);
+            this.ClientSize = new System.Drawing.Size(994, 740);
             this.Controls.Add(this.reportViewer1);
             this.Name = "DetalleEgresoEntreFechas_form";
             this.Text = "Visor Reportes";
             this.Load += new System.EventHandler(this.DetalleEgresoEntreFechas_form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.egresosDetallePorRubroEntreFechasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,7 +83,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource egresosDetallePorRubroEntreFechasBindingSource;
-        private Transacciones.TransaccionesDataSet transaccionesDataSet;
-        private Transacciones.TransaccionesDataSetTableAdapters.EgresosDetallePorRubroEntreFechasTableAdapter egresosDetallePorRubroEntreFechasTableAdapter;
+        private ReportesDataSet reportesDataSet;
+        private ReportesDataSetTableAdapters.EgresosDetallePorRubroEntreFechasTableAdapter egresosDetallePorRubroEntreFechasTableAdapter;
     }
 }

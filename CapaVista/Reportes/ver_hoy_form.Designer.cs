@@ -57,7 +57,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaVista.Reportes.ver hoy.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(359, 628);
+            this.reportViewer1.Size = new System.Drawing.Size(819, 683);
             this.reportViewer1.TabIndex = 0;
             // 
             // TRANSACCION_DIA_VEHICULOTableAdapter
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 708);
+            this.ClientSize = new System.Drawing.Size(859, 763);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ver_hoy_form";
             this.Text = "Visor Reportes";

@@ -433,7 +433,6 @@
     <EmbeddedResource Include="Reportes\MenuReportes.resx">
       <DependentUpon>MenuReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\TicketFisico.rdlc" />
     <EmbeddedResource Include="Reportes\TicketFisicoForm.resx">
       <DependentUpon>TicketFisicoForm.cs</DependentUpon>

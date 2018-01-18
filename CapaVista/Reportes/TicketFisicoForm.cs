@@ -55,6 +55,7 @@ namespace CapaVista.Reportes
                     new ReportParameter("Egresos", egreso.ToString()),
                     new ReportParameter("Total", total.ToString())
                 });
+            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
     }
