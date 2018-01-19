@@ -26,7 +26,7 @@
     <TargetCulture>es-NI</TargetCulture>
     <ProductName>Sistema de ingreso y egresos</ProductName>
     <PublisherName>Cootracosan - Soft</PublisherName>
-    <ApplicationRevision>35</ApplicationRevision>
+    <ApplicationRevision>38</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
