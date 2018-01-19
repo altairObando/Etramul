@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ztpuZXG71/yMVENhn3g5ogf2h5LzJhNGUxFXoO2x3oE=</dsig:DigestValue>
+        <dsig:DigestValue>3Nb8J78JGvL9prrC9sqMZ6ZWcIKLlgvcMpqXPIkEDPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tKkbxUF2LNWUyrBbObnK0NPjSGIk3+lhgToSXg6n8aU=</dsig:DigestValue>
+        <dsig:DigestValue>pqTvwgREVCis4cyEFprA5U0mTdPMWwbFiuEI7THfQbE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zAIKWVrsK1JfTYYYzKq6xbGAOzrfrUMsIFQv7Udb63I=</dsig:DigestValue>
+        <dsig:DigestValue>D5A/qkpQv8f+CRwF7EsOR3SaYx6TSHl54eBY9whAnsI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xR+bdzNqmDmAf3fASv8ZobQ6J0Q6wCYtrC3TMncEnAg=</dsig:DigestValue>
+        <dsig:DigestValue>Vxsb5+opWnqLiE22NlFCv7Ffckl1R+ulXos/AFwYYxc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -258,13 +258,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="COOTRACOSAN.exe.config" size="2076">
+  <file name="COOTRACOSAN.exe.config" size="2067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ArmqtsYTST2A5UPKT0WPDTF09gx2MsJblU/G1DxuP4c=</dsig:DigestValue>
+      <dsig:DigestValue>BpVNgk1f87HwDUPe172uSbyC/oML4T286ciRcuTxuig=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon.ico" size="370070">
