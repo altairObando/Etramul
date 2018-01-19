@@ -81,7 +81,7 @@
             this.btnFiltrar.Location = new System.Drawing.Point(83, 45);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(112, 35);
-            this.btnFiltrar.TabIndex = 5;
+            this.btnFiltrar.TabIndex = 2;
             this.btnFiltrar.Text = "Aplicar Filtro";
             this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.dtFecha2.Location = new System.Drawing.Point(128, 19);
             this.dtFecha2.Name = "dtFecha2";
             this.dtFecha2.Size = new System.Drawing.Size(95, 20);
-            this.dtFecha2.TabIndex = 3;
+            this.dtFecha2.TabIndex = 1;
             // 
             // dtFecha1
             // 
@@ -111,7 +111,7 @@
             this.dtFecha1.Location = new System.Drawing.Point(27, 19);
             this.dtFecha1.Name = "dtFecha1";
             this.dtFecha1.Size = new System.Drawing.Size(95, 20);
-            this.dtFecha1.TabIndex = 2;
+            this.dtFecha1.TabIndex = 0;
             // 
             // dtFecha
             // 
@@ -119,7 +119,7 @@
             this.dtFecha.Location = new System.Drawing.Point(23, 87);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(178, 20);
-            this.dtFecha.TabIndex = 1;
+            this.dtFecha.TabIndex = 0;
             this.dtFecha.ValueChanged += new System.EventHandler(this.dtFecha_ValueChanged);
             // 
             // dgvDatos
@@ -205,7 +205,7 @@
             this.lblNombre.Location = new System.Drawing.Point(232, 31);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(136, 23);
-            this.lblNombre.TabIndex = 7;
+            this.lblNombre.TabIndex = 5;
             this.lblNombre.Text = "--";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -214,8 +214,8 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Location = new System.Drawing.Point(307, 332);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 19);
-            this.lblTotal.TabIndex = 8;
+            this.lblTotal.Size = new System.Drawing.Size(39, 19);
+            this.lblTotal.TabIndex = 3;
             this.lblTotal.Text = "Total:";
             // 
             // txtTotal
@@ -227,7 +227,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(105, 20);
-            this.txtTotal.TabIndex = 9;
+            this.txtTotal.TabIndex = 4;
             // 
             // cboTipo
             // 
@@ -236,7 +236,7 @@
             this.cboTipo.Location = new System.Drawing.Point(23, 117);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(178, 29);
-            this.cboTipo.TabIndex = 10;
+            this.cboTipo.TabIndex = 1;
             this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipos_SelectedIndexChanged);
             // 
             // btnClose
@@ -247,7 +247,7 @@
             this.btnClose.Location = new System.Drawing.Point(429, 41);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(49, 19);
-            this.btnClose.TabIndex = 11;
+            this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Cerrar";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = true;

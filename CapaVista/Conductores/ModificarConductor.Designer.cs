@@ -97,7 +97,7 @@
             this.paneDatosPersonales.Name = "paneDatosPersonales";
             this.paneDatosPersonales.Size = new System.Drawing.Size(576, 239);
             this.paneDatosPersonales.Style = MetroFramework.MetroColorStyle.Silver;
-            this.paneDatosPersonales.TabIndex = 15;
+            this.paneDatosPersonales.TabIndex = 0;
             this.paneDatosPersonales.Theme = MetroFramework.MetroThemeStyle.Light;
             this.paneDatosPersonales.VerticalScrollbarBarColor = true;
             this.paneDatosPersonales.VerticalScrollbarHighlightOnWheel = false;
@@ -119,7 +119,7 @@
             this.panel1.Location = new System.Drawing.Point(354, 156);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(161, 30);
-            this.panel1.TabIndex = 20;
+            this.panel1.TabIndex = 7;
             // 
             // radioButton2
             // 
@@ -165,7 +165,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(30, 118);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(58, 19);
             this.metroLabel3.TabIndex = 13;
             this.metroLabel3.Text = "Teléfono";
             // 
@@ -174,7 +174,7 @@
             this.lblDatosPersonales.AutoSize = true;
             this.lblDatosPersonales.Location = new System.Drawing.Point(3, 4);
             this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(108, 19);
+            this.lblDatosPersonales.Size = new System.Drawing.Size(107, 19);
             this.lblDatosPersonales.TabIndex = 12;
             this.lblDatosPersonales.Text = "Datos Personales";
             // 
@@ -318,7 +318,7 @@
             this.dgvConductor.RowHeadersVisible = false;
             this.dgvConductor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConductor.Size = new System.Drawing.Size(764, 191);
-            this.dgvConductor.TabIndex = 4;
+            this.dgvConductor.TabIndex = 5;
             this.dgvConductor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConductor_CellDoubleClick);
             // 
             // Cedula
@@ -384,7 +384,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(706, 180);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 58);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(625, 180);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 58);
-            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -419,7 +419,7 @@
             this.btnSalir.Location = new System.Drawing.Point(706, 253);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 58);
-            this.btnSalir.TabIndex = 3;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -436,7 +436,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(625, 253);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 58);
-            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;

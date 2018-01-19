@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPlaca = new MetroFramework.Controls.MetroLabel();
             this.lblCodigoPlaca = new MetroFramework.Controls.MetroLabel();
             this.lblNumero = new MetroFramework.Controls.MetroLabel();
@@ -68,7 +68,7 @@
             this.lblCodigoPlaca.Location = new System.Drawing.Point(72, 68);
             this.lblCodigoPlaca.Name = "lblCodigoPlaca";
             this.lblCodigoPlaca.Size = new System.Drawing.Size(27, 19);
-            this.lblCodigoPlaca.TabIndex = 1;
+            this.lblCodigoPlaca.TabIndex = 2;
             this.lblCodigoPlaca.Text = "---";
             // 
             // lblNumero
@@ -77,7 +77,7 @@
             this.lblNumero.Location = new System.Drawing.Point(408, 65);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(21, 19);
-            this.lblNumero.TabIndex = 3;
+            this.lblNumero.TabIndex = 6;
             this.lblNumero.Text = "--";
             // 
             // dgDatos
@@ -105,7 +105,7 @@
             this.dgDatos.RowHeadersVisible = false;
             this.dgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgDatos.Size = new System.Drawing.Size(615, 236);
-            this.dgDatos.TabIndex = 5;
+            this.dgDatos.TabIndex = 8;
             this.dgDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellContentDoubleClick);
             // 
             // No
@@ -116,9 +116,9 @@
             // 
             // Fecha
             // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle4;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
@@ -131,16 +131,16 @@
             // 
             // Ingreso
             // 
-            dataGridViewCellStyle2.Format = "C";
-            this.Ingreso.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "C";
+            this.Ingreso.DefaultCellStyle = dataGridViewCellStyle5;
             this.Ingreso.HeaderText = "Ingreso total";
             this.Ingreso.Name = "Ingreso";
             this.Ingreso.ReadOnly = true;
             // 
             // Egreso
             // 
-            dataGridViewCellStyle3.Format = "C";
-            this.Egreso.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "C";
+            this.Egreso.DefaultCellStyle = dataGridViewCellStyle6;
             this.Egreso.HeaderText = "Egreso Total";
             this.Egreso.Name = "Egreso";
             this.Egreso.ReadOnly = true;
@@ -168,7 +168,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(551, 51);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(81, 37);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 9;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             this.lblSaldo.Location = new System.Drawing.Point(72, 87);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(35, 19);
-            this.lblSaldo.TabIndex = 9;
+            this.lblSaldo.TabIndex = 3;
             this.lblSaldo.Text = " --- ";
             // 
             // metroLabel2
@@ -200,7 +200,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(23, 87);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(45, 19);
-            this.metroLabel2.TabIndex = 8;
+            this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Saldo:";
             // 
             // lblMostrar
@@ -209,7 +209,7 @@
             this.lblMostrar.Location = new System.Drawing.Point(191, 65);
             this.lblMostrar.Name = "lblMostrar";
             this.lblMostrar.Size = new System.Drawing.Size(59, 19);
-            this.lblMostrar.TabIndex = 11;
+            this.lblMostrar.TabIndex = 4;
             this.lblMostrar.Text = "Mostrar:";
             // 
             // tbTOP
@@ -218,7 +218,7 @@
             this.tbTOP.Location = new System.Drawing.Point(239, 65);
             this.tbTOP.Name = "tbTOP";
             this.tbTOP.Size = new System.Drawing.Size(163, 23);
-            this.tbTOP.TabIndex = 10;
+            this.tbTOP.TabIndex = 5;
             this.tbTOP.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbTOP_Scroll);
             // 
             // UltimasTransacciones

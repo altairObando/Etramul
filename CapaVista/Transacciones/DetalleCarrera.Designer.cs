@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lblNumero = new MetroFramework.Controls.MetroLabel();
+            this.detallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transaccionesDataSet = new CapaVista.Transacciones.TransaccionesDataSet();
             this.lblConductor = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -40,17 +42,15 @@
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.lblTotal = new MetroFramework.Controls.MetroLabel();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
-            this.lblApellidos = new MetroFramework.Controls.MetroLabel();
-            this.transaccionesDataSet = new CapaVista.Transacciones.TransaccionesDataSet();
-            this.detallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.detallesTableAdapter = new CapaVista.Transacciones.TransaccionesDataSetTableAdapters.DetallesTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.egresoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblApellidos = new MetroFramework.Controls.MetroLabel();
+            this.detallesTableAdapter = new CapaVista.Transacciones.TransaccionesDataSetTableAdapters.DetallesTableAdapter();
             this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -59,7 +59,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(23, 68);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel1.TabIndex = 0;
+            this.metroLabel1.TabIndex = 8;
             this.metroLabel1.Text = "No. Carrera:";
             // 
             // lblNumero
@@ -69,9 +69,19 @@
             this.lblNumero.Location = new System.Drawing.Point(108, 68);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(21, 19);
-            this.lblNumero.TabIndex = 1;
+            this.lblNumero.TabIndex = 0;
             this.lblNumero.Text = "--";
             this.lblNumero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // detallesBindingSource
+            // 
+            this.detallesBindingSource.DataMember = "Detalles";
+            this.detallesBindingSource.DataSource = this.transaccionesDataSet;
+            // 
+            // transaccionesDataSet
+            // 
+            this.transaccionesDataSet.DataSetName = "TransaccionesDataSet";
+            this.transaccionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblConductor
             // 
@@ -80,7 +90,7 @@
             this.lblConductor.Location = new System.Drawing.Point(108, 97);
             this.lblConductor.Name = "lblConductor";
             this.lblConductor.Size = new System.Drawing.Size(21, 19);
-            this.lblConductor.TabIndex = 2;
+            this.lblConductor.TabIndex = 1;
             this.lblConductor.Text = "--";
             this.lblConductor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -89,8 +99,8 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(31, 97);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(74, 19);
-            this.metroLabel2.TabIndex = 3;
+            this.metroLabel2.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel2.TabIndex = 9;
             this.metroLabel2.Text = "Conductor:";
             // 
             // metroLabel3
@@ -109,7 +119,7 @@
             this.lblFecha.Location = new System.Drawing.Point(366, 68);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(21, 19);
-            this.lblFecha.TabIndex = 5;
+            this.lblFecha.TabIndex = 4;
             this.lblFecha.Text = "--";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -119,7 +129,7 @@
             this.metroLabel7.Location = new System.Drawing.Point(62, 127);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(43, 19);
-            this.metroLabel7.TabIndex = 8;
+            this.metroLabel7.TabIndex = 10;
             this.metroLabel7.Text = "Placa:";
             // 
             // lblPlaca
@@ -129,7 +139,7 @@
             this.lblPlaca.Location = new System.Drawing.Point(108, 127);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(25, 19);
-            this.lblPlaca.TabIndex = 9;
+            this.lblPlaca.TabIndex = 2;
             this.lblPlaca.Text = "-- ";
             this.lblPlaca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -138,7 +148,7 @@
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.Location = new System.Drawing.Point(281, 97);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel9.Size = new System.Drawing.Size(83, 19);
             this.metroLabel9.TabIndex = 10;
             this.metroLabel9.Text = "Total Egreso:";
             // 
@@ -148,7 +158,7 @@
             this.lblTotal.Location = new System.Drawing.Point(366, 97);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(21, 19);
-            this.lblTotal.TabIndex = 11;
+            this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "--";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -174,32 +184,7 @@
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEgresos.Size = new System.Drawing.Size(402, 150);
-            this.dgvEgresos.TabIndex = 12;
-            // 
-            // lblApellidos
-            // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detallesBindingSource, "Apellidos", true));
-            this.lblApellidos.Location = new System.Drawing.Point(175, 97);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(21, 19);
-            this.lblApellidos.TabIndex = 13;
-            this.lblApellidos.Text = "--";
-            this.lblApellidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // transaccionesDataSet
-            // 
-            this.transaccionesDataSet.DataSetName = "TransaccionesDataSet";
-            this.transaccionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // detallesBindingSource
-            // 
-            this.detallesBindingSource.DataMember = "Detalles";
-            this.detallesBindingSource.DataSource = this.transaccionesDataSet;
-            // 
-            // detallesTableAdapter
-            // 
-            this.detallesTableAdapter.ClearBeforeFill = true;
+            this.dgvEgresos.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -222,15 +207,31 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // lblApellidos
+            // 
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detallesBindingSource, "Apellidos", true));
+            this.lblApellidos.Location = new System.Drawing.Point(175, 97);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(21, 19);
+            this.lblApellidos.TabIndex = 3;
+            this.lblApellidos.Text = "--";
+            this.lblApellidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // detallesTableAdapter
+            // 
+            this.detallesTableAdapter.ClearBeforeFill = true;
+            // 
             // btnSalir
             // 
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Image = global::CapaVista.Properties.Resources.close_button;
             this.btnSalir.Location = new System.Drawing.Point(312, 119);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 41);
-            this.btnSalir.TabIndex = 14;
+            this.btnSalir.TabIndex = 6;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -261,9 +262,9 @@
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
             this.Text = "Detalle de Carrera";
             this.Load += new System.EventHandler(this.DetalleCarrera_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

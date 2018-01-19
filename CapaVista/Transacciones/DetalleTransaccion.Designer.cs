@@ -56,7 +56,7 @@
             this.lblPlaca.Location = new System.Drawing.Point(372, 48);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(25, 19);
-            this.lblPlaca.TabIndex = 23;
+            this.lblPlaca.TabIndex = 3;
             this.lblPlaca.Text = "-- ";
             this.lblPlaca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -66,7 +66,7 @@
             this.metroLabel7.Location = new System.Drawing.Point(326, 48);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(43, 19);
-            this.metroLabel7.TabIndex = 22;
+            this.metroLabel7.TabIndex = 4;
             this.metroLabel7.Text = "Placa:";
             // 
             // lblfecha
@@ -76,7 +76,7 @@
             this.lblfecha.Location = new System.Drawing.Point(372, 19);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(21, 19);
-            this.lblfecha.TabIndex = 19;
+            this.lblfecha.TabIndex = 2;
             this.lblfecha.Text = "--";
             this.lblfecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -85,7 +85,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(253, 19);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(118, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(116, 19);
             this.metroLabel3.TabIndex = 18;
             this.metroLabel3.Text = "Fecha Transaccion:";
             // 
@@ -105,7 +105,7 @@
             this.lblCajero.Location = new System.Drawing.Point(114, 48);
             this.lblCajero.Name = "lblCajero";
             this.lblCajero.Size = new System.Drawing.Size(21, 19);
-            this.lblCajero.TabIndex = 16;
+            this.lblCajero.TabIndex = 1;
             this.lblCajero.Text = "--";
             this.lblCajero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -116,7 +116,7 @@
             this.lblNumero.Location = new System.Drawing.Point(114, 19);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(21, 19);
-            this.lblNumero.TabIndex = 15;
+            this.lblNumero.TabIndex = 0;
             this.lblNumero.Text = "--";
             this.lblNumero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -125,7 +125,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(29, 19);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
             this.metroLabel1.TabIndex = 14;
             this.metroLabel1.Text = "No. Factura:";
             // 
@@ -142,7 +142,7 @@
             this.panel1.Location = new System.Drawing.Point(23, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(469, 81);
-            this.panel1.TabIndex = 27;
+            this.panel1.TabIndex = 2;
             // 
             // dgvEgresos
             // 
@@ -166,7 +166,7 @@
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEgresos.Size = new System.Drawing.Size(567, 144);
-            this.dgvEgresos.TabIndex = 28;
+            this.dgvEgresos.TabIndex = 1;
             // 
             // CodEgreso
             // 
@@ -210,7 +210,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(498, 126);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 24);
-            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Anular";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             this.button1.Location = new System.Drawing.Point(496, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 61);
-            this.button1.TabIndex = 30;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Cerrar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;

@@ -20,12 +20,12 @@ namespace CapaVista.Reportes
         private string placa;
         private string conductor;
         private string socio;
-        private string ingreso;
-        private string egreso;
-        private string total;
+        private decimal ingreso;
+        private decimal egreso;
+        private decimal total;
 
-        public TicketFisicoForm(int transac, string fecha, string cajerp, string placa, string conductor, string socio, string ingreso
-            , string egreso, string total)
+        public TicketFisicoForm(int transac, string fecha, string cajerp, string placa, string conductor, string socio, decimal ingreso
+            , decimal egreso, decimal total)
         {
             InitializeComponent();
             this.transac = transac;

@@ -78,7 +78,7 @@
             this.paneDatosPersonales.Name = "paneDatosPersonales";
             this.paneDatosPersonales.Size = new System.Drawing.Size(572, 216);
             this.paneDatosPersonales.Style = MetroFramework.MetroColorStyle.Silver;
-            this.paneDatosPersonales.TabIndex = 13;
+            this.paneDatosPersonales.TabIndex = 0;
             this.paneDatosPersonales.Theme = MetroFramework.MetroThemeStyle.Light;
             this.paneDatosPersonales.VerticalScrollbarBarColor = true;
             this.paneDatosPersonales.VerticalScrollbarHighlightOnWheel = false;
@@ -95,7 +95,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(440, 143);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
-            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(339, 143);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 58);
-            this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             this.dtpF_asociacion.Location = new System.Drawing.Point(164, 153);
             this.dtpF_asociacion.Name = "dtpF_asociacion";
             this.dtpF_asociacion.Size = new System.Drawing.Size(109, 20);
-            this.dtpF_asociacion.TabIndex = 15;
+            this.dtpF_asociacion.TabIndex = 4;
             // 
             // metroLabel4
             // 
@@ -141,7 +141,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(30, 118);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(58, 19);
             this.metroLabel3.TabIndex = 13;
             this.metroLabel3.Text = "Teléfono";
             // 
@@ -150,7 +150,7 @@
             this.lblDatosPersonales.AutoSize = true;
             this.lblDatosPersonales.Location = new System.Drawing.Point(3, 4);
             this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(108, 19);
+            this.lblDatosPersonales.Size = new System.Drawing.Size(107, 19);
             this.lblDatosPersonales.TabIndex = 12;
             this.lblDatosPersonales.Text = "Datos Personales";
             // 
@@ -169,7 +169,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(360, 114);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(155, 23);
-            this.txtCorreo.TabIndex = 5;
+            this.txtCorreo.TabIndex = 6;
             // 
             // txtDirecion
             // 
@@ -177,7 +177,7 @@
             this.txtDirecion.Multiline = true;
             this.txtDirecion.Name = "txtDirecion";
             this.txtDirecion.Size = new System.Drawing.Size(155, 75);
-            this.txtDirecion.TabIndex = 4;
+            this.txtDirecion.TabIndex = 5;
             // 
             // lblCedula
             // 

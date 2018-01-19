@@ -62,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ingresoTotalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IngresoEntreFechas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTotal
@@ -85,7 +86,7 @@
             this.dgvTotal.RowHeadersVisible = false;
             this.dgvTotal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTotal.Size = new System.Drawing.Size(636, 207);
-            this.dgvTotal.TabIndex = 2;
+            this.dgvTotal.TabIndex = 6;
             this.dgvTotal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTotal_CellContentClick);
             // 
             // idVehiculoDataGridViewTextBoxColumn
@@ -125,12 +126,12 @@
             this.verDetalles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verDetallesToolStripMenuItem});
             this.verDetalles.Name = "verDetalles";
-            this.verDetalles.Size = new System.Drawing.Size(136, 26);
+            this.verDetalles.Size = new System.Drawing.Size(135, 26);
             // 
             // verDetallesToolStripMenuItem
             // 
             this.verDetallesToolStripMenuItem.Name = "verDetallesToolStripMenuItem";
-            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.verDetallesToolStripMenuItem.Text = "&Ver Detalles";
             this.verDetallesToolStripMenuItem.Click += new System.EventHandler(this.verDetallesToolStripMenuItem_Click);
             // 
@@ -159,7 +160,7 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(23, 69);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(55, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(54, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Por dia:";
             // 
@@ -168,8 +169,8 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(21, 346);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(88, 19);
-            this.metroLabel2.TabIndex = 3;
+            this.metroLabel2.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel2.TabIndex = 7;
             this.metroLabel2.Text = "Ingreso Total:";
             // 
             // metroLabel3
@@ -177,8 +178,8 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(212, 346);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(85, 19);
-            this.metroLabel3.TabIndex = 4;
+            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel3.TabIndex = 9;
             this.metroLabel3.Text = "Egreso Total:";
             // 
             // metroLabel4
@@ -186,8 +187,8 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(414, 346);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(90, 19);
-            this.metroLabel4.TabIndex = 5;
+            this.metroLabel4.Size = new System.Drawing.Size(88, 19);
+            this.metroLabel4.TabIndex = 11;
             this.metroLabel4.Text = "Utilidad Total:";
             // 
             // txtIngreso
@@ -201,7 +202,7 @@
             this.txtIngreso.Name = "txtIngreso";
             this.txtIngreso.ReadOnly = true;
             this.txtIngreso.Size = new System.Drawing.Size(109, 19);
-            this.txtIngreso.TabIndex = 6;
+            this.txtIngreso.TabIndex = 8;
             this.txtIngreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtEgreso
@@ -215,7 +216,7 @@
             this.txtEgreso.Name = "txtEgreso";
             this.txtEgreso.ReadOnly = true;
             this.txtEgreso.Size = new System.Drawing.Size(118, 19);
-            this.txtEgreso.TabIndex = 7;
+            this.txtEgreso.TabIndex = 10;
             this.txtEgreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtTotal
@@ -229,7 +230,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(140, 19);
-            this.txtTotal.TabIndex = 8;
+            this.txtTotal.TabIndex = 12;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnCerrar
@@ -242,7 +243,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(556, 69);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(78, 46);
-            this.btnCerrar.TabIndex = 9;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -258,7 +259,7 @@
             this.btnPrint.Location = new System.Drawing.Point(463, 68);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(87, 46);
-            this.btnPrint.TabIndex = 10;
+            this.btnPrint.TabIndex = 4;
             this.btnPrint.Text = "Imprimir";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -269,7 +270,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(463, 22);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(136, 23);
-            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "--";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -282,7 +283,7 @@
             this.groupBox1.Location = new System.Drawing.Point(149, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(271, 45);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entre Fechas:";
             // 
@@ -291,7 +292,7 @@
             this.lblFiltrar.Location = new System.Drawing.Point(215, 16);
             this.lblFiltrar.Name = "lblFiltrar";
             this.lblFiltrar.Size = new System.Drawing.Size(48, 23);
-            this.lblFiltrar.TabIndex = 4;
+            this.lblFiltrar.TabIndex = 2;
             this.lblFiltrar.Text = "Filtrar";
             this.lblFiltrar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.lblFiltrar.UseStyleColors = true;
@@ -304,7 +305,7 @@
             this.dtFechaFin.Location = new System.Drawing.Point(113, 19);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(96, 20);
-            this.dtFechaFin.TabIndex = 3;
+            this.dtFechaFin.TabIndex = 1;
             // 
             // dtFechaInicio
             // 
@@ -313,7 +314,7 @@
             this.dtFechaInicio.Location = new System.Drawing.Point(6, 19);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(96, 20);
-            this.dtFechaInicio.TabIndex = 2;
+            this.dtFechaInicio.TabIndex = 0;
             // 
             // ingreso_TotalTableAdapter
             // 
@@ -350,6 +351,8 @@
             this.verDetalles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ingresoTotalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IngresoEntreFechas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

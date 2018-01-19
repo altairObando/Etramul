@@ -195,7 +195,7 @@
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.Location = new System.Drawing.Point(31, 59);
             this.lblPlaca.Name = "lblPlaca";
-            this.lblPlaca.Size = new System.Drawing.Size(93, 19);
+            this.lblPlaca.Size = new System.Drawing.Size(92, 19);
             this.lblPlaca.TabIndex = 3;
             this.lblPlaca.Text = "Placa Vehiculo";
             // 

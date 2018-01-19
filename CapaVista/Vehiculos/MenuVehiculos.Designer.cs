@@ -211,7 +211,7 @@
             this.btnGastos.Location = new System.Drawing.Point(564, 3);
             this.btnGastos.Name = "btnGastos";
             this.btnGastos.Size = new System.Drawing.Size(85, 54);
-            this.btnGastos.TabIndex = 5;
+            this.btnGastos.TabIndex = 6;
             this.btnGastos.Text = "Gastos Rubro";
             this.btnGastos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -227,7 +227,7 @@
             this.btnReload.Location = new System.Drawing.Point(635, 3);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(85, 54);
-            this.btnReload.TabIndex = 6;
+            this.btnReload.TabIndex = 7;
             this.btnReload.Text = "Actualizar";
             this.btnReload.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -243,7 +243,7 @@
             this.btnTotal.Location = new System.Drawing.Point(484, 3);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(85, 54);
-            this.btnTotal.TabIndex = 4;
+            this.btnTotal.TabIndex = 5;
             this.btnTotal.Text = "Ingresos Hoy";
             this.btnTotal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTotal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -259,7 +259,7 @@
             this.btnSalir.Location = new System.Drawing.Point(726, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(85, 54);
-            this.btnSalir.TabIndex = 7;
+            this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Cerrar";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -275,7 +275,7 @@
             this.btnCarrera.Location = new System.Drawing.Point(393, 3);
             this.btnCarrera.Name = "btnCarrera";
             this.btnCarrera.Size = new System.Drawing.Size(85, 54);
-            this.btnCarrera.TabIndex = 3;
+            this.btnCarrera.TabIndex = 4;
             this.btnCarrera.Text = "Nueva Carrera";
             this.btnCarrera.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCarrera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -292,7 +292,7 @@
             this.btnSocios.Location = new System.Drawing.Point(300, 3);
             this.btnSocios.Name = "btnSocios";
             this.btnSocios.Size = new System.Drawing.Size(75, 54);
-            this.btnSocios.TabIndex = 2;
+            this.btnSocios.TabIndex = 3;
             this.btnSocios.Text = "Socios";
             this.btnSocios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSocios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -308,7 +308,7 @@
             this.btnModificar.Location = new System.Drawing.Point(208, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 54);
-            this.btnModificar.TabIndex = 1;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -324,7 +324,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(117, 3);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 54);
-            this.btnNuevo.TabIndex = 0;
+            this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -336,8 +336,8 @@
             this.lbltitulo.AutoSize = true;
             this.lbltitulo.Location = new System.Drawing.Point(3, 9);
             this.lbltitulo.Name = "lbltitulo";
-            this.lbltitulo.Size = new System.Drawing.Size(88, 38);
-            this.lbltitulo.TabIndex = 8;
+            this.lbltitulo.Size = new System.Drawing.Size(87, 38);
+            this.lbltitulo.TabIndex = 0;
             this.lbltitulo.Text = "Operaciones \r\ncon Vehiculos";
             // 
             // MenuConductores

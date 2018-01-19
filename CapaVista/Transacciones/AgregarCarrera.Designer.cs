@@ -148,7 +148,7 @@
             this.txtIngreso.Mask = "$ 99999.99";
             this.txtIngreso.Name = "txtIngreso";
             this.txtIngreso.Size = new System.Drawing.Size(189, 20);
-            this.txtIngreso.TabIndex = 6;
+            this.txtIngreso.TabIndex = 5;
             this.txtIngreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblIngresos
@@ -156,7 +156,7 @@
             this.lblIngresos.AutoSize = true;
             this.lblIngresos.Location = new System.Drawing.Point(257, 175);
             this.lblIngresos.Name = "lblIngresos";
-            this.lblIngresos.Size = new System.Drawing.Size(85, 19);
+            this.lblIngresos.Size = new System.Drawing.Size(83, 19);
             this.lblIngresos.TabIndex = 12;
             this.lblIngresos.Text = "Ingreso Total";
             // 
@@ -168,7 +168,7 @@
             this.cbVueltaCompleta.Location = new System.Drawing.Point(62, 174);
             this.cbVueltaCompleta.Name = "cbVueltaCompleta";
             this.cbVueltaCompleta.Size = new System.Drawing.Size(116, 15);
-            this.cbVueltaCompleta.TabIndex = 2;
+            this.cbVueltaCompleta.TabIndex = 6;
             this.cbVueltaCompleta.Text = "Vuelta Completa?";
             this.cbVueltaCompleta.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +186,7 @@
             this.lblVehiculo.AutoSize = true;
             this.lblVehiculo.Location = new System.Drawing.Point(6, 95);
             this.lblVehiculo.Name = "lblVehiculo";
-            this.lblVehiculo.Size = new System.Drawing.Size(123, 19);
+            this.lblVehiculo.Size = new System.Drawing.Size(122, 19);
             this.lblVehiculo.TabIndex = 11;
             this.lblVehiculo.Text = "Seleccione Vehiculo";
             // 
@@ -196,7 +196,7 @@
             this.dtFecha.Location = new System.Drawing.Point(318, 63);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtFecha.TabIndex = 3;
+            this.dtFecha.TabIndex = 2;
             // 
             // lblFechaCarrera
             // 
@@ -213,7 +213,7 @@
             this.dtLlegada.Location = new System.Drawing.Point(422, 126);
             this.dtLlegada.Name = "dtLlegada";
             this.dtLlegada.Size = new System.Drawing.Size(122, 20);
-            this.dtLlegada.TabIndex = 5;
+            this.dtLlegada.TabIndex = 4;
             // 
             // dtSalida
             // 
@@ -221,7 +221,7 @@
             this.dtSalida.Location = new System.Drawing.Point(291, 126);
             this.dtSalida.Name = "dtSalida";
             this.dtSalida.Size = new System.Drawing.Size(125, 20);
-            this.dtSalida.TabIndex = 4;
+            this.dtSalida.TabIndex = 3;
             // 
             // lblLlegada
             // 
@@ -298,7 +298,7 @@
             this.txtMonto.RejectInputOnFirstFailure = true;
             this.txtMonto.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtMonto.Size = new System.Drawing.Size(100, 20);
-            this.txtMonto.TabIndex = 2;
+            this.txtMonto.TabIndex = 6;
             this.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvEgresos
@@ -321,7 +321,7 @@
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEgresos.Size = new System.Drawing.Size(560, 96);
-            this.dgvEgresos.TabIndex = 4;
+            this.dgvEgresos.TabIndex = 8;
             // 
             // CodEgreso
             // 
@@ -381,7 +381,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(397, 41);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(68, 19);
-            this.metroLabel2.TabIndex = 8;
+            this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Monto C$";
             // 
             // metroLabel1
@@ -390,7 +390,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(192, 43);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(76, 19);
-            this.metroLabel1.TabIndex = 7;
+            this.metroLabel1.TabIndex = 3;
             this.metroLabel1.Text = "Descripcion";
             // 
             // txtDescripcion
@@ -398,14 +398,16 @@
             this.txtDescripcion.Location = new System.Drawing.Point(192, 69);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(196, 23);
-            this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.Text = "SIN DEFINIR";
+            this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(508, 65);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(58, 29);
-            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -417,7 +419,7 @@
             this.cboEgresos.Location = new System.Drawing.Point(6, 63);
             this.cboEgresos.Name = "cboEgresos";
             this.cboEgresos.Size = new System.Drawing.Size(182, 29);
-            this.cboEgresos.TabIndex = 0;
+            this.cboEgresos.TabIndex = 2;
             // 
             // lblAgregar
             // 
@@ -425,7 +427,7 @@
             this.lblAgregar.Location = new System.Drawing.Point(6, 41);
             this.lblAgregar.Name = "lblAgregar";
             this.lblAgregar.Size = new System.Drawing.Size(97, 19);
-            this.lblAgregar.TabIndex = 3;
+            this.lblAgregar.TabIndex = 1;
             this.lblAgregar.Text = "Añadir Egresos";
             // 
             // lblEgresos
@@ -434,7 +436,7 @@
             this.lblEgresos.Location = new System.Drawing.Point(6, 11);
             this.lblEgresos.Name = "lblEgresos";
             this.lblEgresos.Size = new System.Drawing.Size(91, 19);
-            this.lblEgresos.TabIndex = 2;
+            this.lblEgresos.TabIndex = 0;
             this.lblEgresos.Text = "Datos Egresos";
             // 
             // btnGuardar
@@ -446,7 +448,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(421, 507);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(87, 56);
-            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -461,7 +463,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(502, 507);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(87, 56);
-            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;

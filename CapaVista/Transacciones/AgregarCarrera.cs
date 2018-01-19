@@ -164,17 +164,17 @@ namespace CapaVista
                                     //var cond = ConductorController.leer(ultima.Id_conductor);
                                     //Creando instancia de reporte
                                     TicketFisicoForm ticket = new TicketFisicoForm(
-                                        ultima.Id_carrera,
+                                        CapaControlador.TransaccionController.getUltima().IdTransaccion,
                                         ultima.FechaCarrera.ToShortDateString(),
                                         MainContainer.sesion.ToString(),
                                         ultima.Vehiculo.Placa,
                                         ultima.Vehiculo.Socio.ToString(),
                                         cboConductor.SelectedItem.ToString(),
-                                        ingreso.ToString(),
-                                        totalEgreso.ToString(),
-                                        (ingreso - totalEgreso).ToString()
+                                        ingreso,
+                                        totalEgreso,
+                                        (ingreso - totalEgreso)
                                         );
-                                    ticket.Show();
+                                    ticket.ShowDialog();
                                 }
                                 limpiarControles();
                                 actualizarNoFactura();

@@ -177,7 +177,7 @@
     <value>320, 285</value>
   </data>
   <data name="gbIngreso.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="gbIngreso.Text" xml:space="preserve">
     <value>Ingresos</value>
@@ -306,7 +306,7 @@
     <value>26, 25</value>
   </data>
   <data name="txtUnidad.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtUnidad.Text" xml:space="preserve">
     <value>--</value>
@@ -330,7 +330,7 @@
     <value>109, 20</value>
   </data>
   <data name="dtFecha.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;dtFecha.Name" xml:space="preserve">
     <value>dtFecha</value>
@@ -351,7 +351,7 @@
     <value>98, 23</value>
   </data>
   <data name="metroLink1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="metroLink1.Text" xml:space="preserve">
     <value>Cambiar Fecha</value>
@@ -378,7 +378,7 @@
     <value>58, 25</value>
   </data>
   <data name="lblTotal.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>9</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
     <value>Total: </value>
@@ -405,7 +405,7 @@
     <value>58, 25</value>
   </data>
   <data name="metroLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="metroLabel1.Text" xml:space="preserve">
     <value>Total: </value>
@@ -432,7 +432,7 @@
     <value>114, 25</value>
   </data>
   <data name="metroLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>13</value>
   </data>
   <data name="metroLabel2.Text" xml:space="preserve">
     <value>Utilidad total</value>
@@ -462,7 +462,7 @@
     <value>100, 25</value>
   </data>
   <data name="txtIngresos.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>10</value>
   </data>
   <data name="txtIngresos.Text" xml:space="preserve">
     <value>C$ -</value>
@@ -496,7 +496,7 @@
     <value>100, 25</value>
   </data>
   <data name="txtEgresos.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>12</value>
   </data>
   <data name="txtEgresos.Text" xml:space="preserve">
     <value>C$ -</value>
@@ -529,7 +529,7 @@
     <value>100, 25</value>
   </data>
   <data name="txtTotal.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>14</value>
   </data>
   <data name="txtTotal.Text" xml:space="preserve">
     <value>C$ -</value>
@@ -562,7 +562,7 @@
     <value>64, 58</value>
   </data>
   <data name="btnCerrar.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="btnCerrar.Text" xml:space="preserve">
     <value>Cerrar</value>
@@ -598,7 +598,7 @@
     <value>64, 58</value>
   </data>
   <data name="btnPrint.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>Imprimir</value>
@@ -628,7 +628,7 @@
     <value>47, 23</value>
   </data>
   <data name="lblFiltrar.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="lblFiltrar.Text" xml:space="preserve">
     <value>Filtrar</value>
@@ -655,7 +655,7 @@
     <value>95, 20</value>
   </data>
   <data name="dtFechaFin.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;dtFechaFin.Name" xml:space="preserve">
     <value>dtFechaFin</value>
@@ -679,7 +679,7 @@
     <value>95, 20</value>
   </data>
   <data name="dtFechaInicio.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;dtFechaInicio.Name" xml:space="preserve">
     <value>dtFechaInicio</value>
@@ -703,7 +703,7 @@
     <value>261, 58</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Entre Fechas</value>

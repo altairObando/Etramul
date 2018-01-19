@@ -88,7 +88,7 @@
             this.dgvSocio.RowHeadersVisible = false;
             this.dgvSocio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSocio.Size = new System.Drawing.Size(866, 269);
-            this.dgvSocio.TabIndex = 0;
+            this.dgvSocio.TabIndex = 4;
             this.dgvSocio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellDoubleClick);
             // 
             // Cedula
@@ -141,7 +141,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.PromptText = "Ingrese el nombre de un socio";
             this.txtNombres.Size = new System.Drawing.Size(275, 23);
-            this.txtNombres.TabIndex = 4;
+            this.txtNombres.TabIndex = 1;
             // 
             // lblNombres
             // 
@@ -149,7 +149,7 @@
             this.lblNombres.Location = new System.Drawing.Point(29, 86);
             this.lblNombres.Name = "lblNombres";
             this.lblNombres.Size = new System.Drawing.Size(59, 19);
-            this.lblNombres.TabIndex = 5;
+            this.lblNombres.TabIndex = 0;
             this.lblNombres.Text = "Nombre";
             // 
             // btnBuscar
@@ -163,7 +163,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(380, 63);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 58);
-            this.btnBuscar.TabIndex = 17;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(461, 63);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
-            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;

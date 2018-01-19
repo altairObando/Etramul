@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="COOTRACOSAN.exe" version="1.1.0.34" publicKeyToken="0000000000000000" language="es-NI" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="COOTRACOSAN.exe" version="1.1.0.35" publicKeyToken="0000000000000000" language="es-NI" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>R3lDrN6RZDE4MzV2P2tbfKSMg46nhOOa0C2Pg4fF1Nk=</dsig:DigestValue>
+        <dsig:DigestValue>5VbjeyOnev87hpqmQ7wIpkai7cHgZnwlgXtPV2gxXIU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aZXx+CnXCFJ59z4vnEsi6sHqmtSRpeX2dpSmOoxTerI=</dsig:DigestValue>
+        <dsig:DigestValue>Vx3vqT3mm9iBSOow7RR4g6iVYVQUfAouOP1pTzrp+jQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="4465664">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="4836864">
       <assemblyIdentity name="COOTRACOSAN" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tvfng/gC6B7Z8IibdryOfwvag0nKp755Xc0sraQBAI8=</dsig:DigestValue>
+        <dsig:DigestValue>n1QYRcQJummRkHpfJmFHVgG6gzQuBBXNOh9/FdHn5kM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D+TS2mtn4Wn0YZLrM/6SLyvq6dU8QXj0Odl3nUweYt4=</dsig:DigestValue>
+        <dsig:DigestValue>TMcwAef1RAGpH+zrlIlHd5ZwbBlt8rt+snxpH/JfSTg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -258,13 +258,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="COOTRACOSAN.exe.config" size="2072">
+  <file name="COOTRACOSAN.exe.config" size="2073">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>T/mfZElFvjtwZaNl32E2fkW2o4DG7m2kqK4fd0uv8Yw=</dsig:DigestValue>
+      <dsig:DigestValue>TBlUb4OmuYcrSN75IiNMZQyqzK3p5JvR+EBWQt60nHc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon.ico" size="370070">

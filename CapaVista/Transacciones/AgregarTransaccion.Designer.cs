@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarTransaccion));
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
             this.lblNoFactura = new MetroFramework.Controls.MetroLabel();
             this.lblFactura = new MetroFramework.Controls.MetroLabel();
@@ -40,6 +41,7 @@
             this.lblConductor = new MetroFramework.Controls.MetroLabel();
             this.lblDatosGeneral = new MetroFramework.Controls.MetroLabel();
             this.mpEgresos = new MetroFramework.Controls.MetroPanel();
+            this.btnCarrera = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,11 +49,6 @@
             this.rbtnIngreso = new System.Windows.Forms.RadioButton();
             this.txtMonto = new System.Windows.Forms.MaskedTextBox();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
-            this.CodEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoTransaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OpcionesBasicas = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarRegistroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -65,7 +62,12 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblUser = new MetroFramework.Controls.MetroLink();
             this.lblSalir = new MetroFramework.Controls.MetroLink();
-            this.btnCarrera = new System.Windows.Forms.Button();
+            this.CodEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoTransaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cambiarTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDatos.SuspendLayout();
             this.mpEgresos.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,7 +113,7 @@
             this.lblFactura.AutoSize = true;
             this.lblFactura.Location = new System.Drawing.Point(178, 10);
             this.lblFactura.Name = "lblFactura";
-            this.lblFactura.Size = new System.Drawing.Size(59, 19);
+            this.lblFactura.Size = new System.Drawing.Size(58, 19);
             this.lblFactura.TabIndex = 4;
             this.lblFactura.Text = "Factura: ";
             // 
@@ -146,7 +148,7 @@
             this.lblFechaCarrera.AutoSize = true;
             this.lblFechaCarrera.Location = new System.Drawing.Point(321, 36);
             this.lblFechaCarrera.Name = "lblFechaCarrera";
-            this.lblFechaCarrera.Size = new System.Drawing.Size(115, 19);
+            this.lblFechaCarrera.Size = new System.Drawing.Size(113, 19);
             this.lblFechaCarrera.TabIndex = 8;
             this.lblFechaCarrera.Text = "Fecha Transacción";
             // 
@@ -164,7 +166,7 @@
             this.lblConductor.AutoSize = true;
             this.lblConductor.Location = new System.Drawing.Point(6, 36);
             this.lblConductor.Name = "lblConductor";
-            this.lblConductor.Size = new System.Drawing.Size(123, 19);
+            this.lblConductor.Size = new System.Drawing.Size(122, 19);
             this.lblConductor.TabIndex = 3;
             this.lblConductor.Text = "Seleccione Vehiculo";
             // 
@@ -198,11 +200,21 @@
             this.mpEgresos.HorizontalScrollbarSize = 10;
             this.mpEgresos.Location = new System.Drawing.Point(23, 195);
             this.mpEgresos.Name = "mpEgresos";
-            this.mpEgresos.Size = new System.Drawing.Size(571, 283);
+            this.mpEgresos.Size = new System.Drawing.Size(571, 405);
             this.mpEgresos.TabIndex = 1;
             this.mpEgresos.VerticalScrollbarBarColor = true;
             this.mpEgresos.VerticalScrollbarHighlightOnWheel = false;
             this.mpEgresos.VerticalScrollbarSize = 10;
+            // 
+            // btnCarrera
+            // 
+            this.btnCarrera.Location = new System.Drawing.Point(318, 14);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(118, 33);
+            this.btnCarrera.TabIndex = 9;
+            this.btnCarrera.Text = "Registrar Viaje";
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
             // 
             // btnResumen
             // 
@@ -219,7 +231,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(6, 14);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(121, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(119, 19);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "Detalle Transacción";
             // 
@@ -227,17 +239,18 @@
             // 
             this.panel1.Controls.Add(this.rbtnEgreso);
             this.panel1.Controls.Add(this.rbtnIngreso);
-            this.panel1.Location = new System.Drawing.Point(120, 50);
+            this.panel1.Location = new System.Drawing.Point(120, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(147, 26);
+            this.panel1.Size = new System.Drawing.Size(100, 68);
             this.panel1.TabIndex = 0;
             // 
             // rbtnEgreso
             // 
             this.rbtnEgreso.AutoSize = true;
-            this.rbtnEgreso.Location = new System.Drawing.Point(68, 6);
+            this.rbtnEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnEgreso.Location = new System.Drawing.Point(3, 36);
             this.rbtnEgreso.Name = "rbtnEgreso";
-            this.rbtnEgreso.Size = new System.Drawing.Size(58, 17);
+            this.rbtnEgreso.Size = new System.Drawing.Size(89, 28);
             this.rbtnEgreso.TabIndex = 1;
             this.rbtnEgreso.Text = "Egreso";
             this.rbtnEgreso.UseVisualStyleBackColor = true;
@@ -246,9 +259,10 @@
             // 
             this.rbtnIngreso.AutoSize = true;
             this.rbtnIngreso.Checked = true;
+            this.rbtnIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnIngreso.Location = new System.Drawing.Point(3, 6);
             this.rbtnIngreso.Name = "rbtnIngreso";
-            this.rbtnIngreso.Size = new System.Drawing.Size(60, 17);
+            this.rbtnIngreso.Size = new System.Drawing.Size(91, 28);
             this.rbtnIngreso.TabIndex = 0;
             this.rbtnIngreso.TabStop = true;
             this.rbtnIngreso.Text = "Ingreso";
@@ -256,7 +270,7 @@
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(394, 108);
+            this.txtMonto.Location = new System.Drawing.Point(394, 129);
             this.txtMonto.Mask = "$ 999999.99";
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.RejectInputOnFirstFailure = true;
@@ -268,7 +282,6 @@
             // dgvEgresos
             // 
             this.dgvEgresos.AllowUserToAddRows = false;
-            this.dgvEgresos.AllowUserToDeleteRows = false;
             this.dgvEgresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEgresos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvEgresos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -280,50 +293,20 @@
             this.TipoTransaccion,
             this.monto});
             this.dgvEgresos.ContextMenuStrip = this.OpcionesBasicas;
-            this.dgvEgresos.Location = new System.Drawing.Point(6, 141);
+            this.dgvEgresos.Location = new System.Drawing.Point(6, 163);
             this.dgvEgresos.Name = "dgvEgresos";
-            this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(560, 139);
+            this.dgvEgresos.Size = new System.Drawing.Size(560, 239);
             this.dgvEgresos.TabIndex = 5;
-            // 
-            // CodEgreso
-            // 
-            this.CodEgreso.HeaderText = "Codigo";
-            this.CodEgreso.Name = "CodEgreso";
-            this.CodEgreso.ReadOnly = true;
-            // 
-            // Egreso
-            // 
-            this.Egreso.HeaderText = "Tipo Detalle";
-            this.Egreso.Name = "Egreso";
-            this.Egreso.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // TipoTransaccion
-            // 
-            this.TipoTransaccion.HeaderText = "Tipo Transacción";
-            this.TipoTransaccion.Name = "TipoTransaccion";
-            this.TipoTransaccion.ReadOnly = true;
-            // 
-            // monto
-            // 
-            this.monto.HeaderText = "Monto Total";
-            this.monto.Name = "monto";
-            this.monto.ReadOnly = true;
             // 
             // OpcionesBasicas
             // 
             this.OpcionesBasicas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eliminarRegistroToolStripMenuItem});
+            this.eliminarRegistroToolStripMenuItem,
+            this.cambiarTipoToolStripMenuItem});
             this.OpcionesBasicas.Name = "OpcionesBasicas";
-            this.OpcionesBasicas.Size = new System.Drawing.Size(161, 26);
+            this.OpcionesBasicas.Size = new System.Drawing.Size(161, 48);
             // 
             // eliminarRegistroToolStripMenuItem
             // 
@@ -335,7 +318,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(397, 80);
+            this.metroLabel2.Location = new System.Drawing.Point(397, 101);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(68, 19);
             this.metroLabel2.TabIndex = 8;
@@ -344,7 +327,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(192, 82);
+            this.metroLabel1.Location = new System.Drawing.Point(192, 103);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(76, 19);
             this.metroLabel1.TabIndex = 7;
@@ -352,15 +335,16 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(192, 108);
+            this.txtDescripcion.Location = new System.Drawing.Point(192, 129);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(196, 23);
             this.txtDescripcion.TabIndex = 2;
-            this.txtDescripcion.Text = " - - - - - ";
+            this.txtDescripcion.Text = " SIN DEFINIR";
+            this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(508, 104);
+            this.btnAgregar.Location = new System.Drawing.Point(508, 125);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(58, 29);
             this.btnAgregar.TabIndex = 4;
@@ -372,7 +356,7 @@
             // 
             this.cboEgresos.FormattingEnabled = true;
             this.cboEgresos.ItemHeight = 23;
-            this.cboEgresos.Location = new System.Drawing.Point(6, 102);
+            this.cboEgresos.Location = new System.Drawing.Point(6, 123);
             this.cboEgresos.Name = "cboEgresos";
             this.cboEgresos.Size = new System.Drawing.Size(182, 29);
             this.cboEgresos.TabIndex = 1;
@@ -380,7 +364,7 @@
             // lblAgregar
             // 
             this.lblAgregar.AutoSize = true;
-            this.lblAgregar.Location = new System.Drawing.Point(6, 80);
+            this.lblAgregar.Location = new System.Drawing.Point(6, 101);
             this.lblAgregar.Name = "lblAgregar";
             this.lblAgregar.Size = new System.Drawing.Size(98, 19);
             this.lblAgregar.TabIndex = 8;
@@ -391,7 +375,7 @@
             this.lblEgresos.AutoSize = true;
             this.lblEgresos.Location = new System.Drawing.Point(6, 50);
             this.lblEgresos.Name = "lblEgresos";
-            this.lblEgresos.Size = new System.Drawing.Size(110, 19);
+            this.lblEgresos.Size = new System.Drawing.Size(108, 19);
             this.lblEgresos.TabIndex = 7;
             this.lblEgresos.Text = "Tipo Transacción:";
             // 
@@ -404,7 +388,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::CapaVista.Properties.Resources.close_button;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(515, 484);
+            this.btnCancelar.Location = new System.Drawing.Point(519, 606);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
             this.btnCancelar.TabIndex = 4;
@@ -422,7 +406,7 @@
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardar.Image = global::CapaVista.Properties.Resources.save;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(417, 484);
+            this.btnGuardar.Location = new System.Drawing.Point(421, 606);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 58);
             this.btnGuardar.TabIndex = 3;
@@ -451,32 +435,55 @@
             this.lblSalir.UseStyleColors = true;
             this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
             // 
-            // btnCarrera
+            // CodEgreso
             // 
-            this.btnCarrera.Location = new System.Drawing.Point(318, 14);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(118, 33);
-            this.btnCarrera.TabIndex = 9;
-            this.btnCarrera.Text = "Registrar Viaje";
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
+            this.CodEgreso.HeaderText = "Codigo";
+            this.CodEgreso.Name = "CodEgreso";
+            // 
+            // Egreso
+            // 
+            this.Egreso.HeaderText = "Tipo Detalle";
+            this.Egreso.Name = "Egreso";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            // 
+            // TipoTransaccion
+            // 
+            this.TipoTransaccion.HeaderText = "Tipo Transacción";
+            this.TipoTransaccion.Name = "TipoTransaccion";
+            this.TipoTransaccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // monto
+            // 
+            this.monto.HeaderText = "Monto Total";
+            this.monto.Name = "monto";
+            // 
+            // cambiarTipoToolStripMenuItem
+            // 
+            this.cambiarTipoToolStripMenuItem.Name = "cambiarTipoToolStripMenuItem";
+            this.cambiarTipoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.cambiarTipoToolStripMenuItem.Text = "Cambiar Tipo";
+            this.cambiarTipoToolStripMenuItem.Click += new System.EventHandler(this.cambiarTipoToolStripMenuItem_Click);
             // 
             // AgregarTransaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 541);
+            this.ClientSize = new System.Drawing.Size(613, 687);
             this.Controls.Add(this.lblSalir);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.mpEgresos);
             this.Controls.Add(this.panelDatos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarTransaccion";
             this.Resizable = false;
-            this.ShowInTaskbar = false;
             this.Text = "Agregar Transaccion";
             this.Load += new System.EventHandler(this.AgregarTransaccion_Load);
             this.panelDatos.ResumeLayout(false);
@@ -516,11 +523,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rbtnEgreso;
         private System.Windows.Forms.RadioButton rbtnIngreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodEgreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Egreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoTransaccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         public MetroFramework.Controls.MetroComboBox cboVehiculo;
@@ -530,5 +532,11 @@
         private MetroFramework.Controls.MetroLink lblUser;
         private MetroFramework.Controls.MetroLink lblSalir;
         private System.Windows.Forms.Button btnCarrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodEgreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Egreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoTransaccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
+        private System.Windows.Forms.ToolStripMenuItem cambiarTipoToolStripMenuItem;
     }
 }

@@ -97,7 +97,7 @@
             this.paneDatosPersonales.Name = "paneDatosPersonales";
             this.paneDatosPersonales.Size = new System.Drawing.Size(580, 202);
             this.paneDatosPersonales.Style = MetroFramework.MetroColorStyle.Silver;
-            this.paneDatosPersonales.TabIndex = 14;
+            this.paneDatosPersonales.TabIndex = 0;
             this.paneDatosPersonales.Theme = MetroFramework.MetroThemeStyle.Light;
             this.paneDatosPersonales.VerticalScrollbarBarColor = true;
             this.paneDatosPersonales.VerticalScrollbarHighlightOnWheel = false;
@@ -127,7 +127,7 @@
             this.rbtnInactivo.Location = new System.Drawing.Point(81, 3);
             this.rbtnInactivo.Name = "rbtnInactivo";
             this.rbtnInactivo.Size = new System.Drawing.Size(63, 17);
-            this.rbtnInactivo.TabIndex = 17;
+            this.rbtnInactivo.TabIndex = 1;
             this.rbtnInactivo.Text = "Inactivo";
             this.rbtnInactivo.UseVisualStyleBackColor = true;
             // 
@@ -138,7 +138,7 @@
             this.rbtnActivo.Location = new System.Drawing.Point(3, 3);
             this.rbtnActivo.Name = "rbtnActivo";
             this.rbtnActivo.Size = new System.Drawing.Size(55, 17);
-            this.rbtnActivo.TabIndex = 16;
+            this.rbtnActivo.TabIndex = 0;
             this.rbtnActivo.TabStop = true;
             this.rbtnActivo.Text = "Activo";
             this.rbtnActivo.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             this.dtpF_asociacion.Location = new System.Drawing.Point(164, 153);
             this.dtpF_asociacion.Name = "dtpF_asociacion";
             this.dtpF_asociacion.Size = new System.Drawing.Size(109, 20);
-            this.dtpF_asociacion.TabIndex = 15;
+            this.dtpF_asociacion.TabIndex = 4;
             // 
             // metroLabel4
             // 
@@ -165,7 +165,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(30, 118);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(58, 19);
             this.metroLabel3.TabIndex = 13;
             this.metroLabel3.Text = "Teléfono";
             // 
@@ -174,7 +174,7 @@
             this.lblDatosPersonales.AutoSize = true;
             this.lblDatosPersonales.Location = new System.Drawing.Point(3, 4);
             this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(108, 19);
+            this.lblDatosPersonales.Size = new System.Drawing.Size(107, 19);
             this.lblDatosPersonales.TabIndex = 12;
             this.lblDatosPersonales.Text = "Datos Personales";
             // 
@@ -193,7 +193,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(360, 114);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(196, 23);
-            this.txtCorreo.TabIndex = 5;
+            this.txtCorreo.TabIndex = 6;
             // 
             // txtDirecion
             // 
@@ -201,7 +201,7 @@
             this.txtDirecion.Multiline = true;
             this.txtDirecion.Name = "txtDirecion";
             this.txtDirecion.Size = new System.Drawing.Size(196, 75);
-            this.txtDirecion.TabIndex = 4;
+            this.txtDirecion.TabIndex = 5;
             // 
             // lblCedula
             // 
@@ -287,7 +287,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(701, 211);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Salir";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -304,7 +304,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(620, 211);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 58);
-            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(620, 138);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 58);
-            this.btnBuscar.TabIndex = 21;
+            this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -338,7 +338,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(701, 138);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 58);
-            this.btnNuevo.TabIndex = 22;
+            this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -439,7 +439,7 @@
             this.dgvSocio.RowHeadersVisible = false;
             this.dgvSocio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSocio.Size = new System.Drawing.Size(754, 187);
-            this.dgvSocio.TabIndex = 20;
+            this.dgvSocio.TabIndex = 5;
             this.dgvSocio.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSocio_CellContentClick);
             // 
             // ModificarSocio

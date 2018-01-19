@@ -201,50 +201,50 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(130, 371);
+            this.metroLabel2.Location = new System.Drawing.Point(130, 369);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(93, 19);
-            this.metroLabel2.TabIndex = 11;
+            this.metroLabel2.Size = new System.Drawing.Size(91, 19);
+            this.metroLabel2.TabIndex = 8;
             this.metroLabel2.Text = "Total Ingresos:";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(312, 371);
+            this.metroLabel3.Location = new System.Drawing.Point(312, 369);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(90, 19);
-            this.metroLabel3.TabIndex = 12;
+            this.metroLabel3.Size = new System.Drawing.Size(88, 19);
+            this.metroLabel3.TabIndex = 10;
             this.metroLabel3.Text = "Total Egresos:";
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(552, 371);
+            this.metroLabel7.Location = new System.Drawing.Point(552, 369);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(41, 19);
-            this.metroLabel7.TabIndex = 36;
+            this.metroLabel7.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel7.TabIndex = 12;
             this.metroLabel7.Text = "Total:";
             // 
             // txtIngreso
             // 
             this.txtIngreso.BackColor = System.Drawing.Color.White;
             this.txtIngreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIngreso.Location = new System.Drawing.Point(222, 376);
+            this.txtIngreso.Location = new System.Drawing.Point(222, 375);
             this.txtIngreso.Name = "txtIngreso";
             this.txtIngreso.ReadOnly = true;
             this.txtIngreso.Size = new System.Drawing.Size(89, 13);
-            this.txtIngreso.TabIndex = 7;
+            this.txtIngreso.TabIndex = 9;
             this.txtIngreso.Text = "C$ -";
             // 
             // txtEgreso
             // 
             this.txtEgreso.BackColor = System.Drawing.Color.White;
             this.txtEgreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEgreso.Location = new System.Drawing.Point(403, 376);
+            this.txtEgreso.Location = new System.Drawing.Point(403, 375);
             this.txtEgreso.Name = "txtEgreso";
             this.txtEgreso.ReadOnly = true;
             this.txtEgreso.Size = new System.Drawing.Size(89, 13);
-            this.txtEgreso.TabIndex = 8;
+            this.txtEgreso.TabIndex = 11;
             this.txtEgreso.Text = "C$ -";
             // 
             // txtTotal
@@ -255,7 +255,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(89, 13);
-            this.txtTotal.TabIndex = 9;
+            this.txtTotal.TabIndex = 13;
             this.txtTotal.Text = "C$ -";
             // 
             // lblAnuladas
@@ -263,9 +263,9 @@
             this.lblAnuladas.AutoSize = true;
             this.lblAnuladas.Location = new System.Drawing.Point(32, 369);
             this.lblAnuladas.Name = "lblAnuladas";
-            this.lblAnuladas.Size = new System.Drawing.Size(68, 19);
+            this.lblAnuladas.Size = new System.Drawing.Size(66, 19);
             this.lblAnuladas.Style = MetroFramework.MetroColorStyle.Red;
-            this.lblAnuladas.TabIndex = 10;
+            this.lblAnuladas.TabIndex = 7;
             this.lblAnuladas.Text = "*Anuladas";
             this.lblAnuladas.Theme = MetroFramework.MetroThemeStyle.Light;
             this.lblAnuladas.UseStyleColors = true;
@@ -293,7 +293,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(130, 78);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(130, 20);
-            this.txtDescripcion.TabIndex = 37;
+            this.txtDescripcion.TabIndex = 1;
             // 
             // ListaTransacciones
             // 

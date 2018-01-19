@@ -90,7 +90,7 @@
             this.txtLicencia.Location = new System.Drawing.Point(100, 153);
             this.txtLicencia.Name = "txtLicencia";
             this.txtLicencia.Size = new System.Drawing.Size(155, 23);
-            this.txtLicencia.TabIndex = 4;
+            this.txtLicencia.TabIndex = 5;
             // 
             // btnCancelar
             // 
@@ -103,7 +103,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(440, 153);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(342, 154);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 58);
-            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(30, 118);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(58, 19);
             this.metroLabel3.TabIndex = 13;
             this.metroLabel3.Text = "Teléfono";
             // 
@@ -150,8 +150,8 @@
             this.lblDatosPersonales.AutoSize = true;
             this.lblDatosPersonales.Location = new System.Drawing.Point(3, 4);
             this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(108, 19);
-            this.lblDatosPersonales.TabIndex = 12;
+            this.lblDatosPersonales.Size = new System.Drawing.Size(107, 19);
+            this.lblDatosPersonales.TabIndex = 0;
             this.lblDatosPersonales.Text = "Datos Personales";
             // 
             // metroLabel2
@@ -169,7 +169,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(360, 114);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(155, 23);
-            this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.TabIndex = 7;
             // 
             // txtDirecion
             // 
@@ -177,7 +177,7 @@
             this.txtDirecion.Multiline = true;
             this.txtDirecion.Name = "txtDirecion";
             this.txtDirecion.Size = new System.Drawing.Size(155, 75);
-            this.txtDirecion.TabIndex = 5;
+            this.txtDirecion.TabIndex = 6;
             // 
             // lblCedula
             // 
@@ -203,7 +203,7 @@
             this.txtCedula.Mask = "000-000000-0000A";
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(173, 20);
-            this.txtCedula.TabIndex = 0;
+            this.txtCedula.TabIndex = 1;
             this.txtCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTelefono
@@ -212,7 +212,7 @@
             this.txtTelefono.Mask = "0000-0000";
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(173, 20);
-            this.txtTelefono.TabIndex = 3;
+            this.txtTelefono.TabIndex = 4;
             this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNombres
@@ -222,7 +222,7 @@
             this.txtNombres.MaxLength = 50;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(173, 23);
-            this.txtNombres.TabIndex = 1;
+            this.txtNombres.TabIndex = 2;
             // 
             // lblApellidos
             // 
@@ -249,7 +249,7 @@
             this.txtApellidos.MaxLength = 50;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(173, 23);
-            this.txtApellidos.TabIndex = 2;
+            this.txtApellidos.TabIndex = 3;
             // 
             // AgregarConductor
             // 

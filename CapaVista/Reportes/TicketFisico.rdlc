@@ -133,7 +133,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Tipo</rd:DefaultName>
@@ -191,7 +193,8 @@
                             <TextRun>
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
-                                <Format>'C$'0.00;('C$'0.00)</Format>
+                                <Format>'C$' 0.00;('C$' 0.00)</Format>
+                                <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -369,7 +372,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total de gastos:        </Value>
+                <Value>Total de gastos:</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>Underline</TextDecoration>
@@ -436,7 +439,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total por Ciclo:                     </Value>
+                <Value>Total por Ciclo:</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>Underline</TextDecoration>
@@ -474,8 +477,9 @@
                 <Value>=Parameters!Egresos.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
-                  <Format>'C$'0.00;('C$'0.00)</Format>
+                  <Format>'C$' 0.00;('C$' 0.00)</Format>
                   <TextDecoration>Underline</TextDecoration>
+                  <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -509,8 +513,8 @@
               <TextRun>
                 <Value>=Parameters!Ingreso.Value</Value>
                 <Style>
-                  <Format>'C$'0.00;('C$'0.00)</Format>
-                  <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                  <Format>'C$' 0.00;('C$' 0.00)</Format>
+                  <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -545,8 +549,9 @@
                 <Value>=Parameters!Total.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
-                  <Format>'C$'0.00;('C$'0.00)</Format>
+                  <Format>'C$' 0.00;('C$' 0.00)</Format>
                   <TextDecoration>Underline</TextDecoration>
+                  <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -854,15 +859,15 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Ingreso">
-      <DataType>String</DataType>
+      <DataType>Float</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Egresos">
-      <DataType>String</DataType>
+      <DataType>Float</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Total">
-      <DataType>String</DataType>
+      <DataType>Float</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Codigo">

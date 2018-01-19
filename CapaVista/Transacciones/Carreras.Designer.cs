@@ -210,7 +210,7 @@
             this.copiarToolStripMenuItem});
             this.menu.Name = "Menu";
             this.menu.ShowImageMargin = false;
-            this.menu.Size = new System.Drawing.Size(140, 148);
+            this.menu.Size = new System.Drawing.Size(140, 126);
             this.menu.Text = "Operaciones de Registro";
             this.menu.Opening += new System.ComponentModel.CancelEventHandler(this.Menu_Opening);
             // 
@@ -285,7 +285,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(22, 72);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(176, 19);
-            this.metroLabel1.TabIndex = 2;
+            this.metroLabel1.TabIndex = 8;
             this.metroLabel1.Text = "Seleccione un filtro de Fecha";
             // 
             // btnAgregar
@@ -297,7 +297,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(523, 62);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(90, 34);
-            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -309,7 +309,7 @@
             this.lblTrackbar.Location = new System.Drawing.Point(23, 107);
             this.lblTrackbar.Name = "lblTrackbar";
             this.lblTrackbar.Size = new System.Drawing.Size(113, 19);
-            this.lblTrackbar.TabIndex = 6;
+            this.lblTrackbar.TabIndex = 9;
             this.lblTrackbar.Text = "Cantidad Maxima";
             // 
             // tbNumeroRegistros
@@ -318,7 +318,7 @@
             this.tbNumeroRegistros.Location = new System.Drawing.Point(204, 107);
             this.tbNumeroRegistros.Name = "tbNumeroRegistros";
             this.tbNumeroRegistros.Size = new System.Drawing.Size(126, 19);
-            this.tbNumeroRegistros.TabIndex = 1;
+            this.tbNumeroRegistros.TabIndex = 4;
             this.tbNumeroRegistros.Text = "No Registros";
             this.tbNumeroRegistros.Value = 20;
             this.tbNumeroRegistros.ValueChanged += new System.EventHandler(this.tbNumeroRegistros_ValueChanged);
@@ -329,7 +329,7 @@
             this.lblTrackValue.Location = new System.Drawing.Point(345, 107);
             this.lblTrackValue.Name = "lblTrackValue";
             this.lblTrackValue.Size = new System.Drawing.Size(23, 19);
-            this.lblTrackValue.TabIndex = 8;
+            this.lblTrackValue.TabIndex = 5;
             this.lblTrackValue.Text = "20";
             // 
             // btnFiltrar
@@ -342,7 +342,7 @@
             this.btnFiltrar.Location = new System.Drawing.Point(374, 63);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(134, 34);
-            this.btnFiltrar.TabIndex = 2;
+            this.btnFiltrar.TabIndex = 1;
             this.btnFiltrar.Text = "Filtrar Resultados";
             this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -353,7 +353,7 @@
             this.lblRestablecer.Location = new System.Drawing.Point(396, 103);
             this.lblRestablecer.Name = "lblRestablecer";
             this.lblRestablecer.Size = new System.Drawing.Size(112, 23);
-            this.lblRestablecer.TabIndex = 3;
+            this.lblRestablecer.TabIndex = 6;
             this.lblRestablecer.Text = "Mostrar Todas";
             this.lblRestablecer.Theme = MetroFramework.MetroThemeStyle.Light;
             this.lblRestablecer.UseStyleColors = true;
@@ -364,7 +364,7 @@
             this.lblUser.Location = new System.Drawing.Point(646, 34);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(133, 23);
-            this.lblUser.TabIndex = 9;
+            this.lblUser.TabIndex = 10;
             this.lblUser.Text = "User";
             // 
             // carrerasTableTableAdapter
@@ -383,7 +383,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(619, 51);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cerrar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;

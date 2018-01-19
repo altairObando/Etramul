@@ -127,7 +127,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(168, 164);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 41);
-            this.btnCerrar.TabIndex = 9;
+            this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 

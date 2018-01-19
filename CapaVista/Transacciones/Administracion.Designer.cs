@@ -96,7 +96,7 @@
             this.txtClave.PromptText = "Verifique su clave de acceso";
             this.txtClave.Size = new System.Drawing.Size(263, 23);
             this.txtClave.Style = MetroFramework.MetroColorStyle.Red;
-            this.txtClave.TabIndex = 3;
+            this.txtClave.TabIndex = 1;
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtClave.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtClave.UseStyleColors = true;
@@ -111,7 +111,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(215, 174);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 38);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(123, 174);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(86, 40);
-            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;

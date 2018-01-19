@@ -100,7 +100,7 @@
             this.dgvTipoDetalle.RowHeadersVisible = false;
             this.dgvTipoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTipoDetalle.Size = new System.Drawing.Size(473, 169);
-            this.dgvTipoDetalle.TabIndex = 23;
+            this.dgvTipoDetalle.TabIndex = 1;
             this.dgvTipoDetalle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoDetalle_CellClick);
             // 
             // idTipoDetalleDataGridViewTextBoxColumn
@@ -160,7 +160,7 @@
             this.navegacion.Name = "navegacion";
             this.navegacion.PositionItem = this.bindingNavigatorPositionItem;
             this.navegacion.Size = new System.Drawing.Size(473, 25);
-            this.navegacion.TabIndex = 24;
+            this.navegacion.TabIndex = 0;
             this.navegacion.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem

@@ -15,13 +15,13 @@ namespace CapaVista.Transacciones
             InitializeComponent();
             loadTransaccion();
             this.lblUser.Text = MainContainer.sesion.Personas.ToString();
+            loadCombos();
         }
 
         void loadTransaccion()
         {
             try
             {
-                loadCombos();
                 lblNombreCajero.Text = MainContainer.sesion.Personas.Nombres;
                 ActualizarNoFactura();
             }
@@ -36,11 +36,11 @@ namespace CapaVista.Transacciones
         {
             try
             {
-                Vehiculo[] vehiculos = VehiculosController.lista(new Vehiculo()).OrderBy(x => x.Placa).ToArray();
-                var egr = TipoDetalleController.listar().OrderBy(x=> x.Descripcion).ToArray();
+                List<CapaDatos.Vehiculo>vehiculos = VehiculosController.lista(new Vehiculo()).OrderBy(x => x.Placa).ToList();
+                List<CapaDatos.TipoDetalle> egr = TipoDetalleController.listar().OrderBy(x=> x.Descripcion).ToList();
 
-                cboVehiculo.Items.AddRange(vehiculos);
-                cboEgresos.Items.AddRange(egr);
+                cboVehiculo.DataSource = vehiculos;
+                cboEgresos.DataSource = egr;
             }
             catch (Exception ex)
             {
@@ -227,7 +227,7 @@ namespace CapaVista.Transacciones
        
         void LimpiarControles()
         {
-            txtDescripcion.Text = null;
+            txtDescripcion.Text = "SIN DEFINIR";
             txtMonto.Text = null;
             dgvEgresos.Rows.Clear();
             loadTransaccion();
@@ -317,6 +317,16 @@ namespace CapaVista.Transacciones
             {
                 MessageBox.Show(ex.Message, "Error!!!");
             }
+        }
+
+        private void cambiarTipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int fila = dgvEgresos.SelectedRows[0].Index;
+            bool tpTransaccion = dgvEgresos.Rows[fila].Cells[3].Value.ToString() == "INGRESO" ? true : false;
+            if (tpTransaccion)
+                dgvEgresos.Rows[fila].Cells[3].Value = "EGRESO";
+            else
+                dgvEgresos.Rows[fila].Cells[3].Value = "INGRESO";
         }
     }
 }

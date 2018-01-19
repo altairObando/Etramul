@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <assemblyIdentity name="COOTRACOSAN.application" version="1.1.0.34" publicKeyToken="0000000000000000" language="es-NI" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <assemblyIdentity name="COOTRACOSAN.application" version="1.1.0.35" publicKeyToken="0000000000000000" language="es-NI" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="Cootracosan - Soft" asmv2:product="Sistema de ingreso y egresos" asmv2:supportUrl="https://fb.com/Deatshquad" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
@@ -8,13 +8,13 @@
   </compatibleFrameworks>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="COOTRACOSAN.exe.manifest" size="17217">
-      <assemblyIdentity name="COOTRACOSAN.exe" version="1.1.0.34" publicKeyToken="0000000000000000" language="es-NI" processorArchitecture="msil" type="win32" />
+      <assemblyIdentity name="COOTRACOSAN.exe" version="1.1.0.35" publicKeyToken="0000000000000000" language="es-NI" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wv8dNt8eQ5RcmAMSvSuZ6fjCCy9giShSEewjw4mvoSU=</dsig:DigestValue>
+        <dsig:DigestValue>VVqoMkl0Geqhr7FCKxIwP/F6Y3bBzLpqewCQ1s6IYDA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

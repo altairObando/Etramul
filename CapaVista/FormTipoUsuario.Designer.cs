@@ -74,7 +74,7 @@
             this.dgTipoUsuario.Location = new System.Drawing.Point(20, 95);
             this.dgTipoUsuario.Name = "dgTipoUsuario";
             this.dgTipoUsuario.Size = new System.Drawing.Size(416, 167);
-            this.dgTipoUsuario.TabIndex = 4;
+            this.dgTipoUsuario.TabIndex = 1;
             // 
             // idtipoDataGridViewTextBoxColumn
             // 

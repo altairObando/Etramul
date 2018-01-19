@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.idTransaccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaTransaccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,14 +67,14 @@
             this.dgvDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetalles.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvDetalles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idTransaccionDataGridViewTextBoxColumn,
@@ -136,7 +136,7 @@
             this.btnPrint.Location = new System.Drawing.Point(364, 44);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(49, 35);
-            this.btnPrint.TabIndex = 1;
+            this.btnPrint.TabIndex = 0;
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -149,7 +149,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(419, 44);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(49, 35);
-            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.TabIndex = 1;
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -188,7 +188,7 @@
             this.dgFechas.RowHeadersVisible = false;
             this.dgFechas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgFechas.Size = new System.Drawing.Size(477, 229);
-            this.dgFechas.TabIndex = 3;
+            this.dgFechas.TabIndex = 4;
             // 
             // idTransaccionDataGridViewTextBoxColumn1
             // 
@@ -200,9 +200,9 @@
             // fechaTransaccionDataGridViewTextBoxColumn1
             // 
             this.fechaTransaccionDataGridViewTextBoxColumn1.DataPropertyName = "FechaTransaccion";
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.fechaTransaccionDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fechaTransaccionDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.fechaTransaccionDataGridViewTextBoxColumn1.HeaderText = "Fecha";
             this.fechaTransaccionDataGridViewTextBoxColumn1.Name = "fechaTransaccionDataGridViewTextBoxColumn1";
             this.fechaTransaccionDataGridViewTextBoxColumn1.ReadOnly = true;
@@ -217,8 +217,8 @@
             // cantidadDataGridViewTextBoxColumn1
             // 
             this.cantidadDataGridViewTextBoxColumn1.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle6.Format = "C2";
-            this.cantidadDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "C2";
+            this.cantidadDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
             this.cantidadDataGridViewTextBoxColumn1.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn1.Name = "cantidadDataGridViewTextBoxColumn1";
             this.cantidadDataGridViewTextBoxColumn1.ReadOnly = true;
@@ -229,7 +229,7 @@
             this.lblPlaca.Location = new System.Drawing.Point(23, 60);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(45, 19);
-            this.lblPlaca.TabIndex = 0;
+            this.lblPlaca.TabIndex = 2;
             this.lblPlaca.Text = "------";
             // 
             // metroLabel1
@@ -237,8 +237,8 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(163, 60);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel1.TabIndex = 4;
+            this.metroLabel1.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "Gasto Total: ";
             // 
             // lblTotal
@@ -247,7 +247,7 @@
             this.lblTotal.Location = new System.Drawing.Point(251, 60);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(45, 19);
-            this.lblTotal.TabIndex = 5;
+            this.lblTotal.TabIndex = 3;
             this.lblTotal.Text = "------";
             // 
             // DetalleEgresos

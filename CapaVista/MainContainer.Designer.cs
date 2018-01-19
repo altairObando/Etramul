@@ -78,7 +78,7 @@
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(188, 181);
             this.btnAyuda.Style = MetroFramework.MetroColorStyle.White;
-            this.btnAyuda.TabIndex = 10;
+            this.btnAyuda.TabIndex = 8;
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAyuda.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -94,7 +94,7 @@
             this.btnTransacciones.Name = "btnTransacciones";
             this.btnTransacciones.Size = new System.Drawing.Size(188, 181);
             this.btnTransacciones.Style = MetroFramework.MetroColorStyle.Purple;
-            this.btnTransacciones.TabIndex = 9;
+            this.btnTransacciones.TabIndex = 5;
             this.btnTransacciones.Text = "Transacciones";
             this.btnTransacciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTransacciones.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -109,7 +109,7 @@
             this.btnSalir.Location = new System.Drawing.Point(780, 190);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(188, 181);
-            this.btnSalir.TabIndex = 7;
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalir.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -124,7 +124,7 @@
             this.btnTools.Location = new System.Drawing.Point(585, 3);
             this.btnTools.Name = "btnTools";
             this.btnTools.Size = new System.Drawing.Size(188, 181);
-            this.btnTools.TabIndex = 8;
+            this.btnTools.TabIndex = 6;
             this.btnTools.Text = "Herramientas";
             this.btnTools.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTools.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -140,7 +140,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(188, 181);
             this.btnLogout.Style = MetroFramework.MetroColorStyle.Orange;
-            this.btnLogout.TabIndex = 5;
+            this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "Cambiar de Usuario";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogout.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -156,7 +156,7 @@
             this.btnCarreras.Name = "btnCarreras";
             this.btnCarreras.Size = new System.Drawing.Size(188, 181);
             this.btnCarreras.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.btnCarreras.TabIndex = 2;
+            this.btnCarreras.TabIndex = 4;
             this.btnCarreras.Text = "Carreras";
             this.btnCarreras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCarreras.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -172,7 +172,7 @@
             this.btnBuses.Name = "btnBuses";
             this.btnBuses.Size = new System.Drawing.Size(188, 181);
             this.btnBuses.Style = MetroFramework.MetroColorStyle.Brown;
-            this.btnBuses.TabIndex = 4;
+            this.btnBuses.TabIndex = 3;
             this.btnBuses.Text = "Vehiculos";
             this.btnBuses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuses.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -188,7 +188,7 @@
             this.btnConductores.Name = "btnConductores";
             this.btnConductores.Size = new System.Drawing.Size(188, 181);
             this.btnConductores.Style = MetroFramework.MetroColorStyle.Green;
-            this.btnConductores.TabIndex = 3;
+            this.btnConductores.TabIndex = 1;
             this.btnConductores.Text = "Conductores";
             this.btnConductores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConductores.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -204,7 +204,7 @@
             this.btnSocios.Name = "btnSocios";
             this.btnSocios.Size = new System.Drawing.Size(188, 181);
             this.btnSocios.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnSocios.TabIndex = 1;
+            this.btnSocios.TabIndex = 2;
             this.btnSocios.Text = "Socios";
             this.btnSocios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSocios.Theme = MetroFramework.MetroThemeStyle.Light;
