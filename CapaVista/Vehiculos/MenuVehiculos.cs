@@ -165,9 +165,9 @@ namespace CapaVista.Conductores
                 var form = new UltimasTransacciones(getVehiculo());
                form.ShowDialog();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -177,28 +177,28 @@ namespace CapaVista.Conductores
             Clipboard.SetText(getVehiculo().Placa);
         }
 
-        private void registrarTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new CapaVista.Transacciones.AgregarTransaccion();
-            form.Show();
-            form.cboVehiculo.Items.Clear();
-            form.cboVehiculo.Items.Add(getVehiculo());
-            form.cboVehiculo.SelectedIndex = 0;
-            form.cboVehiculo.SelectedItem = getVehiculo();
-            form.cboVehiculo.Text = getVehiculo().Placa;
-            form.cboVehiculo.Enabled = false;
-        }
-        private void registrarCarreraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new Carrera();
-            form.Show();
-            form.cboVehiculo.Items.Clear();
-            form.cboVehiculo.Items.Add(getVehiculo());
-            form.cboVehiculo.SelectedIndex = 0;
-            form.cboVehiculo.SelectedItem = getVehiculo();
-            form.cboVehiculo.Text = getVehiculo().Placa;
-            form.cboVehiculo.Enabled = false;
-        }
+        //private void registrarTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    var form = new CapaVista.Transacciones.AgregarTransaccion();
+        //    form.Show();
+        //    form.cboVehiculo.Items.Clear();
+        //    form.cboVehiculo.Items.Add(getVehiculo());
+        //    form.cboVehiculo.SelectedIndex = 0;
+        //    form.cboVehiculo.SelectedItem = getVehiculo();
+        //    form.cboVehiculo.Text = getVehiculo().Placa;
+        //    form.cboVehiculo.Enabled = false;
+        //}
+        //private void registrarCarreraToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    var form = new Carrera();
+        //    form.Show();
+        //    form.cboVehiculo.Items.Clear();
+        //    form.cboVehiculo.Items.Add(getVehiculo());
+        //    form.cboVehiculo.SelectedIndex = 0;
+        //    form.cboVehiculo.SelectedItem = getVehiculo();
+        //    form.cboVehiculo.Text = getVehiculo().Placa;
+        //    form.cboVehiculo.Enabled = false;
+        //}
         private void btnReload_Click(object sender, EventArgs e)
         {
             this.loadElements();

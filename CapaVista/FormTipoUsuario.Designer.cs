@@ -71,10 +71,11 @@
             this.dgTipoUsuario.DataSource = this.tipoUsuarioSetBindingSource;
             this.dgTipoUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgTipoUsuario.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgTipoUsuario.Location = new System.Drawing.Point(20, 95);
+            this.dgTipoUsuario.Location = new System.Drawing.Point(20, 103);
             this.dgTipoUsuario.Name = "dgTipoUsuario";
-            this.dgTipoUsuario.Size = new System.Drawing.Size(416, 167);
+            this.dgTipoUsuario.Size = new System.Drawing.Size(416, 229);
             this.dgTipoUsuario.TabIndex = 1;
+            this.dgTipoUsuario.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgTipoUsuario_CurrentCellDirtyStateChanged);
             // 
             // idtipoDataGridViewTextBoxColumn
             // 
@@ -245,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 282);
+            this.ClientSize = new System.Drawing.Size(456, 352);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dgTipoUsuario);
             this.MaximizeBox = false;
@@ -253,7 +254,7 @@
             this.Name = "FormTipoUsuario";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
-            this.ShowInTaskbar = false;
+            this.ShowIcon = false;
             this.Text = "Tipos de usuarios";
             this.Load += new System.EventHandler(this.TipoUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTipoUsuario)).EndInit();

@@ -18,6 +18,7 @@ namespace CapaVista
         public FormTipoUsuario()
         {
             InitializeComponent();
+            
         }
 
         private void TipoUsuario_Load(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace CapaVista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            dgTipoUsuario.CommitEdit(DataGridViewDataErrorContexts.Commit);
             this.tipoUsuarioSetTableAdapter.Update(transaccionesDataSet.TipoUsuarioSet);
         }
 
@@ -40,6 +42,11 @@ namespace CapaVista
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             TipoUsuario_Load(null, null);
+        }
+
+        private void dgTipoUsuario_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            dgTipoUsuario.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace CapaVista.Transacciones
 
         private void btnGuardarCambios(object sender, EventArgs e)
         {
-            
+            dgvTipoDetalle.CommitEdit(DataGridViewDataErrorContexts.Commit);
             tipoDetalleSetTableAdapter.Update(transaccionesDataSet.TipoDetalleSet);
         }
 

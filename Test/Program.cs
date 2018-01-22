@@ -65,7 +65,8 @@ namespace Test
                 VehiculosController.agregar(9, "M 2433", "MERCEDEZ", "BENZ");
 
                 VehiculosController.agregar(10, "M 2411", "MERCEDEZ", "BENZ");
-                Console.ReadKey();
+                Console.WriteLine("Agregados");
+                Console.ReadKey(); 
             }
             catch (Exception ex)
             {

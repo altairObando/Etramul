@@ -21,6 +21,7 @@ namespace CapaVista
             loadTipos();
             loadGrid();
             edicion = false;
+            
         }
         private void loadTipos()
         {

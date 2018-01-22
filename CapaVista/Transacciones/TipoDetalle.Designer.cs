@@ -85,7 +85,7 @@
             this.dgvTipoDetalle.DataSource = this.tipoDetalleSetBindingSource;
             this.dgvTipoDetalle.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTipoDetalle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvTipoDetalle.Location = new System.Drawing.Point(20, 113);
+            this.dgvTipoDetalle.Location = new System.Drawing.Point(20, 108);
             this.dgvTipoDetalle.MultiSelect = false;
             this.dgvTipoDetalle.Name = "dgvTipoDetalle";
             this.dgvTipoDetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -99,7 +99,7 @@
             this.dgvTipoDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTipoDetalle.RowHeadersVisible = false;
             this.dgvTipoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTipoDetalle.Size = new System.Drawing.Size(473, 169);
+            this.dgvTipoDetalle.Size = new System.Drawing.Size(473, 255);
             this.dgvTipoDetalle.TabIndex = 1;
             this.dgvTipoDetalle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoDetalle_CellClick);
             // 
@@ -277,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 302);
+            this.ClientSize = new System.Drawing.Size(513, 383);
             this.Controls.Add(this.navegacion);
             this.Controls.Add(this.dgvTipoDetalle);
             this.MaximizeBox = false;

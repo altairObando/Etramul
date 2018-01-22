@@ -46,18 +46,14 @@
             this.ingresoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.completaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.anularCarreraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarEgresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.conductorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.socioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carrerasTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transaccionesDataSet = new CapaVista.Transacciones.TransaccionesDataSet();
             this.dtFiltroFecha = new System.Windows.Forms.DateTimePicker();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblTrackbar = new MetroFramework.Controls.MetroLabel();
             this.tbNumeroRegistros = new MetroFramework.Controls.MetroTrackBar();
             this.lblTrackValue = new MetroFramework.Controls.MetroLabel();
@@ -113,12 +109,12 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCarreras.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCarreras.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvCarreras.Location = new System.Drawing.Point(20, 143);
+            this.dgvCarreras.Location = new System.Drawing.Point(20, 180);
             this.dgvCarreras.Name = "dgvCarreras";
             this.dgvCarreras.ReadOnly = true;
             this.dgvCarreras.RowHeadersVisible = false;
             this.dgvCarreras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarreras.Size = new System.Drawing.Size(760, 278);
+            this.dgvCarreras.Size = new System.Drawing.Size(843, 278);
             this.dgvCarreras.TabIndex = 7;
             // 
             // idcarreraDataGridViewTextBoxColumn
@@ -201,25 +197,15 @@
             // menu
             // 
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.anularCarreraToolStripMenuItem,
             this.mostrarEgresosToolStripMenuItem,
             this.toolStripSeparator1,
-            this.conductorToolStripMenuItem,
-            this.socioToolStripMenuItem,
             this.toolStripSeparator2,
             this.copiarToolStripMenuItem});
             this.menu.Name = "Menu";
             this.menu.ShowImageMargin = false;
-            this.menu.Size = new System.Drawing.Size(140, 126);
+            this.menu.Size = new System.Drawing.Size(140, 60);
             this.menu.Text = "Operaciones de Registro";
             this.menu.Opening += new System.ComponentModel.CancelEventHandler(this.Menu_Opening);
-            // 
-            // anularCarreraToolStripMenuItem
-            // 
-            this.anularCarreraToolStripMenuItem.Name = "anularCarreraToolStripMenuItem";
-            this.anularCarreraToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.anularCarreraToolStripMenuItem.Text = "&Anular Carrera";
-            this.anularCarreraToolStripMenuItem.Click += new System.EventHandler(this.anularCarreraToolStripMenuItem_Click);
             // 
             // mostrarEgresosToolStripMenuItem
             // 
@@ -232,20 +218,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
-            // 
-            // conductorToolStripMenuItem
-            // 
-            this.conductorToolStripMenuItem.Name = "conductorToolStripMenuItem";
-            this.conductorToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.conductorToolStripMenuItem.Text = "&Conductor";
-            this.conductorToolStripMenuItem.Click += new System.EventHandler(this.conductorToolStripMenuItem_Click);
-            // 
-            // socioToolStripMenuItem
-            // 
-            this.socioToolStripMenuItem.Name = "socioToolStripMenuItem";
-            this.socioToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.socioToolStripMenuItem.Text = "&Socio";
-            this.socioToolStripMenuItem.Click += new System.EventHandler(this.socioToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -287,21 +259,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(176, 19);
             this.metroLabel1.TabIndex = 8;
             this.metroLabel1.Text = "Seleccione un filtro de Fecha";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Image = global::CapaVista.Properties.Resources.plus;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(523, 62);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(90, 34);
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblTrackbar
             // 
@@ -380,7 +337,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::CapaVista.Properties.Resources.close_button;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(619, 51);
+            this.btnCancelar.Location = new System.Drawing.Point(509, 51);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
             this.btnCancelar.TabIndex = 3;
@@ -393,7 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 441);
+            this.ClientSize = new System.Drawing.Size(883, 478);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnFiltrar);
@@ -401,7 +358,6 @@
             this.Controls.Add(this.lblTrackValue);
             this.Controls.Add(this.tbNumeroRegistros);
             this.Controls.Add(this.lblTrackbar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.dtFiltroFecha);
             this.Controls.Add(this.dgvCarreras);
@@ -427,7 +383,6 @@
         private System.Windows.Forms.DataGridView dgvCarreras;
         public System.Windows.Forms.DateTimePicker dtFiltroFecha;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.Button btnAgregar;
         private MetroFramework.Controls.MetroLabel lblTrackbar;
         private MetroFramework.Controls.MetroTrackBar tbNumeroRegistros;
         private MetroFramework.Controls.MetroLabel lblTrackValue;
@@ -435,10 +390,7 @@
         private MetroFramework.Controls.MetroLink lblRestablecer;
         private MetroFramework.Controls.MetroLink lblUser;
         private System.Windows.Forms.ContextMenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem anularCarreraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarEgresosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem conductorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem socioToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;

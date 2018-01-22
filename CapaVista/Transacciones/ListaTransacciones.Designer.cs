@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
             this.CodEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +40,6 @@
             this.Egresos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuDesplegable = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.vToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.anularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtFechaFiltro = new System.Windows.Forms.DateTimePicker();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -72,21 +70,6 @@
             this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Image = global::CapaVista.Properties.Resources.plus;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(572, 73);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(90, 34);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // metroLabel1
             // 
@@ -164,10 +147,9 @@
             // 
             this.menuDesplegable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vToolStripMenuItem,
-            this.anularToolStripMenuItem,
             this.imprimirFacturaToolStripMenuItem});
             this.menuDesplegable.Name = "contextMenuStrip1";
-            this.menuDesplegable.Size = new System.Drawing.Size(163, 70);
+            this.menuDesplegable.Size = new System.Drawing.Size(163, 48);
             // 
             // vToolStripMenuItem
             // 
@@ -175,13 +157,6 @@
             this.vToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.vToolStripMenuItem.Text = "Ver Detalles";
             this.vToolStripMenuItem.Click += new System.EventHandler(this.vToolStripMenuItem_Click);
-            // 
-            // anularToolStripMenuItem
-            // 
-            this.anularToolStripMenuItem.Name = "anularToolStripMenuItem";
-            this.anularToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.anularToolStripMenuItem.Text = "Anular";
-            this.anularToolStripMenuItem.Click += new System.EventHandler(this.anularToolStripMenuItem_Click);
             // 
             // imprimirFacturaToolStripMenuItem
             // 
@@ -276,7 +251,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::CapaVista.Properties.Resources.close_button;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(668, 73);
+            this.btnCerrar.Location = new System.Drawing.Point(577, 73);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(84, 34);
             this.btnCerrar.TabIndex = 5;
@@ -313,7 +288,6 @@
             this.Controls.Add(this.dgvEgresos);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnFiltrar);
-            this.Controls.Add(this.btnAgregar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaTransacciones";
@@ -330,7 +304,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Button btnAgregar;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.DataGridView dgvEgresos;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodEgreso;
@@ -341,7 +314,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Egresos;
         private System.Windows.Forms.ContextMenuStrip menuDesplegable;
         private System.Windows.Forms.ToolStripMenuItem vToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem anularToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imprimirFacturaToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker dtFechaFiltro;
         private MetroFramework.Controls.MetroLabel metroLabel2;

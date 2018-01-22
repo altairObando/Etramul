@@ -43,11 +43,11 @@
             // lblNickname
             // 
             this.lblNickname.AutoSize = true;
-            this.lblNickname.Location = new System.Drawing.Point(183, 78);
+            this.lblNickname.Location = new System.Drawing.Point(197, 78);
             this.lblNickname.Name = "lblNickname";
-            this.lblNickname.Size = new System.Drawing.Size(67, 19);
+            this.lblNickname.Size = new System.Drawing.Size(53, 19);
             this.lblNickname.TabIndex = 4;
-            this.lblNickname.Text = "Nickname";
+            this.lblNickname.Text = "Usuario";
             // 
             // lblClave
             // 

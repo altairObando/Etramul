@@ -19,15 +19,19 @@ namespace CapaVista.Transacciones
         {
             InitializeComponent();
             this.codigo = codigo;
+            if (MainContainer.sesion.TipoUsuario.Descripcion == "Administrador")
+                btnCancelar.Enabled = false;
         }
 
+        
         private int codigo;
-
+        
         private void DetalleTransaccion_Load(object sender, EventArgs e)
         {
             try
             {
                 var list = TransaccionController.leer(codigo);
+                
                 var list2 = DetalleController.listar(codigo);
                 lblNumero.Text = list.IdTransaccion.ToString();
                 lblfecha.Text = list.FechaTransaccion.Date.ToShortDateString();
@@ -60,7 +64,7 @@ namespace CapaVista.Transacciones
                 {
                     var an = TransaccionController.anular(codigo);
                     if (an < 0)
-                        throw new Exception("Ne pudo eliminar la transaccion");
+                        throw new Exception("No se pudo eliminar la transaccion");
                     var list = DetalleController.listar(codigo);
                     for (int i = 0; i < list.Count; i++)
                     {

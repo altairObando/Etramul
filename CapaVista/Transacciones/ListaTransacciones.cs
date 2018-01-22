@@ -78,42 +78,42 @@ namespace CapaVista.Transacciones
             
         }
 
-        private void anularToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int codigo = (int)dgvEgresos.SelectedRows[0].Cells[0].Value;
-                DialogResult result;
-                var admin = new Administracion("Confirme la eliminacion del registro numero: " + codigo);
-                admin.ShowDialog();
-                result = admin.resultado;
-                if (DialogResult.Yes.Equals(result))
-                {
-                    try
-                    {
-                        int an = TransaccionController.anular(codigo);
-                        if (an < 0)
-                            throw new Exception("Ne pudo eliminar la transaccion");
-                        //var list = DetalleController.listar(codigo);
-                        //for (int i = 0; i < list.Count; i++)
-                        //{
-                        //    int j = DetalleController.anular(list[i].IdDetalle);
-                        //    if (j < 0)
-                        //        throw new Exception("No se ha podido eliminar");
-                        //}
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }    
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        //private void anularToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        int codigo = (int)dgvEgresos.SelectedRows[0].Cells[0].Value;
+        //        DialogResult result;
+        //        var admin = new Administracion("Confirme la eliminacion del registro numero: " + codigo);
+        //        admin.ShowDialog();
+        //        result = admin.resultado;
+        //        if (DialogResult.Yes.Equals(result))
+        //        {
+        //            try
+        //            {
+        //                int an = TransaccionController.anular(codigo);
+        //                if (an < 0)
+        //                    throw new Exception("Ne pudo eliminar la transaccion");
+        //                //var list = DetalleController.listar(codigo);
+        //                //for (int i = 0; i < list.Count; i++)
+        //                //{
+        //                //    int j = DetalleController.anular(list[i].IdDetalle);
+        //                //    if (j < 0)
+        //                //        throw new Exception("No se ha podido eliminar");
+        //                //}
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show(ex.Message);
+        //            }
+        //        }    
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
              
-        }
+        //}
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -156,19 +156,19 @@ namespace CapaVista.Transacciones
             }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var form = new AgregarTransaccion();
-                form.ShowDialog();
-                loadGrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void btnAgregar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        var form = new AgregarTransaccion();
+        //        form.ShowDialog();
+        //        loadGrid();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void imprimirFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -56,7 +56,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 68);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 107);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(82, 19);
             this.metroLabel1.TabIndex = 8;
@@ -66,7 +66,7 @@
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detallesBindingSource, "Id_carrera", true));
-            this.lblNumero.Location = new System.Drawing.Point(108, 68);
+            this.lblNumero.Location = new System.Drawing.Point(108, 107);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(21, 19);
             this.lblNumero.TabIndex = 0;
@@ -87,7 +87,7 @@
             // 
             this.lblConductor.AutoSize = true;
             this.lblConductor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detallesBindingSource, "Nombres", true));
-            this.lblConductor.Location = new System.Drawing.Point(108, 97);
+            this.lblConductor.Location = new System.Drawing.Point(108, 136);
             this.lblConductor.Name = "lblConductor";
             this.lblConductor.Size = new System.Drawing.Size(21, 19);
             this.lblConductor.TabIndex = 1;
@@ -97,7 +97,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(31, 97);
+            this.metroLabel2.Location = new System.Drawing.Point(31, 136);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(75, 19);
             this.metroLabel2.TabIndex = 9;
@@ -106,7 +106,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(265, 68);
+            this.metroLabel3.Location = new System.Drawing.Point(317, 107);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(95, 19);
             this.metroLabel3.TabIndex = 4;
@@ -116,7 +116,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detallesBindingSource, "FechaCarrera", true));
-            this.lblFecha.Location = new System.Drawing.Point(366, 68);
+            this.lblFecha.Location = new System.Drawing.Point(418, 107);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(21, 19);
             this.lblFecha.TabIndex = 4;
@@ -126,7 +126,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(62, 127);
+            this.metroLabel7.Location = new System.Drawing.Point(62, 166);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(43, 19);
             this.metroLabel7.TabIndex = 10;
@@ -136,7 +136,7 @@
             // 
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detallesBindingSource, "Placa", true));
-            this.lblPlaca.Location = new System.Drawing.Point(108, 127);
+            this.lblPlaca.Location = new System.Drawing.Point(108, 166);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(25, 19);
             this.lblPlaca.TabIndex = 2;
@@ -146,7 +146,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(281, 97);
+            this.metroLabel9.Location = new System.Drawing.Point(333, 136);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(83, 19);
             this.metroLabel9.TabIndex = 10;
@@ -155,7 +155,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(366, 97);
+            this.lblTotal.Location = new System.Drawing.Point(418, 136);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(21, 19);
             this.lblTotal.TabIndex = 5;
@@ -178,12 +178,12 @@
             this.dataGridViewTextBoxColumn3});
             this.dgvEgresos.DataSource = this.detallesBindingSource;
             this.dgvEgresos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvEgresos.Location = new System.Drawing.Point(20, 162);
+            this.dgvEgresos.Location = new System.Drawing.Point(20, 239);
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(402, 150);
+            this.dgvEgresos.Size = new System.Drawing.Size(555, 150);
             this.dgvEgresos.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn2
@@ -211,7 +211,7 @@
             // 
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detallesBindingSource, "Apellidos", true));
-            this.lblApellidos.Location = new System.Drawing.Point(175, 97);
+            this.lblApellidos.Location = new System.Drawing.Point(175, 136);
             this.lblApellidos.Name = "lblApellidos";
             this.lblApellidos.Size = new System.Drawing.Size(21, 19);
             this.lblApellidos.TabIndex = 3;
@@ -228,7 +228,7 @@
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Image = global::CapaVista.Properties.Resources.close_button;
-            this.btnSalir.Location = new System.Drawing.Point(312, 119);
+            this.btnSalir.Location = new System.Drawing.Point(517, 6);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 41);
             this.btnSalir.TabIndex = 6;
@@ -241,7 +241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(442, 332);
+            this.ClientSize = new System.Drawing.Size(595, 409);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.dgvEgresos);

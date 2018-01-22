@@ -29,27 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Vehiculos Activos", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Vehiculos Inactivos", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Vehiculos Activos", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Vehiculos Inactivos", System.Windows.Forms.HorizontalAlignment.Left);
             this.Imagenes = new System.Windows.Forms.ImageList(this.components);
             this.listaVehiculos = new System.Windows.Forms.ListView();
             this.OpcionesVehiculos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.marcarComoInactivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarPlacaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verSocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ultimaCarreraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verHoyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarTransaccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarCarreraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mtpOperacionesGenerales = new MetroFramework.Controls.MetroPanel();
             this.btnGastos = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnCarrera = new System.Windows.Forms.Button();
             this.btnSocios = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -72,13 +68,13 @@
             this.listaVehiculos.ContextMenuStrip = this.OpcionesVehiculos;
             this.listaVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaVehiculos.GridLines = true;
-            listViewGroup1.Header = "Vehiculos Activos";
-            listViewGroup1.Name = "activos";
-            listViewGroup2.Header = "Vehiculos Inactivos";
-            listViewGroup2.Name = "inactivos";
+            listViewGroup3.Header = "Vehiculos Activos";
+            listViewGroup3.Name = "activos";
+            listViewGroup4.Header = "Vehiculos Inactivos";
+            listViewGroup4.Name = "inactivos";
             this.listaVehiculos.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
+            listViewGroup3,
+            listViewGroup4});
             this.listaVehiculos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listaVehiculos.LabelWrap = false;
             this.listaVehiculos.LargeImageList = this.Imagenes;
@@ -99,15 +95,12 @@
             this.marcarComoInactivoToolStripMenuItem,
             this.copiarPlacaToolStripMenuItem,
             this.detallesToolStripMenuItem,
-            this.verSocioToolStripMenuItem,
             this.toolStripSeparator1,
             this.ultimaCarreraToolStripMenuItem,
             this.verHoyToolStripMenuItem,
-            this.transaccionesToolStripMenuItem,
-            this.registrarTransaccionToolStripMenuItem,
-            this.registrarCarreraToolStripMenuItem});
+            this.transaccionesToolStripMenuItem});
             this.OpcionesVehiculos.Name = "contextVehiculos";
-            this.OpcionesVehiculos.Size = new System.Drawing.Size(196, 208);
+            this.OpcionesVehiculos.Size = new System.Drawing.Size(196, 142);
             this.OpcionesVehiculos.Opening += new System.ComponentModel.CancelEventHandler(this.contextVehiculos_Opening);
             // 
             // marcarComoInactivoToolStripMenuItem
@@ -130,13 +123,6 @@
             this.detallesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.detallesToolStripMenuItem.Text = "&Detalles";
             this.detallesToolStripMenuItem.Click += new System.EventHandler(this.detallesToolStripMenuItem_Click);
-            // 
-            // verSocioToolStripMenuItem
-            // 
-            this.verSocioToolStripMenuItem.Name = "verSocioToolStripMenuItem";
-            this.verSocioToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.verSocioToolStripMenuItem.Text = "&Ver Socio";
-            this.verSocioToolStripMenuItem.Click += new System.EventHandler(this.verSocioToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -164,20 +150,6 @@
             this.transaccionesToolStripMenuItem.Text = "&Transacciones";
             this.transaccionesToolStripMenuItem.Click += new System.EventHandler(this.transaccionesToolStripMenuItem_Click);
             // 
-            // registrarTransaccionToolStripMenuItem
-            // 
-            this.registrarTransaccionToolStripMenuItem.Name = "registrarTransaccionToolStripMenuItem";
-            this.registrarTransaccionToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.registrarTransaccionToolStripMenuItem.Text = "&Registrar Transaccion";
-            this.registrarTransaccionToolStripMenuItem.Click += new System.EventHandler(this.registrarTransaccionToolStripMenuItem_Click);
-            // 
-            // registrarCarreraToolStripMenuItem
-            // 
-            this.registrarCarreraToolStripMenuItem.Name = "registrarCarreraToolStripMenuItem";
-            this.registrarCarreraToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.registrarCarreraToolStripMenuItem.Text = "&Registrar Carrera";
-            this.registrarCarreraToolStripMenuItem.Click += new System.EventHandler(this.registrarCarreraToolStripMenuItem_Click);
-            // 
             // mtpOperacionesGenerales
             // 
             this.mtpOperacionesGenerales.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -186,7 +158,6 @@
             this.mtpOperacionesGenerales.Controls.Add(this.btnReload);
             this.mtpOperacionesGenerales.Controls.Add(this.btnTotal);
             this.mtpOperacionesGenerales.Controls.Add(this.btnSalir);
-            this.mtpOperacionesGenerales.Controls.Add(this.btnCarrera);
             this.mtpOperacionesGenerales.Controls.Add(this.btnSocios);
             this.mtpOperacionesGenerales.Controls.Add(this.btnModificar);
             this.mtpOperacionesGenerales.Controls.Add(this.btnNuevo);
@@ -208,7 +179,7 @@
             this.btnGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGastos.Image = global::CapaVista.Properties.Resources.payment1;
             this.btnGastos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGastos.Location = new System.Drawing.Point(564, 3);
+            this.btnGastos.Location = new System.Drawing.Point(510, 3);
             this.btnGastos.Name = "btnGastos";
             this.btnGastos.Size = new System.Drawing.Size(85, 54);
             this.btnGastos.TabIndex = 6;
@@ -224,7 +195,7 @@
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Image = global::CapaVista.Properties.Resources.exchange_1_;
             this.btnReload.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReload.Location = new System.Drawing.Point(635, 3);
+            this.btnReload.Location = new System.Drawing.Point(612, 3);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(85, 54);
             this.btnReload.TabIndex = 7;
@@ -240,7 +211,7 @@
             this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotal.Image = global::CapaVista.Properties.Resources.payment1;
             this.btnTotal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTotal.Location = new System.Drawing.Point(484, 3);
+            this.btnTotal.Location = new System.Drawing.Point(393, 3);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(85, 54);
             this.btnTotal.TabIndex = 5;
@@ -265,22 +236,6 @@
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnCarrera
-            // 
-            this.btnCarrera.FlatAppearance.BorderSize = 0;
-            this.btnCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCarrera.Image = global::CapaVista.Properties.Resources.road1;
-            this.btnCarrera.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCarrera.Location = new System.Drawing.Point(393, 3);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(85, 54);
-            this.btnCarrera.TabIndex = 4;
-            this.btnCarrera.Text = "Nueva Carrera";
-            this.btnCarrera.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCarrera.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
             // 
             // btnSocios
             // 
@@ -371,12 +326,10 @@
         private System.Windows.Forms.ContextMenuStrip OpcionesVehiculos;
         private System.Windows.Forms.ToolStripMenuItem marcarComoInactivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ultimaCarreraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verSocioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detallesToolStripMenuItem;
         public System.Windows.Forms.ImageList Imagenes;
         private MetroFramework.Controls.MetroPanel mtpOperacionesGenerales;
         private MetroFramework.Controls.MetroLabel lbltitulo;
-        private System.Windows.Forms.Button btnCarrera;
         private System.Windows.Forms.Button btnSocios;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNuevo;
@@ -384,12 +337,10 @@
         private System.Windows.Forms.ToolStripMenuItem transaccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copiarPlacaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem registrarTransaccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verHoyToolStripMenuItem;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnGastos;
-        private System.Windows.Forms.ToolStripMenuItem registrarCarreraToolStripMenuItem;
 
     }
 }

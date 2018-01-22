@@ -41,6 +41,8 @@
             this.lblConductor = new MetroFramework.Controls.MetroLabel();
             this.lblDatosGeneral = new MetroFramework.Controls.MetroLabel();
             this.mpEgresos = new MetroFramework.Controls.MetroPanel();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.txtFac = new System.Windows.Forms.TextBox();
             this.btnCarrera = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -49,8 +51,14 @@
             this.rbtnIngreso = new System.Windows.Forms.RadioButton();
             this.txtMonto = new System.Windows.Forms.MaskedTextBox();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
+            this.CodEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoTransaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OpcionesBasicas = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarRegistroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtDescripcion = new MetroFramework.Controls.MetroTextBox();
@@ -62,12 +70,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblUser = new MetroFramework.Controls.MetroLink();
             this.lblSalir = new MetroFramework.Controls.MetroLink();
-            this.CodEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoTransaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cambiarTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCambiarContra = new MetroFramework.Controls.MetroLink();
             this.panelDatos.SuspendLayout();
             this.mpEgresos.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -92,7 +95,7 @@
             this.panelDatos.HorizontalScrollbarSize = 10;
             this.panelDatos.Location = new System.Drawing.Point(23, 63);
             this.panelDatos.Name = "panelDatos";
-            this.panelDatos.Size = new System.Drawing.Size(571, 117);
+            this.panelDatos.Size = new System.Drawing.Size(613, 117);
             this.panelDatos.TabIndex = 1;
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
@@ -182,6 +185,8 @@
             // mpEgresos
             // 
             this.mpEgresos.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.mpEgresos.Controls.Add(this.btnAnular);
+            this.mpEgresos.Controls.Add(this.txtFac);
             this.mpEgresos.Controls.Add(this.btnCarrera);
             this.mpEgresos.Controls.Add(this.btnResumen);
             this.mpEgresos.Controls.Add(this.metroLabel3);
@@ -200,15 +205,32 @@
             this.mpEgresos.HorizontalScrollbarSize = 10;
             this.mpEgresos.Location = new System.Drawing.Point(23, 195);
             this.mpEgresos.Name = "mpEgresos";
-            this.mpEgresos.Size = new System.Drawing.Size(571, 405);
+            this.mpEgresos.Size = new System.Drawing.Size(616, 446);
             this.mpEgresos.TabIndex = 1;
             this.mpEgresos.VerticalScrollbarBarColor = true;
             this.mpEgresos.VerticalScrollbarHighlightOnWheel = false;
             this.mpEgresos.VerticalScrollbarSize = 10;
             // 
+            // btnAnular
+            // 
+            this.btnAnular.Location = new System.Drawing.Point(485, 14);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(110, 33);
+            this.btnAnular.TabIndex = 12;
+            this.btnAnular.Text = "Buscar Factura";
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // txtFac
+            // 
+            this.txtFac.Location = new System.Drawing.Point(361, 21);
+            this.txtFac.Name = "txtFac";
+            this.txtFac.Size = new System.Drawing.Size(118, 20);
+            this.txtFac.TabIndex = 11;
+            // 
             // btnCarrera
             // 
-            this.btnCarrera.Location = new System.Drawing.Point(318, 14);
+            this.btnCarrera.Location = new System.Drawing.Point(361, 65);
             this.btnCarrera.Name = "btnCarrera";
             this.btnCarrera.Size = new System.Drawing.Size(118, 33);
             this.btnCarrera.TabIndex = 9;
@@ -218,7 +240,7 @@
             // 
             // btnResumen
             // 
-            this.btnResumen.Location = new System.Drawing.Point(442, 14);
+            this.btnResumen.Location = new System.Drawing.Point(485, 65);
             this.btnResumen.Name = "btnResumen";
             this.btnResumen.Size = new System.Drawing.Size(110, 33);
             this.btnResumen.TabIndex = 10;
@@ -297,8 +319,34 @@
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(560, 239);
+            this.dgvEgresos.Size = new System.Drawing.Size(607, 280);
             this.dgvEgresos.TabIndex = 5;
+            // 
+            // CodEgreso
+            // 
+            this.CodEgreso.HeaderText = "Codigo";
+            this.CodEgreso.Name = "CodEgreso";
+            // 
+            // Egreso
+            // 
+            this.Egreso.HeaderText = "Tipo Detalle";
+            this.Egreso.Name = "Egreso";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            // 
+            // TipoTransaccion
+            // 
+            this.TipoTransaccion.HeaderText = "Tipo Transacción";
+            this.TipoTransaccion.Name = "TipoTransaccion";
+            this.TipoTransaccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // monto
+            // 
+            this.monto.HeaderText = "Monto Total";
+            this.monto.Name = "monto";
             // 
             // OpcionesBasicas
             // 
@@ -314,6 +362,13 @@
             this.eliminarRegistroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.eliminarRegistroToolStripMenuItem.Text = "&Eliminar registro";
             this.eliminarRegistroToolStripMenuItem.Click += new System.EventHandler(this.eliminarRegistroToolStripMenuItem_Click);
+            // 
+            // cambiarTipoToolStripMenuItem
+            // 
+            this.cambiarTipoToolStripMenuItem.Name = "cambiarTipoToolStripMenuItem";
+            this.cambiarTipoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.cambiarTipoToolStripMenuItem.Text = "Cambiar Tipo";
+            this.cambiarTipoToolStripMenuItem.Click += new System.EventHandler(this.cambiarTipoToolStripMenuItem_Click);
             // 
             // metroLabel2
             // 
@@ -388,7 +443,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::CapaVista.Properties.Resources.close_button;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(519, 606);
+            this.btnCancelar.Location = new System.Drawing.Point(519, 647);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 58);
             this.btnCancelar.TabIndex = 4;
@@ -406,7 +461,7 @@
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardar.Image = global::CapaVista.Properties.Resources.save;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(421, 606);
+            this.btnGuardar.Location = new System.Drawing.Point(421, 647);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 58);
             this.btnGuardar.TabIndex = 3;
@@ -417,7 +472,7 @@
             // 
             // lblUser
             // 
-            this.lblUser.Location = new System.Drawing.Point(362, 24);
+            this.lblUser.Location = new System.Drawing.Point(397, 24);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(150, 23);
             this.lblUser.TabIndex = 0;
@@ -426,7 +481,7 @@
             // 
             // lblSalir
             // 
-            this.lblSalir.Location = new System.Drawing.Point(521, 24);
+            this.lblSalir.Location = new System.Drawing.Point(558, 24);
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Size = new System.Drawing.Size(75, 23);
             this.lblSalir.Style = MetroFramework.MetroColorStyle.Red;
@@ -435,44 +490,22 @@
             this.lblSalir.UseStyleColors = true;
             this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
             // 
-            // CodEgreso
+            // lblCambiarContra
             // 
-            this.CodEgreso.HeaderText = "Codigo";
-            this.CodEgreso.Name = "CodEgreso";
-            // 
-            // Egreso
-            // 
-            this.Egreso.HeaderText = "Tipo Detalle";
-            this.Egreso.Name = "Egreso";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            // 
-            // TipoTransaccion
-            // 
-            this.TipoTransaccion.HeaderText = "Tipo Transacción";
-            this.TipoTransaccion.Name = "TipoTransaccion";
-            this.TipoTransaccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // monto
-            // 
-            this.monto.HeaderText = "Monto Total";
-            this.monto.Name = "monto";
-            // 
-            // cambiarTipoToolStripMenuItem
-            // 
-            this.cambiarTipoToolStripMenuItem.Name = "cambiarTipoToolStripMenuItem";
-            this.cambiarTipoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.cambiarTipoToolStripMenuItem.Text = "Cambiar Tipo";
-            this.cambiarTipoToolStripMenuItem.Click += new System.EventHandler(this.cambiarTipoToolStripMenuItem_Click);
+            this.lblCambiarContra.Location = new System.Drawing.Point(252, 24);
+            this.lblCambiarContra.Name = "lblCambiarContra";
+            this.lblCambiarContra.Size = new System.Drawing.Size(150, 23);
+            this.lblCambiarContra.TabIndex = 6;
+            this.lblCambiarContra.Text = "Cambiar Contraseña";
+            this.lblCambiarContra.UseStyleColors = true;
+            this.lblCambiarContra.Click += new System.EventHandler(this.lblCambiarContra_Click);
             // 
             // AgregarTransaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 687);
+            this.ClientSize = new System.Drawing.Size(662, 724);
+            this.Controls.Add(this.lblCambiarContra);
             this.Controls.Add(this.lblSalir);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnCancelar);
@@ -538,5 +571,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoTransaccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto;
         private System.Windows.Forms.ToolStripMenuItem cambiarTipoToolStripMenuItem;
+        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.TextBox txtFac;
+        private MetroFramework.Controls.MetroLink lblCambiarContra;
     }
 }

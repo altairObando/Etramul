@@ -17,29 +17,49 @@ namespace CapaVista.Vehiculos
 
         public UltimasTransacciones(CapaDatos.Vehiculo data)
         {
-            InitializeComponent();
-            this.datos = data.Transaccion.ToList();
-            this.lblCodigoPlaca.Text = data.Placa;
-            this.lblSaldo.Text = string.Format("{0:C}", 
-                CapaControlador.SaldoController.leer(data.Id_Vehiculo).Total_sado
-                );
+            try
+            {
+                InitializeComponent();
+                if (data.Transaccion.Count == 0)
+                    throw new Exception("NO EXISTEN TRANSACCIONES PARA ESTE BUS");
+                this.datos = data.Transaccion.ToList();
+                this.lblCodigoPlaca.Text = data.Placa;
+                this.lblSaldo.Text = string.Format("{0:C}",
+                    CapaControlador.SaldoController.leer(data.Id_Vehiculo).Total_sado
+                    );
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
         
         private void UltimasTransacciones_Load(object sender, EventArgs e)
         {
-            if (datos.Count != 0)
+            try
             {
-                //Volteando la tortilla
-                llenarGrid(datos);
-                tbTOP.Value = datos.Count;
-                tbTOP.Maximum = datos.Count;
-                lblNumero.Text = tbTOP.Value.ToString();
+                if (datos.Count != 0)
+                {
+                    //Volteando la tortilla
+                    llenarGrid(datos);
+                    tbTOP.Value = datos.Count;
+                    tbTOP.Maximum = datos.Count;
+                    lblNumero.Text = tbTOP.Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Este vehiculo no posee transacciones", "SIN TRANSACCIONES", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Este vehiculo no posee transacciones", "SIN TRANSACCIONES", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Dispose();
+
+                MessageBox.Show(ex.Message);
             }
+            
             
         }
 

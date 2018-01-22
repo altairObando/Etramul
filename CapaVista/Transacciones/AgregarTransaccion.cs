@@ -328,5 +328,39 @@ namespace CapaVista.Transacciones
             else
                 dgvEgresos.Rows[fila].Cells[3].Value = "INGRESO";
         }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtFac.Text) && !String.IsNullOrWhiteSpace(txtFac.Text))
+            {
+                try
+                {
+                    int num = Convert.ToInt32(txtFac.Text.Trim());
+                    if (TransaccionController.leer(num) != null)
+                    {
+                        var form =  new  CapaVista.Transacciones.DetalleTransaccion(num);
+                        form.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("EL NUMERO DE FACTURA INGRESADO NO EXISTE", "NO EXISTE TRANSACCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+                MessageBox.Show("INGRESE EL NUMERO DE LA FACTURA A BUSCAR", "NUMERO DE FACTURA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void lblCambiarContra_Click(object sender, EventArgs e)
+        {
+            CapaDatos.Personas persona = MainContainer.sesion.Personas;
+            CambiarContraseña form = new CambiarContraseña(persona);
+            form.ShowDialog();
+
+        }
     }
 }

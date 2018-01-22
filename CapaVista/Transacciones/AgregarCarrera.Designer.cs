@@ -99,7 +99,7 @@
             this.panelDatos.HorizontalScrollbarSize = 10;
             this.panelDatos.Location = new System.Drawing.Point(23, 75);
             this.panelDatos.Name = "panelDatos";
-            this.panelDatos.Size = new System.Drawing.Size(571, 206);
+            this.panelDatos.Size = new System.Drawing.Size(654, 210);
             this.panelDatos.TabIndex = 0;
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
@@ -145,7 +145,7 @@
             // txtIngreso
             // 
             this.txtIngreso.Location = new System.Drawing.Point(355, 174);
-            this.txtIngreso.Mask = "$ 99999.99";
+            this.txtIngreso.Mask = "$ 999999.99";
             this.txtIngreso.Name = "txtIngreso";
             this.txtIngreso.Size = new System.Drawing.Size(189, 20);
             this.txtIngreso.TabIndex = 5;
@@ -192,6 +192,7 @@
             // 
             // dtFecha
             // 
+            this.dtFecha.Enabled = false;
             this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFecha.Location = new System.Drawing.Point(318, 63);
             this.dtFecha.Name = "dtFecha";
@@ -284,7 +285,7 @@
             this.mpEgresos.HorizontalScrollbarSize = 10;
             this.mpEgresos.Location = new System.Drawing.Point(23, 291);
             this.mpEgresos.Name = "mpEgresos";
-            this.mpEgresos.Size = new System.Drawing.Size(571, 210);
+            this.mpEgresos.Size = new System.Drawing.Size(654, 281);
             this.mpEgresos.TabIndex = 1;
             this.mpEgresos.VerticalScrollbarBarColor = true;
             this.mpEgresos.VerticalScrollbarHighlightOnWheel = false;
@@ -292,12 +293,12 @@
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(394, 69);
+            this.txtMonto.Location = new System.Drawing.Point(426, 71);
             this.txtMonto.Mask = "$ 999999.99";
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.RejectInputOnFirstFailure = true;
             this.txtMonto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMonto.Size = new System.Drawing.Size(100, 20);
+            this.txtMonto.Size = new System.Drawing.Size(135, 20);
             this.txtMonto.TabIndex = 6;
             this.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -320,7 +321,7 @@
             this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(560, 96);
+            this.dgvEgresos.Size = new System.Drawing.Size(644, 176);
             this.dgvEgresos.TabIndex = 8;
             // 
             // CodEgreso
@@ -378,7 +379,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(397, 41);
+            this.metroLabel2.Location = new System.Drawing.Point(431, 45);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(68, 19);
             this.metroLabel2.TabIndex = 5;
@@ -387,7 +388,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(192, 43);
+            this.metroLabel1.Location = new System.Drawing.Point(193, 43);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(76, 19);
             this.metroLabel1.TabIndex = 3;
@@ -395,16 +396,16 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(192, 69);
+            this.txtDescripcion.Location = new System.Drawing.Point(194, 69);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(196, 23);
+            this.txtDescripcion.Size = new System.Drawing.Size(226, 23);
             this.txtDescripcion.TabIndex = 4;
             this.txtDescripcion.Text = "SIN DEFINIR";
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(508, 65);
+            this.btnAgregar.Location = new System.Drawing.Point(575, 65);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(58, 29);
             this.btnAgregar.TabIndex = 7;
@@ -445,7 +446,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::CapaVista.Properties.Resources.save;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(421, 507);
+            this.btnGuardar.Location = new System.Drawing.Point(505, 578);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(87, 56);
             this.btnGuardar.TabIndex = 2;
@@ -460,7 +461,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::CapaVista.Properties.Resources.close_button;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(502, 507);
+            this.btnCancelar.Location = new System.Drawing.Point(586, 578);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(87, 56);
             this.btnCancelar.TabIndex = 3;
@@ -473,7 +474,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 569);
+            this.ClientSize = new System.Drawing.Size(712, 655);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.mpEgresos);

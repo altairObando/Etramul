@@ -217,6 +217,18 @@
     <Compile Include="Reportes\ver_hoy_form.Designer.cs">
       <DependentUpon>ver_hoy_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transacciones\Atransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Atransaccion.Designer.cs">
+      <DependentUpon>Atransaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\CambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\CambiarContraseña.Designer.cs">
+      <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transacciones\DetalleEgresos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,6 +463,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ver_hoy_form.resx">
       <DependentUpon>ver_hoy_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Atransaccion.resx">
+      <DependentUpon>Atransaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\CambiarContraseña.resx">
+      <DependentUpon>CambiarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\DetalleEgresos.resx">
       <DependentUpon>DetalleEgresos.cs</DependentUpon>
