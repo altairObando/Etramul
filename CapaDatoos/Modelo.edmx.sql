@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/20/2017 15:53:44
--- Generated from EDMX file: C:\Users\PC\Desktop\Etramul - Restore\CapaDatoos\Modelo.edmx
+-- Date Created: 01/22/2018 19:52:21
+-- Generated from EDMX file: C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\Modelo.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -44,6 +44,15 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_TransaccionEgreso]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DetalleSet] DROP CONSTRAINT [FK_TransaccionEgreso];
 GO
+IF OBJECT_ID(N'[dbo].[FK_ConductorCarrera]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CarreraSet] DROP CONSTRAINT [FK_ConductorCarrera];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetalleCredito]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CreditoSet] DROP CONSTRAINT [FK_DetalleCredito];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CreditoAbono]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AbonoSet] DROP CONSTRAINT [FK_CreditoAbono];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -78,6 +87,15 @@ IF OBJECT_ID(N'[dbo].[TipoDetalleSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[CarreraSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[CarreraSet];
+GO
+IF OBJECT_ID(N'[dbo].[SaldoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SaldoSet];
+GO
+IF OBJECT_ID(N'[dbo].[CreditoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CreditoSet];
+GO
+IF OBJECT_ID(N'[dbo].[AbonoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AbonoSet];
 GO
 
 -- --------------------------------------------------
@@ -159,7 +177,8 @@ CREATE TABLE [dbo].[DetalleSet] (
     [TipoTransaccion] bit  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
     [Cantidad] decimal(18,0)  NOT NULL,
-    [Activo] bit  NOT NULL
+    [Activo] bit  NOT NULL,
+    [credito] bit  NULL
 );
 GO
 
@@ -191,6 +210,27 @@ CREATE TABLE [dbo].[SaldoSet] (
     [Id_vehiculo] int  NOT NULL,
     [Total_sado] float  NOT NULL,
     [ultima_transacion] int  NOT NULL
+);
+GO
+
+-- Creating table 'CreditoSet'
+CREATE TABLE [dbo].[CreditoSet] (
+    [Id_credito] int IDENTITY(1,1) NOT NULL,
+    [id_detalle] nvarchar(max)  NOT NULL,
+    [saldo] decimal(18,0)  NOT NULL,
+    [cancelado] bit  NOT NULL,
+    [anulado] bit  NOT NULL,
+    [Detalle_IdDetalle] int  NOT NULL
+);
+GO
+
+-- Creating table 'AbonoSet'
+CREATE TABLE [dbo].[AbonoSet] (
+    [id_abono] int IDENTITY(1,1) NOT NULL,
+    [id_credito] int  NOT NULL,
+    [fecha] nvarchar(max)  NOT NULL,
+    [monto] decimal(18,0)  NOT NULL,
+    [anulado] bit  NOT NULL
 );
 GO
 
@@ -264,6 +304,18 @@ ADD CONSTRAINT [PK_SaldoSet]
     PRIMARY KEY CLUSTERED ([Id_saldo] ASC);
 GO
 
+-- Creating primary key on [Id_credito] in table 'CreditoSet'
+ALTER TABLE [dbo].[CreditoSet]
+ADD CONSTRAINT [PK_CreditoSet]
+    PRIMARY KEY CLUSTERED ([Id_credito] ASC);
+GO
+
+-- Creating primary key on [id_abono] in table 'AbonoSet'
+ALTER TABLE [dbo].[AbonoSet]
+ADD CONSTRAINT [PK_AbonoSet]
+    PRIMARY KEY CLUSTERED ([id_abono] ASC);
+GO
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -275,6 +327,7 @@ ADD CONSTRAINT [FK_PersonasUsuarios]
     REFERENCES [dbo].[PersonasSet]
         ([Id_persona])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PersonasUsuarios'
 CREATE INDEX [IX_FK_PersonasUsuarios]
@@ -289,6 +342,7 @@ ADD CONSTRAINT [FK_PersonasConductor]
     REFERENCES [dbo].[PersonasSet]
         ([Id_persona])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PersonasConductor'
 CREATE INDEX [IX_FK_PersonasConductor]
@@ -303,6 +357,7 @@ ADD CONSTRAINT [FK_PersonasSocio]
     REFERENCES [dbo].[PersonasSet]
         ([Id_persona])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PersonasSocio'
 CREATE INDEX [IX_FK_PersonasSocio]
@@ -317,6 +372,7 @@ ADD CONSTRAINT [FK_VehiculoCarrera]
     REFERENCES [dbo].[VehiculoSet]
         ([Id_Vehiculo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_VehiculoCarrera'
 CREATE INDEX [IX_FK_VehiculoCarrera]
@@ -331,6 +387,7 @@ ADD CONSTRAINT [FK_VehiculoTransaccion]
     REFERENCES [dbo].[VehiculoSet]
         ([Id_Vehiculo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_VehiculoTransaccion'
 CREATE INDEX [IX_FK_VehiculoTransaccion]
@@ -345,6 +402,7 @@ ADD CONSTRAINT [FK_SocioVehiculo]
     REFERENCES [dbo].[SocioSet]
         ([Id_socio])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_SocioVehiculo'
 CREATE INDEX [IX_FK_SocioVehiculo]
@@ -359,6 +417,7 @@ ADD CONSTRAINT [FK_TipoUsuarioUsuarios]
     REFERENCES [dbo].[TipoUsuarioSet]
         ([Id_tipo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_TipoUsuarioUsuarios'
 CREATE INDEX [IX_FK_TipoUsuarioUsuarios]
@@ -373,6 +432,7 @@ ADD CONSTRAINT [FK_TipoEgresoEgreso]
     REFERENCES [dbo].[TipoDetalleSet]
         ([IdTipoDetalle])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_TipoEgresoEgreso'
 CREATE INDEX [IX_FK_TipoEgresoEgreso]
@@ -387,11 +447,57 @@ ADD CONSTRAINT [FK_TransaccionEgreso]
     REFERENCES [dbo].[TransaccionSet]
         ([IdTransaccion])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_TransaccionEgreso'
 CREATE INDEX [IX_FK_TransaccionEgreso]
 ON [dbo].[DetalleSet]
     ([IdTransaccion]);
+GO
+
+-- Creating foreign key on [Id_conductor] in table 'CarreraSet'
+ALTER TABLE [dbo].[CarreraSet]
+ADD CONSTRAINT [FK_ConductorCarrera]
+    FOREIGN KEY ([Id_conductor])
+    REFERENCES [dbo].[ConductorSet]
+        ([Id_conductor])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ConductorCarrera'
+CREATE INDEX [IX_FK_ConductorCarrera]
+ON [dbo].[CarreraSet]
+    ([Id_conductor]);
+GO
+
+-- Creating foreign key on [Detalle_IdDetalle] in table 'CreditoSet'
+ALTER TABLE [dbo].[CreditoSet]
+ADD CONSTRAINT [FK_DetalleCredito]
+    FOREIGN KEY ([Detalle_IdDetalle])
+    REFERENCES [dbo].[DetalleSet]
+        ([IdDetalle])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DetalleCredito'
+CREATE INDEX [IX_FK_DetalleCredito]
+ON [dbo].[CreditoSet]
+    ([Detalle_IdDetalle]);
+GO
+
+-- Creating foreign key on [id_credito] in table 'AbonoSet'
+ALTER TABLE [dbo].[AbonoSet]
+ADD CONSTRAINT [FK_CreditoAbono]
+    FOREIGN KEY ([id_credito])
+    REFERENCES [dbo].[CreditoSet]
+        ([Id_credito])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CreditoAbono'
+CREATE INDEX [IX_FK_CreditoAbono]
+ON [dbo].[AbonoSet]
+    ([id_credito]);
 GO
 
 -- --------------------------------------------------

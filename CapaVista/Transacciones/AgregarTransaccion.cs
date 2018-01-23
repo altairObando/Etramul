@@ -22,7 +22,7 @@ namespace CapaVista.Transacciones
         {
             try
             {
-                lblNombreCajero.Text = MainContainer.sesion.Personas.Nombres;
+                //lblNombreCajero.Text = MainContainer.sesion.Personas.Nombres;
                 ActualizarNoFactura();
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace CapaVista.Transacciones
             try
             {
                 if(cboEgresos.SelectedItem == null)
-                    throw new System.NullReferenceException("Para agregar un registro, primero seleccione un elemento de la lista");
+                    throw new NullReferenceException("Para agregar un registro, primero seleccione un elemento de la lista");
                 int cod = ((CapaDatos.TipoDetalle)cboEgresos.SelectedItem).IdTipoDetalle;
                 string tipo = ((CapaDatos.TipoDetalle)cboEgresos.SelectedItem).Descripcion;
                 if (txtDescripcion.Text.Length == 0)
@@ -81,13 +81,10 @@ namespace CapaVista.Transacciones
                 decimal monto = decimal.Parse(QuitarEspacios(txtMonto.Text));
                 if (monto <= 0)
                     throw new FormatException("El valor de la transacción no puede ser menor o igual a C$ 0.00 ");
-                if (rbtnIngreso.Checked == true)
-                    valor = "INGRESO";
-                else
-                    valor = "EGRESO";
-
+                valor = (rbtnIngreso.Checked) ? "INGRESO" : rbtnIngreso.Checked ? "EGRESO" : "CREDITO";
                 dgvEgresos.Rows.Add(cod, tipo, descripcion, valor, monto);
                 limpiarEgresos();
+                txtDescripcion.Text = "SIN DEFINIR";
             }
             catch (Exception ex)
             {
@@ -123,63 +120,74 @@ namespace CapaVista.Transacciones
         {
             if (CombosValidos())
             {
-                try
+                var confirmacion = MessageBox.Show("Guardar Factura?", "Los Cambios no se pueden deshacer!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning );
+                if(confirmacion.Equals(DialogResult.Yes))
                 {
-                    //Obtiendo el encabezado de la transaccion
-                    int id_cajero = MainContainer.sesion.Personas.Id_persona;
-                    int id_vehiculo = ((Vehiculo)cboVehiculo.SelectedItem).Id_Vehiculo;
-                    DateTime Fecha = dtFecha.Value.Date;
-                    //Insertando la transaccion
-                    int i = TransaccionController.agregar(id_cajero, id_vehiculo, Fecha, true);
-                    //Si la transaccion tuvo exito
-                    if (i > 0)
+                    try
                     {
-                        int sald = 0;
-                        int t = 0;
-                        //Obtiendo el utimo id de la transaccion
-                        int idTransaccion = TransaccionController.getUltima().IdTransaccion;
-                        decimal ing =0;
-                        decimal eg=0;
-                        for (int j = 0; j < dgvEgresos.Rows.Count; j++)
+                        //Obtiendo el encabezado de la transaccion
+                        int id_cajero = MainContainer.sesion.Personas.Id_persona;
+                        int id_vehiculo = ((Vehiculo)cboVehiculo.SelectedItem).Id_Vehiculo;
+                        DateTime Fecha = dtFecha.Value.Date;
+                        //Insertando la transaccion
+                        int i = TransaccionController.agregar(id_cajero, id_vehiculo, Fecha, true);
+                        //Si la transaccion tuvo exito
+                        if (i > 0)
                         {
-                            int TipoDetalle = (int)dgvEgresos.Rows[j].Cells[0].Value;
-                            string Descripcion =(string) dgvEgresos.Rows[j].Cells[2].Value;
-                            bool tpTransaccion = dgvEgresos.Rows[j].Cells[3].Value.ToString() == "INGRESO" ? true : false;
-                            
-                            decimal monto = (decimal)dgvEgresos.Rows[j].Cells[4].Value;
+                            int sald = 0;
+                            int t = 0;
+                            //Obtiendo el utimo id de la transaccion
+                            int idTransaccion = TransaccionController.getUltima().IdTransaccion;
+                            decimal ing = 0;
+                            decimal eg = 0;
+                            for (int j = 0; j < dgvEgresos.Rows.Count; j++)
+                            {
+                                int TipoDetalle = (int)dgvEgresos.Rows[j].Cells[0].Value;
+                                string Descripcion = (string)dgvEgresos.Rows[j].Cells[2].Value;
 
-                            t = DetalleController.agregar(idTransaccion, TipoDetalle, Descripcion, monto, tpTransaccion, true);
-                            float dec = Convert.ToSingle(monto);
-                            if(dgvEgresos.Rows[j].Cells[3].Value.ToString() == "INGRESO")
+                                bool tpTransaccion = dgvEgresos.Rows[j].Cells[3].Value.ToString() == "INGRESO" ? true ? dgvEgresos.Rows[j].Cells[3].Value.ToString() ==
+                                    "CREDITO": true : false;
+
+                                decimal monto = (decimal)dgvEgresos.Rows[j].Cells[4].Value;
+
+                                t = DetalleController.agregar(idTransaccion, TipoDetalle, Descripcion, monto, tpTransaccion, true);
+                                float dec = Convert.ToSingle(monto);
+
+                                if (dgvEgresos.Rows[j].Cells[3].Value.ToString() == "INGRESO")
                                 {
-                                    ing+=monto;                                    
+                                    ing += monto;
                                     sald = SaldoController.actualizar(id_vehiculo, dec, true, idTransaccion);
-                                }                                
+                                }
+                                else if(dgvEgresos.Rows[j].Cells[3].Value.Equals("EGRESO"))
+                                {
+                                    eg += monto;
+                                    sald = SaldoController.actualizar(id_vehiculo, dec, false, idTransaccion);
+                                }
+                                else
+                                {
+                                    //Actualizamos los creditos
+                                }
+
+                            }
+                            if (t == 0) //Si no se registraron transacciones
+                                throw new Exception("No se registraron las transacciones de Entrada/Salida!");
                             else
                             {
-                                eg += monto;
-                                sald = SaldoController.actualizar(id_vehiculo, dec, false, idTransaccion);
+                                decimal total = ing - eg;
+                                MessageBox.Show("Se ha insertado la transacion", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ImprimirTicket(idTransaccion, MainContainer.sesion.ToString(), ((Vehiculo)cboVehiculo.SelectedItem).Placa, total, ing, eg);
+                                LimpiarControles();
                             }
-                                
                         }
-                        if (t == 0) //Si no se registraron transacciones
-                            throw new Exception("No se registraron las transacciones de Entrada/Salida!");
                         else
                         {
-                            decimal total= ing - eg;
-                            MessageBox.Show("Se ha insertado la transacion", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ImprimirTicket(idTransaccion,lblNombreCajero.Text, ((Vehiculo)cboVehiculo.SelectedItem).Placa, total, ing, eg);
-                            LimpiarControles();
+                            throw new Exception("No se pudo insertar la transaccion");
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        throw new Exception("No se pudo insertar la transaccion");
+                        MessageBox.Show(ex.Message, "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -291,7 +299,6 @@ namespace CapaVista.Transacciones
 
         private void lblSalir_Click(object sender, EventArgs e)
         {
-            
             this.Close();
         }
 
@@ -355,12 +362,11 @@ namespace CapaVista.Transacciones
                 MessageBox.Show("INGRESE EL NUMERO DE LA FACTURA A BUSCAR", "NUMERO DE FACTURA", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void lblCambiarContra_Click(object sender, EventArgs e)
+        private void lblUser_Click(object sender, EventArgs e)
         {
-            CapaDatos.Personas persona = MainContainer.sesion.Personas;
+            Personas persona = MainContainer.sesion.Personas;
             CambiarContraseña form = new CambiarContraseña(persona);
             form.ShowDialog();
-
         }
     }
 }

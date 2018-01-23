@@ -29,9 +29,9 @@ namespace CapaVista.Conductores
         MetroMessageBox msg;
         private void MenuConductores_Load(object sender, EventArgs e)
         {
-            this.Imagenes.Images.Add(global::CapaVista.Properties.Resources.school_bus);
-            loadElements();
+            this.Imagenes.Images.Add(Properties.Resources.school_bus);
             msg = new MetroMessageBox();
+            loadElements();
         }
 
         private void loadElements()
@@ -49,9 +49,7 @@ namespace CapaVista.Conductores
                     element.Group = this.listaVehiculos.Groups["inactivos"];
                 listaVehiculos.Items.Add(element);
             }
-
         }
-        
         private void marcarComoInactivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Obtener la placa del vehiculo
@@ -222,6 +220,9 @@ namespace CapaVista.Conductores
             form.ShowDialog();
         }
 
-        
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            loadElements();
+        }
     }
 }

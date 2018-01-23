@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Vehiculos Activos", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Vehiculos Inactivos", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Vehiculos Activos", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Vehiculos Inactivos", System.Windows.Forms.HorizontalAlignment.Left);
             this.Imagenes = new System.Windows.Forms.ImageList(this.components);
             this.listaVehiculos = new System.Windows.Forms.ListView();
             this.OpcionesVehiculos = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -50,6 +50,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lbltitulo = new MetroFramework.Controls.MetroLabel();
+            this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.OpcionesVehiculos.SuspendLayout();
             this.mtpOperacionesGenerales.SuspendLayout();
             this.SuspendLayout();
@@ -68,13 +69,13 @@
             this.listaVehiculos.ContextMenuStrip = this.OpcionesVehiculos;
             this.listaVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaVehiculos.GridLines = true;
-            listViewGroup3.Header = "Vehiculos Activos";
-            listViewGroup3.Name = "activos";
-            listViewGroup4.Header = "Vehiculos Inactivos";
-            listViewGroup4.Name = "inactivos";
+            listViewGroup1.Header = "Vehiculos Activos";
+            listViewGroup1.Name = "activos";
+            listViewGroup2.Header = "Vehiculos Inactivos";
+            listViewGroup2.Name = "inactivos";
             this.listaVehiculos.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup1,
+            listViewGroup2});
             this.listaVehiculos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listaVehiculos.LabelWrap = false;
             this.listaVehiculos.LargeImageList = this.Imagenes;
@@ -82,7 +83,7 @@
             this.listaVehiculos.MultiSelect = false;
             this.listaVehiculos.Name = "listaVehiculos";
             this.listaVehiculos.ShowItemToolTips = true;
-            this.listaVehiculos.Size = new System.Drawing.Size(960, 472);
+            this.listaVehiculos.Size = new System.Drawing.Size(1004, 556);
             this.listaVehiculos.SmallImageList = this.Imagenes;
             this.listaVehiculos.TabIndex = 1;
             this.listaVehiculos.TileSize = new System.Drawing.Size(256, 256);
@@ -165,7 +166,7 @@
             this.mtpOperacionesGenerales.HorizontalScrollbarBarColor = true;
             this.mtpOperacionesGenerales.HorizontalScrollbarHighlightOnWheel = false;
             this.mtpOperacionesGenerales.HorizontalScrollbarSize = 10;
-            this.mtpOperacionesGenerales.Location = new System.Drawing.Point(74, 63);
+            this.mtpOperacionesGenerales.Location = new System.Drawing.Point(122, 63);
             this.mtpOperacionesGenerales.Name = "mtpOperacionesGenerales";
             this.mtpOperacionesGenerales.Size = new System.Drawing.Size(833, 60);
             this.mtpOperacionesGenerales.TabIndex = 0;
@@ -295,13 +296,18 @@
             this.lbltitulo.TabIndex = 0;
             this.lbltitulo.Text = "Operaciones \r\ncon Vehiculos";
             // 
+            // tiempo
+            // 
+            this.tiempo.Interval = 50000;
+            this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
+            // 
             // MenuConductores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(998, 613);
+            this.ClientSize = new System.Drawing.Size(1069, 708);
             this.Controls.Add(this.mtpOperacionesGenerales);
             this.Controls.Add(this.listaVehiculos);
             this.MaximizeBox = false;
@@ -341,6 +347,6 @@
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnGastos;
-
+        private System.Windows.Forms.Timer tiempo;
     }
 }

@@ -12,22 +12,25 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\MASTERCOMP01\Desktop\Primero\</PublishUrl>
+    <PublishUrl>C:\Users\Estudiante\Desktop\Publicacion\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\MLB07\Server\</InstallUrl>
+    <UpdateUrl>\\MLB07\Server\</UpdateUrl>
     <SupportUrl>https://fb.com/Deatshquad</SupportUrl>
     <TargetCulture>es-NI</TargetCulture>
     <ProductName>Sistema de ingreso y egresos</ProductName>
     <PublisherName>Cootracosan - Soft</PublisherName>
-    <ApplicationRevision>38</ApplicationRevision>
-    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>43</ApplicationRevision>
+    <ApplicationVersion>1.1.119.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -217,6 +220,7 @@
     <Compile Include="Reportes\ver_hoy_form.Designer.cs">
       <DependentUpon>ver_hoy_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Transacciones\Atransaccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -695,6 +699,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\list.png" />
     <None Include="Resources\question%281%29.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\info.png" />
@@ -969,6 +974,9 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Creditos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

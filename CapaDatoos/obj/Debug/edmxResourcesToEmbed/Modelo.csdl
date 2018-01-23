@@ -48,6 +48,20 @@
       <End Role="Detalle" EntitySet="DetalleSet" />
     </AssociationSet>
     <EntitySet Name="SaldoSet" EntityType="Modelo.Saldo" />
+    <AssociationSet Name="ConductorCarrera" Association="Modelo.ConductorCarrera">
+      <End Role="Conductor" EntitySet="ConductorSet" />
+      <End Role="Carrera" EntitySet="CarreraSet" />
+    </AssociationSet>
+    <EntitySet Name="CreditoSet" EntityType="Modelo.Credito" />
+    <AssociationSet Name="DetalleCredito" Association="Modelo.DetalleCredito">
+      <End Role="Detalle" EntitySet="DetalleSet" />
+      <End Role="Credito" EntitySet="CreditoSet" />
+    </AssociationSet>
+    <EntitySet Name="AbonoSet" EntityType="Modelo.Abono" />
+    <AssociationSet Name="CreditoAbono" Association="Modelo.CreditoAbono">
+      <End Role="Credito" EntitySet="CreditoSet" />
+      <End Role="Abono" EntitySet="AbonoSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Personas">
     <Key>
@@ -83,6 +97,7 @@
     <Property Name="Id_conductor" Type="Int32" Nullable="false" />
     <Property Name="Licencia" Type="String" Nullable="false" />
     <NavigationProperty Name="Personas" Relationship="Modelo.PersonasConductor" FromRole="Conductor" ToRole="Personas" />
+    <NavigationProperty Name="Carrera" Relationship="Modelo.ConductorCarrera" FromRole="Conductor" ToRole="Carrera" />
   </EntityType>
   <EntityType Name="Socio">
     <Key>
@@ -140,6 +155,8 @@
     <Property Name="Activo" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="TipoEgreso" Relationship="Modelo.TipoEgresoEgreso" FromRole="Detalle" ToRole="TipoDetalle" />
     <NavigationProperty Name="Transaccion" Relationship="Modelo.TransaccionEgreso" FromRole="Detalle" ToRole="Transaccion" />
+    <NavigationProperty Name="Credito" Relationship="Modelo.DetalleCredito" FromRole="Detalle" ToRole="Credito" />
+    <Property Name="credito" Type="Boolean" Nullable="true" />
   </EntityType>
   <EntityType Name="TipoDetalle">
     <Key>
@@ -164,6 +181,7 @@
     <Property Name="Vuelta_Completa" Type="Boolean" Nullable="false" />
     <Property Name="Activo" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Vehiculo" Relationship="Modelo.VehiculoCarrera" FromRole="Carrera" ToRole="Vehiculo" />
+    <NavigationProperty Name="Conductor" Relationship="Modelo.ConductorCarrera" FromRole="Carrera" ToRole="Conductor" />
   </EntityType>
   <Association Name="PersonasUsuarios">
     <End Type="Modelo.Personas" Role="Personas" Multiplicity="1" />
@@ -258,4 +276,55 @@
     <Property Name="Total_sado" Type="Double" Nullable="false" />
     <Property Name="ultima_transacion" Type="Int32" Nullable="false" />
   </EntityType>
+  <Association Name="ConductorCarrera">
+    <End Type="Modelo.Conductor" Role="Conductor" Multiplicity="1" />
+    <End Type="Modelo.Carrera" Role="Carrera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conductor">
+        <PropertyRef Name="Id_conductor" />
+      </Principal>
+      <Dependent Role="Carrera">
+        <PropertyRef Name="Id_conductor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Credito">
+    <Key>
+      <PropertyRef Name="Id_credito" />
+    </Key>
+    <Property Name="Id_credito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Detalle" Relationship="Modelo.DetalleCredito" FromRole="Credito" ToRole="Detalle" />
+    <Property Name="id_detalle" Type="String" Nullable="false" />
+    <Property Name="saldo" Type="Decimal" Nullable="false" />
+    <Property Name="cancelado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Abono" Relationship="Modelo.CreditoAbono" FromRole="Credito" ToRole="Abono" />
+    <Property Name="anulado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="DetalleCredito">
+    <End Type="Modelo.Detalle" Role="Detalle" Multiplicity="1" />
+    <End Type="Modelo.Credito" Role="Credito" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="Abono">
+    <Key>
+      <PropertyRef Name="id_abono" />
+    </Key>
+    <Property Name="id_abono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Credito" Relationship="Modelo.CreditoAbono" FromRole="Abono" ToRole="Credito" />
+    <Property Name="id_credito" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="String" Nullable="false" />
+    <Property Name="monto" Type="Decimal" Nullable="false" />
+    <Property Name="anulado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="CreditoAbono">
+    <End Type="Modelo.Credito" Role="Credito" Multiplicity="1" />
+    <End Type="Modelo.Abono" Role="Abono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Credito">
+        <PropertyRef Name="Id_credito" />
+      </Principal>
+      <Dependent Role="Abono">
+        <PropertyRef Name="id_credito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

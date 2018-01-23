@@ -82,6 +82,7 @@
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
           <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="credito" ColumnName="credito" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -119,6 +120,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CreditoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Credito)">
+        <MappingFragment StoreEntitySet="CreditoSet">
+          <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+          <ScalarProperty Name="cancelado" ColumnName="cancelado" />
+          <ScalarProperty Name="anulado" ColumnName="anulado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbonoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Abono)">
+        <MappingFragment StoreEntitySet="AbonoSet">
+          <ScalarProperty Name="id_abono" ColumnName="id_abono" />
+          <ScalarProperty Name="id_credito" ColumnName="id_credito" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="anulado" ColumnName="anulado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PersonasUsuarios" TypeName="Modelo.PersonasUsuarios" StoreEntitySet="UsuariosSet">
       <EndProperty Name="Personas">
         <ScalarProperty Name="Id_persona" ColumnName="Personas_Id_persona" />
@@ -141,6 +164,14 @@
       </EndProperty>
       <EndProperty Name="Socio">
         <ScalarProperty Name="Id_socio" ColumnName="Id_socio" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DetalleCredito" TypeName="Modelo.DetalleCredito" StoreEntitySet="CreditoSet">
+      <EndProperty Name="Detalle">
+        <ScalarProperty Name="IdDetalle" ColumnName="Detalle_IdDetalle" />
+      </EndProperty>
+      <EndProperty Name="Credito">
+        <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

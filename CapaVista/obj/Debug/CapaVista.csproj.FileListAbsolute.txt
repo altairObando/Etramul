@@ -493,9 +493,7 @@ C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacci
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.DetalleCarrera.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.DetalleTransaccion.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.ListaTransacciones.resources
-C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.Ticket.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.TipoDetalle.resources
-C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.VisorReportes.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Vehiculos.AgregarVehiculos.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Vehiculos.Total_Vehiculos.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Vehiculos.UltimasTransacciones.resources
@@ -506,8 +504,6 @@ C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Reportes.
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.Administracion.es-NI.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Vehiculos.Ver_dia.es-NI.resources
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.csproj.GenerateResource.Cache
-C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\RdlCompile.cache
-C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\RdlCompile.compiled
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\es-NI\COOTRACOSAN.resources.dll
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.TrustInfo.xml
 C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe.manifest
@@ -775,3 +771,5 @@ C:\Users\Estudiante\Desktop\Etramul\CapaVista\obj\Debug\es-NI\COOTRACOSAN.resour
 C:\Users\Estudiante\Desktop\Etramul\CapaVista\obj\Debug\COOTRACOSAN.TrustInfo.xml
 C:\Users\Estudiante\Desktop\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe.manifest
 C:\Users\Estudiante\Desktop\Etramul\CapaVista\obj\Debug\COOTRACOSAN.application
+C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.Atransaccion.resources
+C:\Users\Estudiante\Source\Repos\Etramul\CapaVista\obj\Debug\CapaVista.Transacciones.CambiarContraseña.resources

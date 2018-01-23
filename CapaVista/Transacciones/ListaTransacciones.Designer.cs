@@ -103,7 +103,7 @@
             this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(727, 221);
+            this.dgvEgresos.Size = new System.Drawing.Size(727, 311);
             this.dgvEgresos.TabIndex = 6;
             this.dgvEgresos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEgresos_CellContentClick);
             // 
@@ -176,7 +176,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(130, 369);
+            this.metroLabel2.Location = new System.Drawing.Point(149, 444);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(91, 19);
             this.metroLabel2.TabIndex = 8;
@@ -185,7 +185,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(312, 369);
+            this.metroLabel3.Location = new System.Drawing.Point(331, 444);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(88, 19);
             this.metroLabel3.TabIndex = 10;
@@ -194,7 +194,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(552, 369);
+            this.metroLabel7.Location = new System.Drawing.Point(571, 444);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(39, 19);
             this.metroLabel7.TabIndex = 12;
@@ -204,7 +204,7 @@
             // 
             this.txtIngreso.BackColor = System.Drawing.Color.White;
             this.txtIngreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIngreso.Location = new System.Drawing.Point(222, 375);
+            this.txtIngreso.Location = new System.Drawing.Point(241, 448);
             this.txtIngreso.Name = "txtIngreso";
             this.txtIngreso.ReadOnly = true;
             this.txtIngreso.Size = new System.Drawing.Size(89, 13);
@@ -215,7 +215,7 @@
             // 
             this.txtEgreso.BackColor = System.Drawing.Color.White;
             this.txtEgreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEgreso.Location = new System.Drawing.Point(403, 375);
+            this.txtEgreso.Location = new System.Drawing.Point(422, 448);
             this.txtEgreso.Name = "txtEgreso";
             this.txtEgreso.ReadOnly = true;
             this.txtEgreso.Size = new System.Drawing.Size(89, 13);
@@ -226,7 +226,7 @@
             // 
             this.txtTotal.BackColor = System.Drawing.Color.White;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotal.Location = new System.Drawing.Point(595, 375);
+            this.txtTotal.Location = new System.Drawing.Point(614, 448);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(89, 13);
@@ -236,7 +236,7 @@
             // lblAnuladas
             // 
             this.lblAnuladas.AutoSize = true;
-            this.lblAnuladas.Location = new System.Drawing.Point(32, 369);
+            this.lblAnuladas.Location = new System.Drawing.Point(51, 444);
             this.lblAnuladas.Name = "lblAnuladas";
             this.lblAnuladas.Size = new System.Drawing.Size(66, 19);
             this.lblAnuladas.Style = MetroFramework.MetroColorStyle.Red;
@@ -274,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 404);
+            this.ClientSize = new System.Drawing.Size(775, 483);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblAnuladas);
@@ -292,7 +292,7 @@
             this.MinimizeBox = false;
             this.Name = "ListaTransacciones";
             this.Resizable = false;
-            this.Text = "Historico de Transacciones";
+            this.Text = "Histórico de Transacciones";
             this.Load += new System.EventHandler(this.ListaTransacciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).EndInit();
             this.menuDesplegable.ResumeLayout(false);
