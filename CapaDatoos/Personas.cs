@@ -41,11 +41,7 @@ public partial class Personas
     public virtual Socio Socios { get; set; }
 
     public virtual Conductor Conductor { get; set; }
-        public override string ToString()
-        {
-            return string.Format("{0} {1}", Nombres, Apellidos);
-        }
 
-    }
+}
 
 }

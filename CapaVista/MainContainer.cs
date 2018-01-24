@@ -120,7 +120,7 @@ namespace CapaVista
 
         private void btnTools_Click(object sender, EventArgs e)
         {
-            var menu = new Reportes.MenuHerramientas();
+            var menu = new Transacciones.TipoDetalle();
             menu.ShowDialog();
         }
 
@@ -134,6 +134,12 @@ namespace CapaVista
         {
             var ayuda = new Manual_de_ayuda.Help_Form();
             ayuda.Show();
+        }
+
+        private void btnCreditos_Click(object sender, EventArgs e)
+        {
+            var form = new Creditos.Creditos_form();
+            form.ShowDialog();
         }
     }
 }

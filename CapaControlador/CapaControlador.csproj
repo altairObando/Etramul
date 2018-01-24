@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="CarreraController.cs" />
     <Compile Include="ConductorController.cs" />
+    <Compile Include="CreditoController.cs" />
     <Compile Include="DetalleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaldoController.cs" />

@@ -136,7 +136,7 @@ namespace CapaVista
                             t = 0;
                             decimal ingreso = Decimal.Parse(QuitarEspacios(txtIngreso.Text));
                             //Registrando Ingreso
-                            t = DetalleController.agregar(idTransaccion, TipoDetalleController.leer("CICLO").IdTipoDetalle, "CICLO", ingreso, true, true);
+                            t = DetalleController.agregar(idTransaccion, TipoDetalleController.leer("CICLO").IdTipoDetalle, "CICLO", ingreso, true, true, false);
                             //Verificando y registrando los egresos
                             decimal totalEgreso = 0;
                             if(dgvEgresos.Rows.Count > 0) // Si hay egresos
@@ -147,7 +147,7 @@ namespace CapaVista
                                     string descripcion = dgvEgresos.Rows[j].Cells[2].Value.ToString();
                                     decimal monto = (decimal)dgvEgresos.Rows[j].Cells[3].Value;
                                     totalEgreso += monto;
-                                    t += DetalleController.agregar(idTransaccion, id_egreso, descripcion, monto, false, true);
+                                    t += DetalleController.agregar(idTransaccion, id_egreso, descripcion, monto, false, true, false);
                                 }
                             }
                             // se actualiza el saldo del vehiculo

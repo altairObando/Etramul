@@ -144,13 +144,16 @@ namespace CapaVista.Transacciones
                             {
                                 int TipoDetalle = (int)dgvEgresos.Rows[j].Cells[0].Value;
                                 string Descripcion = (string)dgvEgresos.Rows[j].Cells[2].Value;
-
-                                bool tpTransaccion = dgvEgresos.Rows[j].Cells[3].Value.ToString() == "INGRESO" ? true ? dgvEgresos.Rows[j].Cells[3].Value.ToString() ==
-                                    "CREDITO": true : false;
-
+                                string tipo = dgvEgresos.Rows[j].Cells[3].Value.ToString();
+                                bool tpTransaccion = false;
+                                bool credito = false;
+                                if (tipo.Equals("INGRESO") || tipo.Equals("CREDITO"))
+                                    tpTransaccion = true;
+                                if (tipo.Equals("CREDITO"))
+                                    credito = true;
                                 decimal monto = (decimal)dgvEgresos.Rows[j].Cells[4].Value;
 
-                                t = DetalleController.agregar(idTransaccion, TipoDetalle, Descripcion, monto, tpTransaccion, true);
+                                t = DetalleController.agregar(idTransaccion, TipoDetalle, Descripcion, monto, tpTransaccion, true, credito);
                                 float dec = Convert.ToSingle(monto);
 
                                 if (dgvEgresos.Rows[j].Cells[3].Value.ToString() == "INGRESO")
@@ -163,10 +166,7 @@ namespace CapaVista.Transacciones
                                     eg += monto;
                                     sald = SaldoController.actualizar(id_vehiculo, dec, false, idTransaccion);
                                 }
-                                else
-                                {
-                                    //Actualizamos los creditos
-                                }
+
 
                             }
                             if (t == 0) //Si no se registraron transacciones

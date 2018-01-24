@@ -179,7 +179,7 @@
       <PropertyRef Name="Id_credito" />
     </Key>
     <Property Name="Id_credito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_detalle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id_detalle" Type="int" Nullable="false" />
     <Property Name="saldo" Type="decimal" Nullable="false" />
     <Property Name="cancelado" Type="bit" Nullable="false" />
     <Property Name="anulado" Type="bit" Nullable="false" />

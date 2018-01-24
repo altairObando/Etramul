@@ -28,7 +28,7 @@ public partial class Credito
 
     public int Id_credito { get; set; }
 
-    public string id_detalle { get; set; }
+    public int id_detalle { get; set; }
 
     public decimal saldo { get; set; }
 

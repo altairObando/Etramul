@@ -42,7 +42,6 @@ public partial class Carrera
 
     public virtual Conductor Conductor { get; set; }
 
-
-    }
+}
 
 }

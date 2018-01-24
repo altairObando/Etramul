@@ -184,7 +184,7 @@
       <PropertyRef Name="Id_credito" />
     </Key>
     <Property Name="Id_credito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_detalle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id_detalle" Type="int" Nullable="false" />
     <Property Name="saldo" Type="decimal" Nullable="false" />
     <Property Name="cancelado" Type="bit" Nullable="false" />
     <Property Name="anulado" Type="bit" Nullable="false" />
@@ -642,7 +642,7 @@
           </Key>
           <Property Name="Id_credito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Detalle" Relationship="Modelo.DetalleCredito" FromRole="Credito" ToRole="Detalle" />
-          <Property Name="id_detalle" Type="String" Nullable="false" />
+          <Property Name="id_detalle" Type="Int32" Nullable="false" />
           <Property Name="saldo" Type="Decimal" Nullable="false" />
           <Property Name="cancelado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Abono" Relationship="Modelo.CreditoAbono" FromRole="Credito" ToRole="Abono" />

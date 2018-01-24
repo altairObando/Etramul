@@ -131,6 +131,12 @@
     <Compile Include="Conductores\BuscarConductor.Designer.cs">
       <DependentUpon>BuscarConductor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creditos\Creditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\Creditos.Designer.cs">
+      <DependentUpon>Creditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTipoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Conductores\BuscarConductor.resx">
       <DependentUpon>BuscarConductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Creditos.resx">
+      <DependentUpon>Creditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manual de ayuda\Help_Form.es-NI.resx">
       <DependentUpon>Help_Form.cs</DependentUpon>
@@ -699,6 +708,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\thumbs-up.png" />
     <None Include="Resources\list.png" />
     <None Include="Resources\question%281%29.png" />
     <None Include="Resources\question.png" />
@@ -975,9 +985,7 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Creditos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

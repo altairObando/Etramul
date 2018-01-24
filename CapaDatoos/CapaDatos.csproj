@@ -102,8 +102,10 @@
     <Compile Include="Vehiculo.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="_Abono.cs" />
     <Compile Include="_Carrera.cs" />
     <Compile Include="_Conductor.cs" />
+    <Compile Include="_Credito.cs" />
     <Compile Include="_Detalle.cs" />
     <Compile Include="_Saldo.cs" />
     <Compile Include="_Socio.cs" />

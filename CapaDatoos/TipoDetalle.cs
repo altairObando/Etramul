@@ -35,10 +35,7 @@ public partial class TipoDetalle
 
 
     public virtual ICollection<Detalle> Egreso { get; set; }
-        public override string ToString()
-        {
-            return Descripcion;
-        }
-    }
+
+}
 
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainContainer));
             this.mpPanelPrincipal = new MetroFramework.Controls.MetroPanel();
+            this.btnCreditos = new MetroFramework.Controls.MetroTile();
             this.btnAyuda = new MetroFramework.Controls.MetroTile();
             this.btnTransacciones = new MetroFramework.Controls.MetroTile();
             this.btnSalir = new MetroFramework.Controls.MetroTile();
@@ -39,13 +40,13 @@
             this.btnBuses = new MetroFramework.Controls.MetroTile();
             this.btnConductores = new MetroFramework.Controls.MetroTile();
             this.btnSocios = new MetroFramework.Controls.MetroTile();
-            this.btnUsuarios = new MetroFramework.Controls.MetroTile();
             this.mpPanelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // mpPanelPrincipal
             // 
             this.mpPanelPrincipal.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.mpPanelPrincipal.Controls.Add(this.btnCreditos);
             this.mpPanelPrincipal.Controls.Add(this.btnAyuda);
             this.mpPanelPrincipal.Controls.Add(this.btnTransacciones);
             this.mpPanelPrincipal.Controls.Add(this.btnSalir);
@@ -55,7 +56,6 @@
             this.mpPanelPrincipal.Controls.Add(this.btnBuses);
             this.mpPanelPrincipal.Controls.Add(this.btnConductores);
             this.mpPanelPrincipal.Controls.Add(this.btnSocios);
-            this.mpPanelPrincipal.Controls.Add(this.btnUsuarios);
             this.mpPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mpPanelPrincipal.HorizontalScrollbarBarColor = true;
             this.mpPanelPrincipal.HorizontalScrollbarHighlightOnWheel = false;
@@ -70,11 +70,27 @@
             this.mpPanelPrincipal.VerticalScrollbarHighlightOnWheel = false;
             this.mpPanelPrincipal.VerticalScrollbarSize = 10;
             // 
+            // btnCreditos
+            // 
+            this.btnCreditos.Location = new System.Drawing.Point(391, 5);
+            this.btnCreditos.Name = "btnCreditos";
+            this.btnCreditos.Size = new System.Drawing.Size(188, 181);
+            this.btnCreditos.Style = MetroFramework.MetroColorStyle.Silver;
+            this.btnCreditos.TabIndex = 10;
+            this.btnCreditos.Text = "Creditos/Abonos";
+            this.btnCreditos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCreditos.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnCreditos.TileImage = global::CapaVista.Properties.Resources.thumbs_up;
+            this.btnCreditos.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCreditos.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.btnCreditos.UseTileImage = true;
+            this.btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
+            // 
             // btnAyuda
             // 
             this.btnAyuda.CustomForeColor = true;
             this.btnAyuda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAyuda.Location = new System.Drawing.Point(779, 3);
+            this.btnAyuda.Location = new System.Drawing.Point(779, 5);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(188, 181);
             this.btnAyuda.Style = MetroFramework.MetroColorStyle.White;
@@ -90,7 +106,7 @@
             // 
             // btnTransacciones
             // 
-            this.btnTransacciones.Location = new System.Drawing.Point(392, 190);
+            this.btnTransacciones.Location = new System.Drawing.Point(392, 192);
             this.btnTransacciones.Name = "btnTransacciones";
             this.btnTransacciones.Size = new System.Drawing.Size(188, 181);
             this.btnTransacciones.Style = MetroFramework.MetroColorStyle.Purple;
@@ -106,7 +122,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(780, 190);
+            this.btnSalir.Location = new System.Drawing.Point(780, 192);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(188, 181);
             this.btnSalir.TabIndex = 9;
@@ -121,11 +137,11 @@
             // 
             // btnTools
             // 
-            this.btnTools.Location = new System.Drawing.Point(585, 3);
+            this.btnTools.Location = new System.Drawing.Point(585, 5);
             this.btnTools.Name = "btnTools";
             this.btnTools.Size = new System.Drawing.Size(188, 181);
             this.btnTools.TabIndex = 6;
-            this.btnTools.Text = "Herramientas";
+            this.btnTools.Text = "Rubros";
             this.btnTools.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTools.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnTools.TileImage = global::CapaVista.Properties.Resources.settings;
@@ -136,7 +152,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(586, 190);
+            this.btnLogout.Location = new System.Drawing.Point(586, 192);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(188, 181);
             this.btnLogout.Style = MetroFramework.MetroColorStyle.Orange;
@@ -152,7 +168,7 @@
             // 
             // btnCarreras
             // 
-            this.btnCarreras.Location = new System.Drawing.Point(391, 3);
+            this.btnCarreras.Location = new System.Drawing.Point(197, 192);
             this.btnCarreras.Name = "btnCarreras";
             this.btnCarreras.Size = new System.Drawing.Size(188, 181);
             this.btnCarreras.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -168,7 +184,7 @@
             // 
             // btnBuses
             // 
-            this.btnBuses.Location = new System.Drawing.Point(197, 190);
+            this.btnBuses.Location = new System.Drawing.Point(197, 5);
             this.btnBuses.Name = "btnBuses";
             this.btnBuses.Size = new System.Drawing.Size(188, 181);
             this.btnBuses.Style = MetroFramework.MetroColorStyle.Brown;
@@ -184,7 +200,7 @@
             // 
             // btnConductores
             // 
-            this.btnConductores.Location = new System.Drawing.Point(3, 190);
+            this.btnConductores.Location = new System.Drawing.Point(3, 5);
             this.btnConductores.Name = "btnConductores";
             this.btnConductores.Size = new System.Drawing.Size(188, 181);
             this.btnConductores.Style = MetroFramework.MetroColorStyle.Green;
@@ -200,7 +216,7 @@
             // 
             // btnSocios
             // 
-            this.btnSocios.Location = new System.Drawing.Point(197, 3);
+            this.btnSocios.Location = new System.Drawing.Point(3, 192);
             this.btnSocios.Name = "btnSocios";
             this.btnSocios.Size = new System.Drawing.Size(188, 181);
             this.btnSocios.Style = MetroFramework.MetroColorStyle.Blue;
@@ -213,22 +229,6 @@
             this.btnSocios.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.btnSocios.UseTileImage = true;
             this.btnSocios.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Location = new System.Drawing.Point(3, 3);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(188, 181);
-            this.btnUsuarios.Style = MetroFramework.MetroColorStyle.Silver;
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUsuarios.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.btnUsuarios.TileImage = global::CapaVista.Properties.Resources.student128x128;
-            this.btnUsuarios.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnUsuarios.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.btnUsuarios.UseTileImage = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // MainContainer
             // 
@@ -253,7 +253,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel mpPanelPrincipal;
-        private MetroFramework.Controls.MetroTile btnUsuarios;
         private MetroFramework.Controls.MetroTile btnBuses;
         private MetroFramework.Controls.MetroTile btnConductores;
         private MetroFramework.Controls.MetroTile btnSocios;
@@ -263,5 +262,6 @@
         private MetroFramework.Controls.MetroTile btnSalir;
         private MetroFramework.Controls.MetroTile btnLogout;
         private MetroFramework.Controls.MetroTile btnAyuda;
+        private MetroFramework.Controls.MetroTile btnCreditos;
     }
 }

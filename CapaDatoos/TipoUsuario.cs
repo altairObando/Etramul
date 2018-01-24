@@ -33,10 +33,7 @@ public partial class TipoUsuario
 
 
     public virtual ICollection<Usuarios> Usuarios { get; set; }
-        public override string ToString()
-        {
-            return Descripcion;
-        }
-    }
+
+}
 
 }

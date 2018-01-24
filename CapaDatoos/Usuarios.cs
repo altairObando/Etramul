@@ -31,11 +31,7 @@ public partial class Usuarios
     public virtual Personas Personas { get; set; }
 
     public virtual TipoUsuario TipoUsuario { get; set; }
-        public override string ToString()
-        {
-            return Personas.ToString();
-        }
 
-    }
+}
 
 }

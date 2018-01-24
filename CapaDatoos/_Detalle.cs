@@ -49,6 +49,17 @@ namespace CapaDatos
                     {
                         db.DetalleSet.Add(det);
                         result = db.SaveChanges();
+                        //Si es un credito actualizamos la tabla de los creditos
+                        if((bool)det.credito)
+                        {
+                            //Obtenemos el ultimo detalle agregado
+                            int ultimo = (from item in db.DetalleSet orderby item.IdDetalle descending select item).First().IdDetalle;
+                            //Agregamos a la tabla de creditos
+                            var credito = new _Credito(
+                                new Credito { id_detalle = ultimo, saldo = det.Cantidad, anulado = false, cancelado = false}
+                                );
+                            result = credito.agregar();
+                        }
                     }
                 }
                 catch (Exception ex)

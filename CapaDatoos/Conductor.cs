@@ -35,10 +35,7 @@ public partial class Conductor
     public virtual Personas Personas { get; set; }
 
     public virtual ICollection<Carrera> Carrera { get; set; }
-        public override string ToString()
-        {
-            return Personas.ToString();
-        }
-    }
+
+}
 
 }

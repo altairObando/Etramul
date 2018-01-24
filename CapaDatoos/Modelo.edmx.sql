@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/22/2018 19:52:21
+-- Date Created: 01/23/2018 17:41:49
 -- Generated from EDMX file: C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\Modelo.edmx
 -- --------------------------------------------------
 
@@ -216,7 +216,7 @@ GO
 -- Creating table 'CreditoSet'
 CREATE TABLE [dbo].[CreditoSet] (
     [Id_credito] int IDENTITY(1,1) NOT NULL,
-    [id_detalle] nvarchar(max)  NOT NULL,
+    [id_detalle] int  NOT NULL,
     [saldo] decimal(18,0)  NOT NULL,
     [cancelado] bit  NOT NULL,
     [anulado] bit  NOT NULL,

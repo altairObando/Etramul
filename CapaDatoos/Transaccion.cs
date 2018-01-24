@@ -42,6 +42,6 @@ public partial class Transaccion
 
     public virtual ICollection<Detalle> Egreso { get; set; }
 
-    }
+}
 
 }
