@@ -18,32 +18,32 @@ namespace CapaVista.Creditos
         {
             InitializeComponent();
             newInstanceCreditosTable();
-            obtenerCreditos(CreditoController.Listar());
+            //obtenerCreditos(CreditoController.Listar());
         }
-        List<CapaDatos.Credito> datos = null;
+        //List<CapaDatos.Credito> datos = null;
         private DataTable CreditosTable = null;
-        private void obtenerCreditos(List<CapaDatos.Credito> datos)
-        {
+        //private void obtenerCreditos(List<CapaDatos.Credito> datos)
+        //{
             
-            //Poblando la tabla
-            foreach (var item in datos)
-            {
-                var fila = CreditosTable.NewRow();
-                fila["Factura"] = item.Detalle.IdTransaccion;
-                fila["Placa"] = item.Detalle.Transaccion.Vehiculo.Placa;
-                fila["Fecha"] = item.Detalle.Transaccion.FechaTransaccion;
-                fila["Monto"] = item.Detalle.Cantidad;
-                fila["Saldo"] = item.saldo;
-                fila["Abonos"] = item.Abono.Count();
-                fila["Cancelado"] = item.cancelado;
+        //    //Poblando la tabla
+        //    foreach (var item in datos)
+        //    {
+        //        var fila = CreditosTable.NewRow();
+        //        fila["Factura"] = item.Detalle.IdTransaccion;
+        //        fila["Placa"] = item.Detalle.Transaccion.Vehiculo.Placa;
+        //        fila["Fecha"] = item.Detalle.Transaccion.FechaTransaccion;
+        //        fila["Monto"] = item.Detalle.Cantidad;
+        //        fila["Saldo"] = item.saldo;
+        //        fila["Abonos"] = item.Abono.Count();
+        //        fila["Cancelado"] = item.cancelado;
 
-                CreditosTable.Rows.Add(fila);
-            }
-            //Seteando al datagrid
-            dgvCreditos.DataSource = CreditosTable;
-            dgvCreditos.Refresh();
-            Refresh();
-        }
+        //        CreditosTable.Rows.Add(fila);
+        //    }
+        //    //Seteando al datagrid
+        //    dgvCreditos.DataSource = CreditosTable;
+        //    dgvCreditos.Refresh();
+        //    Refresh();
+        ////}
         private void Creditos_Load(object sender, EventArgs e)
         {
             //Cargar Combo rubros
@@ -66,7 +66,7 @@ namespace CapaVista.Creditos
 
         private void cboRubros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            obtenerCreditos(CreditoController.Listar(obtenerCbo().IdTipoDetalle, dtFecha.Value));
+            //obtenerCreditos(CreditoController.Listar(obtenerCbo().IdTipoDetalle, dtFecha.Value));
         }
 
         private void dtFecha_ValueChanged(object sender, EventArgs e)
@@ -79,12 +79,12 @@ namespace CapaVista.Creditos
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            List<CapaDatos.Credito> lista = CreditoController.Listar()
-                .Where(x =>
-               x.Detalle.Transaccion.FechaTransaccion >= dtFecha1.Value.Date &&
-               x.Detalle.Transaccion.FechaTransaccion <= dtFecha2.Value.Date
-                ).ToList();
-            obtenerCreditos(lista);
+            //List<CapaDatos.Credito> lista = CreditoController.Listar()
+            //    .Where(x =>
+            //   x.Detalle.Transaccion.FechaTransaccion >= dtFecha1.Value.Date &&
+            //   x.Detalle.Transaccion.FechaTransaccion <= dtFecha2.Value.Date
+            //    ).ToList();
+            //obtenerCreditos(lista);
         }
 
         private void ctxMenu_Opening(object sender, CancelEventArgs e)

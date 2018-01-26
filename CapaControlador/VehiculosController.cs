@@ -32,8 +32,8 @@ namespace CapaControlador
             {
                 _Vehiculo db = new _Vehiculo(veh);
                 result = db.agregar();
-                //Si se agrega ingresar a los saldos
-                 result = SaldoController.agregar(getUltimo().Id_Vehiculo, 0 , 0);
+                ////Si se agrega ingresar a los saldos
+                // result = SaldoController.agregar(getUltimo().Id_Vehiculo, 0 , 0);
             }
             catch (Exception ex)
             {

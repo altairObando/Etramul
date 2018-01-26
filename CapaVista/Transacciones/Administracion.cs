@@ -29,7 +29,7 @@ namespace CapaVista.Transacciones
         private void btnAceptar_Click(object sender, System.EventArgs e)
         {
             //Obtencion de la informacion seleccionada
-            string nick = cboUsuario.Text;
+            string nick = ((CapaDatos.Usuarios)cboUsuario.SelectedItem).Nickname;
             string clave = txtClave.Text;
             //validando informacion complementaria
             if (!string.IsNullOrWhiteSpace(clave))

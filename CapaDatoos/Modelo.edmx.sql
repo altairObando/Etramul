@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/23/2018 17:41:49
+-- Date Created: 01/24/2018 19:24:33
 -- Generated from EDMX file: C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\Modelo.edmx
 -- --------------------------------------------------
 
@@ -47,11 +47,11 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ConductorCarrera]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CarreraSet] DROP CONSTRAINT [FK_ConductorCarrera];
 GO
-IF OBJECT_ID(N'[dbo].[FK_DetalleCredito]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[CreditoSet] DROP CONSTRAINT [FK_DetalleCredito];
+IF OBJECT_ID(N'[dbo].[FK_DetalleAbono]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AbonoSet] DROP CONSTRAINT [FK_DetalleAbono];
 GO
-IF OBJECT_ID(N'[dbo].[FK_CreditoAbono]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[AbonoSet] DROP CONSTRAINT [FK_CreditoAbono];
+IF OBJECT_ID(N'[dbo].[FK_DetalleSaldo_detalle]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Saldo_detalleSet] DROP CONSTRAINT [FK_DetalleSaldo_detalle];
 GO
 
 -- --------------------------------------------------
@@ -88,14 +88,11 @@ GO
 IF OBJECT_ID(N'[dbo].[CarreraSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[CarreraSet];
 GO
-IF OBJECT_ID(N'[dbo].[SaldoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[SaldoSet];
-GO
-IF OBJECT_ID(N'[dbo].[CreditoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CreditoSet];
-GO
 IF OBJECT_ID(N'[dbo].[AbonoSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[AbonoSet];
+GO
+IF OBJECT_ID(N'[dbo].[Saldo_detalleSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Saldo_detalleSet];
 GO
 
 -- --------------------------------------------------
@@ -174,11 +171,11 @@ CREATE TABLE [dbo].[DetalleSet] (
     [IdDetalle] int IDENTITY(1,1) NOT NULL,
     [IdTransaccion] int  NOT NULL,
     [TipoDetalle] int  NOT NULL,
-    [TipoTransaccion] bit  NOT NULL,
+    [TipoTransaccion] int  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
     [Cantidad] decimal(18,0)  NOT NULL,
     [Activo] bit  NOT NULL,
-    [credito] bit  NULL
+    [Cancelado] bit  NOT NULL
 );
 GO
 
@@ -204,33 +201,21 @@ CREATE TABLE [dbo].[CarreraSet] (
 );
 GO
 
--- Creating table 'SaldoSet'
-CREATE TABLE [dbo].[SaldoSet] (
-    [Id_saldo] int IDENTITY(1,1) NOT NULL,
-    [Id_vehiculo] int  NOT NULL,
-    [Total_sado] float  NOT NULL,
-    [ultima_transacion] int  NOT NULL
-);
-GO
-
--- Creating table 'CreditoSet'
-CREATE TABLE [dbo].[CreditoSet] (
-    [Id_credito] int IDENTITY(1,1) NOT NULL,
-    [id_detalle] int  NOT NULL,
-    [saldo] decimal(18,0)  NOT NULL,
-    [cancelado] bit  NOT NULL,
-    [anulado] bit  NOT NULL,
-    [Detalle_IdDetalle] int  NOT NULL
-);
-GO
-
 -- Creating table 'AbonoSet'
 CREATE TABLE [dbo].[AbonoSet] (
-    [id_abono] int IDENTITY(1,1) NOT NULL,
-    [id_credito] int  NOT NULL,
-    [fecha] nvarchar(max)  NOT NULL,
-    [monto] decimal(18,0)  NOT NULL,
-    [anulado] bit  NOT NULL
+    [Id_abono] int IDENTITY(1,1) NOT NULL,
+    [Id_transaccion] int  NOT NULL,
+    [id_detalle] int  NOT NULL,
+    [Monto] decimal(18,0)  NOT NULL
+);
+GO
+
+-- Creating table 'Saldo_detalleSet'
+CREATE TABLE [dbo].[Saldo_detalleSet] (
+    [Id_saldo] int IDENTITY(1,1) NOT NULL,
+    [id_detalle] int  NOT NULL,
+    [Saldo] decimal(18,0)  NOT NULL,
+    [Detalle_IdDetalle] int  NULL
 );
 GO
 
@@ -298,22 +283,16 @@ ADD CONSTRAINT [PK_CarreraSet]
     PRIMARY KEY CLUSTERED ([Id_carrera] ASC);
 GO
 
--- Creating primary key on [Id_saldo] in table 'SaldoSet'
-ALTER TABLE [dbo].[SaldoSet]
-ADD CONSTRAINT [PK_SaldoSet]
-    PRIMARY KEY CLUSTERED ([Id_saldo] ASC);
-GO
-
--- Creating primary key on [Id_credito] in table 'CreditoSet'
-ALTER TABLE [dbo].[CreditoSet]
-ADD CONSTRAINT [PK_CreditoSet]
-    PRIMARY KEY CLUSTERED ([Id_credito] ASC);
-GO
-
--- Creating primary key on [id_abono] in table 'AbonoSet'
+-- Creating primary key on [Id_abono] in table 'AbonoSet'
 ALTER TABLE [dbo].[AbonoSet]
 ADD CONSTRAINT [PK_AbonoSet]
-    PRIMARY KEY CLUSTERED ([id_abono] ASC);
+    PRIMARY KEY CLUSTERED ([Id_abono] ASC);
+GO
+
+-- Creating primary key on [Id_saldo] in table 'Saldo_detalleSet'
+ALTER TABLE [dbo].[Saldo_detalleSet]
+ADD CONSTRAINT [PK_Saldo_detalleSet]
+    PRIMARY KEY CLUSTERED ([Id_saldo] ASC);
 GO
 
 -- --------------------------------------------------
@@ -470,34 +449,49 @@ ON [dbo].[CarreraSet]
     ([Id_conductor]);
 GO
 
--- Creating foreign key on [Detalle_IdDetalle] in table 'CreditoSet'
-ALTER TABLE [dbo].[CreditoSet]
-ADD CONSTRAINT [FK_DetalleCredito]
+-- Creating foreign key on [id_detalle] in table 'AbonoSet'
+ALTER TABLE [dbo].[AbonoSet]
+ADD CONSTRAINT [FK_DetalleAbono]
+    FOREIGN KEY ([id_detalle])
+    REFERENCES [dbo].[DetalleSet]
+        ([IdDetalle])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DetalleAbono'
+CREATE INDEX [IX_FK_DetalleAbono]
+ON [dbo].[AbonoSet]
+    ([id_detalle]);
+GO
+
+-- Creating foreign key on [Detalle_IdDetalle] in table 'Saldo_detalleSet'
+ALTER TABLE [dbo].[Saldo_detalleSet]
+ADD CONSTRAINT [FK_DetalleSaldo_detalle]
     FOREIGN KEY ([Detalle_IdDetalle])
     REFERENCES [dbo].[DetalleSet]
         ([IdDetalle])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_DetalleCredito'
-CREATE INDEX [IX_FK_DetalleCredito]
-ON [dbo].[CreditoSet]
+-- Creating non-clustered index for FOREIGN KEY 'FK_DetalleSaldo_detalle'
+CREATE INDEX [IX_FK_DetalleSaldo_detalle]
+ON [dbo].[Saldo_detalleSet]
     ([Detalle_IdDetalle]);
 GO
 
--- Creating foreign key on [id_credito] in table 'AbonoSet'
+-- Creating foreign key on [Id_transaccion] in table 'AbonoSet'
 ALTER TABLE [dbo].[AbonoSet]
-ADD CONSTRAINT [FK_CreditoAbono]
-    FOREIGN KEY ([id_credito])
-    REFERENCES [dbo].[CreditoSet]
-        ([Id_credito])
+ADD CONSTRAINT [FK_TransaccionAbono]
+    FOREIGN KEY ([Id_transaccion])
+    REFERENCES [dbo].[TransaccionSet]
+        ([IdTransaccion])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_CreditoAbono'
-CREATE INDEX [IX_FK_CreditoAbono]
+-- Creating non-clustered index for FOREIGN KEY 'FK_TransaccionAbono'
+CREATE INDEX [IX_FK_TransaccionAbono]
 ON [dbo].[AbonoSet]
-    ([id_credito]);
+    ([Id_transaccion]);
 GO
 
 -- --------------------------------------------------

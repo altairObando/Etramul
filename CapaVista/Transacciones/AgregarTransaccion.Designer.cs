@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarTransaccion));
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.txtFac = new System.Windows.Forms.TextBox();
             this.lblNoFactura = new MetroFramework.Controls.MetroLabel();
             this.lblFactura = new MetroFramework.Controls.MetroLabel();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
@@ -40,8 +42,11 @@
             this.lblConductor = new MetroFramework.Controls.MetroLabel();
             this.lblDatosGeneral = new MetroFramework.Controls.MetroLabel();
             this.mpEgresos = new MetroFramework.Controls.MetroPanel();
-            this.txtFac = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCarrera = new System.Windows.Forms.Button();
+            this.btnResumen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbCredito = new System.Windows.Forms.RadioButton();
             this.rbtnEgreso = new System.Windows.Forms.RadioButton();
             this.rbtnIngreso = new System.Windows.Forms.RadioButton();
             this.txtMonto = new System.Windows.Forms.MaskedTextBox();
@@ -62,11 +67,6 @@
             this.lblEgresos = new MetroFramework.Controls.MetroLabel();
             this.lblUser = new MetroFramework.Controls.MetroLink();
             this.lblSalir = new MetroFramework.Controls.MetroLink();
-            this.rbCredito = new System.Windows.Forms.RadioButton();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCarrera = new System.Windows.Forms.Button();
-            this.btnResumen = new System.Windows.Forms.Button();
             this.panelDatos.SuspendLayout();
             this.mpEgresos.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -96,11 +96,36 @@
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
             this.panelDatos.VerticalScrollbarSize = 10;
             // 
+            // btnAnular
+            // 
+            this.btnAnular.FlatAppearance.BorderSize = 0;
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnular.Image = global::CapaVista.Properties.Resources.search_1_;
+            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnular.Location = new System.Drawing.Point(535, 59);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(140, 39);
+            this.btnAnular.TabIndex = 12;
+            this.btnAnular.Text = "Buscar Factura";
+            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // txtFac
+            // 
+            this.txtFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFac.Location = new System.Drawing.Point(382, 69);
+            this.txtFac.Name = "txtFac";
+            this.txtFac.Size = new System.Drawing.Size(147, 22);
+            this.txtFac.TabIndex = 11;
+            this.txtFac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblNoFactura
             // 
             this.lblNoFactura.AutoSize = true;
             this.lblNoFactura.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblNoFactura.Location = new System.Drawing.Point(229, 5);
+            this.lblNoFactura.Location = new System.Drawing.Point(229, 6);
             this.lblNoFactura.Name = "lblNoFactura";
             this.lblNoFactura.Size = new System.Drawing.Size(110, 25);
             this.lblNoFactura.TabIndex = 5;
@@ -181,14 +206,56 @@
             this.mpEgresos.VerticalScrollbarHighlightOnWheel = false;
             this.mpEgresos.VerticalScrollbarSize = 10;
             // 
-            // txtFac
+            // btnGuardar
             // 
-            this.txtFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFac.Location = new System.Drawing.Point(382, 69);
-            this.txtFac.Name = "txtFac";
-            this.txtFac.Size = new System.Drawing.Size(147, 22);
-            this.txtFac.TabIndex = 11;
-            this.txtFac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MintCream;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGuardar.Image = global::CapaVista.Properties.Resources.save;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGuardar.Location = new System.Drawing.Point(606, 123);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(88, 58);
+            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCarrera
+            // 
+            this.btnCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCarrera.FlatAppearance.BorderSize = 0;
+            this.btnCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarrera.Image = global::CapaVista.Properties.Resources.road1;
+            this.btnCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCarrera.Location = new System.Drawing.Point(377, 31);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(147, 33);
+            this.btnCarrera.TabIndex = 9;
+            this.btnCarrera.Text = "Registrar Viaje";
+            this.btnCarrera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
+            // 
+            // btnResumen
+            // 
+            this.btnResumen.FlatAppearance.BorderSize = 0;
+            this.btnResumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResumen.Image = global::CapaVista.Properties.Resources.list;
+            this.btnResumen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnResumen.Location = new System.Drawing.Point(545, 30);
+            this.btnResumen.Name = "btnResumen";
+            this.btnResumen.Size = new System.Drawing.Size(130, 33);
+            this.btnResumen.TabIndex = 10;
+            this.btnResumen.Text = "Resumen";
+            this.btnResumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnResumen.UseVisualStyleBackColor = true;
+            this.btnResumen.Click += new System.EventHandler(this.btnResumen_Click);
             // 
             // panel1
             // 
@@ -199,6 +266,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 42);
             this.panel1.TabIndex = 0;
+            // 
+            // rbCredito
+            // 
+            this.rbCredito.AutoSize = true;
+            this.rbCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCredito.Location = new System.Drawing.Point(195, 6);
+            this.rbCredito.Name = "rbCredito";
+            this.rbCredito.Size = new System.Drawing.Size(88, 28);
+            this.rbCredito.TabIndex = 2;
+            this.rbCredito.Text = "Credito";
+            this.rbCredito.UseVisualStyleBackColor = true;
             // 
             // rbtnEgreso
             // 
@@ -408,84 +486,6 @@
             this.lblSalir.Text = "Salir";
             this.lblSalir.UseStyleColors = true;
             this.lblSalir.Click += new System.EventHandler(this.lblSalir_Click);
-            // 
-            // rbCredito
-            // 
-            this.rbCredito.AutoSize = true;
-            this.rbCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCredito.Location = new System.Drawing.Point(195, 6);
-            this.rbCredito.Name = "rbCredito";
-            this.rbCredito.Size = new System.Drawing.Size(88, 28);
-            this.rbCredito.TabIndex = 2;
-            this.rbCredito.Text = "Credito";
-            this.rbCredito.UseVisualStyleBackColor = true;
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.FlatAppearance.BorderSize = 0;
-            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.Image = global::CapaVista.Properties.Resources.search_1_;
-            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnular.Location = new System.Drawing.Point(535, 59);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(140, 39);
-            this.btnAnular.TabIndex = 12;
-            this.btnAnular.Text = "Buscar Factura";
-            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.UseVisualStyleBackColor = true;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MintCream;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGuardar.Image = global::CapaVista.Properties.Resources.save;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(606, 123);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(88, 58);
-            this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCarrera
-            // 
-            this.btnCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCarrera.FlatAppearance.BorderSize = 0;
-            this.btnCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarrera.Image = global::CapaVista.Properties.Resources.road1;
-            this.btnCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCarrera.Location = new System.Drawing.Point(377, 31);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(147, 33);
-            this.btnCarrera.TabIndex = 9;
-            this.btnCarrera.Text = "Registrar Viaje";
-            this.btnCarrera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
-            // 
-            // btnResumen
-            // 
-            this.btnResumen.FlatAppearance.BorderSize = 0;
-            this.btnResumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResumen.Image = global::CapaVista.Properties.Resources.list;
-            this.btnResumen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnResumen.Location = new System.Drawing.Point(545, 30);
-            this.btnResumen.Name = "btnResumen";
-            this.btnResumen.Size = new System.Drawing.Size(130, 33);
-            this.btnResumen.TabIndex = 10;
-            this.btnResumen.Text = "Resumen";
-            this.btnResumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResumen.UseVisualStyleBackColor = true;
-            this.btnResumen.Click += new System.EventHandler(this.btnResumen_Click);
             // 
             // AgregarTransaccion
             // 

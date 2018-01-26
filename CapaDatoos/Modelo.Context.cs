@@ -52,11 +52,9 @@ public partial class ModeloContainer : DbContext
 
     public DbSet<Carrera> CarreraSet { get; set; }
 
-    public DbSet<Saldo> SaldoSet { get; set; }
-
-    public DbSet<Credito> CreditoSet { get; set; }
-
     public DbSet<Abono> AbonoSet { get; set; }
+
+    public DbSet<Saldo_detalle> Saldo_detalleSet { get; set; }
 
 }
 

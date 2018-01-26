@@ -82,7 +82,7 @@
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
           <ScalarProperty Name="Activo" ColumnName="Activo" />
-          <ScalarProperty Name="credito" ColumnName="credito" />
+          <ScalarProperty Name="Cancelado" ColumnName="Cancelado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -110,35 +110,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SaldoSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Saldo)">
-        <MappingFragment StoreEntitySet="SaldoSet">
-          <ScalarProperty Name="Id_saldo" ColumnName="Id_saldo" />
-          <ScalarProperty Name="Id_vehiculo" ColumnName="Id_vehiculo" />
-          <ScalarProperty Name="Total_sado" ColumnName="Total_sado" />
-          <ScalarProperty Name="ultima_transacion" ColumnName="ultima_transacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CreditoSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Credito)">
-        <MappingFragment StoreEntitySet="CreditoSet">
-          <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
-          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
-          <ScalarProperty Name="saldo" ColumnName="saldo" />
-          <ScalarProperty Name="cancelado" ColumnName="cancelado" />
-          <ScalarProperty Name="anulado" ColumnName="anulado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AbonoSet">
       <EntityTypeMapping TypeName="IsTypeOf(Modelo.Abono)">
         <MappingFragment StoreEntitySet="AbonoSet">
-          <ScalarProperty Name="id_abono" ColumnName="id_abono" />
-          <ScalarProperty Name="id_credito" ColumnName="id_credito" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
-          <ScalarProperty Name="monto" ColumnName="monto" />
-          <ScalarProperty Name="anulado" ColumnName="anulado" />
+          <ScalarProperty Name="Id_abono" ColumnName="Id_abono" />
+          <ScalarProperty Name="Id_transaccion" ColumnName="Id_transaccion" />
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Saldo_detalleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Saldo_detalle)">
+        <MappingFragment StoreEntitySet="Saldo_detalleSet">
+          <ScalarProperty Name="Id_saldo" ColumnName="Id_saldo" />
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -166,13 +153,14 @@
         <ScalarProperty Name="Id_socio" ColumnName="Id_socio" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="DetalleCredito" TypeName="Modelo.DetalleCredito" StoreEntitySet="CreditoSet">
+    <AssociationSetMapping Name="DetalleSaldo_detalle" TypeName="Modelo.DetalleSaldo_detalle" StoreEntitySet="Saldo_detalleSet">
       <EndProperty Name="Detalle">
         <ScalarProperty Name="IdDetalle" ColumnName="Detalle_IdDetalle" />
       </EndProperty>
-      <EndProperty Name="Credito">
-        <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
+      <EndProperty Name="Saldo_detalle">
+        <ScalarProperty Name="Id_saldo" ColumnName="Id_saldo" />
       </EndProperty>
+      <Condition ColumnName="Detalle_IdDetalle" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -58,6 +58,7 @@ C:\Users\martiz\Source\Repos\Etramul\Test\bin\Debug\EntityFramework.xml
 C:\Users\martiz\Source\Repos\Etramul\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\martiz\Source\Repos\Etramul\Test\obj\Debug\Test.exe
 C:\Users\martiz\Source\Repos\Etramul\Test\obj\Debug\Test.pdb
+C:\Users\Estudiante\Source\Repos\Etramul\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\Estudiante\Source\Repos\Etramul\Test\bin\Debug\Test.exe.config
 C:\Users\Estudiante\Source\Repos\Etramul\Test\bin\Debug\Test.exe
 C:\Users\Estudiante\Source\Repos\Etramul\Test\bin\Debug\Test.pdb
@@ -67,6 +68,17 @@ C:\Users\Estudiante\Source\Repos\Etramul\Test\bin\Debug\EntityFramework.dll
 C:\Users\Estudiante\Source\Repos\Etramul\Test\bin\Debug\CapaControlador.pdb
 C:\Users\Estudiante\Source\Repos\Etramul\Test\bin\Debug\CapaDatoos.pdb
 C:\Users\Estudiante\Source\Repos\Etramul\Test\bin\Debug\EntityFramework.xml
-C:\Users\Estudiante\Source\Repos\Etramul\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\Estudiante\Source\Repos\Etramul\Test\obj\Debug\Test.exe
 C:\Users\Estudiante\Source\Repos\Etramul\Test\obj\Debug\Test.pdb
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\Test.exe.config
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\obj\Debug\Test.exe
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\obj\Debug\Test.pdb
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\Test.exe
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\Test.pdb
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\CapaControlador.dll
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\CapaDatoos.dll
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\EntityFramework.dll
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\CapaControlador.pdb
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\CapaDatoos.pdb
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\bin\Debug\EntityFramework.xml
+C:\Users\MASTERCOMP01\Desktop\Etramul\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

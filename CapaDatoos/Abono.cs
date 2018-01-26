@@ -18,19 +18,19 @@ using System;
 public partial class Abono
 {
 
-    public int id_abono { get; set; }
+    public int Id_abono { get; set; }
 
-    public int id_credito { get; set; }
+    public int Id_transaccion { get; set; }
 
-    public string fecha { get; set; }
+    public int id_detalle { get; set; }
 
-    public decimal monto { get; set; }
-
-    public bool anulado { get; set; }
+    public decimal Monto { get; set; }
 
 
 
-    public virtual Credito Credito { get; set; }
+    public virtual Detalle Detalle { get; set; }
+
+    public virtual Transaccion Transaccion { get; set; }
 
 }
 

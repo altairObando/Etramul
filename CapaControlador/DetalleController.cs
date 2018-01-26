@@ -20,7 +20,7 @@ namespace CapaControlador
         /// <param name="TipoTransaccion">Representa el numero </param>
         /// <param name="activo">Representa el estado del detalle</param>
         /// <returns></returns>
-        public static int agregar(int idtransaccion, int IdTipoDetalle, string Descripcion, decimal cantidad, bool TipoTransaccion, bool activo, bool isCredito)
+        public static int agregar(int idtransaccion, int IdTipoDetalle, string Descripcion, decimal cantidad, int TipoTransaccion, bool activo)
         {
             int result = -1;
             Detalle det = new Detalle()
@@ -30,8 +30,7 @@ namespace CapaControlador
                 Descripcion = Descripcion,
                 Cantidad = cantidad,
                 TipoTransaccion = TipoTransaccion,
-                Activo = activo,
-                credito = isCredito
+                Activo = activo
             };
 
             try

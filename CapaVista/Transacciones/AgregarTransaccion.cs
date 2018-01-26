@@ -81,7 +81,7 @@ namespace CapaVista.Transacciones
                 decimal monto = decimal.Parse(QuitarEspacios(txtMonto.Text));
                 if (monto <= 0)
                     throw new FormatException("El valor de la transacción no puede ser menor o igual a C$ 0.00 ");
-                valor = (rbtnIngreso.Checked) ? "INGRESO" : rbtnIngreso.Checked ? "EGRESO" : "CREDITO";
+                valor = (rbtnIngreso.Checked) ? "INGRESO" : rbtnEgreso.Checked ? "EGRESO" : "CREDITO";
                 dgvEgresos.Rows.Add(cod, tipo, descripcion, valor, monto);
                 limpiarEgresos();
                 txtDescripcion.Text = "SIN DEFINIR";
@@ -134,7 +134,6 @@ namespace CapaVista.Transacciones
                         //Si la transaccion tuvo exito
                         if (i > 0)
                         {
-                            int sald = 0;
                             int t = 0;
                             //Obtiendo el utimo id de la transaccion
                             int idTransaccion = TransaccionController.getUltima().IdTransaccion;
@@ -145,29 +144,22 @@ namespace CapaVista.Transacciones
                                 int TipoDetalle = (int)dgvEgresos.Rows[j].Cells[0].Value;
                                 string Descripcion = (string)dgvEgresos.Rows[j].Cells[2].Value;
                                 string tipo = dgvEgresos.Rows[j].Cells[3].Value.ToString();
-                                bool tpTransaccion = false;
-                                bool credito = false;
-                                if (tipo.Equals("INGRESO") || tipo.Equals("CREDITO"))
-                                    tpTransaccion = true;
-                                if (tipo.Equals("CREDITO"))
-                                    credito = true;
+                                int tpTransaccion = 0; //Egreso
+                                if (tipo.Equals("INGRESO"))
+                                    tpTransaccion = 1;
+                                else if (tipo.Equals("CREDITO"))
+                                    tpTransaccion = 2;
+
                                 decimal monto = (decimal)dgvEgresos.Rows[j].Cells[4].Value;
 
-                                t = DetalleController.agregar(idTransaccion, TipoDetalle, Descripcion, monto, tpTransaccion, true, credito);
+                                t = DetalleController.agregar(idTransaccion, TipoDetalle, Descripcion, monto, tpTransaccion, true);
                                 float dec = Convert.ToSingle(monto);
 
-                                if (dgvEgresos.Rows[j].Cells[3].Value.ToString() == "INGRESO")
-                                {
+                                if (tipo == "INGRESO")
                                     ing += monto;
-                                    sald = SaldoController.actualizar(id_vehiculo, dec, true, idTransaccion);
-                                }
-                                else if(dgvEgresos.Rows[j].Cells[3].Value.Equals("EGRESO"))
-                                {
+                                   
+                                else if(tipo.Equals("EGRESO"))
                                     eg += monto;
-                                    sald = SaldoController.actualizar(id_vehiculo, dec, false, idTransaccion);
-                                }
-
-
                             }
                             if (t == 0) //Si no se registraron transacciones
                                 throw new Exception("No se registraron las transacciones de Entrada/Salida!");
@@ -285,9 +277,9 @@ namespace CapaVista.Transacciones
                 {
                     foreach (var it in item.Egreso)
                     {
-                        if (it.TipoTransaccion)
+                        if (it.TipoTransaccion == 1)
                             ingreso += it.Cantidad;
-                        else
+                        else if(it.TipoTransaccion == 0)
                             egreso += it.Cantidad;
                     }
                 }
@@ -345,7 +337,7 @@ namespace CapaVista.Transacciones
                     int num = Convert.ToInt32(txtFac.Text.Trim());
                     if (TransaccionController.leer(num) != null)
                     {
-                        var form =  new  CapaVista.Transacciones.DetalleTransaccion(num);
+                        var form =  new DetalleTransaccion(num);
                         form.ShowDialog();
                     }
                     else

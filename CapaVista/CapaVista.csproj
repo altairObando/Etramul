@@ -131,6 +131,12 @@
     <Compile Include="Conductores\BuscarConductor.Designer.cs">
       <DependentUpon>BuscarConductor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creditos\AgregarAbono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\AgregarAbono.Designer.cs">
+      <DependentUpon>AgregarAbono.cs</DependentUpon>
+    </Compile>
     <Compile Include="Creditos\Creditos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,12 +233,6 @@
       <DependentUpon>ver_hoy_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Transacciones\Atransaccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Transacciones\Atransaccion.Designer.cs">
-      <DependentUpon>Atransaccion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Transacciones\CambiarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,12 +293,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Saldo\ConsultaSaldo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Saldo\ConsultaSaldo.Designer.cs">
-      <DependentUpon>ConsultaSaldo.cs</DependentUpon>
     </Compile>
     <Compile Include="Socios\AgregarSocio.cs">
       <SubType>Form</SubType>
@@ -413,6 +407,9 @@
     <EmbeddedResource Include="Conductores\BuscarConductor.resx">
       <DependentUpon>BuscarConductor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\AgregarAbono.resx">
+      <DependentUpon>AgregarAbono.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Creditos\Creditos.resx">
       <DependentUpon>Creditos.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,9 +474,6 @@
     <EmbeddedResource Include="Reportes\ver_hoy_form.resx">
       <DependentUpon>ver_hoy_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transacciones\Atransaccion.resx">
-      <DependentUpon>Atransaccion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\CambiarContraseña.resx">
       <DependentUpon>CambiarContraseña.cs</DependentUpon>
     </EmbeddedResource>
@@ -511,9 +505,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Saldo\ConsultaSaldo.resx">
-      <DependentUpon>ConsultaSaldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Socios\AgregarSocio.resx">
       <DependentUpon>AgregarSocio.cs</DependentUpon>

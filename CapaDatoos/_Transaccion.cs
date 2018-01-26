@@ -75,17 +75,10 @@ namespace CapaDatos
                     /// para ser anulados.
                     var temp = (from u in db.TransaccionSet
                                where u.IdTransaccion==tran.IdTransaccion && u.Activo select u).First();
-                    //Marcando como anulada la transaccion
                     temp.Activo = false;
-                    //Obteniendo el vehiculo de la tabla saldos
-                    var saldo = db.SaldoSet.First(v => v.Id_vehiculo.Equals(temp.Id_Vehiculo));
-                    //anulando el detalle de la transaccion y estableciendo el saldo actual
-                    foreach (var item in temp.Egreso)
+                    for (int i = 0; i < temp.Egreso.Count; i++)
                     {
-                        if (item.TipoTransaccion)
-                            saldo.Total_sado -= (float)item.Cantidad;
-                        else
-                            saldo.Total_sado += (float)item.Cantidad;
+                        temp.Egreso.ElementAt(i).Activo = false;
                     }
                     result = db.SaveChanges();
                 }

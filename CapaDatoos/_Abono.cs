@@ -9,7 +9,6 @@ namespace CapaDatos
     public class _Abono
     {
         private Abono data;
-
         public _Abono(Abono data)
         {
             this.data = data;
@@ -21,97 +20,89 @@ namespace CapaDatos
             {
                 using (var db = new ModeloContainer())
                 {
-                    //Obtener el credito
-                    var credito = db.CreditoSet.FirstOrDefault(x => x.Id_credito.Equals(data.id_credito));
-                    ///Verificar que el credito no haya sido cancelado,
-                    if (!credito.cancelado)
-                    {//Actualizar el saldo
-                        credito.saldo -= data.monto;
-                        //Comprobar si ha sido cancelado
-                        if (credito.saldo <= 0)
-                        {
-                            credito.cancelado = true;
-                            //Actualizar el detalle para que aparezca como un ingreso
-                            //credito.Detalle.credito = false;
-                        }
-                        //Registrar el abono
-                        db.AbonoSet.Add(data);
-                        result = db.SaveChanges();
+                    //Guardando el abono
+                    db.AbonoSet.Add(data);
+                    result = db.SaveChanges();
+                    //Actualizando el saldo
+                    var saldo = db.Saldo_detalleSet.First(x => x.id_detalle == data.id_detalle);
+                    saldo.Saldo -= data.Monto;
+                    if(saldo.Saldo <= 0)
+                    {
+                        var det = db.DetalleSet.First(x => x.IdDetalle == data.id_detalle);
+                        det.Cancelado = true;
                     }
-                    else
-                        throw new Exception("Este credito ya ha sido Cancelado");
-                }
-                return result;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public int Anular()
-        {
-            int result = -1;
-            try
-            {
-                using (var db = new ModeloContainer())
-                {
-                    //Buscar el abono por el id;
-                    var ab = db.AbonoSet.First(x => x.id_abono.Equals(data.id_abono));
-                    //Marcar el abono como anulado
-                    ab.anulado = true;
-                    //Actualizar el monto del credito
-                    ab.Credito.saldo += ab.monto;
-                    //Guardar los cambios
                     result = db.SaveChanges();
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+        public List<Abono> getAllAbono()
+        {
+            //instancia de base de datos
+            var db = new ModeloContainer();
+            try
+            {
+                //lectura de todos los abonos
+                var list = (from item in db.AbonoSet
+                            where item.Transaccion.Activo
+                            orderby item.Transaccion.FechaTransaccion descending
+                            select item).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (db != null && db.Database.Connection.State == System.Data.ConnectionState.Open)
+                    db.Database.Connection.Close();
+            }
+        }
+
+        public Abono leer()
+        {
+            ModeloContainer db = null;
+            try
+            {
+                db = new ModeloContainer();
+                var result = (from item in db.AbonoSet where item.Id_abono.Equals(data.Id_abono) select item).First();
                 return result;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            finally
+            {
+                if (db != null && db.Database.Connection.State == System.Data.ConnectionState.Open)
+                    db.Database.Connection.Close();
+            }
         }
-        public Abono leer()
+
+        public int anular()
         {
-            Abono tmp = null;
             try
             {
-                var db = new ModeloContainer();
-                tmp = (from item in db.AbonoSet where item.id_abono.Equals(data.id_abono) select item).First();
-                if (tmp == null)
-                    throw new NullReferenceException("El abono no ha sido localizado", new Exception("El id_abono no coincide con ningun elemento en la base de datos"));
-                db.Database.Connection.Close();
-                return tmp;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public List<Abono> getAllAbonos()
-        { 
-            List<Abono> lista = null;
-            try
-            {
-                var db = new ModeloContainer();
-                lista = (from item in db.AbonoSet where !item.anulado select item).ToList();
-                db.Database.Connection.Close();
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public List<Abono> getAllAbonos(int id_vehiculo)
-        {
-            List<Abono> lista = null;
-            try
-            {
-                var db = new ModeloContainer();
-                lista = (from item in db.AbonoSet where !item.anulado && item.Credito.Detalle.Transaccion.Id_Vehiculo.Equals(id_vehiculo) select item).ToList();
-                db.Database.Connection.Close();
-                return lista;
+                int result = -1;
+                using (var db = new ModeloContainer())
+                {
+                    //Buscando el abono
+                    var abono = db.AbonoSet.FirstOrDefault(x => x.Id_abono.Equals(data.Id_abono));
+                    if(abono != null)
+                    {
+                        var transact = db.TransaccionSet.FirstOrDefault(x=> x.IdTransaccion.Equals(abono.Id_transaccion));
+                        //Marcamos como anulada
+                        transact.Activo = false;
+                        //Guardamos los cambios
+                        result = db.SaveChanges();
+                    }
+                }
+                return result;
             }
             catch (Exception ex)
             {

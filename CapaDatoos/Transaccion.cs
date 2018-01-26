@@ -23,6 +23,8 @@ public partial class Transaccion
 
         this.Egreso = new HashSet<Detalle>();
 
+        this.Abono = new HashSet<Abono>();
+
     }
 
 
@@ -41,6 +43,8 @@ public partial class Transaccion
     public virtual Vehiculo Vehiculo { get; set; }
 
     public virtual ICollection<Detalle> Egreso { get; set; }
+
+    public virtual ICollection<Abono> Abono { get; set; }
 
 }
 

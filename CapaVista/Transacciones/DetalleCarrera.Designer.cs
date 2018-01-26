@@ -178,7 +178,7 @@
             this.dataGridViewTextBoxColumn3});
             this.dgvEgresos.DataSource = this.detallesBindingSource;
             this.dgvEgresos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvEgresos.Location = new System.Drawing.Point(20, 239);
+            this.dgvEgresos.Location = new System.Drawing.Point(20, 194);
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
@@ -241,7 +241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(595, 409);
+            this.ClientSize = new System.Drawing.Size(595, 364);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.dgvEgresos);

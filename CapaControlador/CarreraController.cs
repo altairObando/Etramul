@@ -11,16 +11,17 @@ namespace CapaControlador
 
         public static int Agregar(int id_transaccion, int id_vehiculo, int id_conductor, TimeSpan salida, TimeSpan llegada, DateTime Fecha, bool vuelta)
         {
-            Carrera car = new Carrera {
+            Carrera car = new Carrera
+            {
                 Id_conductor = id_conductor,
                 Id_vehiculo = id_vehiculo,
                 FechaCarrera = Fecha,
-                HoraSalida = salida, 
-                HoraLlegada = llegada, 
+                HoraSalida = salida,
+                HoraLlegada = llegada,
                 Vuelta_Completa = vuelta,
                 No_transaccion = id_transaccion,
-                Activo = true      
-             };
+                Activo = true
+            };
             return new _Carrera(car).Agregar();
         }
 
@@ -32,7 +33,7 @@ namespace CapaControlador
 
         public static int Eliminar(int codigo)
         {
-            _Carrera car = new _Carrera(new Carrera { Id_carrera = codigo});
+            _Carrera car = new _Carrera(new Carrera { Id_carrera = codigo });
             return car.Eliminar();
         }
         public static List<Carrera> listar()

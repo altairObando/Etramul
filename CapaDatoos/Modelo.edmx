@@ -16,9 +16,8 @@
     <EntitySet Name="DetalleSet" EntityType="Modelo.Store.DetalleSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TipoDetalleSet" EntityType="Modelo.Store.TipoDetalleSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CarreraSet" EntityType="Modelo.Store.CarreraSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SaldoSet" EntityType="Modelo.Store.SaldoSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CreditoSet" EntityType="Modelo.Store.CreditoSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AbonoSet" EntityType="Modelo.Store.AbonoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Saldo_detalleSet" EntityType="Modelo.Store.Saldo_detalleSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="PersonasUsuarios" Association="Modelo.Store.PersonasUsuarios">
       <End Role="Personas" EntitySet="PersonasSet" />
       <End Role="Usuarios" EntitySet="UsuariosSet" />
@@ -59,12 +58,16 @@
       <End Role="Conductor" EntitySet="ConductorSet" />
       <End Role="Carrera" EntitySet="CarreraSet" />
     </AssociationSet>
-    <AssociationSet Name="DetalleCredito" Association="Modelo.Store.DetalleCredito">
+    <AssociationSet Name="DetalleAbono" Association="Modelo.Store.DetalleAbono">
       <End Role="Detalle" EntitySet="DetalleSet" />
-      <End Role="Credito" EntitySet="CreditoSet" />
+      <End Role="Abono" EntitySet="AbonoSet" />
     </AssociationSet>
-    <AssociationSet Name="CreditoAbono" Association="Modelo.Store.CreditoAbono">
-      <End Role="Credito" EntitySet="CreditoSet" />
+    <AssociationSet Name="DetalleSaldo_detalle" Association="Modelo.Store.DetalleSaldo_detalle">
+      <End Role="Detalle" EntitySet="DetalleSet" />
+      <End Role="Saldo_detalle" EntitySet="Saldo_detalleSet" />
+    </AssociationSet>
+    <AssociationSet Name="TransaccionAbono" Association="Modelo.Store.TransaccionAbono">
+      <End Role="Transaccion" EntitySet="TransaccionSet" />
       <End Role="Abono" EntitySet="AbonoSet" />
     </AssociationSet>
   </EntityContainer>
@@ -142,11 +145,11 @@
     <Property Name="IdDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdTransaccion" Type="int" Nullable="false" />
     <Property Name="TipoDetalle" Type="int" Nullable="false" />
-    <Property Name="TipoTransaccion" Type="bit" Nullable="false" />
+    <Property Name="TipoTransaccion" Type="int" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cantidad" Type="decimal" Nullable="false" />
     <Property Name="Activo" Type="bit" Nullable="false" />
-    <Property Name="credito" Type="bit" Nullable="true" />
+    <Property Name="Cancelado" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoDetalleSet">
     <Key>
@@ -170,35 +173,23 @@
     <Property Name="Vuelta_Completa" Type="bit" Nullable="false" />
     <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="SaldoSet">
+  <EntityType Name="AbonoSet">
+    <Key>
+      <PropertyRef Name="Id_abono" />
+    </Key>
+    <Property Name="Id_abono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_transaccion" Type="int" Nullable="false" />
+    <Property Name="id_detalle" Type="int" Nullable="false" />
+    <Property Name="Monto" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Saldo_detalleSet">
     <Key>
       <PropertyRef Name="Id_saldo" />
     </Key>
     <Property Name="Id_saldo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id_vehiculo" Type="int" Nullable="false" />
-    <Property Name="Total_sado" Type="float" Nullable="false" />
-    <Property Name="ultima_transacion" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CreditoSet">
-    <Key>
-      <PropertyRef Name="Id_credito" />
-    </Key>
-    <Property Name="Id_credito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_detalle" Type="int" Nullable="false" />
-    <Property Name="saldo" Type="decimal" Nullable="false" />
-    <Property Name="cancelado" Type="bit" Nullable="false" />
-    <Property Name="anulado" Type="bit" Nullable="false" />
-    <Property Name="Detalle_IdDetalle" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="AbonoSet">
-    <Key>
-      <PropertyRef Name="id_abono" />
-    </Key>
-    <Property Name="id_abono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_credito" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="monto" Type="decimal" Nullable="false" />
-    <Property Name="anulado" Type="bit" Nullable="false" />
+    <Property Name="Saldo" Type="decimal" Nullable="false" />
+    <Property Name="Detalle_IdDetalle" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="PersonasUsuarios">
     <End Role="Personas" Type="Modelo.Store.PersonasSet" Multiplicity="1" />
@@ -320,27 +311,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DetalleCredito">
+  <Association Name="DetalleAbono">
     <End Role="Detalle" Type="Modelo.Store.DetalleSet" Multiplicity="1" />
-    <End Role="Credito" Type="Modelo.Store.CreditoSet" Multiplicity="*" />
+    <End Role="Abono" Type="Modelo.Store.AbonoSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Detalle">
         <PropertyRef Name="IdDetalle" />
       </Principal>
-      <Dependent Role="Credito">
+      <Dependent Role="Abono">
+        <PropertyRef Name="id_detalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DetalleSaldo_detalle">
+    <End Role="Detalle" Type="Modelo.Store.DetalleSet" Multiplicity="0..1" />
+    <End Role="Saldo_detalle" Type="Modelo.Store.Saldo_detalleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Detalle">
+        <PropertyRef Name="IdDetalle" />
+      </Principal>
+      <Dependent Role="Saldo_detalle">
         <PropertyRef Name="Detalle_IdDetalle" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="CreditoAbono">
-    <End Role="Credito" Type="Modelo.Store.CreditoSet" Multiplicity="1" />
+  <Association Name="TransaccionAbono">
+    <End Role="Transaccion" Type="Modelo.Store.TransaccionSet" Multiplicity="1" />
     <End Role="Abono" Type="Modelo.Store.AbonoSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Credito">
-        <PropertyRef Name="Id_credito" />
+      <Principal Role="Transaccion">
+        <PropertyRef Name="IdTransaccion" />
       </Principal>
       <Dependent Role="Abono">
-        <PropertyRef Name="id_credito" />
+        <PropertyRef Name="Id_transaccion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -395,19 +398,22 @@
             <End Role="Transaccion" EntitySet="TransaccionSet" />
             <End Role="Detalle" EntitySet="DetalleSet" />
           </AssociationSet>
-          <EntitySet Name="SaldoSet" EntityType="Modelo.Saldo" />
           <AssociationSet Name="ConductorCarrera" Association="Modelo.ConductorCarrera">
             <End Role="Conductor" EntitySet="ConductorSet" />
             <End Role="Carrera" EntitySet="CarreraSet" />
           </AssociationSet>
-          <EntitySet Name="CreditoSet" EntityType="Modelo.Credito" />
-          <AssociationSet Name="DetalleCredito" Association="Modelo.DetalleCredito">
-            <End Role="Detalle" EntitySet="DetalleSet" />
-            <End Role="Credito" EntitySet="CreditoSet" />
-          </AssociationSet>
           <EntitySet Name="AbonoSet" EntityType="Modelo.Abono" />
-          <AssociationSet Name="CreditoAbono" Association="Modelo.CreditoAbono">
-            <End Role="Credito" EntitySet="CreditoSet" />
+          <AssociationSet Name="DetalleAbono" Association="Modelo.DetalleAbono">
+            <End Role="Detalle" EntitySet="DetalleSet" />
+            <End Role="Abono" EntitySet="AbonoSet" />
+          </AssociationSet>
+          <EntitySet Name="Saldo_detalleSet" EntityType="Modelo.Saldo_detalle" />
+          <AssociationSet Name="DetalleSaldo_detalle" Association="Modelo.DetalleSaldo_detalle">
+            <End EntitySet="DetalleSet" Role="Detalle" />
+            <End EntitySet="Saldo_detalleSet" Role="Saldo_detalle" />
+          </AssociationSet>
+          <AssociationSet Name="TransaccionAbono" Association="Modelo.TransaccionAbono">
+            <End Role="Transaccion" EntitySet="TransaccionSet" />
             <End Role="Abono" EntitySet="AbonoSet" />
           </AssociationSet>
         </EntityContainer>
@@ -489,6 +495,7 @@
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Vehiculo" Relationship="Modelo.VehiculoTransaccion" FromRole="Transaccion" ToRole="Vehiculo" />
           <NavigationProperty Name="Egreso" Relationship="Modelo.TransaccionEgreso" FromRole="Transaccion" ToRole="Detalle" />
+          <NavigationProperty Name="Abono" Relationship="Modelo.TransaccionAbono" FromRole="Transaccion" ToRole="Abono" />
         </EntityType>
         <EntityType Name="Detalle">
           <Key>
@@ -497,14 +504,15 @@
           <Property Name="IdDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdTransaccion" Type="Int32" Nullable="false" />
           <Property Name="TipoDetalle" Type="Int32" Nullable="false" />
-          <Property Name="TipoTransaccion" Type="Boolean" Nullable="false" />
+          <Property Name="TipoTransaccion" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
           <Property Name="Cantidad" Type="Decimal" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="TipoEgreso" Relationship="Modelo.TipoEgresoEgreso" FromRole="Detalle" ToRole="TipoDetalle" />
           <NavigationProperty Name="Transaccion" Relationship="Modelo.TransaccionEgreso" FromRole="Detalle" ToRole="Transaccion" />
-          <NavigationProperty Name="Credito" Relationship="Modelo.DetalleCredito" FromRole="Detalle" ToRole="Credito" />
-          <Property Name="credito" Type="Boolean" Nullable="true" />
+          <Property Name="Cancelado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Abono" Relationship="Modelo.DetalleAbono" FromRole="Detalle" ToRole="Abono" />
+          <NavigationProperty Name="Saldo_detalle" Relationship="Modelo.DetalleSaldo_detalle" FromRole="Detalle" ToRole="Saldo_detalle" />
         </EntityType>
         <EntityType Name="TipoDetalle">
           <Key>
@@ -615,15 +623,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Saldo">
-          <Key>
-            <PropertyRef Name="Id_saldo" />
-          </Key>
-          <Property Name="Id_saldo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_vehiculo" Type="Int32" Nullable="false" />
-          <Property Name="Total_sado" Type="Double" Nullable="false" />
-          <Property Name="ultima_transacion" Type="Int32" Nullable="false" />
-        </EntityType>
         <Association Name="ConductorCarrera">
           <End Type="Modelo.Conductor" Role="Conductor" Multiplicity="1" />
           <End Type="Modelo.Carrera" Role="Carrera" Multiplicity="*" />
@@ -636,42 +635,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Credito">
-          <Key>
-            <PropertyRef Name="Id_credito" />
-          </Key>
-          <Property Name="Id_credito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Detalle" Relationship="Modelo.DetalleCredito" FromRole="Credito" ToRole="Detalle" />
-          <Property Name="id_detalle" Type="Int32" Nullable="false" />
-          <Property Name="saldo" Type="Decimal" Nullable="false" />
-          <Property Name="cancelado" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Abono" Relationship="Modelo.CreditoAbono" FromRole="Credito" ToRole="Abono" />
-          <Property Name="anulado" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <Association Name="DetalleCredito">
-          <End Type="Modelo.Detalle" Role="Detalle" Multiplicity="1" />
-          <End Type="Modelo.Credito" Role="Credito" Multiplicity="0..1" />
-        </Association>
         <EntityType Name="Abono">
           <Key>
-            <PropertyRef Name="id_abono" />
+            <PropertyRef Name="Id_abono" />
           </Key>
-          <Property Name="id_abono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Credito" Relationship="Modelo.CreditoAbono" FromRole="Abono" ToRole="Credito" />
-          <Property Name="id_credito" Type="Int32" Nullable="false" />
-          <Property Name="fecha" Type="String" Nullable="false" />
-          <Property Name="monto" Type="Decimal" Nullable="false" />
-          <Property Name="anulado" Type="Boolean" Nullable="false" />
+          <Property Name="Id_abono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_transaccion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Detalle" Relationship="Modelo.DetalleAbono" FromRole="Abono" ToRole="Detalle" />
+          <Property Name="id_detalle" Type="Int32" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Transaccion" Relationship="Modelo.TransaccionAbono" FromRole="Abono" ToRole="Transaccion" />
         </EntityType>
-        <Association Name="CreditoAbono">
-          <End Type="Modelo.Credito" Role="Credito" Multiplicity="1" />
+        <Association Name="DetalleAbono">
+          <End Type="Modelo.Detalle" Role="Detalle" Multiplicity="1" />
           <End Type="Modelo.Abono" Role="Abono" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Credito">
-              <PropertyRef Name="Id_credito" />
+            <Principal Role="Detalle">
+              <PropertyRef Name="IdDetalle" />
             </Principal>
             <Dependent Role="Abono">
-              <PropertyRef Name="id_credito" />
+              <PropertyRef Name="id_detalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Saldo_detalle">
+          <Key>
+            <PropertyRef Name="Id_saldo" />
+          </Key>
+          <Property Name="Id_saldo" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <NavigationProperty Name="Detalle" Relationship="Modelo.DetalleSaldo_detalle" FromRole="Saldo_detalle" ToRole="Detalle" />
+          <Property Name="id_detalle" Type="Int32" Nullable="false" />
+          <Property Name="Saldo" Nullable="false" Type="Decimal" />
+        </EntityType>
+        <Association Name="DetalleSaldo_detalle">
+          <End Type="Modelo.Detalle" Multiplicity="0..1" Role="Detalle" />
+          <End Type="Modelo.Saldo_detalle" Multiplicity="0..1" Role="Saldo_detalle" />
+        </Association>
+        <Association Name="TransaccionAbono">
+          <End Type="Modelo.Transaccion" Role="Transaccion" Multiplicity="1" />
+          <End Type="Modelo.Abono" Role="Abono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transaccion">
+              <PropertyRef Name="IdTransaccion" />
+            </Principal>
+            <Dependent Role="Abono">
+              <PropertyRef Name="Id_transaccion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -762,7 +770,7 @@
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
           <ScalarProperty Name="Activo" ColumnName="Activo" />
-          <ScalarProperty Name="credito" ColumnName="credito" />
+          <ScalarProperty Name="Cancelado" ColumnName="Cancelado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -790,35 +798,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SaldoSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Saldo)">
-        <MappingFragment StoreEntitySet="SaldoSet">
-          <ScalarProperty Name="Id_saldo" ColumnName="Id_saldo" />
-          <ScalarProperty Name="Id_vehiculo" ColumnName="Id_vehiculo" />
-          <ScalarProperty Name="Total_sado" ColumnName="Total_sado" />
-          <ScalarProperty Name="ultima_transacion" ColumnName="ultima_transacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CreditoSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Credito)">
-        <MappingFragment StoreEntitySet="CreditoSet">
-          <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
-          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
-          <ScalarProperty Name="saldo" ColumnName="saldo" />
-          <ScalarProperty Name="cancelado" ColumnName="cancelado" />
-          <ScalarProperty Name="anulado" ColumnName="anulado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AbonoSet">
       <EntityTypeMapping TypeName="IsTypeOf(Modelo.Abono)">
         <MappingFragment StoreEntitySet="AbonoSet">
-          <ScalarProperty Name="id_abono" ColumnName="id_abono" />
-          <ScalarProperty Name="id_credito" ColumnName="id_credito" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
-          <ScalarProperty Name="monto" ColumnName="monto" />
-          <ScalarProperty Name="anulado" ColumnName="anulado" />
+          <ScalarProperty Name="Id_abono" ColumnName="Id_abono" />
+          <ScalarProperty Name="Id_transaccion" ColumnName="Id_transaccion" />
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Saldo_detalleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Saldo_detalle)">
+        <MappingFragment StoreEntitySet="Saldo_detalleSet">
+          <ScalarProperty Name="Id_saldo" ColumnName="Id_saldo" />
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -846,13 +841,14 @@
         <ScalarProperty Name="Id_socio" ColumnName="Id_socio" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="DetalleCredito" TypeName="Modelo.DetalleCredito" StoreEntitySet="CreditoSet">
+    <AssociationSetMapping Name="DetalleSaldo_detalle" TypeName="Modelo.DetalleSaldo_detalle" StoreEntitySet="Saldo_detalleSet">
       <EndProperty Name="Detalle">
         <ScalarProperty Name="IdDetalle" ColumnName="Detalle_IdDetalle" />
       </EndProperty>
-      <EndProperty Name="Credito">
-        <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
+      <EndProperty Name="Saldo_detalle">
+        <ScalarProperty Name="Id_saldo" ColumnName="Id_saldo" />
       </EndProperty>
+      <Condition ColumnName="Detalle_IdDetalle" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

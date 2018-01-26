@@ -53,7 +53,7 @@ namespace CapaVista.Vehiculos
                 lblCajero.Text = CapaControlador.UsuariosController.leer
                     (transact.Id_usuario).ToString();
                 //Ingreso de la carrera
-                decimal ingreso = transact.Egreso.First(x => x.TipoTransaccion).Cantidad;
+                decimal ingreso = transact.Egreso.First(x => x.TipoTransaccion == 0).Cantidad;
                 lblIngreso.Text = string.Format("{0:C}", ingreso);
                 //Cargando lista de egresos para mostrar en la lista
                 List<CapaDatos.Detalle> lsegresos = transact.Egreso.Where(x => x.TipoTransaccion.Equals(false)).ToList();

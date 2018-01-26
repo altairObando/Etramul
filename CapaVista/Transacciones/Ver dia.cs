@@ -62,13 +62,13 @@ namespace CapaVista.Vehiculos
                 foreach (var det in item.Egreso)
                 {
                     //Si es un ingreso
-                    if (det.TipoTransaccion)
+                    if (det.TipoTransaccion == 1)
                     {
                         i++;
                         dgvIngresos.Rows.Add(item.IdTransaccion, det.TipoEgreso.Descripcion, det.Cantidad);
                         ingresos += det.Cantidad;
                     }
-                    else
+                    else if(det.TipoTransaccion == 0)
                     {
                         eg++;
                         dgvEgresos.Rows.Add(item.IdTransaccion, det.TipoEgreso.Descripcion, det.Cantidad);

@@ -45,8 +45,6 @@
             this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.reset = new MetroFramework.Controls.MetroLink();
-            this.lblSaldo = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.lblMostrar = new MetroFramework.Controls.MetroLabel();
             this.tbTOP = new MetroFramework.Controls.MetroTrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
@@ -68,7 +66,7 @@
             this.lblCodigoPlaca.Location = new System.Drawing.Point(72, 68);
             this.lblCodigoPlaca.Name = "lblCodigoPlaca";
             this.lblCodigoPlaca.Size = new System.Drawing.Size(27, 19);
-            this.lblCodigoPlaca.TabIndex = 2;
+            this.lblCodigoPlaca.TabIndex = 0;
             this.lblCodigoPlaca.Text = "---";
             // 
             // lblNumero
@@ -77,7 +75,7 @@
             this.lblNumero.Location = new System.Drawing.Point(408, 65);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(21, 19);
-            this.lblNumero.TabIndex = 6;
+            this.lblNumero.TabIndex = 3;
             this.lblNumero.Text = "--";
             // 
             // dgDatos
@@ -105,7 +103,7 @@
             this.dgDatos.RowHeadersVisible = false;
             this.dgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgDatos.Size = new System.Drawing.Size(615, 236);
-            this.dgDatos.TabIndex = 8;
+            this.dgDatos.TabIndex = 6;
             this.dgDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellContentDoubleClick);
             // 
             // No
@@ -168,7 +166,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(551, 51);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(81, 37);
-            this.btnCerrar.TabIndex = 9;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -179,29 +177,11 @@
             this.reset.Location = new System.Drawing.Point(444, 61);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(75, 23);
-            this.reset.TabIndex = 7;
+            this.reset.TabIndex = 4;
             this.reset.Text = "Restablecer";
             this.reset.Theme = MetroFramework.MetroThemeStyle.Light;
             this.reset.UseStyleColors = true;
             this.reset.Click += new System.EventHandler(this.reset_Click);
-            // 
-            // lblSaldo
-            // 
-            this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(72, 87);
-            this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(35, 19);
-            this.lblSaldo.TabIndex = 3;
-            this.lblSaldo.Text = " --- ";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 87);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(45, 19);
-            this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Saldo:";
             // 
             // lblMostrar
             // 
@@ -209,7 +189,7 @@
             this.lblMostrar.Location = new System.Drawing.Point(191, 65);
             this.lblMostrar.Name = "lblMostrar";
             this.lblMostrar.Size = new System.Drawing.Size(59, 19);
-            this.lblMostrar.TabIndex = 4;
+            this.lblMostrar.TabIndex = 1;
             this.lblMostrar.Text = "Mostrar:";
             // 
             // tbTOP
@@ -218,7 +198,7 @@
             this.tbTOP.Location = new System.Drawing.Point(239, 65);
             this.tbTOP.Name = "tbTOP";
             this.tbTOP.Size = new System.Drawing.Size(163, 23);
-            this.tbTOP.TabIndex = 5;
+            this.tbTOP.TabIndex = 2;
             this.tbTOP.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbTOP_Scroll);
             // 
             // UltimasTransacciones
@@ -228,8 +208,6 @@
             this.ClientSize = new System.Drawing.Size(655, 375);
             this.Controls.Add(this.lblMostrar);
             this.Controls.Add(this.tbTOP);
-            this.Controls.Add(this.lblSaldo);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.reset);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgDatos);
@@ -264,8 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cajero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ingreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Egreso;
-        private MetroFramework.Controls.MetroLabel lblSaldo;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel lblMostrar;
         private MetroFramework.Controls.MetroTrackBar tbTOP;
         private System.Windows.Forms.ContextMenuStrip detalles;

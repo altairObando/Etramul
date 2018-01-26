@@ -136,7 +136,7 @@ namespace CapaVista
                             t = 0;
                             decimal ingreso = Decimal.Parse(QuitarEspacios(txtIngreso.Text));
                             //Registrando Ingreso
-                            t = DetalleController.agregar(idTransaccion, TipoDetalleController.leer("CICLO").IdTipoDetalle, "CICLO", ingreso, true, true, false);
+                            t = DetalleController.agregar(idTransaccion, TipoDetalleController.leer("CICLO").IdTipoDetalle, "CICLO", ingreso, 0, true);
                             //Verificando y registrando los egresos
                             decimal totalEgreso = 0;
                             if(dgvEgresos.Rows.Count > 0) // Si hay egresos
@@ -147,11 +147,9 @@ namespace CapaVista
                                     string descripcion = dgvEgresos.Rows[j].Cells[2].Value.ToString();
                                     decimal monto = (decimal)dgvEgresos.Rows[j].Cells[3].Value;
                                     totalEgreso += monto;
-                                    t += DetalleController.agregar(idTransaccion, id_egreso, descripcion, monto, false, true, false);
+                                    t += DetalleController.agregar(idTransaccion, id_egreso, descripcion, monto, 1, true);
                                 }
                             }
-                            // se actualiza el saldo del vehiculo
-                            ActualizarSaldo();
                             if (t == 0) //Si no se registraron transacciones
                                 throw new Exception("No se registraron las transacciones de Entrada/Salida!");
                             //Se imprime la factura
@@ -196,19 +194,6 @@ namespace CapaVista
             else
             {
                 MessageBox.Show("Todos los campos son requeridos!", "Faltan campos por completar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        /// <summary>
-        /// Este metodo permite actualizar el saldo del vehiculo que realizo la ultima carrera
-        /// </summary>
-        private void ActualizarSaldo()
-        {
-            //Obtenemos la ultima carrera mediante la ultima transaccion
-            var u = TransaccionController.getUltima();
-            // Agregamos el monto del ingreso
-            foreach (var item in u.Egreso)
-            {
-                SaldoController.actualizar(item.Transaccion.Id_Vehiculo, (float)item.Cantidad, item.TipoTransaccion, item.IdTransaccion);
             }
         }
         private void limpiarControles()

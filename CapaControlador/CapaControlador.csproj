@@ -41,16 +41,15 @@
   <ItemGroup>
     <Compile Include="CarreraController.cs" />
     <Compile Include="ConductorController.cs" />
-    <Compile Include="CreditoController.cs" />
     <Compile Include="DetalleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaldoController.cs" />
     <Compile Include="SociosController.cs" />
     <Compile Include="TipoDetalleController.cs" />
     <Compile Include="TipoUsuarioController.cs" />
     <Compile Include="TransaccionController.cs" />
     <Compile Include="UsuariosController.cs" />
     <Compile Include="VehiculosController.cs" />
+    <Compile Include="_AbonoController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatoos\CapaDatos.csproj">

@@ -18,13 +18,21 @@ using System;
 public partial class Detalle
 {
 
+    public Detalle()
+    {
+
+        this.Abono = new HashSet<Abono>();
+
+    }
+
+
     public int IdDetalle { get; set; }
 
     public int IdTransaccion { get; set; }
 
     public int TipoDetalle { get; set; }
 
-    public bool TipoTransaccion { get; set; }
+    public int TipoTransaccion { get; set; }
 
     public string Descripcion { get; set; }
 
@@ -32,7 +40,7 @@ public partial class Detalle
 
     public bool Activo { get; set; }
 
-    public Nullable<bool> credito { get; set; }
+    public bool Cancelado { get; set; }
 
 
 
@@ -40,7 +48,9 @@ public partial class Detalle
 
     public virtual Transaccion Transaccion { get; set; }
 
-    public virtual Credito Credito { get; set; }
+    public virtual ICollection<Abono> Abono { get; set; }
+
+    public virtual Saldo_detalle Saldo_detalle { get; set; }
 
 }
 

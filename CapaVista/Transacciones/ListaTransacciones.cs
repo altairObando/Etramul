@@ -33,8 +33,8 @@ namespace CapaVista.Transacciones
                 throw new Exception("No se pudo cargar");            
             for (int i = 0; i < list.Count; i++)
             {
-                decimal ingreso = list[i].Egreso.Where(x=> x.TipoTransaccion && x.Activo).Sum(y=>y.Cantidad);
-                decimal egreso = list[i].Egreso.Where(x => !x.TipoTransaccion && x.Activo).Sum(y => y.Cantidad);
+                decimal ingreso = list[i].Egreso.Where(x=> x.TipoTransaccion == 1 && x.Activo).Sum(y=>y.Cantidad);
+                decimal egreso = list[i].Egreso.Where(x => x.TipoTransaccion == 0 && x.Activo).Sum(y => y.Cantidad);
                 string cajero = UsuariosController.leer(list[i].Id_usuario).Personas.ToString();
                 dgvEgresos.Rows.Add(list[i].IdTransaccion, cajero, list[i].Vehiculo.Placa, list[i].FechaTransaccion.ToShortDateString() ,ingreso, egreso);
                 if (!list[i].Activo)
@@ -77,44 +77,6 @@ namespace CapaVista.Transacciones
             }
             
         }
-
-        //private void anularToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        int codigo = (int)dgvEgresos.SelectedRows[0].Cells[0].Value;
-        //        DialogResult result;
-        //        var admin = new Administracion("Confirme la eliminacion del registro numero: " + codigo);
-        //        admin.ShowDialog();
-        //        result = admin.resultado;
-        //        if (DialogResult.Yes.Equals(result))
-        //        {
-        //            try
-        //            {
-        //                int an = TransaccionController.anular(codigo);
-        //                if (an < 0)
-        //                    throw new Exception("Ne pudo eliminar la transaccion");
-        //                //var list = DetalleController.listar(codigo);
-        //                //for (int i = 0; i < list.Count; i++)
-        //                //{
-        //                //    int j = DetalleController.anular(list[i].IdDetalle);
-        //                //    if (j < 0)
-        //                //        throw new Exception("No se ha podido eliminar");
-        //                //}
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                MessageBox.Show(ex.Message);
-        //            }
-        //        }    
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-             
-        //}
-
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             try
@@ -136,8 +98,8 @@ namespace CapaVista.Transacciones
                         throw new Exception("No hay transacciones para ese vehiculo");
                     for (int i = 0; i < list.Count ; i++)
                     {
-                        decimal ingreso = list[i].Egreso.Where(y => y.TipoTransaccion && y.Activo).Sum(x => x.Cantidad);
-                        decimal egreso = list[i].Egreso.Where(y => !y.TipoTransaccion && y.Activo).Sum(x => x.Cantidad);
+                        decimal ingreso = list[i].Egreso.Where(y => y.TipoTransaccion == 1 && y.Activo).Sum(x => x.Cantidad);
+                        decimal egreso = list[i].Egreso.Where(y => y.TipoTransaccion == 0 && y.Activo).Sum(x => x.Cantidad);
                         string cajero = UsuariosController.leer(list[i].Id_usuario).Personas.ToString();
                         dgvEgresos.Rows.Add(list[i].IdTransaccion, cajero, list[i].Vehiculo.Placa, list[i].FechaTransaccion.ToShortDateString() ,ingreso, egreso);
                         if (!list[i].Activo)
@@ -156,20 +118,6 @@ namespace CapaVista.Transacciones
             }
         }
 
-        //private void btnAgregar_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        var form = new AgregarTransaccion();
-        //        form.ShowDialog();
-        //        loadGrid();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
         private void imprimirFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -178,20 +126,10 @@ namespace CapaVista.Transacciones
                 var transacc = TransaccionController.leer(codigo);
                 var det = DetalleController.listar(codigo);
                 string cajero = UsuariosController.leer(transacc.Id_usuario).ToString();
-                decimal ingreso = det.Where(x => x.TipoTransaccion).Sum(y => y.Cantidad);
-                decimal egreso = det.Where(x => !x.TipoTransaccion).Sum(y => y.Cantidad);
+                decimal ingreso = det.Where(x => x.TipoTransaccion == 1).Sum(y => y.Cantidad);
+                decimal egreso = det.Where(x =>  x.TipoTransaccion == 0).Sum(y => y.Cantidad);
                 decimal total = ingreso - egreso;
                 Form ticket = new Reportes.ImprimirFactura(codigo, cajero,transacc.Vehiculo.Placa, dtFechaFiltro.Value);
-                //ticket.SetParameterValue("@codigo", codigo);
-                //ticket.SetParameterValue("Cajero", cajero);
-                //ticket.SetParameterValue("Placa", transacc.Vehiculo.Placa);
-                //ticket.SetParameterValue("Total", total);
-                //ticket.SetParameterValue("Ingresos", ingreso);
-                //ticket.SetParameterValue("Egresos", egreso);
-                //Conexiones.SetReportConexion(ticket);
-                //var visor = new VisorReportes();
-                //visor.Visor.ReportSource = ticket;
-                //visor.ShowDialog();
                 ticket.ShowDialog();
             }
             catch (Exception ex)

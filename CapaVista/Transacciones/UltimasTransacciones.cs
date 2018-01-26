@@ -24,9 +24,7 @@ namespace CapaVista.Vehiculos
                     throw new Exception("NO EXISTEN TRANSACCIONES PARA ESTE BUS");
                 this.datos = data.Transaccion.ToList();
                 this.lblCodigoPlaca.Text = data.Placa;
-                this.lblSaldo.Text = string.Format("{0:C}",
-                    CapaControlador.SaldoController.leer(data.Id_Vehiculo).Total_sado
-                    );
+                //this.lblSaldo.Text = string.Format("{0:C}", CapaControlador.SaldoController.leer(data.Id_Vehiculo).Total_sado);
             }
             catch (Exception ex)
             {
@@ -70,8 +68,8 @@ namespace CapaVista.Vehiculos
             foreach (var item in lista)
             {
                 var usuario = CapaControlador.UsuariosController.leer(item.Id_usuario);
-                decimal ingreso = item.Egreso.Where(x => x.TipoTransaccion).Sum(y => y.Cantidad);
-                decimal egreso = item.Egreso.Where(x => !x.TipoTransaccion).Sum(y => y.Cantidad);
+                decimal ingreso = item.Egreso.Where(x => x.TipoTransaccion == 0).Sum(y => y.Cantidad);
+                decimal egreso = item.Egreso.Where(x => x.TipoTransaccion == 1).Sum(y => y.Cantidad);
                 var row = dgDatos.Rows.Add
                     (
             item.IdTransaccion, item.FechaTransaccion, usuario.ToString(), ingreso, egreso

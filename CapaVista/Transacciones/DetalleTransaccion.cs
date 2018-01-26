@@ -40,7 +40,7 @@ namespace CapaVista.Transacciones
                 dgvEgresos.Rows.Clear();
                 for (int i = 0; i < list2.Count; i++)
                 {
-                    string texto = list2[i].TipoTransaccion == true ? "INGRESO" : "EGRESO";
+                    string texto = list2[i].TipoTransaccion == 1 ? "INGRESO" : "EGRESO";
                     dgvEgresos.Rows.Add(list2[i].TipoEgreso.IdTipoDetalle, list2[i].TipoEgreso.Descripcion,
                                         list2[i].Descripcion, texto, list2[i].Cantidad);
                 }
@@ -79,6 +79,11 @@ namespace CapaVista.Transacciones
                 }
             }            
             
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

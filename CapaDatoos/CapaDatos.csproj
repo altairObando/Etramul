@@ -56,9 +56,6 @@
     <Compile Include="Conductor.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Credito.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
     <Compile Include="Detalle.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -81,7 +78,7 @@
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Saldo.cs">
+    <Compile Include="Saldo_detalle.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Socio.cs">
@@ -105,9 +102,7 @@
     <Compile Include="_Abono.cs" />
     <Compile Include="_Carrera.cs" />
     <Compile Include="_Conductor.cs" />
-    <Compile Include="_Credito.cs" />
     <Compile Include="_Detalle.cs" />
-    <Compile Include="_Saldo.cs" />
     <Compile Include="_Socio.cs" />
     <Compile Include="_TipoDetalle.cs" />
     <Compile Include="_TipoUsuario.cs" />

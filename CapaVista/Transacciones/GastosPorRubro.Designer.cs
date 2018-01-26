@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.cbEntreFechas = new System.Windows.Forms.CheckBox();
@@ -170,8 +170,8 @@
             // Monto
             // 
             this.Monto.DataPropertyName = "Monto";
-            dataGridViewCellStyle1.Format = "C2";
-            this.Monto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            this.Monto.DefaultCellStyle = dataGridViewCellStyle2;
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
@@ -192,7 +192,7 @@
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Image = global::CapaVista.Properties.Resources.printer;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(374, 31);
+            this.btnPrint.Location = new System.Drawing.Point(367, 27);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(49, 35);
             this.btnPrint.TabIndex = 6;
@@ -244,7 +244,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(429, 41);
+            this.btnClose.Location = new System.Drawing.Point(410, 35);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(49, 19);
             this.btnClose.TabIndex = 7;
@@ -270,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 375);
+            this.ClientSize = new System.Drawing.Size(476, 375);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.txtTotal);
