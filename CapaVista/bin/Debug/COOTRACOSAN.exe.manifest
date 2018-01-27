@@ -50,31 +50,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>80PYyVk31pHAcFwCEcDQHkP46cAgichGguZdHvFngIE=</dsig:DigestValue>
+        <dsig:DigestValue>cUS6NeU+ugOMjHkz/uoZ/E38wZv6gZ+kIPLob9MfKFc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatoos.dll" size="87040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatoos.dll" size="87552">
       <assemblyIdentity name="CapaDatoos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>m7OZ1La7c+2BLTEcyxEbdS7VrCB/xCUcc1iz+ImHTPU=</dsig:DigestValue>
+        <dsig:DigestValue>GKeafp1g+yvo7XTO0kILF5cdbL4K6GJY5DPM9UVu0BE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="4856320">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="4863488">
       <assemblyIdentity name="COOTRACOSAN" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eDoHT62GBYl3ydzDiMH2Q88yXDAwNPqGnXBvL8E/mSc=</dsig:DigestValue>
+        <dsig:DigestValue>1PwkRgAHK4VBlMCmhSz5miwQb6n0b0CSJiUXpmTLl6w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8z57wum22vOFbe2UIpZRJtPnMqGrw/h4Fh/tbHNUkx0=</dsig:DigestValue>
+        <dsig:DigestValue>1z9NZ7qI8MNkqqMp1guE/xPQGR/ghxcGa8GmgVMCEJw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -223,6 +223,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es\Microsoft.SqlServer.Types.resources.dll" size="48832">
+      <assemblyIdentity name="Microsoft.SqlServer.Types.resources" version="12.0.0.0" publicKeyToken="89845DCD8080CC91" language="es" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Dj4oCZxkotTq8V1q3OEHWL9GGNwBMKkbQHhpjKo3p6E=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ShockwaveFlashObjects.dll" size="32768">
       <assemblyIdentity name="ShockwaveFlashObjects" version="1.0.0.0" publicKeyToken="692FBEA5521E1304" language="neutral" />
       <hash>
@@ -246,13 +258,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="COOTRACOSAN.exe.config" size="2033">
+  <file name="COOTRACOSAN.exe.config" size="2069">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ee7Ihh/qo3OW8xpyRJyakH3i/3sNgLZZaJGju1zEPvc=</dsig:DigestValue>
+      <dsig:DigestValue>Kthf1JNG5v4v5t8G5+uISINBPBxZEIBN25+9fZHuZZk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon.ico" size="370070">

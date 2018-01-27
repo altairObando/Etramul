@@ -5,6 +5,8 @@
 -- Date Created: 01/24/2018 19:24:33
 -- Generated from EDMX file: C:\Users\Estudiante\Source\Repos\Etramul\CapaDatoos\Modelo.edmx
 -- --------------------------------------------------
+CREATE DATABASE Etramulv2;
+go
 
 SET QUOTED_IDENTIFIER OFF;
 GO

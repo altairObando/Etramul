@@ -46,8 +46,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblAnulacion = new MetroFramework.Controls.MetroLabel();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPlaca
@@ -140,7 +143,7 @@
             this.panel1.Controls.Add(this.lblCajero);
             this.panel1.Controls.Add(this.lblNumero);
             this.panel1.Controls.Add(this.metroLabel1);
-            this.panel1.Location = new System.Drawing.Point(23, 63);
+            this.panel1.Location = new System.Drawing.Point(23, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 81);
             this.panel1.TabIndex = 2;
@@ -236,11 +239,38 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblTotal);
+            this.panel2.Controls.Add(this.lblAnulacion);
             this.panel2.Location = new System.Drawing.Point(7, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(692, 387);
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // lblAnulacion
+            // 
+            this.lblAnulacion.AutoSize = true;
+            this.lblAnulacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAnulacion.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblAnulacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAnulacion.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
+            this.lblAnulacion.Location = new System.Drawing.Point(16, 93);
+            this.lblAnulacion.Name = "lblAnulacion";
+            this.lblAnulacion.Size = new System.Drawing.Size(26, 25);
+            this.lblAnulacion.Style = MetroFramework.MetroColorStyle.Red;
+            this.lblAnulacion.TabIndex = 20;
+            this.lblAnulacion.Text = "--";
+            this.lblAnulacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(424, 108);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(20, 16);
+            this.lblTotal.TabIndex = 21;
+            this.lblTotal.Text = "---";
             // 
             // DetalleTransaccion
             // 
@@ -261,6 +291,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +317,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private MetroFramework.Controls.MetroLabel lblAnulacion;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

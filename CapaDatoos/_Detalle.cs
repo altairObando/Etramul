@@ -102,8 +102,11 @@ namespace CapaDatos
         {
             List<Detalle> lista = null;
             var db = new ModeloContainer();
-            {                
-                lista = (from u in db.DetalleSet where u.IdTransaccion == det.IdTransaccion select u).ToList();
+            {
+                if (det.IdTransaccion > 0)
+                    lista = (from u in db.DetalleSet where u.IdTransaccion == det.IdTransaccion select u).ToList();
+                else
+                    lista = db.DetalleSet.ToList();
             }
             return lista;
         }

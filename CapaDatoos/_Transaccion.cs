@@ -76,9 +76,10 @@ namespace CapaDatos
                     var temp = (from u in db.TransaccionSet
                                where u.IdTransaccion==tran.IdTransaccion && u.Activo select u).First();
                     temp.Activo = false;
-                    for (int i = 0; i < temp.Egreso.Count; i++)
+                    var gastos = (from item in db.DetalleSet where item.IdTransaccion.Equals(temp.IdTransaccion) select item);
+                    foreach (var item in gastos)
                     {
-                        temp.Egreso.ElementAt(i).Activo = false;
+                        item.Activo = false;
                     }
                     result = db.SaveChanges();
                 }
@@ -102,7 +103,7 @@ namespace CapaDatos
                 if (tran.Id_Vehiculo > 0)
                     lista = (from u in db.TransaccionSet where u.Id_Vehiculo == tran.Id_Vehiculo orderby u.IdTransaccion descending select u).ToList();
                 else
-                    lista = (from u in db.TransaccionSet where u.Activo orderby u.IdTransaccion descending select u).ToList();
+                    lista = (from u in db.TransaccionSet orderby u.IdTransaccion descending select u).ToList();
             }           
             return lista;
         }

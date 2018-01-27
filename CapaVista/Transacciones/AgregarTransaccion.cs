@@ -335,9 +335,10 @@ namespace CapaVista.Transacciones
                 try
                 {
                     int num = Convert.ToInt32(txtFac.Text.Trim());
-                    if (TransaccionController.leer(num) != null)
+                    var item = TransaccionController.leer(num);
+                    if (item != null)
                     {
-                        var form =  new DetalleTransaccion(num);
+                        var form =  new DetalleTransaccion(item);
                         form.ShowDialog();
                     }
                     else

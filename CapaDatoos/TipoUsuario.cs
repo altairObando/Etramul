@@ -31,8 +31,11 @@ public partial class TipoUsuario
     public string Descripcion { get; set; }
 
 
-
-    public virtual ICollection<Usuarios> Usuarios { get; set; }
+        public override string ToString()
+        {
+            return Descripcion;
+        }
+        public virtual ICollection<Usuarios> Usuarios { get; set; }
 
 }
 

@@ -289,7 +289,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Conductor:    </Value>
+                <Value>Socio:          </Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -323,7 +323,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Socio:          </Value>
+                <Value>Conductor:    </Value>
                 <Style />
               </TextRun>
               <TextRun>

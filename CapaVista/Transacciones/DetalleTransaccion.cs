@@ -15,39 +15,43 @@ namespace CapaVista.Transacciones
 {
     public partial class DetalleTransaccion : MetroForm
     {
-        public DetalleTransaccion(int codigo)
+        public DetalleTransaccion(CapaDatos.Transaccion codigo)
         {
             InitializeComponent();
             this.codigo = codigo;
             if (MainContainer.sesion.TipoUsuario.Descripcion == "Administrador")
                 btnCancelar.Enabled = false;
-        }
-
-        
-        private int codigo;
+            if (!this.codigo.Activo)
+            {
+                btnCancelar.Enabled = false;
+                this.lblAnulacion.Text = "ESTA FACTURA HA SIDO ANULADA";
+            }
+        }        
+        private Transaccion codigo;
         
         private void DetalleTransaccion_Load(object sender, EventArgs e)
         {
             try
             {
-                var list = TransaccionController.leer(codigo);
-                
-                var list2 = DetalleController.listar(codigo);
-                lblNumero.Text = list.IdTransaccion.ToString();
-                lblfecha.Text = list.FechaTransaccion.Date.ToShortDateString();
-                lblCajero.Text = UsuariosController.leer(list.Id_usuario).Personas.Nombres;
-                lblPlaca.Text = list.Vehiculo.Placa;
+                lblNumero.Text = codigo.IdTransaccion.ToString();
+                lblfecha.Text = codigo.FechaTransaccion.ToShortDateString();
+                lblCajero.Text = (UsuariosController.leer(codigo.Id_usuario)).ToString();
+                lblPlaca.Text = codigo.Vehiculo.Placa;
                 dgvEgresos.Rows.Clear();
-                for (int i = 0; i < list2.Count; i++)
+                decimal valor1 = 0, valor2 = 0;
+                foreach (var item in codigo.Egreso)
                 {
-                    string texto = list2[i].TipoTransaccion == 1 ? "INGRESO" : "EGRESO";
-                    dgvEgresos.Rows.Add(list2[i].TipoEgreso.IdTipoDetalle, list2[i].TipoEgreso.Descripcion,
-                                        list2[i].Descripcion, texto, list2[i].Cantidad);
+                    string texto = item.TipoTransaccion == 1 ? "INGRESO" : item.TipoTransaccion == 0 ? "EGRESO": "CREDITO";
+                    dgvEgresos.Rows.Add(item.TipoEgreso.IdTipoDetalle, item.TipoEgreso.Descripcion, item.Descripcion, texto, item.Cantidad);
+                    if (item.TipoTransaccion == 1)
+                        valor1 += item.Cantidad;
+                    else if(item.TipoTransaccion == 0)
+                        valor2 += item.Cantidad;
                 }
+                lblTotal.Text = "C$ " + (valor1 - valor2).ToString();
             }
             catch (Exception ex)
             { 
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -62,16 +66,13 @@ namespace CapaVista.Transacciones
             {
                 try
                 {
-                    var an = TransaccionController.anular(codigo);
+                    var an = TransaccionController.anular(codigo.IdTransaccion);
                     if (an < 0)
                         throw new Exception("No se pudo eliminar la transaccion");
-                    var list = DetalleController.listar(codigo);
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        int j = DetalleController.anular(list[i].IdDetalle);
-                        if (j < 0)
-                            throw new Exception("No se ha podido eliminar");
-                    }
+                    else
+                        MessageBox.Show("Factura #" + codigo.IdTransaccion+"  ha sido anulada correctamente",
+                            "Factura Anulada", MessageBoxButtons.OK, MessageBoxIcon.Information
+                            );
                 }
                 catch (Exception ex)
                 {

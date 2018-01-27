@@ -143,6 +143,12 @@
     <Compile Include="Creditos\Creditos.Designer.cs">
       <DependentUpon>Creditos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creditos\Lista Abonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\Lista Abonos.Designer.cs">
+      <DependentUpon>Lista Abonos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTipoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Creditos\Creditos.resx">
       <DependentUpon>Creditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Lista Abonos.resx">
+      <DependentUpon>Lista Abonos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manual de ayuda\Help_Form.es-NI.resx">
       <DependentUpon>Help_Form.cs</DependentUpon>

@@ -35,7 +35,10 @@ public partial class Socio
     public virtual Personas Personas { get; set; }
 
     public virtual ICollection<Vehiculo> Vehiculo { get; set; }
-
-}
+        public override string ToString()
+        {
+            return Personas.ToString();
+        }
+    }
 
 }

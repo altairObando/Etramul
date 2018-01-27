@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCreditos = new System.Windows.Forms.DataGridView();
+            this.ctxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarAbonoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirAbonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cboRubros = new System.Windows.Forms.ComboBox();
             this.lblRubros = new System.Windows.Forms.Label();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
@@ -39,14 +45,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtFecha2 = new System.Windows.Forms.DateTimePicker();
             this.dtFecha1 = new System.Windows.Forms.DateTimePicker();
+            this.btnAll = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.ctxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirCreditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirAbonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCreditos)).BeginInit();
-            this.gbFiltro.SuspendLayout();
             this.ctxMenu.SuspendLayout();
+            this.gbFiltro.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvCreditos
@@ -58,10 +61,51 @@
             this.dgvCreditos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvCreditos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCreditos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCreditos.ContextMenuStrip = this.ctxMenu;
             this.dgvCreditos.Location = new System.Drawing.Point(12, 133);
             this.dgvCreditos.Name = "dgvCreditos";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCreditos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvCreditos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCreditos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCreditos.Size = new System.Drawing.Size(885, 325);
             this.dgvCreditos.TabIndex = 0;
+            // 
+            // ctxMenu
+            // 
+            this.ctxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verDetallesToolStripMenuItem,
+            this.registrarAbonoToolStripMenuItem,
+            this.imprimirAbonosToolStripMenuItem});
+            this.ctxMenu.Name = "ctxMenu";
+            this.ctxMenu.Size = new System.Drawing.Size(165, 70);
+            this.ctxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenu_Opening);
+            // 
+            // verDetallesToolStripMenuItem
+            // 
+            this.verDetallesToolStripMenuItem.Name = "verDetallesToolStripMenuItem";
+            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.verDetallesToolStripMenuItem.Text = "&Abonos";
+            this.verDetallesToolStripMenuItem.Click += new System.EventHandler(this.verDetallesToolStripMenuItem_Click);
+            // 
+            // registrarAbonoToolStripMenuItem
+            // 
+            this.registrarAbonoToolStripMenuItem.Name = "registrarAbonoToolStripMenuItem";
+            this.registrarAbonoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.registrarAbonoToolStripMenuItem.Text = "&Registrar Abono";
+            // 
+            // imprimirAbonosToolStripMenuItem
+            // 
+            this.imprimirAbonosToolStripMenuItem.Name = "imprimirAbonosToolStripMenuItem";
+            this.imprimirAbonosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.imprimirAbonosToolStripMenuItem.Text = "&Imprimir Abonos";
             // 
             // cboRubros
             // 
@@ -101,7 +145,7 @@
             this.gbFiltro.Controls.Add(this.dtFecha2);
             this.gbFiltro.Controls.Add(this.dtFecha1);
             this.gbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFiltro.Location = new System.Drawing.Point(357, 64);
+            this.gbFiltro.Location = new System.Drawing.Point(439, 64);
             this.gbFiltro.Name = "gbFiltro";
             this.gbFiltro.Size = new System.Drawing.Size(457, 64);
             this.gbFiltro.TabIndex = 3;
@@ -156,13 +200,23 @@
             this.dtFecha1.Size = new System.Drawing.Size(106, 23);
             this.dtFecha1.TabIndex = 5;
             // 
+            // btnAll
+            // 
+            this.btnAll.Location = new System.Drawing.Point(338, 87);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(75, 30);
+            this.btnAll.TabIndex = 5;
+            this.btnAll.Text = "Todo";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
             // btnPrint
             // 
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Image = global::CapaVista.Properties.Resources.printer;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(820, 74);
+            this.btnPrint.Location = new System.Drawing.Point(633, 14);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 53);
             this.btnPrint.TabIndex = 4;
@@ -170,39 +224,12 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
-            // ctxMenu
-            // 
-            this.ctxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verDetallesToolStripMenuItem,
-            this.imprimirCreditoToolStripMenuItem,
-            this.imprimirAbonosToolStripMenuItem});
-            this.ctxMenu.Name = "ctxMenu";
-            this.ctxMenu.Size = new System.Drawing.Size(165, 92);
-            this.ctxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenu_Opening);
-            // 
-            // verDetallesToolStripMenuItem
-            // 
-            this.verDetallesToolStripMenuItem.Name = "verDetallesToolStripMenuItem";
-            this.verDetallesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.verDetallesToolStripMenuItem.Text = "&Ver Detalles";
-            // 
-            // imprimirCreditoToolStripMenuItem
-            // 
-            this.imprimirCreditoToolStripMenuItem.Name = "imprimirCreditoToolStripMenuItem";
-            this.imprimirCreditoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.imprimirCreditoToolStripMenuItem.Text = "&Imprimir Credito";
-            // 
-            // imprimirAbonosToolStripMenuItem
-            // 
-            this.imprimirAbonosToolStripMenuItem.Name = "imprimirAbonosToolStripMenuItem";
-            this.imprimirAbonosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.imprimirAbonosToolStripMenuItem.Text = "&Imprimir Abonos";
-            // 
             // Creditos_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 487);
+            this.Controls.Add(this.btnAll);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.gbFiltro);
             this.Controls.Add(this.dtFecha);
@@ -213,9 +240,9 @@
             this.Text = "Creditos";
             this.Load += new System.EventHandler(this.Creditos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCreditos)).EndInit();
+            this.ctxMenu.ResumeLayout(false);
             this.gbFiltro.ResumeLayout(false);
             this.gbFiltro.PerformLayout();
-            this.ctxMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +263,8 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.ContextMenuStrip ctxMenu;
         private System.Windows.Forms.ToolStripMenuItem verDetallesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imprimirCreditoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imprimirAbonosToolStripMenuItem;
+        private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.ToolStripMenuItem registrarAbonoToolStripMenuItem;
     }
 }

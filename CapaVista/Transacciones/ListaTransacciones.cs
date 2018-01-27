@@ -68,7 +68,7 @@ namespace CapaVista.Transacciones
             try
             {
                 int codigo = (int)dgvEgresos.SelectedRows[0].Cells[0].Value;
-                var form = new DetalleTransaccion(codigo);
+                var form = new DetalleTransaccion(TransaccionController.leer(codigo));
                 form.ShowDialog();
             }
             catch (Exception ex)

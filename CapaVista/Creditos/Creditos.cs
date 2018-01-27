@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControlador;
+using CapaDatos;
 using MetroFramework.Forms;
 
 namespace CapaVista.Creditos
@@ -18,36 +19,15 @@ namespace CapaVista.Creditos
         {
             InitializeComponent();
             newInstanceCreditosTable();
-            //obtenerCreditos(CreditoController.Listar());
         }
-        //List<CapaDatos.Credito> datos = null;
         private DataTable CreditosTable = null;
-        //private void obtenerCreditos(List<CapaDatos.Credito> datos)
-        //{
-            
-        //    //Poblando la tabla
-        //    foreach (var item in datos)
-        //    {
-        //        var fila = CreditosTable.NewRow();
-        //        fila["Factura"] = item.Detalle.IdTransaccion;
-        //        fila["Placa"] = item.Detalle.Transaccion.Vehiculo.Placa;
-        //        fila["Fecha"] = item.Detalle.Transaccion.FechaTransaccion;
-        //        fila["Monto"] = item.Detalle.Cantidad;
-        //        fila["Saldo"] = item.saldo;
-        //        fila["Abonos"] = item.Abono.Count();
-        //        fila["Cancelado"] = item.cancelado;
 
-        //        CreditosTable.Rows.Add(fila);
-        //    }
-        //    //Seteando al datagrid
-        //    dgvCreditos.DataSource = CreditosTable;
-        //    dgvCreditos.Refresh();
-        //    Refresh();
-        ////}
         private void Creditos_Load(object sender, EventArgs e)
         {
             //Cargar Combo rubros
             cboRubros.DataSource = TipoDetalleController.listar();
+            dgvCreditos.Columns["Monto"].DefaultCellStyle.Format = "C2";
+            dgvCreditos.Columns["Saldo"].DefaultCellStyle.Format = "C2";
         }
         private void newInstanceCreditosTable()
         {
@@ -55,7 +35,7 @@ namespace CapaVista.Creditos
             CreditosTable = new DataTable("Creditos");
             //Generando Columnas
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Factura", Caption="Factura", DataType = typeof(Int32), ReadOnly = true});
-            CreditosTable.Columns.Add(new DataColumn { ColumnName = "Placa", Caption = "Placa", DataType = typeof(Int32), ReadOnly = true });
+            CreditosTable.Columns.Add(new DataColumn { ColumnName = "Placa", Caption = "Placa", DataType = typeof(String), ReadOnly = true });
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Fecha", Caption = "Fecha", DataType = typeof(DateTime), ReadOnly = true });
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Monto", Caption = "Monto", DataType = typeof(Decimal), ReadOnly = true });
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Saldo", Caption = "Saldo", DataType = typeof(Decimal), ReadOnly = true });
@@ -63,30 +43,63 @@ namespace CapaVista.Creditos
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Cancelado", Caption = "Cancelado", DataType = typeof(Boolean), ReadOnly = true });
 
         }
-
-        private void cboRubros_SelectedIndexChanged(object sender, EventArgs e)
+        private void CargarDatos(List<Detalle> lista)
         {
-            //obtenerCreditos(CreditoController.Listar(obtenerCbo().IdTipoDetalle, dtFecha.Value));
+            CreditosTable.Rows.Clear();
+            foreach (var item in lista)
+            {
+                var row = CreditosTable.NewRow();
+                row["Factura"] = item.Transaccion.IdTransaccion;
+                row["Placa"] = item.Transaccion.Vehiculo.Placa;
+                row["Fecha"] = item.Transaccion.FechaTransaccion.Date;
+                row["Monto"] = item.Cantidad;
+                if (item.Saldo_detalle != null)
+                    row["Saldo"] = item.Saldo_detalle.Saldo;
+                else
+                    row["Saldo"] = item.Cantidad;
+                if (item.Abono != null)
+                    row["Abonos"] = item.Abono.Count;
+                else
+                    row["Abonos"] = 0;
+                row["Cancelado"] = item.Cancelado;
+                CreditosTable.Rows.Add(row);
+            }
+            dgvCreditos.DataSource = CreditosTable;
         }
+        private List<Detalle> obtenerCreditos()
+        {
+            List<Detalle> lista = null;
+            try
+            {
+                //Obteniendo todos las
+                lista = DetalleController.listar(-1).Where(x => x.TipoTransaccion == 2).ToList();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error durante la obtencion de la informacion",ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return lista;
+        }
         private void dtFecha_ValueChanged(object sender, EventArgs e)
         {
             cboRubros_SelectedIndexChanged(sender, e);
         }
-        private CapaDatos.TipoDetalle obtenerCbo()
+        private TipoDetalle obtenerCbo()
         {
-            return (CapaDatos.TipoDetalle)cboRubros.SelectedItem;
+            return (TipoDetalle)cboRubros.SelectedItem;
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            //List<CapaDatos.Credito> lista = CreditoController.Listar()
-            //    .Where(x =>
-            //   x.Detalle.Transaccion.FechaTransaccion >= dtFecha1.Value.Date &&
-            //   x.Detalle.Transaccion.FechaTransaccion <= dtFecha2.Value.Date
-            //    ).ToList();
-            //obtenerCreditos(lista);
+            CargarDatos(
+                obtenerCreditos().
+                    Where(x =>
+                        x.Transaccion.FechaTransaccion >= dtFecha1.Value.Date &&
+                        x.Transaccion.FechaTransaccion <= dtFecha2.Value.Date &&
+                        x.TipoDetalle.Equals(obtenerCbo().IdTipoDetalle)
+                ).ToList()
+                );
         }
-
         private void ctxMenu_Opening(object sender, CancelEventArgs e)
         {
             //Verificar que se haya seleccionado una fila
@@ -94,6 +107,36 @@ namespace CapaVista.Creditos
                 ctxMenu.Enabled = false;
             else
                 ctxMenu.Enabled = true;
+        }
+        private void cboRubros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var lista = obtenerCreditos().
+                 Where(
+                     x =>
+                     x.TipoDetalle.Equals(obtenerCbo().IdTipoDetalle) &&
+                     x.Transaccion.FechaTransaccion.Equals(dtFecha.Value.Date)
+                     ).ToList();
+            CargarDatos(lista);
+        }
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            CargarDatos(obtenerCreditos());
+        }
+
+        private void verDetallesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Obteniendo el indice seleccionado
+            int id_transacc = (int)dgvCreditos.SelectedRows[0].Cells[0].Value;
+            var transaccion = TransaccionController.leer(id_transacc);
+            if (transaccion != null)
+            {
+                var form = new Lista_Abonos(transaccion);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No se ha localizado dicha factura!", "Error durante la busqueada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

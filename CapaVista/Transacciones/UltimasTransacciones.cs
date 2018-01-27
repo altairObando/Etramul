@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using CapaControlador;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,8 +119,14 @@ namespace CapaVista.Vehiculos
             try
             {
                 int valor = (int)dgDatos.SelectedRows[0].Cells[0].Value;
-                var form = new Transacciones.DetalleTransaccion(valor);
-                form.ShowDialog();
+                var item = TransaccionController.leer(valor);
+                if (item != null)
+                {
+                    Transacciones.DetalleTransaccion form = new Transacciones.DetalleTransaccion(item);
+                    form.ShowDialog();
+                }
+                else
+                    throw new Exception("Factura no encontrada");
             }
             catch (Exception ex)
             {

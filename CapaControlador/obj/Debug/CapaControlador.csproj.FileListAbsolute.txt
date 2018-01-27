@@ -70,3 +70,21 @@ D:\Etramul\CapaControlador\bin\Debug\EntityFramework.xml
 D:\Etramul\CapaControlador\obj\Debug\CapaControlador.csprojResolveAssemblyReference.cache
 D:\Etramul\CapaControlador\obj\Debug\CapaControlador.dll
 D:\Etramul\CapaControlador\obj\Debug\CapaControlador.pdb
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\bin\Debug\CapaControlador.dll
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\bin\Debug\CapaControlador.pdb
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\bin\Debug\CapaDatoos.dll
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\bin\Debug\EntityFramework.dll
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\bin\Debug\CapaDatoos.pdb
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\bin\Debug\EntityFramework.xml
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\obj\Debug\CapaControlador.csprojResolveAssemblyReference.cache
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\obj\Debug\CapaControlador.dll
+C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaControlador\obj\Debug\CapaControlador.pdb
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\bin\Debug\CapaControlador.dll
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\bin\Debug\CapaControlador.pdb
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\bin\Debug\CapaDatoos.dll
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\bin\Debug\EntityFramework.dll
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\bin\Debug\CapaDatoos.pdb
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\bin\Debug\EntityFramework.xml
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\obj\Debug\CapaControlador.csprojResolveAssemblyReference.cache
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\obj\Debug\CapaControlador.dll
+C:\Users\altair\Documents\Proyectos\Etramul\CapaControlador\obj\Debug\CapaControlador.pdb

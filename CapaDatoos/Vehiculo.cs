@@ -47,7 +47,10 @@ public partial class Vehiculo
     public virtual ICollection<Transaccion> Transaccion { get; set; }
 
     public virtual Socio Socio { get; set; }
-
-}
+        public override string ToString()
+        {
+            return Placa;
+        }
+    }
 
 }

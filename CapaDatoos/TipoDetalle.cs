@@ -33,8 +33,11 @@ public partial class TipoDetalle
     public bool Activo { get; set; }
 
 
-
-    public virtual ICollection<Detalle> Egreso { get; set; }
+        public override string ToString()
+        {
+            return Descripcion;
+        }
+        public virtual ICollection<Detalle> Egreso { get; set; }
 
 }
 
