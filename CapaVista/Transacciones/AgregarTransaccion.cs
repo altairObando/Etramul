@@ -334,6 +334,7 @@ namespace CapaVista.Transacciones
                     {
                         MessageBox.Show("EL NUMERO DE FACTURA INGRESADO NO EXISTE", "NO EXISTE TRANSACCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    ActualizarNoFactura();
                 }
                 catch (Exception ex)
                 {

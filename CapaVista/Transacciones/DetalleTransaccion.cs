@@ -20,10 +20,13 @@ namespace CapaVista.Transacciones
             InitializeComponent();
             this.codigo = codigo;
             if (MainContainer.sesion.TipoUsuario.Descripcion == "Administrador")
-                btnCancelar.Enabled = false;
+            {
+                btnCancelar.Enabled = false;lblAnulacion.Visible = false;
+            }
             if (!this.codigo.Activo)
             {
                 btnCancelar.Enabled = false;
+                lblAnulacion.Visible = true;
                 this.lblAnulacion.Text = "ESTA FACTURA HA SIDO ANULADA";
             }
         }        

@@ -10,8 +10,9 @@ namespace CapaControlador
     {
         public static int Agregar(int id_transac, int id_detalle, decimal monto)
         {
-            if (id_transac < 1|| id_detalle < 1 || monto < 1)
-                throw new NullReferenceException("No se ha ingresado la informacion correctamente!", new Exception("Valores en negativo o ceros!"));
+            if( DetalleController.agregar(id_transac, TipoDetalleController.leer("Abono").IdTipoDetalle, "Abono por Factura", monto, 1, true) > 0)
+                if (id_transac < 1|| id_detalle < 1 || monto < 1)
+                    throw new NullReferenceException("No se ha ingresado la informacion correctamente!", new Exception("Valores en negativo o ceros!"));
             return new _Abono(new Abono { Id_transaccion = id_transac,id_detalle = id_detalle,Monto = monto }).Agregar();
         }
         public static Abono Leer(int id_abono)

@@ -25,6 +25,7 @@ namespace CapaVista.Creditos
         public Factura_Abono(string placa, int idTransaccion1, DateTime fechaTransaccion1, string nickname, int idTransaccion2, DateTime fechaTransaccion2, string v1, decimal cantidad, decimal monto, decimal v2)
         {
             InitializeComponent();
+
             this.placa = placa;
             this.factura = idTransaccion1;
             this.fecha = fechaTransaccion1;
@@ -35,7 +36,6 @@ namespace CapaVista.Creditos
             this.cantidad = cantidad;
             this.monto = monto;
             this.saldo = v2;
-            InitializeComponent();
         }
 
         private void Factura_Abono_Load(object sender, EventArgs e)
@@ -56,6 +56,7 @@ namespace CapaVista.Creditos
                 }
                 );
             fact.RefreshReport();
+            fact.SetDisplayMode(DisplayMode.PrintLayout);
         }
     }
 }

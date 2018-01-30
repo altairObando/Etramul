@@ -81,6 +81,18 @@ namespace CapaDatos
                     {
                         item.Activo = false;
                     }
+                    //Si es un abono la transaccion eliminamos el abono
+                    foreach (var item in temp.Abono)
+                    {
+                        //Buscamos el saldo
+                        var saldo = (from x in db.Saldo_detalleSet where x.id_detalle == item.id_detalle select x).First();
+                        //Devolvemos el monto debitado
+                        saldo.Saldo += item.Monto;
+                        if (saldo.Detalle.Cancelado)
+                            saldo.Detalle.Cancelado = false;
+                    }
+                    //Removemos el abono de la base de datos
+                    db.AbonoSet.Remove(temp.Abono.First());
                     result = db.SaveChanges();
                 }
                 catch (Exception ex)

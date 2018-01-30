@@ -1111,3 +1111,4 @@ C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe.
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.application
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.pdb
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Factura_Abono.resources

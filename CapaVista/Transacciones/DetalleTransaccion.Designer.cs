@@ -37,6 +37,8 @@
             this.lblNumero = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
             this.CodEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Egreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +48,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.lblAnulacion = new MetroFramework.Controls.MetroLabel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
             this.panel2.SuspendLayout();
@@ -128,11 +128,11 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(29, 19);
+            this.metroLabel1.Location = new System.Drawing.Point(54, 19);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(54, 19);
             this.metroLabel1.TabIndex = 14;
-            this.metroLabel1.Text = "No. Factura:";
+            this.metroLabel1.Text = "Factura:";
             // 
             // panel1
             // 
@@ -151,6 +151,26 @@
             this.panel1.Size = new System.Drawing.Size(613, 81);
             this.panel1.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(498, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Total:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(546, 19);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(20, 16);
+            this.lblTotal.TabIndex = 21;
+            this.lblTotal.Text = "---";
+            // 
             // dgvEgresos
             // 
             this.dgvEgresos.AllowUserToAddRows = false;
@@ -167,12 +187,12 @@
             this.descripcion,
             this.TipoTransaccion,
             this.monto});
-            this.dgvEgresos.Location = new System.Drawing.Point(23, 173);
+            this.dgvEgresos.Location = new System.Drawing.Point(23, 143);
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(666, 224);
+            this.dgvEgresos.Size = new System.Drawing.Size(666, 254);
             this.dgvEgresos.TabIndex = 1;
             // 
             // CodEgreso
@@ -251,16 +271,6 @@
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(546, 19);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(20, 16);
-            this.lblTotal.TabIndex = 21;
-            this.lblTotal.Text = "---";
-            // 
             // lblAnulacion
             // 
             this.lblAnulacion.AutoSize = true;
@@ -268,23 +278,13 @@
             this.lblAnulacion.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblAnulacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblAnulacion.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
-            this.lblAnulacion.Location = new System.Drawing.Point(16, 99);
+            this.lblAnulacion.Location = new System.Drawing.Point(16, 91);
             this.lblAnulacion.Name = "lblAnulacion";
             this.lblAnulacion.Size = new System.Drawing.Size(26, 25);
             this.lblAnulacion.Style = MetroFramework.MetroColorStyle.Red;
             this.lblAnulacion.TabIndex = 20;
             this.lblAnulacion.Text = "--";
             this.lblAnulacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(498, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 16);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Total:";
             // 
             // DetalleTransaccion
             // 
