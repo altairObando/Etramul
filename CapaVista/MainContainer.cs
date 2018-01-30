@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using CapaDatos;
 using CapaVista.Socios;
+using CapaVista.Transacciones;
 //using CapaVista.Reportes;
 //using CapaVista.Vehiculos;
 //using CapaVista.Transacciones;
@@ -37,6 +38,7 @@ namespace CapaVista
             var login = new Login();
             login.ShowDialog();
             sesion = login.sesion;
+            lblchange.Text = sesion.Nickname;
             if (sesion == null)
                 Application.Exit();
             else
@@ -139,6 +141,13 @@ namespace CapaVista
         private void btnCreditos_Click(object sender, EventArgs e)
         {
             var form = new Creditos.Creditos_form();
+            form.ShowDialog();
+        }
+
+        private void lblchange_Click(object sender, EventArgs e)
+        {
+            Personas persona = MainContainer.sesion.Personas;
+            CambiarContraseña form = new CambiarContraseña(persona);
             form.ShowDialog();
         }
     }

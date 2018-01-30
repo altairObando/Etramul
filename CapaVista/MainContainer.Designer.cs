@@ -40,6 +40,7 @@
             this.btnBuses = new MetroFramework.Controls.MetroTile();
             this.btnConductores = new MetroFramework.Controls.MetroTile();
             this.btnSocios = new MetroFramework.Controls.MetroTile();
+            this.lblchange = new MetroFramework.Controls.MetroLink();
             this.mpPanelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,11 +231,23 @@
             this.btnSocios.UseTileImage = true;
             this.btnSocios.Click += new System.EventHandler(this.metroTile1_Click);
             // 
+            // lblchange
+            // 
+            this.lblchange.Location = new System.Drawing.Point(912, 31);
+            this.lblchange.Name = "lblchange";
+            this.lblchange.Size = new System.Drawing.Size(75, 23);
+            this.lblchange.TabIndex = 1;
+            this.lblchange.Text = "User Name";
+            this.lblchange.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lblchange.UseStyleColors = true;
+            this.lblchange.Click += new System.EventHandler(this.lblchange_Click);
+            // 
             // MainContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 459);
+            this.Controls.Add(this.lblchange);
             this.Controls.Add(this.mpPanelPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -263,5 +276,6 @@
         private MetroFramework.Controls.MetroTile btnLogout;
         private MetroFramework.Controls.MetroTile btnAyuda;
         private MetroFramework.Controls.MetroTile btnCreditos;
+        private MetroFramework.Controls.MetroLink lblchange;
     }
 }

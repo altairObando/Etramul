@@ -157,6 +157,12 @@
     <Compile Include="Creditos\Creditos_por_fecha.Designer.cs">
       <DependentUpon>Creditos_por_fecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creditos\CREDITO_FECHA_Y_RUBRO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\CREDITO_FECHA_Y_RUBRO.Designer.cs">
+      <DependentUpon>CREDITO_FECHA_Y_RUBRO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Creditos\Factura_Abono.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,10 +449,14 @@
     <EmbeddedResource Include="Creditos\Creditos_por_fecha.resx">
       <DependentUpon>Creditos_por_fecha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\CREDITO_FECHA_Y_RUBRO.resx">
+      <DependentUpon>CREDITO_FECHA_Y_RUBRO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Creditos\Factura_Abono.resx">
       <DependentUpon>Factura_Abono.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Creditos\Factura_por_abono.rdlc" />
+    <EmbeddedResource Include="Creditos\CREDITOS_FECHA_Y_RUBRO.rdlc" />
     <EmbeddedResource Include="Creditos\Lista Abonos.resx">
       <DependentUpon>Lista Abonos.cs</DependentUpon>
     </EmbeddedResource>

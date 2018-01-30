@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="5013504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="5014016">
       <assemblyIdentity name="COOTRACOSAN" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0efXV9Fp51RdbHdaqMU76UkhAwJoTn2hO8itlCmGyWw=</dsig:DigestValue>
+        <dsig:DigestValue>pUshoXPZrnhdonFpEXsNPX8d0vgYcZqR0LvrKXZzA1g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>J8smspZ58iYiOHjedXGfNy605y76oueV2IEfBOVXolY=</dsig:DigestValue>
+        <dsig:DigestValue>rU9gFMnNumNAnkN8C5wZFkTuxTi1nJEPj1cOHezwVIk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

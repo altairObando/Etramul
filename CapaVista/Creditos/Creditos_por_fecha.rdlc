@@ -42,7 +42,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -52,10 +51,9 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -78,7 +76,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -88,10 +85,9 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -114,7 +110,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -124,10 +119,9 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -150,7 +144,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -160,10 +153,9 @@
                       <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -186,7 +178,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -196,10 +187,9 @@
                       <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -222,7 +212,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -232,10 +221,9 @@
                       <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -271,7 +259,6 @@
                       <rd:DefaultName>Factura</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -305,7 +292,6 @@
                       <rd:DefaultName>FechaTransaccion</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -338,7 +324,6 @@
                       <rd:DefaultName>Descripcion</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -371,7 +356,6 @@
                       <rd:DefaultName>Placa</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -406,7 +390,6 @@
                       <rd:DefaultName>Monto</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -441,7 +424,6 @@
                       <rd:DefaultName>Saldo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -470,7 +452,6 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#465678</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -480,10 +461,9 @@
                       <rd:DefaultName>Factura1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#c6daf8</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#9eb6e4</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -505,7 +485,6 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#465678</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -515,10 +494,9 @@
                       <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#c6daf8</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#9eb6e4</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -540,7 +518,6 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#465678</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -550,10 +527,9 @@
                       <rd:DefaultName>Textbox25</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#c6daf8</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#9eb6e4</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -575,7 +551,6 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#465678</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -585,10 +560,9 @@
                       <rd:DefaultName>Textbox26</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#c6daf8</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#9eb6e4</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -611,7 +585,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'C$' #,0.00;'C$' -#,0.00;'-'</Format>
-                                <Color>#465678</Color>
                                 <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
@@ -622,10 +595,9 @@
                       <rd:DefaultName>Textbox27</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#c6daf8</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#9eb6e4</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -648,7 +620,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'C$' #,0.00;'C$' -#,0.00;'-'</Format>
-                                <Color>#465678</Color>
                                 <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
@@ -659,10 +630,9 @@
                       <rd:DefaultName>Textbox28</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#c6daf8</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#9eb6e4</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -689,7 +659,6 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -699,10 +668,9 @@
                       <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#9eb6e4</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#7292cc</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -724,7 +692,6 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -734,10 +701,9 @@
                       <rd:DefaultName>Textbox17</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#9eb6e4</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#7292cc</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -769,10 +735,9 @@
                       <rd:DefaultName>Textbox18</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#9eb6e4</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#7292cc</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -804,10 +769,9 @@
                       <rd:DefaultName>Textbox19</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#9eb6e4</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#7292cc</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -830,7 +794,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'C$' #,0.00;'C$' -#,0.00</Format>
-                                <Color>White</Color>
                                 <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
@@ -841,10 +804,9 @@
                       <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#9eb6e4</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#7292cc</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -867,7 +829,6 @@
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'C$' #,0.00;'C$' -#,0.00;'-'</Format>
-                                <Color>White</Color>
                                 <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
@@ -878,10 +839,9 @@
                       <rd:DefaultName>Textbox21</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>#9eb6e4</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#7292cc</BackgroundColor>
+                        <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -922,7 +882,6 @@
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -932,10 +891,9 @@
                     <rd:DefaultName>Textbox13</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>#7292cc</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#4c68a2</BackgroundColor>
+                      <BackgroundColor>White</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -974,7 +932,6 @@
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
-                              <Color>#465678</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -984,10 +941,9 @@
                     <rd:DefaultName>Estado</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>#c6daf8</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#9eb6e4</BackgroundColor>
+                      <BackgroundColor>White</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -1020,7 +976,6 @@
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
-                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -1030,10 +985,9 @@
                     <rd:DefaultName>Textbox15</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>#9eb6e4</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#7292cc</BackgroundColor>
+                      <BackgroundColor>White</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -1060,7 +1014,7 @@
     <Height>1.20833in</Height>
     <Style />
   </Body>
-  <Width>7.35801in</Width>
+  <Width>6.88976in</Width>
   <Page>
     <PageHeader>
       <Height>3.04271cm</Height>

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCreditos = new System.Windows.Forms.DataGridView();
             this.ctxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +39,7 @@
             this.lblRubros = new System.Windows.Forms.Label();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.gbFiltro = new System.Windows.Forms.GroupBox();
+            this.check = new System.Windows.Forms.CheckBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.dtFecha1 = new System.Windows.Forms.DateTimePicker();
             this.btnAll = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.check = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCreditos)).BeginInit();
             this.ctxMenu.SuspendLayout();
             this.gbFiltro.SuspendLayout();
@@ -64,16 +64,16 @@
             this.dgvCreditos.ContextMenuStrip = this.ctxMenu;
             this.dgvCreditos.Location = new System.Drawing.Point(12, 133);
             this.dgvCreditos.Name = "dgvCreditos";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCreditos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvCreditos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCreditos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvCreditos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCreditos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCreditos.Size = new System.Drawing.Size(885, 325);
             this.dgvCreditos.TabIndex = 5;
@@ -145,6 +145,16 @@
             this.gbFiltro.TabIndex = 4;
             this.gbFiltro.TabStop = false;
             this.gbFiltro.Text = "Busqueda entre fechas:";
+            // 
+            // check
+            // 
+            this.check.AutoSize = true;
+            this.check.Location = new System.Drawing.Point(23, 28);
+            this.check.Name = "check";
+            this.check.Size = new System.Drawing.Size(15, 14);
+            this.check.TabIndex = 0;
+            this.check.UseVisualStyleBackColor = true;
+            this.check.CheckedChanged += new System.EventHandler(this.check_CheckedChanged);
             // 
             // btnFiltrar
             // 
@@ -222,16 +232,6 @@
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // check
-            // 
-            this.check.AutoSize = true;
-            this.check.Location = new System.Drawing.Point(23, 28);
-            this.check.Name = "check";
-            this.check.Size = new System.Drawing.Size(15, 14);
-            this.check.TabIndex = 0;
-            this.check.UseVisualStyleBackColor = true;
-            this.check.CheckedChanged += new System.EventHandler(this.check_CheckedChanged);
-            // 
             // Creditos_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,7 +244,12 @@
             this.Controls.Add(this.lblRubros);
             this.Controls.Add(this.cboRubros);
             this.Controls.Add(this.dgvCreditos);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Creditos_form";
+            this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
+            this.ShowIcon = false;
             this.Text = "Creditos";
             this.Load += new System.EventHandler(this.Creditos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCreditos)).EndInit();

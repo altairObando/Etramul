@@ -265,8 +265,12 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CambiarContraseña";
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
+            this.ShowIcon = false;
             this.Text = "Cambio de Contraseña";
             this.Load += new System.EventHandler(this.CambiarContraseña_Load);
             this.panel1.ResumeLayout(false);
