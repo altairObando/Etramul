@@ -14,34 +14,27 @@ namespace CapaVista.Creditos
 {
     public partial class AgregarAbono : MetroFramework.Forms.MetroForm
     {
+       
         public AgregarAbono()
         {
             InitializeComponent();
             loadTransaccion();
             loadCombos();
-            listTemp = null;
-
+            this.creditosDataset.EnforceConstraints = false;
         }
-
-
-        private DataTable abonosTable;
-
-        private List<Transaccion> listTemp;
-
         void ActualizarNoFactura()
         {
             try
             {
                 var ultima = TransaccionController.getUltima();
                 if (ultima != null)
-                    lblNoFactura.Text = String.Format("{0}", ultima.IdTransaccion + 1);
+                    lblFactura.Text = String.Format("{0}", ultima.IdTransaccion + 1);
                 else
-                    lblNoFactura.Text = "1";
+                    lblFactura.Text = "1";
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                MessageBox.Show(ex.Message, "Error al obtener el numero de facturacion actual", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -63,7 +56,7 @@ namespace CapaVista.Creditos
         {
             try
             {                
-                List<CapaDatos.Vehiculo> vehiculos = VehiculosController.lista(new Vehiculo()).OrderBy(x => x.Placa).ToList();
+                List<Vehiculo> vehiculos = VehiculosController.lista(new Vehiculo()).OrderBy(x => x.Placa).ToList();
                 cboVehiculo.DataSource = vehiculos;
             }
             catch (Exception ex)
@@ -73,53 +66,120 @@ namespace CapaVista.Creditos
             }
         }
 
-        private void btnAnular_Click(object sender, EventArgs e)
+       private void cmsAbono_Click(object sender, EventArgs e)
         {
-            Vehiculo vehiculo = (Vehiculo)cboVehiculo.SelectedItem;
-            List<Transaccion> lista = vehiculo.Transaccion.ToList();
-            LlenarData(lista);
             
         }
-
-        void LlenarData(List<Transaccion> lista)
+        private int getVehiculoIndex()
         {
+            int index = 0;
             try
             {
-                List<Transaccion> nueva = null;
-                foreach (var item in lista)
-                {
-                    foreach (var det in item.Egreso)
-                    {
-                        if (det.TipoTransaccion == 2 && det.Cancelado == false)
-                            nueva.Add(item);
-                    }
-                }
-                if (nueva != null)
-                {
-                    foreach (var item in nueva)
-                    {
-                        foreach (var item2 in item.Egreso)
-                        {
-                            abonosTable.Rows.Add(item.IdTransaccion, item.FechaTransaccion.ToShortDateString(), item2.TipoEgreso.Descripcion, item2.Cantidad, item2.Saldo_detalle.Saldo);
-                            //dgvCreditos.Rows.Add(item.IdTransaccion, item.FechaTransaccion.ToShortDateString(), item2.TipoEgreso.Descripcion, item2.Cantidad, item2.Saldo_detalle.Saldo);
-                        }
-                    }
-                    this.listTemp = nueva;
-                    dgvCreditos.DataSource = abonosTable;
-                }
-                else
-                    throw new Exception("No hay creditos pendientes para este bus");
+                index = ((Vehiculo)cboVehiculo.SelectedItem).Id_Vehiculo;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+            return index;
+        }
+        private void AgregarAbono_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                HabilitarSeleccion(true);
+                this.creditosDataset.EnforceConstraints = false;
+                cREDITOS_PENDIENTESTableAdapter.Fill(this.creditosDataset.CREDITOS_PENDIENTES, getVehiculoIndex());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void cmsAbono_Click(object sender, EventArgs e)
+        private void cboVehiculo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AgregarAbono_Load(sender, e);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             
+            try
+            {
+                var result = MessageBox.Show(
+                    @"Confirme la insercion del abono", "Agregar el abono?",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result.Equals(DialogResult.Yes))
+                {
+                    decimal monto = int.Parse(txtMonto.Text);
+                    //Obteniendo el codigo de el detalle a abonar
+                    int id = (int)dgvCreditos.SelectedRows[0].Cells["Detalle"].Value;
+                    //Obteniendo el codigo del vehiculo
+                    int id_vehiculo = ((Vehiculo)cboVehiculo.SelectedItem).Id_Vehiculo;
+                    //Registramos la transaccion
+                    int i = TransaccionController.agregar(MainContainer.sesion.Id_usuario, id_vehiculo, DateTime.Now.Date, true);
+                    if (i > 0)
+                    {
+                        //si se guardo el encabezado de la factura
+                        int j = _AbonoController.Agregar(TransaccionController.getUltima().IdTransaccion, id, monto);
+                        if (j > 0)
+                        {
+                            MessageBox.Show("Abono Agregado Correctamente!", "Cambios Guardados");
+                            //Mostramos factura
+                            var tra = TransaccionController.getUltima();
+                            var abono = _AbonoController.getAllAbono().OrderByDescending(x => x.Id_transaccion).FirstOrDefault();
+                            var form = new Factura_Abono(
+                               tra.Vehiculo.Placa, tra.IdTransaccion, tra.FechaTransaccion,
+                               MainContainer.sesion.Nickname, abono.Detalle.IdTransaccion, 
+                               abono.Detalle.Transaccion.FechaTransaccion, abono.Detalle.TipoEgreso.ToString(),
+                               abono.Detalle.Cantidad, abono.Monto, (abono.Detalle.Cantidad - abono.Monto)
+                                );
+                            form.ShowDialog();
+                            //Recargamos los datos
+                            AgregarAbono_Load(sender, e);
+                        }
+                        else
+                            throw new Exception("No se ha logrado la insercion del Abono!!!");
+                    }
+                    else
+                        throw new NullReferenceException("No se ha registrado la transaccion", new Exception("El codigo de la transaccion no se genero correctamente!"));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error durante la insercion de la factura", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void registrarAbonoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HabilitarSeleccion(false);
+        }
+        private void HabilitarSeleccion(bool band)
+        {
+            panelDatos.Enabled = band;
+            dgvCreditos.Enabled = band;
+            panelOpciones.Enabled = !band;
+        }
+        private void cmsAbono_Opening(object sender, CancelEventArgs e)
+        {
+            //Verificando que hayan creditos y se haya seleccionado al menos un credito
+            if (dgvCreditos.SelectedRows.Count > 0)
+                cmsAbono.Enabled = true;
+            else
+                cmsAbono.Enabled = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            HabilitarSeleccion(true);
+            cboVehiculo.Focus();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

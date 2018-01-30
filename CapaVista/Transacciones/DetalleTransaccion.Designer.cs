@@ -46,8 +46,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblAnulacion = new MetroFramework.Controls.MetroLabel();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lblAnulacion = new MetroFramework.Controls.MetroLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,7 +58,7 @@
             // 
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
-            this.lblPlaca.Location = new System.Drawing.Point(457, 48);
+            this.lblPlaca.Location = new System.Drawing.Point(394, 48);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(25, 19);
             this.lblPlaca.TabIndex = 3;
@@ -67,7 +68,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(411, 48);
+            this.metroLabel7.Location = new System.Drawing.Point(348, 48);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(43, 19);
             this.metroLabel7.TabIndex = 4;
@@ -77,7 +78,7 @@
             // 
             this.lblfecha.AutoSize = true;
             this.lblfecha.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
-            this.lblfecha.Location = new System.Drawing.Point(457, 19);
+            this.lblfecha.Location = new System.Drawing.Point(394, 19);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(21, 19);
             this.lblfecha.TabIndex = 2;
@@ -87,7 +88,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(338, 19);
+            this.metroLabel3.Location = new System.Drawing.Point(275, 19);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(116, 19);
             this.metroLabel3.TabIndex = 18;
@@ -135,6 +136,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.lblPlaca);
             this.panel1.Controls.Add(this.metroLabel7);
             this.panel1.Controls.Add(this.lblfecha);
@@ -145,7 +148,7 @@
             this.panel1.Controls.Add(this.metroLabel1);
             this.panel1.Location = new System.Drawing.Point(23, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 81);
+            this.panel1.Size = new System.Drawing.Size(613, 81);
             this.panel1.TabIndex = 2;
             // 
             // dgvEgresos
@@ -211,9 +214,9 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(602, 126);
+            this.btnCancelar.Location = new System.Drawing.Point(632, 80);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 24);
+            this.btnCancelar.Size = new System.Drawing.Size(57, 24);
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Anular";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -229,9 +232,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::CapaVista.Properties.Resources.close_button;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(600, 63);
+            this.button1.Location = new System.Drawing.Point(632, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 61);
+            this.button1.Size = new System.Drawing.Size(57, 61);
             this.button1.TabIndex = 3;
             this.button1.Text = "Cerrar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -239,13 +242,24 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblTotal);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.lblAnulacion);
             this.panel2.Location = new System.Drawing.Point(7, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(692, 387);
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(546, 19);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(20, 16);
+            this.lblTotal.TabIndex = 21;
+            this.lblTotal.Text = "---";
             // 
             // lblAnulacion
             // 
@@ -254,7 +268,7 @@
             this.lblAnulacion.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblAnulacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblAnulacion.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
-            this.lblAnulacion.Location = new System.Drawing.Point(16, 93);
+            this.lblAnulacion.Location = new System.Drawing.Point(16, 99);
             this.lblAnulacion.Name = "lblAnulacion";
             this.lblAnulacion.Size = new System.Drawing.Size(26, 25);
             this.lblAnulacion.Style = MetroFramework.MetroColorStyle.Red;
@@ -262,23 +276,21 @@
             this.lblAnulacion.Text = "--";
             this.lblAnulacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTotal
+            // label1
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(424, 108);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(20, 16);
-            this.lblTotal.TabIndex = 21;
-            this.lblTotal.Text = "---";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(498, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Total:";
             // 
             // DetalleTransaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 420);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvEgresos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -319,5 +331,6 @@
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroLabel lblAnulacion;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label1;
     }
 }

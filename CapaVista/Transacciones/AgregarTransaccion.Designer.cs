@@ -43,7 +43,7 @@
             this.lblDatosGeneral = new MetroFramework.Controls.MetroLabel();
             this.mpEgresos = new MetroFramework.Controls.MetroPanel();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCarrera = new System.Windows.Forms.Button();
+            this.btnAbonos = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbCredito = new System.Windows.Forms.RadioButton();
@@ -184,7 +184,7 @@
             // 
             this.mpEgresos.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.mpEgresos.Controls.Add(this.btnGuardar);
-            this.mpEgresos.Controls.Add(this.btnCarrera);
+            this.mpEgresos.Controls.Add(this.btnAbonos);
             this.mpEgresos.Controls.Add(this.btnResumen);
             this.mpEgresos.Controls.Add(this.panel1);
             this.mpEgresos.Controls.Add(this.txtMonto);
@@ -224,22 +224,22 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCarrera
+            // btnAbonos
             // 
-            this.btnCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCarrera.FlatAppearance.BorderSize = 0;
-            this.btnCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarrera.Image = global::CapaVista.Properties.Resources.road1;
-            this.btnCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCarrera.Location = new System.Drawing.Point(377, 31);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(147, 33);
-            this.btnCarrera.TabIndex = 9;
-            this.btnCarrera.Text = "Registrar Viaje";
-            this.btnCarrera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
+            this.btnAbonos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAbonos.FlatAppearance.BorderSize = 0;
+            this.btnAbonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbonos.Image = global::CapaVista.Properties.Resources.road1;
+            this.btnAbonos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAbonos.Location = new System.Drawing.Point(377, 31);
+            this.btnAbonos.Name = "btnAbonos";
+            this.btnAbonos.Size = new System.Drawing.Size(147, 33);
+            this.btnAbonos.TabIndex = 9;
+            this.btnAbonos.Text = "Registrar Abono";
+            this.btnAbonos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbonos.UseVisualStyleBackColor = true;
+            this.btnAbonos.Click += new System.EventHandler(this.btnCarrera_Click);
             // 
             // btnResumen
             // 
@@ -542,7 +542,7 @@
         private System.Windows.Forms.Button btnResumen;
         private MetroFramework.Controls.MetroLink lblUser;
         private MetroFramework.Controls.MetroLink lblSalir;
-        private System.Windows.Forms.Button btnCarrera;
+        private System.Windows.Forms.Button btnAbonos;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodEgreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Egreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;

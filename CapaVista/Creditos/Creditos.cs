@@ -15,19 +15,31 @@ namespace CapaVista.Creditos
 {
     public partial class Creditos_form : MetroForm
     {
+        /// <summary>
+        /// Contendra la secuencia en la cual debe de mostrarse el reporte
+        /// haciendo uso de la siguiente tabla de valores
+        /// 0 = Todos los creditos por fecha
+        /// 1 = Todos los creditos por fecha y rubro
+        /// 2 = Todos los creditos Entre fechas
+        /// 3 = Todos los creditos entre fechas y rubro
+        /// </summary>
+        private int ordenImpresion;
+        /// <summary>
+        /// Reportes almacenados en un arreglo
+        /// </summary>
         public Creditos_form()
         {
             InitializeComponent();
             newInstanceCreditosTable();
         }
         private DataTable CreditosTable = null;
-
         private void Creditos_Load(object sender, EventArgs e)
         {
             //Cargar Combo rubros
             cboRubros.DataSource = TipoDetalleController.listar();
             dgvCreditos.Columns["Monto"].DefaultCellStyle.Format = "C2";
             dgvCreditos.Columns["Saldo"].DefaultCellStyle.Format = "C2";
+            check_CheckedChanged(sender, e);
         }
         private void newInstanceCreditosTable()
         {
@@ -72,7 +84,7 @@ namespace CapaVista.Creditos
             try
             {
                 //Obteniendo todos las
-                lista = DetalleController.listar(-1).Where(x => x.TipoTransaccion == 2).ToList();
+                lista = DetalleController.listar(-1).Where(x => x.TipoTransaccion == 2 && x.Activo).ToList();
 
             }
             catch (Exception ex)
@@ -95,10 +107,11 @@ namespace CapaVista.Creditos
                 obtenerCreditos().
                     Where(x =>
                         x.Transaccion.FechaTransaccion >= dtFecha1.Value.Date &&
-                        x.Transaccion.FechaTransaccion <= dtFecha2.Value.Date &&
-                        x.TipoDetalle.Equals(obtenerCbo().IdTipoDetalle)
+                        x.Transaccion.FechaTransaccion <= dtFecha2.Value.Date 
+                  /*&&  x.TipoDetalle.Equals(obtenerCbo().IdTipoDetalle)      */
                 ).ToList()
                 );
+            ordenImpresion = 2;
         }
         private void ctxMenu_Opening(object sender, CancelEventArgs e)
         {
@@ -110,17 +123,34 @@ namespace CapaVista.Creditos
         }
         private void cboRubros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var lista = obtenerCreditos().
+            List<Detalle> lista;
+            if(!check.Checked)
+            {
+                lista = obtenerCreditos().
                  Where(
                      x =>
                      x.TipoDetalle.Equals(obtenerCbo().IdTipoDetalle) &&
                      x.Transaccion.FechaTransaccion.Equals(dtFecha.Value.Date)
                      ).ToList();
-            CargarDatos(lista);
+                ordenImpresion = 1;
+            }else
+            {
+                lista = obtenerCreditos().
+                 Where(
+                     x =>
+                     x.TipoDetalle.Equals(obtenerCbo().IdTipoDetalle) &&
+                     x.Transaccion.FechaTransaccion >= dtFecha1.Value.Date &&
+                     x.Transaccion.FechaTransaccion <= dtFecha2.Value.Date
+                     ).ToList();
+                ordenImpresion = 3;
+            }
+            if(lista!= null)
+                CargarDatos(lista);
         }
         private void btnAll_Click(object sender, EventArgs e)
         {
-            CargarDatos(obtenerCreditos());
+            CargarDatos(obtenerCreditos().Where(x=> x.Transaccion.FechaTransaccion.Equals(dtFecha.Value.Date)).ToList());
+            ordenImpresion = 0;
         }
 
         private void verDetallesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,6 +166,26 @@ namespace CapaVista.Creditos
             else
             {
                 MessageBox.Show("No se ha localizado dicha factura!", "Error durante la busqueada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void check_CheckedChanged(object sender, EventArgs e)
+        {
+            bool band = false;
+            if (check.Checked)
+                band = true;
+            dtFecha.Enabled = !band;
+            btnAll.Enabled = !band;
+            dtFecha1.Enabled = band;
+            dtFecha2.Enabled = band;
+            btnFiltrar.Enabled = band;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            switch (ordenImpresion)
+            {
+                case 0: var form = new Creditos_por_fecha(dtFecha.Value); form.ShowDialog() ;break;
             }
         }
     }

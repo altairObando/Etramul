@@ -143,6 +143,26 @@
     <Compile Include="Creditos\Creditos.Designer.cs">
       <DependentUpon>Creditos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creditos\CreditosDataset.cs">
+      <DependentUpon>CreditosDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Creditos\CreditosDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreditosDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Creditos\Creditos_por_fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\Creditos_por_fecha.Designer.cs">
+      <DependentUpon>Creditos_por_fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creditos\Factura_Abono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\Factura_Abono.Designer.cs">
+      <DependentUpon>Factura_Abono.cs</DependentUpon>
+    </Compile>
     <Compile Include="Creditos\Lista Abonos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -419,6 +439,14 @@
     <EmbeddedResource Include="Creditos\Creditos.resx">
       <DependentUpon>Creditos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Creditos_por_fecha.rdlc" />
+    <EmbeddedResource Include="Creditos\Creditos_por_fecha.resx">
+      <DependentUpon>Creditos_por_fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Factura_Abono.resx">
+      <DependentUpon>Factura_Abono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Factura_por_abono.rdlc" />
     <EmbeddedResource Include="Creditos\Lista Abonos.resx">
       <DependentUpon>Lista Abonos.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,6 +597,17 @@
     <EmbeddedResource Include="Vehiculos\VerDetalles.resx">
       <DependentUpon>VerDetalles.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Creditos\CreditosDataset.xsc">
+      <DependentUpon>CreditosDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Creditos\CreditosDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreditosDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Creditos\CreditosDataset.xss">
+      <DependentUpon>CreditosDataset.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

@@ -298,19 +298,8 @@ namespace CapaVista.Transacciones
         {
             try
             {
-                if (cboVehiculo.SelectedItem != null)
-                {
-                    var form = new Carrera();
-                    form.Show();
-                    form.cboVehiculo.Items.Clear();
-                    form.cboVehiculo.Items.Add(cboVehiculo.SelectedItem);
-                    form.cboVehiculo.SelectedIndex = 0;
-                    form.cboVehiculo.SelectedItem = cboVehiculo.SelectedItem;
-                    form.cboVehiculo.Text = cboVehiculo.SelectedItem.ToString();
-                    form.cboVehiculo.Enabled = false;
-                }
-                else
-                    throw new NullReferenceException();
+                var form = new Creditos.AgregarAbono();
+                form.ShowDialog();
             }
             catch (Exception ex)
             {
