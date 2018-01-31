@@ -151,6 +151,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreditosDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Creditos\Creditos_Bus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\Creditos_Bus.Designer.cs">
+      <DependentUpon>Creditos_Bus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creditos\Creditos_entre_fechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\Creditos_entre_fechas.Designer.cs">
+      <DependentUpon>Creditos_entre_fechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creditos\Creditos_entre_fechas_rubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos\Creditos_entre_fechas_rubro.Designer.cs">
+      <DependentUpon>Creditos_entre_fechas_rubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Creditos\Creditos_por_fecha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +463,19 @@
     <EmbeddedResource Include="Creditos\Creditos.resx">
       <DependentUpon>Creditos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Creditos_Bus.rdlc" />
+    <EmbeddedResource Include="Creditos\Creditos_Bus.resx">
+      <DependentUpon>Creditos_Bus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Creditos_bus_rubro.rdlc" />
+    <EmbeddedResource Include="Creditos\Creditos_Entre_Fechas.rdlc" />
+    <EmbeddedResource Include="Creditos\Creditos_entre_fechas.resx">
+      <DependentUpon>Creditos_entre_fechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Creditos_entre_fechas_rubro.resx">
+      <DependentUpon>Creditos_entre_fechas_rubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos\Creditos_entre_fechas_y_rubro.rdlc" />
     <EmbeddedResource Include="Creditos\Creditos_por_fecha.rdlc" />
     <EmbeddedResource Include="Creditos\Creditos_por_fecha.resx">
       <DependentUpon>Creditos_por_fecha.cs</DependentUpon>

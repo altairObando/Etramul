@@ -32,6 +32,7 @@ namespace CapaVista.Creditos
                 );
             reporte.SetDisplayMode(DisplayMode.PrintLayout);
             this.reporte.RefreshReport();
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

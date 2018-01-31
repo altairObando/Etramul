@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pEUrZuyRHIcu/ApUNpBpQRaKHJKGmM0PKteaR5W5RWI=</dsig:DigestValue>
+        <dsig:DigestValue>6SLpPCxR4UesRfCREjrilDtHBHjv9JlnhWFw3Jsbn/g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QFGAvKuaNQJHTYMIcPcC7Q3XjN4YcSYytLmVWuygqKI=</dsig:DigestValue>
+        <dsig:DigestValue>t/4TVQKvzLZHDx13ASwC5Jgaaj/zw2VMo0o0aIsiq/w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="5014016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COOTRACOSAN.exe" size="5122048">
       <assemblyIdentity name="COOTRACOSAN" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pUshoXPZrnhdonFpEXsNPX8d0vgYcZqR0LvrKXZzA1g=</dsig:DigestValue>
+        <dsig:DigestValue>5zvBhOlFEHpVLziFK2g17dVDzC6NFbnJDsq94aJqW3I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rU9gFMnNumNAnkN8C5wZFkTuxTi1nJEPj1cOHezwVIk=</dsig:DigestValue>
+        <dsig:DigestValue>/u5D1ucQ780kqimDOZpkmcv/GE83fH0W8uWzqeTlaSk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

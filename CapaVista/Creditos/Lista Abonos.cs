@@ -15,9 +15,9 @@ namespace CapaVista.Creditos
 {
     public partial class Lista_Abonos : MetroForm
     {
-        private Transaccion data;
+        private Detalle data;
         private DataTable AbonosTable;
-        public Lista_Abonos(Transaccion data)
+        public Lista_Abonos(Detalle data)
         {
             InitializeComponent();
             this.data = data;
@@ -41,14 +41,14 @@ namespace CapaVista.Creditos
                 AbonosTable.Columns.Add("Saldo_Por_Abono", typeof(Decimal));
                 //Obteniendo datos y llenando la tabla
                 lblFactura.Text = data.IdTransaccion.ToString();
-                lblFecha.Text = data.FechaTransaccion.ToShortDateString();
-                lblCajero.Text = UsuariosController.leer(data.Id_usuario).ToString();
+                lblFecha.Text = data.Transaccion.FechaTransaccion.ToShortDateString();
+                lblCajero.Text = UsuariosController.leer(data.Transaccion.Id_usuario).ToString();
                 lblMonto.Text = string.Format("{0:C2}", 
-                    data.Egreso.FirstOrDefault(x=> x.TipoTransaccion == 2).Cantidad
+                    data.Transaccion.Egreso.FirstOrDefault(x=> x.TipoTransaccion == 2).Cantidad
                     );
-                lblPlaca.Text = data.Vehiculo.Placa;
-                lblRubro.Text = data.Egreso.FirstOrDefault(x => x.TipoTransaccion == 2).TipoEgreso.Descripcion;
-
+                lblPlaca.Text = data.Transaccion.Vehiculo.Placa;
+                lblRubro.Text = data.Transaccion.Egreso.FirstOrDefault(x => x.TipoTransaccion == 2).TipoEgreso.Descripcion;
+                decimal saldo = data.Cantidad;
                 foreach (var item in data.Abono)
                 {
                     var row = AbonosTable.NewRow();
@@ -56,7 +56,9 @@ namespace CapaVista.Creditos
                     row["Fecha"] = item.Transaccion.FechaTransaccion;
                     row["Cajero"] = UsuariosController.leer(item.Transaccion.Id_usuario).ToString();
                     row["Monto"] = item.Monto;
-                    row["Saldo_Por_Abono"] = item.Detalle.Cantidad - item.Monto;
+                    saldo -= item.Monto;
+                    row["Saldo_Por_Abono"] = (saldo >= 0) ? saldo : 0;
+                    AbonosTable.Rows.Add(row);
                 }
                 //Estableciendo la fuente de datos para el grid
                 dgvAbonos.DataSource = AbonosTable;

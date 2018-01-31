@@ -24,9 +24,6 @@ namespace CapaVista.Creditos
         /// 3 = Todos los creditos entre fechas y rubro
         /// </summary>
         private int ordenImpresion;
-        /// <summary>
-        /// Reportes almacenados en un arreglo
-        /// </summary>
         public Creditos_form()
         {
             InitializeComponent();
@@ -47,6 +44,7 @@ namespace CapaVista.Creditos
             CreditosTable = new DataTable("Creditos");
             //Generando Columnas
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Factura", Caption="Factura", DataType = typeof(Int32), ReadOnly = true});
+            CreditosTable.Columns.Add(new DataColumn { ColumnName = "Codigo", Caption = "Codigo", DataType = typeof(Int32), ReadOnly = true });
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Placa", Caption = "Placa", DataType = typeof(String), ReadOnly = true });
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Fecha", Caption = "Fecha", DataType = typeof(DateTime), ReadOnly = true });
             CreditosTable.Columns.Add(new DataColumn { ColumnName = "Monto", Caption = "Monto", DataType = typeof(Decimal), ReadOnly = true });
@@ -62,6 +60,7 @@ namespace CapaVista.Creditos
             {
                 var row = CreditosTable.NewRow();
                 row["Factura"] = item.Transaccion.IdTransaccion;
+                row["Codigo"] = item.IdDetalle;
                 row["Placa"] = item.Transaccion.Vehiculo.Placa;
                 row["Fecha"] = item.Transaccion.FechaTransaccion.Date;
                 row["Monto"] = item.Cantidad;
@@ -156,11 +155,11 @@ namespace CapaVista.Creditos
         private void verDetallesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Obteniendo el indice seleccionado
-            int id_transacc = (int)dgvCreditos.SelectedRows[0].Cells[0].Value;
-            var transaccion = TransaccionController.leer(id_transacc);
-            if (transaccion != null)
+            int id_detalle = (int)dgvCreditos.SelectedRows[0].Cells[1].Value;
+            var detalle = DetalleController.leer(id_detalle);
+            if (detalle != null)
             {
-                var form = new Lista_Abonos(transaccion);
+                var form = new Lista_Abonos(detalle);
                 form.ShowDialog();
             }
             else
@@ -183,9 +182,27 @@ namespace CapaVista.Creditos
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            int id_rubro;
+            id_rubro = ((TipoDetalle)cboRubros.SelectedItem).IdTipoDetalle;
             switch (ordenImpresion)
             {
-                case 0: var form = new Creditos_por_fecha(dtFecha.Value); form.ShowDialog() ;break;
+                case 0:
+                    var form = new Creditos_por_fecha(dtFecha.Value);
+                    form.ShowDialog();
+                    break;
+                case 1:
+                    var form2 = new CREDITO_FECHA_Y_RUBRO(dtFecha.Value, ((TipoDetalle)cboRubros.SelectedItem).Descripcion, id_rubro);
+                    form2.ShowDialog();
+                    break;
+                case 2:
+                    var form3 = new Creditos_entre_fechas(dtFecha1.Value, dtFecha2.Value);
+                    form3.ShowDialog();
+                    break;
+                case 3:
+                    var form4 = new Creditos_entre_fechas_rubro(dtFecha1.Value, dtFecha2.Value, ((TipoDetalle)cboRubros.SelectedItem));
+                    form4.ShowDialog();
+                    break;
+                default:  MessageBox.Show("No se ha controlado de forma adecuada los tipos de Impresion","Verificar control de impresiones!"); break;
             }
         }
     }

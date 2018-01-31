@@ -1,6 +1,7 @@
 ﻿using MetroFramework.Forms;
 using Microsoft.Reporting.WinForms;
 using System;
+using System.Windows.Forms;
 
 namespace CapaVista.Creditos
 {
@@ -57,6 +58,7 @@ namespace CapaVista.Creditos
                 );
             fact.RefreshReport();
             fact.SetDisplayMode(DisplayMode.PrintLayout);
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

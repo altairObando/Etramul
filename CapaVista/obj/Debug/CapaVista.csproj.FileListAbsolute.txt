@@ -1112,3 +1112,6 @@ C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.appl
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.pdb
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Factura_Abono.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.CREDITO_FECHA_Y_RUBRO.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_entre_fechas.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_entre_fechas_rubro.resources

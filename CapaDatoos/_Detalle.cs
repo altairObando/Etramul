@@ -119,9 +119,18 @@ namespace CapaDatos
         public Detalle leer()
         {
             Detalle temp = null;
-            using (var db = new ModeloContainer())
+            var db = new ModeloContainer();
+            try
             {
                 temp = (from u in db.DetalleSet where u.IdDetalle == det.IdDetalle select u).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Database.Connection.Close();
             }
             return temp;
         }

@@ -197,6 +197,7 @@
             this.dgvAbonos.Name = "dgvAbonos";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvAbonos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAbonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAbonos.Size = new System.Drawing.Size(580, 189);
             this.dgvAbonos.TabIndex = 13;
             // 

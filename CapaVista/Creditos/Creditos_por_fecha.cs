@@ -1,17 +1,11 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using MetroFramework.Forms;
+using Microsoft.Reporting.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaVista.Creditos
 {
-    public partial class Creditos_por_fecha : Form
+    public partial class Creditos_por_fecha : MetroForm
     {
         private DateTime fecha;
 
@@ -31,6 +25,7 @@ namespace CapaVista.Creditos
                 );
             reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
