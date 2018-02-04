@@ -205,5 +205,10 @@ namespace CapaVista.Creditos
                 default:  MessageBox.Show("No se ha controlado de forma adecuada los tipos de Impresion","Verificar control de impresiones!"); break;
             }
         }
+
+        private void imprimirAbonosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnPrint_Click(sender, e);
+        }
     }
 }

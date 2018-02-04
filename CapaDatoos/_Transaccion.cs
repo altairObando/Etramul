@@ -74,7 +74,8 @@ namespace CapaDatos
                     /// Obteniendo la transaccion y el detalle 
                     /// para ser anulados.
                     var temp = (from u in db.TransaccionSet
-                               where u.IdTransaccion==tran.IdTransaccion && u.Activo select u).First();
+                                where u.IdTransaccion == tran.IdTransaccion && u.Activo
+                                select u).First();
                     temp.Activo = false;
                     var gastos = (from item in db.DetalleSet where item.IdTransaccion.Equals(temp.IdTransaccion) select item);
                     foreach (var item in gastos)
@@ -92,12 +93,23 @@ namespace CapaDatos
                             saldo.Detalle.Cancelado = false;
                     }
                     //Removemos el abono de la base de datos
-                    db.AbonoSet.Remove(temp.Abono.First());
+                    //Buscamos un abono
+                    if(temp.Abono.Count > 0)
+                        db.AbonoSet.Remove(temp.Abono.First());
+                    result = db.SaveChanges();
+                    //REvisando si hay Creditos en la Factura
+                    var list = temp.Egreso.Where(x => x.TipoDetalle == 2).ToList();
+                    foreach (var item in list)
+                    {
+                        //Buscar el saldo
+                        var saldo = db.Saldo_detalleSet.First(x=> x.id_detalle.Equals(item.IdDetalle));
+                        db.Saldo_detalleSet.Remove(saldo);
+                    }
                     result = db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("No se pudo insertar el elemento",ex);
+                    throw new Exception("No se pudo Eliminar el elemento", ex);
                 }
             }
             return result;

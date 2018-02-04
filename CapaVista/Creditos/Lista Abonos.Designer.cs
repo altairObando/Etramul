@@ -44,6 +44,7 @@
             this.lblCajero = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.dgvAbonos = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbonos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,11 +202,24 @@
             this.dgvAbonos.Size = new System.Drawing.Size(580, 189);
             this.dgvAbonos.TabIndex = 13;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Image = global::CapaVista.Properties.Resources.printer;
+            this.btnPrint.Location = new System.Drawing.Point(526, 26);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 45);
+            this.btnPrint.TabIndex = 14;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // Lista_Abonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 413);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dgvAbonos);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.lblCajero);
@@ -250,5 +264,6 @@
         private MetroFramework.Controls.MetroLabel lblCajero;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private System.Windows.Forms.DataGridView dgvAbonos;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

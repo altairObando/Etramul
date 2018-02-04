@@ -42,6 +42,8 @@
             this.lblConductor = new MetroFramework.Controls.MetroLabel();
             this.lblDatosGeneral = new MetroFramework.Controls.MetroLabel();
             this.mpEgresos = new MetroFramework.Controls.MetroPanel();
+            this.lblTotal = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAbonos = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
@@ -90,7 +92,7 @@
             this.panelDatos.HorizontalScrollbarSize = 10;
             this.panelDatos.Location = new System.Drawing.Point(23, 63);
             this.panelDatos.Name = "panelDatos";
-            this.panelDatos.Size = new System.Drawing.Size(707, 117);
+            this.panelDatos.Size = new System.Drawing.Size(894, 117);
             this.panelDatos.TabIndex = 1;
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
@@ -103,7 +105,7 @@
             this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = global::CapaVista.Properties.Resources.search_1_;
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnular.Location = new System.Drawing.Point(535, 59);
+            this.btnAnular.Location = new System.Drawing.Point(686, 59);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(140, 39);
             this.btnAnular.TabIndex = 12;
@@ -115,7 +117,7 @@
             // txtFac
             // 
             this.txtFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFac.Location = new System.Drawing.Point(382, 69);
+            this.txtFac.Location = new System.Drawing.Point(533, 69);
             this.txtFac.Name = "txtFac";
             this.txtFac.Size = new System.Drawing.Size(147, 22);
             this.txtFac.TabIndex = 11;
@@ -144,7 +146,6 @@
             // 
             // dtFecha
             // 
-            this.dtFecha.Enabled = false;
             this.dtFecha.Location = new System.Drawing.Point(487, 10);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
@@ -183,6 +184,8 @@
             // mpEgresos
             // 
             this.mpEgresos.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.mpEgresos.Controls.Add(this.lblTotal);
+            this.mpEgresos.Controls.Add(this.metroLabel2);
             this.mpEgresos.Controls.Add(this.btnGuardar);
             this.mpEgresos.Controls.Add(this.btnAbonos);
             this.mpEgresos.Controls.Add(this.btnResumen);
@@ -198,13 +201,35 @@
             this.mpEgresos.HorizontalScrollbarBarColor = true;
             this.mpEgresos.HorizontalScrollbarHighlightOnWheel = false;
             this.mpEgresos.HorizontalScrollbarSize = 10;
-            this.mpEgresos.Location = new System.Drawing.Point(23, 195);
+            this.mpEgresos.Location = new System.Drawing.Point(23, 194);
             this.mpEgresos.Name = "mpEgresos";
-            this.mpEgresos.Size = new System.Drawing.Size(707, 497);
+            this.mpEgresos.Size = new System.Drawing.Size(894, 507);
             this.mpEgresos.TabIndex = 1;
             this.mpEgresos.VerticalScrollbarBarColor = true;
             this.mpEgresos.VerticalScrollbarHighlightOnWheel = false;
             this.mpEgresos.VerticalScrollbarSize = 10;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblTotal.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblTotal.Location = new System.Drawing.Point(347, 467);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(26, 25);
+            this.lblTotal.TabIndex = 12;
+            this.lblTotal.Text = "--";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.Location = new System.Drawing.Point(253, 467);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(50, 25);
+            this.metroLabel2.TabIndex = 11;
+            this.metroLabel2.Text = "Total:";
             // 
             // btnGuardar
             // 
@@ -215,7 +240,7 @@
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardar.Image = global::CapaVista.Properties.Resources.save;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(606, 123);
+            this.btnGuardar.Location = new System.Drawing.Point(768, 110);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(88, 58);
             this.btnGuardar.TabIndex = 3;
@@ -232,7 +257,7 @@
             this.btnAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbonos.Image = global::CapaVista.Properties.Resources.payment1;
             this.btnAbonos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAbonos.Location = new System.Drawing.Point(377, 31);
+            this.btnAbonos.Location = new System.Drawing.Point(521, 30);
             this.btnAbonos.Name = "btnAbonos";
             this.btnAbonos.Size = new System.Drawing.Size(147, 33);
             this.btnAbonos.TabIndex = 9;
@@ -248,7 +273,7 @@
             this.btnResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResumen.Image = global::CapaVista.Properties.Resources.list;
             this.btnResumen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnResumen.Location = new System.Drawing.Point(545, 30);
+            this.btnResumen.Location = new System.Drawing.Point(726, 31);
             this.btnResumen.Name = "btnResumen";
             this.btnResumen.Size = new System.Drawing.Size(130, 33);
             this.btnResumen.TabIndex = 10;
@@ -262,7 +287,7 @@
             this.panel1.Controls.Add(this.rbCredito);
             this.panel1.Controls.Add(this.rbtnEgreso);
             this.panel1.Controls.Add(this.rbtnIngreso);
-            this.panel1.Location = new System.Drawing.Point(6, 30);
+            this.panel1.Location = new System.Drawing.Point(40, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 42);
             this.panel1.TabIndex = 0;
@@ -305,18 +330,21 @@
             // txtMonto
             // 
             this.txtMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(394, 137);
+            this.txtMonto.Location = new System.Drawing.Point(443, 133);
             this.txtMonto.Mask = "$ 999999.99";
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.RejectInputOnFirstFailure = true;
             this.txtMonto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMonto.Size = new System.Drawing.Size(121, 27);
+            this.txtMonto.Size = new System.Drawing.Size(200, 27);
             this.txtMonto.TabIndex = 3;
             this.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvEgresos
             // 
             this.dgvEgresos.AllowUserToAddRows = false;
+            this.dgvEgresos.AllowUserToDeleteRows = false;
+            this.dgvEgresos.AllowUserToResizeColumns = false;
+            this.dgvEgresos.AllowUserToResizeRows = false;
             this.dgvEgresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEgresos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvEgresos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -348,7 +376,7 @@
             this.dgvEgresos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(681, 280);
+            this.dgvEgresos.Size = new System.Drawing.Size(871, 259);
             this.dgvEgresos.TabIndex = 5;
             // 
             // CodEgreso
@@ -403,7 +431,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(192, 103);
+            this.metroLabel1.Location = new System.Drawing.Point(203, 101);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(100, 25);
             this.metroLabel1.TabIndex = 7;
@@ -412,10 +440,10 @@
             // txtDescripcion
             // 
             this.txtDescripcion.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtDescripcion.Location = new System.Drawing.Point(192, 133);
+            this.txtDescripcion.Location = new System.Drawing.Point(205, 133);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(196, 35);
+            this.txtDescripcion.Size = new System.Drawing.Size(222, 35);
             this.txtDescripcion.TabIndex = 2;
             this.txtDescripcion.Text = " SIN DEFINIR";
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -427,7 +455,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = global::CapaVista.Properties.Resources.plus;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(521, 123);
+            this.btnAgregar.Location = new System.Drawing.Point(649, 110);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(85, 58);
             this.btnAgregar.TabIndex = 4;
@@ -443,7 +471,7 @@
             this.cboEgresos.ItemHeight = 29;
             this.cboEgresos.Location = new System.Drawing.Point(6, 133);
             this.cboEgresos.Name = "cboEgresos";
-            this.cboEgresos.Size = new System.Drawing.Size(182, 35);
+            this.cboEgresos.Size = new System.Drawing.Size(193, 35);
             this.cboEgresos.TabIndex = 1;
             // 
             // lblAgregar
@@ -468,9 +496,9 @@
             // 
             // lblUser
             // 
-            this.lblUser.Location = new System.Drawing.Point(397, 24);
+            this.lblUser.Location = new System.Drawing.Point(603, 34);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(150, 23);
+            this.lblUser.Size = new System.Drawing.Size(228, 23);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Username";
             this.lblUser.UseStyleColors = true;
@@ -478,7 +506,7 @@
             // 
             // lblSalir
             // 
-            this.lblSalir.Location = new System.Drawing.Point(558, 24);
+            this.lblSalir.Location = new System.Drawing.Point(842, 34);
             this.lblSalir.Name = "lblSalir";
             this.lblSalir.Size = new System.Drawing.Size(75, 23);
             this.lblSalir.Style = MetroFramework.MetroColorStyle.Red;
@@ -491,7 +519,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 706);
+            this.ClientSize = new System.Drawing.Size(923, 706);
             this.Controls.Add(this.lblSalir);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.mpEgresos);
@@ -552,5 +580,7 @@
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.TextBox txtFac;
         private System.Windows.Forms.RadioButton rbCredito;
+        private MetroFramework.Controls.MetroLabel lblTotal;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

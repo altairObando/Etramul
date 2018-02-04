@@ -1022,12 +1022,12 @@ C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaVista\obj\Debug\es-NI\COOTRACOS
 C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaVista\obj\Debug\COOTRACOSAN.TrustInfo.xml
 C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe.manifest
 C:\Users\Estudiante\Desktop\USB MIKE\Etramul\CapaVista\obj\Debug\COOTRACOSAN.application
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.exe.config
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.exe.manifest
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.application
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.exe
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\COOTRACOSAN.pdb
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\es-NI\COOTRACOSAN.resources.dll
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\Cootracosan.exe.config
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\Cootracosan.exe.manifest
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\Cootracosan.application
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\Cootracosan.exe
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\Cootracosan.pdb
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\es-NI\Cootracosan.resources.dll
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\CapaControlador.dll
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\CapaDatoos.dll
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\bin\Debug\MetroFramework.dll
@@ -1056,8 +1056,14 @@ C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Conduc
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Conductores.BuscarConductor.resources
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.AgregarAbono.resources
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_form.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_Bus.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_entre_fechas.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_entre_fechas_rubro.resources
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_por_fecha.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.CREDITO_FECHA_Y_RUBRO.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Factura_Abono.resources
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Lista_Abonos.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Ticket_abonos.resources
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Manual_de_ayuda.Help_Form.resources
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Reportes.CarrerasPorDia_Form.resources
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Reportes.DetalleEgresoEntreFechas_form.resources
@@ -1105,13 +1111,9 @@ C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Vehicu
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.csproj.GenerateResource.Cache
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\RdlCompile.cache
 C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\RdlCompile.compiled
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\es-NI\COOTRACOSAN.resources.dll
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.TrustInfo.xml
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe.manifest
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.application
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.exe
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\COOTRACOSAN.pdb
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Factura_Abono.resources
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.CREDITO_FECHA_Y_RUBRO.resources
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_entre_fechas.resources
-C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\CapaVista.Creditos.Creditos_entre_fechas_rubro.resources
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\es-NI\Cootracosan.resources.dll
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\Cootracosan.TrustInfo.xml
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\Cootracosan.exe.manifest
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\Cootracosan.application
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\Cootracosan.exe
+C:\Users\altair\Documents\Proyectos\Etramul\CapaVista\obj\Debug\Cootracosan.pdb

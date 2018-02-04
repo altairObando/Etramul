@@ -174,29 +174,7 @@ namespace CapaVista.Conductores
             Clipboard.Clear();
             Clipboard.SetText(getVehiculo().Placa);
         }
-
-        //private void registrarTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    var form = new CapaVista.Transacciones.AgregarTransaccion();
-        //    form.Show();
-        //    form.cboVehiculo.Items.Clear();
-        //    form.cboVehiculo.Items.Add(getVehiculo());
-        //    form.cboVehiculo.SelectedIndex = 0;
-        //    form.cboVehiculo.SelectedItem = getVehiculo();
-        //    form.cboVehiculo.Text = getVehiculo().Placa;
-        //    form.cboVehiculo.Enabled = false;
-        //}
-        //private void registrarCarreraToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    var form = new Carrera();
-        //    form.Show();
-        //    form.cboVehiculo.Items.Clear();
-        //    form.cboVehiculo.Items.Add(getVehiculo());
-        //    form.cboVehiculo.SelectedIndex = 0;
-        //    form.cboVehiculo.SelectedItem = getVehiculo();
-        //    form.cboVehiculo.Text = getVehiculo().Placa;
-        //    form.cboVehiculo.Enabled = false;
-        //}
+        
         private void btnReload_Click(object sender, EventArgs e)
         {
             this.loadElements();
@@ -223,6 +201,12 @@ namespace CapaVista.Conductores
         private void tiempo_Tick(object sender, EventArgs e)
         {
             loadElements();
+        }
+
+        private void creditosYAbonosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new Creditos.Creditos_Bus(getVehiculo());
+            form.ShowDialog();
         }
     }
 }

@@ -9,16 +9,12 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>ABONO A LA FACTURA #  </Value>
-                <Style>
-                  <FontSize>9pt</FontSize>
-                </Style>
+                <Value>ABONO A LA FAC. # </Value>
+                <Style />
               </TextRun>
               <TextRun>
                 <Value>=Parameters!TRANSACCION.Value</Value>
-                <Style>
-                  <FontSize>9pt</FontSize>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -26,8 +22,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>0.17639cm</Top>
-        <Left>0.28254cm</Left>
-        <Height>0.6cm</Height>
+        <Left>0.3175cm</Left>
+        <Height>0.56472cm</Height>
         <Width>5.67059cm</Width>
         <Style>
           <Border>
@@ -122,8 +118,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RUBRO</rd:DefaultName>
-        <Top>1.55277cm</Top>
-        <Left>3.17059cm</Left>
+        <Top>1.44694cm</Top>
+        <Left>3.20587cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -152,8 +148,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>1.55277cm</Top>
-        <Left>0.28254cm</Left>
+        <Top>1.44694cm</Top>
+        <Left>0.3175cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
@@ -187,7 +183,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MONTO</rd:DefaultName>
-        <Top>2.22333cm</Top>
+        <Top>2.04694cm</Top>
         <Left>3.17059cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -217,8 +213,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>2.22333cm</Top>
-        <Left>0.28254cm</Left>
+        <Top>2.04694cm</Top>
+        <Left>0.3175cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>6</ZIndex>
@@ -247,8 +243,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>2.99972cm</Top>
-        <Left>0.28254cm</Left>
+        <Top>2.64694cm</Top>
+        <Left>0.3175cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>7</ZIndex>
@@ -282,7 +278,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ABONO</rd:DefaultName>
-        <Top>2.99972cm</Top>
+        <Top>2.64694cm</Top>
         <Left>3.17059cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -312,8 +308,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>3.77611cm</Top>
-        <Left>0.28254cm</Left>
+        <Top>3.24694cm</Top>
+        <Left>0.3175cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>9</ZIndex>
@@ -337,7 +333,7 @@
                 <Value>=Parameters!SALDO.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
-                  <Format>'C$' #,0.00;'C$' -#,0.00;'-'</Format>
+                  <Format>'C$' #,0.00;'C$' -#,0.00</Format>
                   <TextDecoration>Underline</TextDecoration>
                   <rd:FormatSymbolCulture>es-NI</rd:FormatSymbolCulture>
                 </Style>
@@ -349,7 +345,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SALDO</rd:DefaultName>
-        <Top>3.77611cm</Top>
+        <Top>3.24694cm</Top>
         <Left>3.17059cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -364,26 +360,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Line Name="Line1">
-        <Top>3.77611cm</Top>
-        <Left>0.28254cm</Left>
-        <Height>0cm</Height>
-        <Width>5.38805cm</Width>
-        <ZIndex>11</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
     </ReportItems>
     <Height>2.01042in</Height>
     <Style />
   </Body>
-  <Width>2.34375in</Width>
+  <Width>2.35752in</Width>
   <Page>
     <PageHeader>
-      <Height>5.22703cm</Height>
+      <Height>4.93599cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -625,7 +609,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>FECHA</rd:DefaultName>
-          <Top>3.75847cm</Top>
+          <Top>3.61736cm</Top>
           <Left>2.85309cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -655,7 +639,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>3.75847cm</Top>
+          <Top>3.65264cm</Top>
           <Left>0.28254cm</Left>
           <Height>0.6cm</Height>
           <Width>1.5034cm</Width>
@@ -687,7 +671,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>CAJERO</rd:DefaultName>
-          <Top>4.49958cm</Top>
+          <Top>4.21736cm</Top>
           <Left>2.85309cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -717,7 +701,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>4.49958cm</Top>
+          <Top>4.25264cm</Top>
           <Left>0.28254cm</Left>
           <Height>0.6cm</Height>
           <Width>1.79444cm</Width>
@@ -739,8 +723,8 @@
         </Border>
       </Style>
     </PageHeader>
-    <PageHeight>10.00001cm</PageHeight>
-    <PageWidth>6.50001cm</PageWidth>
+    <PageHeight>12cm</PageHeight>
+    <PageWidth>6.3cm</PageWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
     <TopMargin>0cm</TopMargin>

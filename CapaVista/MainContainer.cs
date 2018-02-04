@@ -38,10 +38,11 @@ namespace CapaVista
             var login = new Login();
             login.ShowDialog();
             sesion = login.sesion;
-            lblchange.Text = sesion.Nickname;
             if (sesion == null)
                 Application.Exit();
             else
+            {
+                lblchange.Text = sesion.Nickname + " " + sesion.Personas.Apellidos;
                 if (sesion.TipoUsuario.Descripcion.Equals("Cajero"))
                 {
                     this.Hide();
@@ -50,6 +51,7 @@ namespace CapaVista
                     this.Show();
                     MainContainer_Load(sender, e);
                 }
+            }
             this.Show();
                     
         }

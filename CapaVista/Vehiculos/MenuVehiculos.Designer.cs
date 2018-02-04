@@ -51,6 +51,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lbltitulo = new MetroFramework.Controls.MetroLabel();
             this.tiempo = new System.Windows.Forms.Timer(this.components);
+            this.creditosYAbonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpcionesVehiculos.SuspendLayout();
             this.mtpOperacionesGenerales.SuspendLayout();
             this.SuspendLayout();
@@ -99,9 +100,10 @@
             this.toolStripSeparator1,
             this.ultimaCarreraToolStripMenuItem,
             this.verHoyToolStripMenuItem,
-            this.transaccionesToolStripMenuItem});
+            this.transaccionesToolStripMenuItem,
+            this.creditosYAbonosToolStripMenuItem});
             this.OpcionesVehiculos.Name = "contextVehiculos";
-            this.OpcionesVehiculos.Size = new System.Drawing.Size(196, 142);
+            this.OpcionesVehiculos.Size = new System.Drawing.Size(196, 186);
             this.OpcionesVehiculos.Opening += new System.ComponentModel.CancelEventHandler(this.contextVehiculos_Opening);
             // 
             // marcarComoInactivoToolStripMenuItem
@@ -301,6 +303,13 @@
             this.tiempo.Interval = 50000;
             this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
             // 
+            // creditosYAbonosToolStripMenuItem
+            // 
+            this.creditosYAbonosToolStripMenuItem.Name = "creditosYAbonosToolStripMenuItem";
+            this.creditosYAbonosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.creditosYAbonosToolStripMenuItem.Text = "&Creditos y Abonos";
+            this.creditosYAbonosToolStripMenuItem.Click += new System.EventHandler(this.creditosYAbonosToolStripMenuItem_Click);
+            // 
             // MenuConductores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,5 +357,6 @@
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnGastos;
         private System.Windows.Forms.Timer tiempo;
+        private System.Windows.Forms.ToolStripMenuItem creditosYAbonosToolStripMenuItem;
     }
 }

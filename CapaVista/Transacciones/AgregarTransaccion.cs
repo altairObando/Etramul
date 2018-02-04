@@ -16,6 +16,7 @@ namespace CapaVista.Transacciones
             loadTransaccion();
             this.lblUser.Text = MainContainer.sesion.Personas.ToString();
             loadCombos();
+            lblTotal.Text = string.Format("{0:C2}", totalFactura);
         }
 
         void loadTransaccion()
@@ -24,6 +25,7 @@ namespace CapaVista.Transacciones
             {
                 //lblNombreCajero.Text = MainContainer.sesion.Personas.Nombres;
                 ActualizarNoFactura();
+                totalFactura = 0;
             }
             catch (Exception ex)
             {
@@ -65,7 +67,7 @@ namespace CapaVista.Transacciones
                 throw ex;
             }
         }
-
+        private static decimal totalFactura;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string valor;
@@ -85,6 +87,8 @@ namespace CapaVista.Transacciones
                 dgvEgresos.Rows.Add(cod, tipo, descripcion, valor, monto);
                 limpiarEgresos();
                 txtDescripcion.Text = "SIN DEFINIR";
+                actualizarTotal();
+                this.Refresh();
             }
             catch (Exception ex)
             {
@@ -160,6 +164,7 @@ namespace CapaVista.Transacciones
                                    
                                 else if(tipo.Equals("EGRESO"))
                                     eg += monto;
+                                totalFactura = 0;
                             }
                             if (t == 0) //Si no se registraron transacciones
                                 throw new Exception("No se registraron las transacciones de Entrada/Salida!");
@@ -170,6 +175,7 @@ namespace CapaVista.Transacciones
                                 ImprimirTicket(idTransaccion, MainContainer.sesion.ToString(), ((Vehiculo)cboVehiculo.SelectedItem).Placa, total, ing, eg);
                                 LimpiarControles();
                             }
+
                         }
                         else
                         {
@@ -309,12 +315,38 @@ namespace CapaVista.Transacciones
 
         private void cambiarTipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int fila = dgvEgresos.SelectedRows[0].Index;
-            bool tpTransaccion = dgvEgresos.Rows[fila].Cells[3].Value.ToString() == "INGRESO" ? true : false;
-            if (tpTransaccion)
-                dgvEgresos.Rows[fila].Cells[3].Value = "EGRESO";
-            else
-                dgvEgresos.Rows[fila].Cells[3].Value = "INGRESO";
+            try
+            {
+                int fila = dgvEgresos.SelectedRows[0].Index;
+                bool tpTransaccion = dgvEgresos.Rows[fila].Cells[3].Value.ToString() == "INGRESO" ? true : false;
+                if (tpTransaccion)
+                {
+                    dgvEgresos.Rows[fila].Cells[3].Value = "EGRESO";
+                }
+                else
+                {
+                    dgvEgresos.Rows[fila].Cells[3].Value = "INGRESO";
+                }
+                actualizarTotal();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al cambiar los tipos");
+            }
+        }
+
+        private void actualizarTotal()
+        {
+            totalFactura = 0;
+            for (int i = 0; i < dgvEgresos.Rows.Count; i++)
+            {
+                if(dgvEgresos.Rows[i].Cells[3].Value.ToString() == "INGRESO")
+                    totalFactura += (decimal)dgvEgresos.Rows[i].Cells[4].Value;
+                else 
+                    if(dgvEgresos.Rows[i].Cells[3].Value.ToString() == "EGRESO")
+                        totalFactura -= (decimal)dgvEgresos.Rows[i].Cells[4].Value;
+            }
+            lblTotal.Text = string.Format("{0:C2}", totalFactura);
         }
 
         private void btnAnular_Click(object sender, EventArgs e)

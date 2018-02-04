@@ -84,7 +84,7 @@
             this.verDetallesToolStripMenuItem,
             this.imprimirAbonosToolStripMenuItem});
             this.ctxMenu.Name = "ctxMenu";
-            this.ctxMenu.Size = new System.Drawing.Size(165, 48);
+            this.ctxMenu.Size = new System.Drawing.Size(165, 70);
             this.ctxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenu_Opening);
             // 
             // verDetallesToolStripMenuItem
@@ -99,6 +99,7 @@
             this.imprimirAbonosToolStripMenuItem.Name = "imprimirAbonosToolStripMenuItem";
             this.imprimirAbonosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.imprimirAbonosToolStripMenuItem.Text = "&Imprimir Abonos";
+            this.imprimirAbonosToolStripMenuItem.Click += new System.EventHandler(this.imprimirAbonosToolStripMenuItem_Click);
             // 
             // cboRubros
             // 

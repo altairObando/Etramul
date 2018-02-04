@@ -70,6 +70,5 @@ C:\Users\altair\Documents\Proyectos\Etramul\CapaDatoos\bin\Debug\CapaDatoos.dll
 C:\Users\altair\Documents\Proyectos\Etramul\CapaDatoos\bin\Debug\CapaDatoos.pdb
 C:\Users\altair\Documents\Proyectos\Etramul\CapaDatoos\bin\Debug\EntityFramework.dll
 C:\Users\altair\Documents\Proyectos\Etramul\CapaDatoos\bin\Debug\EntityFramework.xml
-C:\Users\altair\Documents\Proyectos\Etramul\CapaDatoos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\altair\Documents\Proyectos\Etramul\CapaDatoos\obj\Debug\CapaDatoos.dll
 C:\Users\altair\Documents\Proyectos\Etramul\CapaDatoos\obj\Debug\CapaDatoos.pdb

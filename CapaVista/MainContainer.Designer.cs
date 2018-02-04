@@ -233,9 +233,9 @@
             // 
             // lblchange
             // 
-            this.lblchange.Location = new System.Drawing.Point(912, 31);
+            this.lblchange.Location = new System.Drawing.Point(737, 31);
             this.lblchange.Name = "lblchange";
-            this.lblchange.Size = new System.Drawing.Size(75, 23);
+            this.lblchange.Size = new System.Drawing.Size(250, 23);
             this.lblchange.TabIndex = 1;
             this.lblchange.Text = "User Name";
             this.lblchange.Theme = MetroFramework.MetroThemeStyle.Light;

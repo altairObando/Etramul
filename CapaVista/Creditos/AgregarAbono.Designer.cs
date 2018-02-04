@@ -106,6 +106,8 @@
             // 
             this.dgvCreditos.AllowUserToAddRows = false;
             this.dgvCreditos.AllowUserToDeleteRows = false;
+            this.dgvCreditos.AllowUserToResizeColumns = false;
+            this.dgvCreditos.AllowUserToResizeRows = false;
             this.dgvCreditos.AutoGenerateColumns = false;
             this.dgvCreditos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCreditos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -144,6 +146,7 @@
             this.dgvCreditos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCreditos.Size = new System.Drawing.Size(681, 240);
             this.dgvCreditos.TabIndex = 2;
+            this.dgvCreditos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCreditos_CellContentClick);
             // 
             // facturaDataGridViewTextBoxColumn
             // 

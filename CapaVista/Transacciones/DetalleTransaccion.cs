@@ -62,7 +62,7 @@ namespace CapaVista.Transacciones
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult result;
-            var admin = new Administracion("Confirme la eliminacion del registro numero: " + codigo);
+            var admin = new Administracion("Confirme la eliminacion del registro numero: " + codigo.IdTransaccion);
             admin.ShowDialog();
             result = admin.resultado;
             if (DialogResult.Yes.Equals(result))

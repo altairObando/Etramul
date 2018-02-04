@@ -72,5 +72,19 @@ namespace CapaVista.Creditos
                 throw;
             }
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var form = new Ticket_abonos(data);
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

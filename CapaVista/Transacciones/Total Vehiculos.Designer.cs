@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTotal = new System.Windows.Forms.DataGridView();
             this.idVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,8 +106,8 @@
             // ingresoDataGridViewTextBoxColumn
             // 
             this.ingresoDataGridViewTextBoxColumn.DataPropertyName = "Ingreso";
-            dataGridViewCellStyle1.Format = "C2";
-            this.ingresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "C2";
+            this.ingresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.ingresoDataGridViewTextBoxColumn.HeaderText = "Ingreso";
             this.ingresoDataGridViewTextBoxColumn.Name = "ingresoDataGridViewTextBoxColumn";
             this.ingresoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -115,8 +115,8 @@
             // egresoDataGridViewTextBoxColumn
             // 
             this.egresoDataGridViewTextBoxColumn.DataPropertyName = "Egreso";
-            dataGridViewCellStyle2.Format = "C2";
-            this.egresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Format = "C2";
+            this.egresoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.egresoDataGridViewTextBoxColumn.HeaderText = "Egreso";
             this.egresoDataGridViewTextBoxColumn.Name = "egresoDataGridViewTextBoxColumn";
             this.egresoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -167,7 +167,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(21, 346);
+            this.metroLabel2.Location = new System.Drawing.Point(42, 346);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(86, 19);
             this.metroLabel2.TabIndex = 7;
@@ -176,7 +176,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(212, 346);
+            this.metroLabel3.Location = new System.Drawing.Point(399, 346);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(83, 19);
             this.metroLabel3.TabIndex = 9;
@@ -185,7 +185,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(414, 346);
+            this.metroLabel4.Location = new System.Drawing.Point(399, 376);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(88, 19);
             this.metroLabel4.TabIndex = 11;
@@ -197,11 +197,11 @@
             this.txtIngreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIngreso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngreso.Location = new System.Drawing.Point(106, 346);
+            this.txtIngreso.Location = new System.Drawing.Point(125, 346);
             this.txtIngreso.Multiline = true;
             this.txtIngreso.Name = "txtIngreso";
             this.txtIngreso.ReadOnly = true;
-            this.txtIngreso.Size = new System.Drawing.Size(109, 19);
+            this.txtIngreso.Size = new System.Drawing.Size(166, 19);
             this.txtIngreso.TabIndex = 8;
             this.txtIngreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -211,11 +211,11 @@
             this.txtEgreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEgreso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEgreso.Location = new System.Drawing.Point(294, 346);
+            this.txtEgreso.Location = new System.Drawing.Point(481, 346);
             this.txtEgreso.Multiline = true;
             this.txtEgreso.Name = "txtEgreso";
             this.txtEgreso.ReadOnly = true;
-            this.txtEgreso.Size = new System.Drawing.Size(118, 19);
+            this.txtEgreso.Size = new System.Drawing.Size(178, 19);
             this.txtEgreso.TabIndex = 10;
             this.txtEgreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -225,11 +225,11 @@
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(519, 346);
+            this.txtTotal.Location = new System.Drawing.Point(494, 376);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(140, 19);
+            this.txtTotal.Size = new System.Drawing.Size(165, 19);
             this.txtTotal.TabIndex = 12;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -325,7 +325,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCerrar;
-            this.ClientSize = new System.Drawing.Size(682, 398);
+            this.ClientSize = new System.Drawing.Size(682, 427);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnPrint);

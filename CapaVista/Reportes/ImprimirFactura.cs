@@ -34,9 +34,7 @@ namespace CapaVista.Reportes
             total = 0;
             total_credito = 0;
             //Calculando total Ingresos
-            total += ReportesDataSet.DetalleDeTransaccion.Where(y=> y.Transaccion.Equals("Ingreso")).Sum(x => x.Cantidad);
-            //Total Egresos
-            total -= ReportesDataSet.DetalleDeTransaccion.Where(y => y.Transaccion.Equals("Egreso")).Sum(x => x.Cantidad);
+            total += ReportesDataSet.DetalleDeTransaccion.Where(x => !x.Transaccion.Equals("Credito")).Sum(x => x.Cantidad);
             //Total Credito
             total_credito += ReportesDataSet.DetalleDeTransaccion.Where(y => y.Transaccion.Equals("Credito")).Sum(x => x.Cantidad);
         }

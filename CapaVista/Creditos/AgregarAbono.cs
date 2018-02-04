@@ -129,11 +129,12 @@ namespace CapaVista.Creditos
                             //Mostramos factura
                             var tra = TransaccionController.getUltima();
                             var abono = _AbonoController.getAllAbono().OrderByDescending(x => x.Id_transaccion).FirstOrDefault();
+                            
                             var form = new Factura_Abono(
                                tra.Vehiculo.Placa, tra.IdTransaccion, tra.FechaTransaccion,
                                MainContainer.sesion.Nickname, abono.Detalle.IdTransaccion, 
                                abono.Detalle.Transaccion.FechaTransaccion, abono.Detalle.TipoEgreso.ToString(),
-                               abono.Detalle.Cantidad, abono.Monto, (abono.Detalle.Cantidad - abono.Monto)
+                               abono.Detalle.Cantidad, abono.Monto, (abono.Detalle.Saldo_detalle.Saldo)
                                 );
                             form.ShowDialog();
                             //Recargamos los datos
@@ -180,6 +181,12 @@ namespace CapaVista.Creditos
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvCreditos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvCreditos.SelectedRows.Count > 0)
+                HabilitarSeleccion(false);
         }
     }
 }
