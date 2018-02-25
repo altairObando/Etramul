@@ -86,15 +86,16 @@ namespace CapaVista.Vehiculos
                 //Obtener el vehiculo por la placa
                 string placa = dgvTotal.SelectedRows[0].Cells[1].Value.ToString();
                 var vehiculo = CapaControlador.VehiculosController.leer(placa);
-                var form = new Ver_dia(vehiculo);
-                form.dtFecha.Enabled = false;
                 if (por_dia)
                 {
+                    var form = new Ver_dia(vehiculo);
+                    form.dtFecha.Enabled = false;
                     form.dtFecha.Value = dtFecha.Value;
                     form.ShowDialog();
                 }
                 else
                 {
+                    var form = new Ver_dia(vehiculo, dtFechaInicio.Value, dtFechaFin.Value);
                     form.Show();
                     form.cargaEntreFechas(dtFechaInicio.Value.Date, dtFechaFin.Value.Date);
                     

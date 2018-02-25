@@ -19,6 +19,13 @@ namespace CapaVista.Vehiculos
             InitializeComponent();
             this.datos = datos;
         }
+        public Ver_dia(CapaDatos.Vehiculo datos, DateTime finicio, DateTime ffin)
+        {
+            InitializeComponent();
+            this.datos = datos;
+            this.dtFechaInicio.Value = finicio;
+            this.dtFechaFin.Value = ffin;
+        }
         public Ver_dia()
         {
 
@@ -35,7 +42,8 @@ namespace CapaVista.Vehiculos
             txtUnidad.Text = datos.Placa;
             List<CapaDatos.Transaccion> trans = datos.Transaccion.
                 Where(x => x.FechaTransaccion >= dtFechaInicio.Value.Date && 
-                           x.FechaTransaccion <= dtFechaFin.Value.Date ).ToList();
+                           x.FechaTransaccion <= dtFechaFin.Value.Date
+                           && x.Activo).ToList();
             setData(trans);
         }
         public void cargaEntreFechas(DateTime inicio, DateTime fin)
@@ -61,18 +69,22 @@ namespace CapaVista.Vehiculos
                 //Recorriendo detalles de transaccion
                 foreach (var det in item.Egreso)
                 {
-                    //Si es un ingreso
-                    if (det.TipoTransaccion == 1)
+                    //Si no ha sido eliminado
+                    if (det.Activo)
                     {
-                        i++;
-                        dgvIngresos.Rows.Add(item.IdTransaccion, det.TipoEgreso.Descripcion, det.Cantidad);
-                        ingresos += det.Cantidad;
-                    }
-                    else if(det.TipoTransaccion == 0)
-                    {
-                        eg++;
-                        dgvEgresos.Rows.Add(item.IdTransaccion, det.TipoEgreso.Descripcion, det.Cantidad);
-                        egresos += det.Cantidad;
+                        //Si es un ingreso
+                        if (det.TipoTransaccion == 1)
+                        {
+                            i++;
+                            dgvIngresos.Rows.Add(item.IdTransaccion, det.TipoEgreso.Descripcion, det.Cantidad);
+                            ingresos += det.Cantidad;
+                        }
+                        else if (det.TipoTransaccion == 0)
+                        {
+                            eg++;
+                            dgvEgresos.Rows.Add(item.IdTransaccion, det.TipoEgreso.Descripcion, det.Cantidad);
+                            egresos += det.Cantidad;
+                        }
                     }
                 }
             }

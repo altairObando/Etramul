@@ -517,6 +517,7 @@
     <EmbeddedResource Include="Reportes\DetalleGastosRubroDia.resx">
       <DependentUpon>DetalleGastosRubroDia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EntreFechas.rdlc" />
     <EmbeddedResource Include="Reportes\GastosPorRubroEntreFechas.rdlc" />
     <EmbeddedResource Include="Reportes\GastosPorRubroEntreFechas_form.resx">
       <DependentUpon>GastosPorRubroEntreFechas_form.cs</DependentUpon>
@@ -546,7 +547,6 @@
       <DependentUpon>TicketFisicoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ver hoy.rdlc" />
-    <EmbeddedResource Include="Reportes\VerEntreFechas.rdlc" />
     <EmbeddedResource Include="Reportes\VerEntreFechasForm.resx">
       <DependentUpon>VerEntreFechasForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -26,7 +26,7 @@ namespace CapaVista.Reportes
         private void IngresoTotalPorFechas_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'ReportesDataset.Total_entre_fechas' table. You can move, or remove it, as needed.
-            this.Total_entre_fechasTableAdapter.Fill(this.ReportesDataset.Total_entre_fechas, FechaInicio, FechaFin);
+            this.Total_entre_fechasTableAdapter.Fill(this.ReportesDataset.Total_entre_fechas, FechaInicio.Date, FechaFin.Date);
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] {
                 new ReportParameter("FechaInicio", FechaInicio.ToShortDateString()),
                 new ReportParameter("FechaFin", FechaFin.ToShortDateString())

@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework.Forms;
+﻿using MetroFramework.Forms;
 using Microsoft.Reporting.WinForms;
+using System;
 
 namespace CapaVista.Reportes
 {
@@ -29,9 +21,10 @@ namespace CapaVista.Reportes
 
         private void VerEntreFechasForm_Load(object sender, EventArgs e)
         {
-            this.ReportesDataset.EnforceConstraints = false;
+            
+            this.ReportesDataSet.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'ReportesDataset.verEntreFechas' table. You can move, or remove it, as needed.
-            this.verEntreFechasTableAdapter.Fill(this.ReportesDataset.verEntreFechas, FechaInicio.Date, FechaFin.Date, IdVehiculo);
+            this.verEntreFechasTableAdapter.Fill(this.ReportesDataSet.verEntreFechas, FechaInicio.Date, FechaFin.Date, IdVehiculo);
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] {
                 new ReportParameter("FechaInicio", FechaInicio.ToShortDateString()),
                 new ReportParameter("FechaFin", FechaFin.ToShortDateString()),

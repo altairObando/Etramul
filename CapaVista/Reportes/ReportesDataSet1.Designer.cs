@@ -6413,6 +6413,8 @@ namespace CapaVista.Reportes {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnFactura}, true));
                 this.columnFactura.AutoIncrement = true;
+                this.columnFactura.AutoIncrementSeed = -1;
+                this.columnFactura.AutoIncrementStep = -1;
                 this.columnFactura.AllowDBNull = false;
                 this.columnFactura.ReadOnly = true;
                 this.columnFactura.Unique = true;
@@ -12397,7 +12399,7 @@ namespace CapaVista.Reportes.ReportesDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CapaVista.Properties.Settings.Default.DatasetsConexion;
+            this._connection.ConnectionString = global::CapaVista.Properties.Settings.Default.TransaccionDataSet;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
