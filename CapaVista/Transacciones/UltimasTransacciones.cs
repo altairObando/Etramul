@@ -29,10 +29,8 @@ namespace CapaVista.Vehiculos
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-            
         }
         
         private void UltimasTransacciones_Load(object sender, EventArgs e)
@@ -40,11 +38,10 @@ namespace CapaVista.Vehiculos
             try
             {
                 if (datos.Count != 0)
-                {
-                    //Volteando la tortilla
-                    llenarGrid(datos);
-                    tbTOP.Value = datos.Count;
-                    tbTOP.Maximum = datos.Count;
+                {                    
+                    llenarGrid(datos.Where(x=> x.FechaTransaccion.Equals(dtFechaFiltro.Value.Date)).ToList());
+                    tbTOP.Maximum = tbTOP.Value > 0 ? tbTOP.Value : 1;
+                    tbTOP.Value = datos.Where(x => x.FechaTransaccion.Equals(dtFechaFiltro.Value.Date)).ToList().Count;
                     lblNumero.Text = tbTOP.Value.ToString();
                 }
                 else
@@ -68,9 +65,9 @@ namespace CapaVista.Vehiculos
             lista = lista.OrderByDescending(x => x.IdTransaccion).ToList();
             foreach (var item in lista)
             {
-                var usuario = CapaControlador.UsuariosController.leer(item.Id_usuario);
-                decimal ingreso = item.Egreso.Where(x => x.TipoTransaccion == 0).Sum(y => y.Cantidad);
-                decimal egreso = item.Egreso.Where(x => x.TipoTransaccion == 1).Sum(y => y.Cantidad);
+                var usuario = UsuariosController.leer(item.Id_usuario);
+                decimal ingreso = item.Egreso.Where(x => x.TipoTransaccion == 1).Sum(y => y.Cantidad);
+                decimal egreso = item.Egreso.Where(x => x.TipoTransaccion == 0).Sum(y => y.Cantidad);
                 var row = dgDatos.Rows.Add
                     (
             item.IdTransaccion, item.FechaTransaccion, usuario.ToString(), ingreso, egreso
@@ -92,13 +89,16 @@ namespace CapaVista.Vehiculos
             int valor = tbTOP.Value;
             //lbl -> valor
             lblNumero.Text = valor.ToString();
-            //Actualizando lista
-            List<CapaDatos.Transaccion> items = new List<CapaDatos.Transaccion>();
-            for (int i = 0; i < valor; i++)
-            {
-                items.Add(datos[i]);
-            }
-            llenarGrid(items);
+                //Actualizando lista
+                //Generando lista temporal
+            var tmp = datos.Where(x => x.FechaTransaccion == dtFechaFiltro.Value.Date).ToList<CapaDatos.Transaccion>();
+            //List<CapaDatos.Transaccion> items = new List<CapaDatos.Transaccion>();
+            tmp =   tmp.Take(valor).ToList();
+            //for (int i = 0; i < valor; i++)
+            //{
+            //    items.Add(tmp[i]);
+            //}
+            llenarGrid(tmp);
             }
             catch (Exception ex)
             {
@@ -111,7 +111,7 @@ namespace CapaVista.Vehiculos
         private void reset_Click(object sender, EventArgs e)
         {
             this.reset.Visible = false;
-            llenarGrid(datos);
+            llenarGrid(datos.Where(x=> x.FechaTransaccion==dtFechaFiltro.Value.Date).ToList());
         }
 
         private void dgDatos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -137,6 +137,11 @@ namespace CapaVista.Vehiculos
         private void verDetallesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dgDatos_CellContentDoubleClick(sender, null);
+        }
+
+        private void dtFechaFiltro_ValueChanged(object sender, EventArgs e)
+        {
+            this.UltimasTransacciones_Load(sender, e);
         }
     }
 }

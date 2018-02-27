@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>X/M9TDEFRlBS228DK1K1/ouxC6p/A9t9iKassFjw+MY=</dsig:DigestValue>
+        <dsig:DigestValue>xYSXV2Rq8Kp3nRmU9FFQ0wkMeeMmTrS6G0y4BfdGxZs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vFzHftApPtncMZIbOiMeIr9J9Z8SDji829CFQF0BTLc=</dsig:DigestValue>
+        <dsig:DigestValue>1L5j8CNUVTaczlCl6yw8bOjCQVpTUzvhCSUK5X3hx50=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -234,13 +234,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Cootracosan.exe.config" size="2033">
+  <file name="Cootracosan.exe.config" size="2097">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ee7Ihh/qo3OW8xpyRJyakH3i/3sNgLZZaJGju1zEPvc=</dsig:DigestValue>
+      <dsig:DigestValue>bfeYRptEXTwkBU2llSrqlw8nn+DYBxEIsEeGZyI0vEU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="favicon.ico" size="370070">

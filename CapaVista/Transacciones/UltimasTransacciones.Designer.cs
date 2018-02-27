@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPlaca = new MetroFramework.Controls.MetroLabel();
             this.lblCodigoPlaca = new MetroFramework.Controls.MetroLabel();
             this.lblNumero = new MetroFramework.Controls.MetroLabel();
@@ -47,6 +47,7 @@
             this.reset = new MetroFramework.Controls.MetroLink();
             this.lblMostrar = new MetroFramework.Controls.MetroLabel();
             this.tbTOP = new MetroFramework.Controls.MetroTrackBar();
+            this.dtFechaFiltro = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
             this.detalles.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +73,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(408, 65);
+            this.lblNumero.Location = new System.Drawing.Point(530, 65);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(21, 19);
             this.lblNumero.TabIndex = 3;
@@ -96,13 +97,13 @@
             this.Egreso});
             this.dgDatos.ContextMenuStrip = this.detalles;
             this.dgDatos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgDatos.Location = new System.Drawing.Point(20, 119);
+            this.dgDatos.Location = new System.Drawing.Point(20, 153);
             this.dgDatos.MultiSelect = false;
             this.dgDatos.Name = "dgDatos";
             this.dgDatos.ReadOnly = true;
             this.dgDatos.RowHeadersVisible = false;
             this.dgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDatos.Size = new System.Drawing.Size(615, 236);
+            this.dgDatos.Size = new System.Drawing.Size(746, 236);
             this.dgDatos.TabIndex = 6;
             this.dgDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellContentDoubleClick);
             // 
@@ -114,9 +115,9 @@
             // 
             // Fecha
             // 
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle10;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
@@ -129,16 +130,16 @@
             // 
             // Ingreso
             // 
-            dataGridViewCellStyle5.Format = "C";
-            this.Ingreso.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Format = "C";
+            this.Ingreso.DefaultCellStyle = dataGridViewCellStyle11;
             this.Ingreso.HeaderText = "Ingreso total";
             this.Ingreso.Name = "Ingreso";
             this.Ingreso.ReadOnly = true;
             // 
             // Egreso
             // 
-            dataGridViewCellStyle6.Format = "C";
-            this.Egreso.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Format = "C";
+            this.Egreso.DefaultCellStyle = dataGridViewCellStyle12;
             this.Egreso.HeaderText = "Egreso Total";
             this.Egreso.Name = "Egreso";
             this.Egreso.ReadOnly = true;
@@ -163,7 +164,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::CapaVista.Properties.Resources.close_button;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(551, 51);
+            this.btnCerrar.Location = new System.Drawing.Point(685, 51);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(81, 37);
             this.btnCerrar.TabIndex = 5;
@@ -174,7 +175,7 @@
             // 
             // reset
             // 
-            this.reset.Location = new System.Drawing.Point(444, 61);
+            this.reset.Location = new System.Drawing.Point(578, 61);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(75, 23);
             this.reset.TabIndex = 4;
@@ -186,7 +187,7 @@
             // lblMostrar
             // 
             this.lblMostrar.AutoSize = true;
-            this.lblMostrar.Location = new System.Drawing.Point(191, 65);
+            this.lblMostrar.Location = new System.Drawing.Point(313, 65);
             this.lblMostrar.Name = "lblMostrar";
             this.lblMostrar.Size = new System.Drawing.Size(59, 19);
             this.lblMostrar.TabIndex = 1;
@@ -195,17 +196,28 @@
             // tbTOP
             // 
             this.tbTOP.BackColor = System.Drawing.Color.Transparent;
-            this.tbTOP.Location = new System.Drawing.Point(239, 65);
+            this.tbTOP.Location = new System.Drawing.Point(361, 65);
             this.tbTOP.Name = "tbTOP";
             this.tbTOP.Size = new System.Drawing.Size(163, 23);
             this.tbTOP.TabIndex = 2;
             this.tbTOP.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbTOP_Scroll);
             // 
+            // dtFechaFiltro
+            // 
+            this.dtFechaFiltro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaFiltro.Location = new System.Drawing.Point(172, 67);
+            this.dtFechaFiltro.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
+            this.dtFechaFiltro.Name = "dtFechaFiltro";
+            this.dtFechaFiltro.Size = new System.Drawing.Size(135, 20);
+            this.dtFechaFiltro.TabIndex = 7;
+            this.dtFechaFiltro.ValueChanged += new System.EventHandler(this.dtFechaFiltro_ValueChanged);
+            // 
             // UltimasTransacciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 375);
+            this.ClientSize = new System.Drawing.Size(786, 409);
+            this.Controls.Add(this.dtFechaFiltro);
             this.Controls.Add(this.lblMostrar);
             this.Controls.Add(this.tbTOP);
             this.Controls.Add(this.reset);
@@ -246,5 +258,6 @@
         private MetroFramework.Controls.MetroTrackBar tbTOP;
         private System.Windows.Forms.ContextMenuStrip detalles;
         private System.Windows.Forms.ToolStripMenuItem verDetallesToolStripMenuItem;
+        public System.Windows.Forms.DateTimePicker dtFechaFiltro;
     }
 }
